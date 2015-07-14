@@ -1,0 +1,164 @@
+<!-- @@master  = ../../_layout.html-->
+<!-- @@block  =  jsBottom-->
+<include src="../../_articles-js.html"></include>
+
+<!-- @@close-->
+<!-- @@block  =  css-->
+<include src="../../_articles-css.html"></include>
+
+<!-- @@close-->
+<!-- @@block  =  articles-social-->
+<include src="../../_articles-social.html"></include>
+
+<!-- @@close-->
+<!-- @@block  =  articles-footer-->
+<include src="../../_articles.html"></include>
+
+<!-- @@close-->
+<!-- @@block  =  meta-->
+<meta property="article:published_time" content="2015-02-09T23:45:00+01:00">
+
+<meta name="keywords" content="css,bounce,animation,transform,彈跳,css 動畫">
+
+<meta name="description" content="這是只用了一個 div 來做的小動畫，純粹利用 CSS3 的 animation 來完成，就像是一個正方形在地上彈跳，碰到地面的時候尖角還會壓縮變圓，陰影的部分也會隨著正方形升高而縮小，至於到底該怎麼完成呢？讓我們繼續看下去。">
+
+<meta itemprop="name" content="有趣的 CSS 彈跳動畫 - OXXO.STUDIO">
+
+<meta itemprop="image" content="http://www.oxxostudio.tw/img/articles/201502/20150209_1_01.gif">
+
+<meta itemprop="description" content="這是只用了一個 div 來做的小動畫，純粹利用 CSS3 的 animation 來完成，就像是一個正方形在地上彈跳，碰到地面的時候尖角還會壓縮變圓，陰影的部分也會隨著正方形升高而縮小，至於到底該怎麼完成呢？讓我們繼續看下去。">
+
+<meta property="og:title" content="有趣的 CSS 彈跳動畫 - OXXO.STUDIO">
+
+<meta property="og:url" content="http://www.oxxostudio.tw/articles/201502/css-bounce.html">
+
+<meta property="og:image" content="http://www.oxxostudio.tw/img/articles/201502/20150209_1_01.gif">
+
+<meta property="og:description" content="這是只用了一個 div 來做的小動畫，純粹利用 CSS3 的 animation 來完成，就像是一個正方形在地上彈跳，碰到地面的時候尖角還會壓縮變圓，陰影的部分也會隨著正方形升高而縮小，至於到底該怎麼完成呢？讓我們繼續看下去。">
+
+<title>有趣的 CSS 彈跳動畫 - OXXO.STUDIO</title> 
+
+<!-- @@close-->
+<!-- @@block  =  articles-content--> 
+<h2>有趣的 CSS 彈跳動畫  <span class="article-date" tag="css"><i></i>FEB 9, 2015</span></h2>
+<p>這是只用了一個 div 來做的小動畫，純粹利用 CSS3 的 animation 來完成，就像是一個正方形在地上彈跳，碰到地面的時候尖角還會壓縮變圓，陰影的部分也會隨著正方形升高而縮小，至於到底該怎麼完成呢？讓我們繼續看下去。</p>
+<p>由於只使用了一個 div，要同時達到正方形旋轉與陰影縮放的效果，這裡必須使用兩個偽元素 ( before 與 after ) 來完成，嚴格來說，雖然只有一個 div，但是卻是把這個 div 當作外框，讓偽元素 before 作為旋轉的正方形，讓偽元素 after 作為陰影，如果對於偽元素不太了解的，可以參考我之前寫的這篇：<a href="http://www.oxxostudio.tw/articles/201407/css-clock.html">電子時鐘效果 ( CSS 偽元素的應用 )</a></p>
+<pre><code>.box{
+  position:relative;
+
+}
+.box:before{
+  content:&#39;&#39;;
+  position:absolute;
+  z-index:2;
+  top:60px;
+  left:50px;
+  width:50px;
+  height:50px;
+  background:#c00;
+  border-radius:2px;
+  transform: rotate(45deg);
+}
+.box:after{
+  content:&#39;&#39;;
+  position:absolute;
+  z-index:1;
+  top:128px;
+  left:52px;
+  width:44px;
+  height:3px;
+  background:#eaeaea;
+  border-radius:100%;
+}
+</code></pre><p><img src="/img/articles/201502/20150209_1_02.jpg" alt="有趣的 CSS 彈跳動畫"></p>
+<p><br/>
+畫出正方形與陰影之後，再來就是要做動畫了，為了避免太過複雜，這裡我們先不要旋轉，先單純讓正方形上下跳動，然後陰影會放大縮小，下面的範例的動畫，有新增了 20% 與 80% 的 keyframe，目的是為了讓接觸的時候角落才會變圓，不然就會變成剛開始移動時尖角就變圓，就會很怪異了。(範例：<a href="/demo/201502/css-bounce-demo1.html">css-bounce-demo1.html</a>)</p>
+<pre><code>.box:before{
+  content:&#39;&#39;;
+  position:absolute;
+  z-index:2;
+  top:60px;
+  left:50px;
+  width:50px;
+  height:50px;
+  background:#c00;
+  border-radius:2px;
+  transform: rotate(45deg);
+  -webkit-animation:box .8s infinite ; 
+}
+@-webkit-keyframes box{
+  0%{
+    top:50px;
+  }
+  20%{
+    border-radius:2px;  /*從 20% 的地方才開始變形*/
+  }
+  50%{
+    top:80px; 
+    border-bottom-right-radius:25px;
+  }
+  80%{
+    border-radius:2px;  /*到 80% 的地方恢復原狀*/
+  }
+  100%{
+    top:50px;
+  }
+}
+.box:after{
+  content:&#39;&#39;;
+  position:absolute;
+  z-index:1;
+  top:128px;
+  left:52px;
+  width:44px;
+  height:3px;
+  background:#eaeaea;
+  border-radius:100%;
+  -webkit-animation:shadow .8s infinite ; 
+}
+@-webkit-keyframes shadow{
+  0%,100%{
+    left:54px;
+    width:40px;
+    background:#eaeaea;
+  }
+  50%{
+    top:126px;
+    left:50px;   /*讓陰影保持在原位*/
+    width:50px;
+    height:7px;
+    background:#eee;
+  }
+}
+</code></pre><p><img src="/img/articles/201502/20150209_1_03.gif" alt="有趣的 CSS 彈跳動畫"></p>
+<p><br/>
+了解原理之後，我們只要再加上旋轉的屬性，就可以達到彈跳起來的時候有旋轉的效果，不過這裡又有用到一個小技巧，就是落下的時候是 90 度轉到 45 度，彈上去的時候從 45 旋轉到 0 度，然後在這一瞬間從 0 度變成 90 度 ( 100% 到 0% )，如此一來我們就會產生錯覺，感覺好像一直在旋轉了。(範例：<a href="/demo/201502/css-bounce-demo2.html">css-bounce-demo2.html</a>)</p>
+<pre><code>@-webkit-keyframes box{
+  0%{
+    top:50px;
+    transform: rotate(90deg); /**/
+  }
+  20%{
+    border-radius:2px;
+  }
+  50%{
+    top:80px; 
+    transform: rotate(45deg);
+    border-bottom-right-radius:25px;
+  }
+  80%{
+    border-radius:2px;
+  }
+  100%{
+    top:50px;
+    transform: rotate(0deg);
+  }
+}
+</code></pre><p><img src="/img/articles/201502/20150209_1_04.gif" alt="有趣的 CSS 彈跳動畫"></p>
+<p><br/>
+舉一反三，我們也可以把角度反轉，就會往另外一邊彈跳。(範例：<a href="/demo/201502/css-bounce-demo3.html">css-bounce-demo3.html</a>)</p>
+<p><img src="/img/articles/201502/20150209_1_05.gif" alt="有趣的 CSS 彈跳動畫"></p>
+<p><br/>
+如果我們把動畫裡頭添加 linear，就會變成線性的連續方式喔。(範例：<a href="/demo/201502/css-bounce-demo4.html">css-bounce-demo4.html</a>)</p>
+<p><img src="/img/articles/201502/20150209_1_06.gif" alt="有趣的 CSS 彈跳動畫"></p>
+<!-- @@close-->
