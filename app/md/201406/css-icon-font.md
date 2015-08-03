@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content-->
 
-##Icon Font 的使用方式 <span class="article-date" tag="css"><i></i>JUN 7, 2014</span>
+##Icon Font 的使用方式 <span class="article-date" tag="css">JUN 7, 2014</span>
+
+<img src="/img/articles/201406/20140607_1_01.jpg" class="preview-img">
 
 之前介紹過 [Web Font 的使用方式][5]，這篇則是介紹 Icon Font 的使用，Icon Font 顧名思義就是使用小圖示 ( icon ) 當作字體，只需要打入對應的代碼，或是加上固定名稱的樣式，就能夠產生一個小圖示。這種方式的好處其實不少，因為使用 Icon Font 除了可以減少圖片的使用率，也可以讓 icon 的大小、顏色都能夠像文字一樣隨心所欲的調整，但相對的也是有些壞處，例如一定得使用外部載入字體、icon 只能夠使用單色 ( 因為文字只能單色 )...等。
 

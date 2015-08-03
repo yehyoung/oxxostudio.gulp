@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (15) - filter - feComponentTransfer <span class="article-date" tag="web"><i></i>JUL 28, 2014</span>
+##SVG 研究之路 (15) - filter - feComponentTransfer <span class="article-date" tag="web">JUL 28, 2014</span>
+
+<img src="/img/articles/201407/20140728_1_01.jpg" class="preview-img">
 
 feComponentTransfer 是針對圖像中每一個像素，利用公式的計算，進行亮度、對比...等調整，其實就有點類似 Photoshop 裏頭的「曲線」調整模式，我們可以利用調整線條的斜率、或是曲線的公式，對圖片進行更細緻的調整，只是在 photoshop 裏頭已經幫我們做了視覺介面的處理，在 SVG 裏頭則是必須要自己手動輸入相關數值。
 

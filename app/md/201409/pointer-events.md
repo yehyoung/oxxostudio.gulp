@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##穿透的 div ( pointer-events ) <span class="article-date" tag="css"><i></i>SEP 2, 2014</span>
+##穿透的 div ( pointer-events ) <span class="article-date" tag="css">SEP 2, 2014</span>
+
+<img src="/img/articles/201409/20140902_1_01.jpg" class="preview-img">
 
 pointer-events 是一個滿有趣的 CSS3 屬性，雖然主要是針對 SVG ，但其中幾個屬性應用在 div 上也是頗有意思。顧名思義，這是一個針對滑鼠事件的屬性，預設值為 auto，若值為 none，則可以穿越該元素，點擊到下方的元素。除了 auto 和 none，這是完整的屬性列表：`pointer-events: auto | none | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | inherit`，除了 auto 與 none，其他都是控制 SVG 的屬性，若採用預設值，則 SVG 就是以 visiblePainted 來表現。
 

@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (19) - transform 基礎篇  <span class="article-date" tag="web"><i></i>SEP 20, 2014</span>
+##SVG 研究之路 (19) - transform 基礎篇  <span class="article-date" tag="web">SEP 20, 2014</span>
 
 在 CSS3 裏頭，我們常常使用到 transform 這個變形的效果，同樣的，對於 SVG 來說，transform 也是重要的變形屬性，與 CSS 一模一樣，SVG 的 transform 不外乎就是這五個方法：translate、scale、rotate、skew、matrix，這篇將介紹基本的前四個方法，[下一篇](http://www.oxxostudio.tw/articles/201409/svg-20-transform-matrix.html)會繼續介紹 matrix 這個比較複雜的方法。
 	
@@ -64,6 +64,8 @@
 
 		<rect fill="#c00" width="60" height="60" x="0" y="0" />
 		<rect fill="#09c" width="60" height="60" x="0" y="0" transform="translate(100,50)" />
+
+<br/>
 
 - **scale(sx,[sy])**
 
@@ -99,6 +101,8 @@
 		  <rect fill="none" width="60" height="60" x="70" y="50" stroke="#000" stroke-width="2" />
 		  <rect fill="#c00" width="60" height="60" x="70" y="50" transform="scale(-1,1) translate(-135)" />
 
+<br/>
+
 - **rotate(angle,[cx,cy])**
 
 	rotate 可以控制圖形的旋轉角度，順時針為正，逆時針為負，旋轉圓心的預設值為 SVG 整張畫布的左上角(0,0)，當然我們也可以自訂圓心的座標值。
@@ -113,6 +117,8 @@
 		<rect fill="none" width="60" height="60" x="50" y="50" stroke="#000" stroke-width="2" />
 		<rect fill="#c00" width="60" height="60" x="50" y="50" transform="rotate(-20,50,50)" />
 
+<br/>
+
 - **skewX(angle)、skewY(angle)**
 
 	最後一個基本的方法是 skew 傾斜，分別是要設定 X 與 Y 方向的傾斜角度，不過與 scale 有點相同的地方，使用 skew 之後，也必須使用 translate 把位置調整回來才可以 ( 同樣是因為 Matrix 矩陣運算，在水平或垂直方向上會加上一個 tan(角度) 的數值，也因此位移了 )
@@ -126,6 +132,8 @@
 
 		<rect fill="none" width="60" height="50" x="10" y="50" stroke="#000" stroke-width="2" />
 		<rect fill="#c00" width="60" height="50" x="10" y="50" transform="skewX(30) skewY(30)" />
+
+<br/>
 
 以上就是基本的 SVG transform，[下一篇](http://www.oxxostudio.tw/articles/201409/svg-20-transform-matrix.html)將仔細介紹 Matrix 的方法。
 

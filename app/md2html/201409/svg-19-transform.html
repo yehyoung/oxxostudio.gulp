@@ -40,7 +40,7 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content--> 
-<h2>SVG 研究之路 (19) - transform 基礎篇  <span class="article-date" tag="web"><i></i>SEP 20, 2014</span></h2>
+<h2>SVG 研究之路 (19) - transform 基礎篇  <span class="article-date" tag="web">SEP 20, 2014</span></h2>
 <p>在 CSS3 裏頭，我們常常使用到 transform 這個變形的效果，同樣的，對於 SVG 來說，transform 也是重要的變形屬性，與 CSS 一模一樣，SVG 的 transform 不外乎就是這五個方法：translate、scale、rotate、skew、matrix，這篇將介紹基本的前四個方法，<a href="http://www.oxxostudio.tw/articles/201409/svg-20-transform-matrix.html">下一篇</a>會繼續介紹 matrix 這個比較複雜的方法。</p>
 <ul>
 <li><p><strong>translate(tx,[ty])</strong></p>
@@ -49,6 +49,9 @@
 <pre><code>  &lt;rect fill=&quot;#c00&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;0&quot; y=&quot;0&quot; /&gt;
   &lt;rect fill=&quot;#09c&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;0&quot; y=&quot;0&quot; transform=&quot;translate(100,50)&quot; /&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>scale(sx,[sy])</strong></p>
 <p>  scale 可以讓圖形放大或是縮小，若只有設定一個值，則會等比例放大縮小，若設定兩個值，則分別為水平放大或垂直放大，比較需要注意的是，scale 的放大縮小除了寬度和高度，連同坐標也會一併放大縮小，所以一開始使用的時候，會被位置跑掉給嚇到 ( 原因是因為矩陣 Matrix 運算的緣故，會在下一篇解釋 )。</p>
 <p>  <img src="/img/articles/201409/20140920_1_03.png" alt="SVG 研究之路 (19) - transform 基礎篇"></p>
@@ -70,6 +73,9 @@
 <pre><code>    &lt;rect fill=&quot;none&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;70&quot; y=&quot;50&quot; stroke=&quot;#000&quot; stroke-width=&quot;2&quot; /&gt;
     &lt;rect fill=&quot;#c00&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;70&quot; y=&quot;50&quot; transform=&quot;scale(-1,1) translate(-135)&quot; /&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>rotate(angle,[cx,cy])</strong></p>
 <p>  rotate 可以控制圖形的旋轉角度，順時針為正，逆時針為負，旋轉圓心的預設值為 SVG 整張畫布的左上角(0,0)，當然我們也可以自訂圓心的座標值。</p>
 <p>  <img src="/img/articles/201409/20140920_1_07.png" alt="SVG 研究之路 (19) - transform 基礎篇"></p>
@@ -79,6 +85,9 @@
 <pre><code>  &lt;rect fill=&quot;none&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;50&quot; y=&quot;50&quot; stroke=&quot;#000&quot; stroke-width=&quot;2&quot; /&gt;
   &lt;rect fill=&quot;#c00&quot; width=&quot;60&quot; height=&quot;60&quot; x=&quot;50&quot; y=&quot;50&quot; transform=&quot;rotate(-20,50,50)&quot; /&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>skewX(angle)、skewY(angle)</strong></p>
 <p>  最後一個基本的方法是 skew 傾斜，分別是要設定 X 與 Y 方向的傾斜角度，不過與 scale 有點相同的地方，使用 skew 之後，也必須使用 translate 把位置調整回來才可以 ( 同樣是因為 Matrix 矩陣運算，在水平或垂直方向上會加上一個 tan(角度) 的數值，也因此位移了 )</p>
 <p>  <img src="/img/articles/201409/20140920_1_09.png" alt="SVG 研究之路 (19) - transform 基礎篇"></p>
@@ -89,5 +98,6 @@
   &lt;rect fill=&quot;#c00&quot; width=&quot;60&quot; height=&quot;50&quot; x=&quot;10&quot; y=&quot;50&quot; transform=&quot;skewX(30) skewY(30)&quot; /&gt;
 </code></pre></li>
 </ul>
+<p><br/></p>
 <p>以上就是基本的 SVG transform，<a href="http://www.oxxostudio.tw/articles/201409/svg-20-transform-matrix.html">下一篇</a>將仔細介紹 Matrix 的方法。</p>
 <!-- @@close-->

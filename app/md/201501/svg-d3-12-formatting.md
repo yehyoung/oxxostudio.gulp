@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3.js - 數字格式 ( Formatting )  <span class="article-date" tag="web"><i></i>JAN 11, 2015</span>
+##SVG D3.js - 數字格式 ( Formatting )  <span class="article-date" tag="web">JAN 11, 2015</span>
+
+<img src="/img/articles/201501/20150111_1_01.jpg" class="preview-img">
 
 在 [SVG D3.js - 時間格式 ( Time Formatting )](http://www.oxxostudio.tw/articles/201412/svg-d3-11-time.html) 這篇文章裡看完了時間的格式，接著就要來看看 d3.js 對於數字格式是如何處理的，因為 d3.js 主要就是針對數據去進行視覺化，所以大幅簡化了過去我們往往要寫很多判斷式來讓數字格式化的方法，只需要運用簡單的 API，就能夠輕鬆地讓數據格式化。其實講到數據的格式化，讓我想到一個強迫症藝術家 Ursus Wehrli 的一系列作品 ( [Tidying Up Art](https://www.google.com.tw/search?q=Tidying+Up+Art&es_sm=122&source=lnms&tbm=isch&sa=X&ei=iYuyVK_nLei9mgX424KgBw&ved=0CAgQ_AUoAQ&biw=1527&bih=850#imgdii=_) )，從一堆雜亂無章的數據當中把這些數據分門別類並且格式化，意境上非常的雷同呀喔哈！( 所以這篇文章的圖片就用這系列藝術作品來表現吧！ )
 
@@ -275,7 +277,7 @@ o 範例：[svg-d3-12-formatting-demo9.html](/demo/201501/svg-d3-12-formatting-d
 	console.log(_o1(-10));      //-12
 	console.log(_o1(-0.123));   //
 
-x 範例：[svg-d3-12-formatting-demo10.html](svg-d3-12-formatting-demo10.html)
+x 範例：[svg-d3-12-formatting-demo10.html](/demo/201501/svg-d3-12-formatting-demo10.html)
 
 	var _x1 = d3.format("x");
 	
@@ -352,9 +354,9 @@ s 範例：[svg-d3-12-formatting-demo13.html](/demo/201501/svg-d3-12-formatting-
 	console.log(_comma(-10000));    //-10,000
 
 <br/>
-我們也可以**用組合的方式**來組合，但組合的順序記得要按照這個規則進行：(範例：[svg-d3-12-formatting-demo15.html](svg-d3-12-formatting-demo15.html))
->
-[[fill]align][sign][symbol][0][width][,][.precision][type]
+我們也可以**用組合的方式**來組合，但組合的順序記得要按照這個規則進行：(範例：[svg-d3-12-formatting-demo15.html](/demo/201501/svg-d3-12-formatting-demo15.html))
+
+>[[fill]align][sign][symbol][0][width][,][.precision][type]
 
 	console.log(d3.format(",.5e")(10000));   //1.00000e+4
 	console.log(d3.format(",.5g")(10000));   //10,000

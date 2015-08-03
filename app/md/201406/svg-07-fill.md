@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (7) - fill 填色 <span class="article-date" tag="web"><i></i>JUN 14, 2014</span>
+##SVG 研究之路 (7) - fill 填色 <span class="article-date" tag="web">JUN 14, 2014</span>
 
 介紹過了 stroke 邊框之後，接下來就要介紹 fill 填色，填色分成三種，一種是純色的填色，一種是漸層的填色，最後一種是利用圖案的填色，一張圖片的好看與否，很重要的一部分往往取決於色彩的呈現，因此掌握填色的技巧，對於圖片的表現也更能引人入勝，而 SVG 的好處，填色也是向量化，更可以用程式去控制色彩，以下將分別介紹三種填色的方式：
 

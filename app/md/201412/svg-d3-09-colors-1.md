@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3.js - 定義色彩 - 基本篇 ( colors )  <span class="article-date" tag="web"><i></i>DEC 25, 2014</span>
+##SVG D3.js - 定義色彩 - 基本篇 ( colors )  <span class="article-date" tag="web">DEC 25, 2014</span>
+
+<img src="/img/articles/201412/20141225_1_01.jpg" class="preview-img">
 
 在網頁的世界裡，色彩是非常重要的，通常我們在寫網頁的色彩，不外乎就是用十六進制 ( #f00、#fff )、顏色名稱 ( red、yellow ) 或 rgba ( rgba(0,0,0,0) )，而在 d3.js 裡，同樣也有操作顏色的 API,有別於一般我們在寫 CSS 的顏色方式，d3.js 是使用 RGB ( 紅綠藍 )、HSL (色調、飽和度，亮度) 、HCL 與 LAB ( 亮度，a 維度，b 維度 ) 的這些色彩空間，對於這些色彩空間不了解的，可以參考 [維基百科色彩空間](http://zh.wikipedia.org/wiki/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%96%93)。
 
@@ -68,7 +70,7 @@
 
 - **d3.rgb(r, g, b)**
 
-	這是可以把一個變數宣告為 d3 的色彩，也就是經過這個方式宣告之後，該變數不僅可作為色彩使用，也可利用 d3.js 其他的色彩 API 來控制和調整，下面的例子便是利用這種方式，將四個　div 的背景色設定為紅綠黃藍。( 範例：[svg-d3-09-colors-demo1.html](svg-d3-09-colors-1-demo1.html) )
+	這是可以把一個變數宣告為 d3 的色彩，也就是經過這個方式宣告之後，該變數不僅可作為色彩使用，也可利用 d3.js 其他的色彩 API 來控制和調整，下面的例子便是利用這種方式，將四個　div 的背景色設定為紅綠黃藍。( 範例：[svg-d3-09-colors-demo1.html](/demo/201412/svg-d3-09-colors-1-demo1.html) )
 
 	HTML：
 
@@ -117,7 +119,7 @@
 
 - **d3.rgb(color)**
 
-	除了用十進位撰寫顏色之外，其實 d3.js 也可以直接讓我們填寫顏色的名稱或十六進位色碼，不過要注意的是，記得要用引號包起來，才識字串的形式。( 範例：[svg-d3-09-colors-1-demo2.html](svg-d3-09-colors-1-demo2.html) )
+	除了用十進位撰寫顏色之外，其實 d3.js 也可以直接讓我們填寫顏色的名稱或十六進位色碼，不過要注意的是，記得要用引號包起來，才識字串的形式。( 範例：[svg-d3-09-colors-1-demo2.html](/demo/201412/svg-d3-09-colors-1-demo2.html) )
 
 		var red = d3.rgb('red');
 		var green = d3.rgb('green');
@@ -137,7 +139,7 @@
 
 - **rgb.brighter([k])**
 
-	加亮顏色的 API，數值從 0 開始往上加，最主要是在原本的顏色數字乘上 0.7^-k ，數字越大越亮，不過最終的數值範圍是 30-255，超過範圍的就會以最大值或最小值表現，範例有改了一下上面的 HTML，可以點開看完整原始檔。( 範例：[svg-d3-09-colors-1-demo3.html](svg-d3-09-colors-1-demo3.html) )
+	加亮顏色的 API，數值從 0 開始往上加，最主要是在原本的顏色數字乘上 0.7^-k ，數字越大越亮，不過最終的數值範圍是 30-255，超過範圍的就會以最大值或最小值表現，範例有改了一下上面的 HTML，可以點開看完整原始檔。( 範例：[svg-d3-09-colors-1-demo3.html](/demo/201412/svg-d3-09-colors-1-demo3.html) )
 
 		var red = d3.rgb(50,0,0);
 		
@@ -167,7 +169,7 @@
 
 - **rgb.darker([k])**
 
-	和剛剛的 rgb.brighter 相反，rgb.darker 是變暗，是在原本的顏色數字乘上 0.7^k，注意不是 -k 而是 k。( 範例：[svg-d3-09-colors-1-demo4.html](svg-d3-09-colors-1-demo4.html) )
+	和剛剛的 rgb.brighter 相反，rgb.darker 是變暗，是在原本的顏色數字乘上 0.7^k，注意不是 -k 而是 k。( 範例：[svg-d3-09-colors-1-demo4.html](/demo/201412/svg-d3-09-colors-1-demo4.html) )
 
 		var red = d3.rgb(255,0,0);
 		
@@ -193,7 +195,7 @@
 
 - **rgb.hsl()**
 
-	返回 HSL 的色彩，可以直接從 console 看出來。( 範例：[svg-d3-09-colors-1-demo5.html](svg-d3-09-colors-1-demo5.html) )
+	返回 HSL 的色彩，可以直接從 console 看出來。( 範例：[svg-d3-09-colors-1-demo5.html](/demo/201412/svg-d3-09-colors-1-demo5.html) )
 
 		var red = d3.rgb(255,0,0);	
 		console.log(red.hsl());
@@ -206,7 +208,7 @@
 
 - **rgb.toString()**
 
-	輸出色彩為十六進位字串。( 範例：[svg-d3-09-colors-1-demo6.html](svg-d3-09-colors-1-demo6.html) )
+	輸出色彩為十六進位字串。( 範例：[svg-d3-09-colors-1-demo6.html](/demo/201412/svg-d3-09-colors-1-demo6.html) )
 		
 		var red = d3.rgb(255,0,0);
 		console.log(red.toString());

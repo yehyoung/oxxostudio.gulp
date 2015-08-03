@@ -46,13 +46,13 @@
 
 <meta property="og:description" content="理解了 line、scale 和座標軸之後，再來要介紹與 area 這個方法，area 就像字面翻譯一樣，可以繪製一個區域，同時也可以像 line 一樣的設定 interpolate ，因此搭配 line 一起使用，就可以畫出具有區域顏色的折線圖，相當的有意思。">
 
-<title>SVG D3 - 區域 ( area )  - OXXO.STUDIO</title> 
+<title>SVG D3.js - 區域 ( area )  - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3 - 區域 ( area )  <span class="article-date" tag="web"><i></i>NOV 16, 2014</span>
+##SVG D3.js - 區域 ( area )  <span class="article-date" tag="web">NOV 16, 2014</span>
 
 理解了 line、scale 和座標軸之後，再來要介紹與 area 這個方法，area 就像字面翻譯一樣，可以繪製一個區域，同時也可以像 line 一樣的設定 interpolate ，因此搭配 line 一起使用，就可以畫出具有區域顏色的折線圖，相當的有意思。
 
@@ -72,7 +72,7 @@
 
 - **x([x])、x0([x0])、x1([x1])、y([y])、y0([y0])、y1([y1])**
 
-	一開始的 x、x0、x1、y、y0、y1 這六個 API 是要一併處理的，這幾個 API 是專門處理座標的 API，通常 **x、y0、y1 互相搭配，y、x0、x1 互相搭配**，舉例來說，若我們把 x 和 y1 帶入一串數據 ( 不是陣列，要用 data 的方式帶入 )，y0 固定，那麼就會畫出一個區域的圖形。( [svg-d3-05-area-demo1.html](svg-d3-05-area-demo1.html) )
+	一開始的 x、x0、x1、y、y0、y1 這六個 API 是要一併處理的，這幾個 API 是專門處理座標的 API，通常 **x、y0、y1 互相搭配，y、x0、x1 互相搭配**，舉例來說，若我們把 x 和 y1 帶入一串數據 ( 不是陣列，要用 data 的方式帶入 )，y0 固定，那麼就會畫出一個區域的圖形。( [svg-d3-05-area-demo1.html](/demo/201411/svg-d3-05-area-demo1.html) )
 	
 		  var data = [
 		  {x:0, y:18}, 
@@ -113,7 +113,7 @@
 	![SVG D3 - 區域 ( area )](/img/articles/201411/20141116_1_02.png)
 
 	<br/>
-	如果我們將陣列換成垂直的，再改一下 area 的 API，方向就會變成垂直的。( [svg-d3-05-area-demo2.html](svg-d3-05-area-demo2.html) )
+	如果我們將陣列換成垂直的，再改一下 area 的 API，方向就會變成垂直的。( [svg-d3-05-area-demo2.html](/demo/201411/svg-d3-05-area-demo2.html) )
 
 		  var area = d3.svg.area()
 		      .y(function(d) { return d.y; })
@@ -123,7 +123,7 @@
 	![SVG D3 - 區域 ( area )](/img/articles/201411/20141116_1_03.png)
 	
 	<br/>
-	如果要比較簡單來思考的話，y0 和 y1 可以分別看成是上方 y 座標與下方 y 坐標，x0、x1 可以看成左方的 x 座標與右方的 x 座標，基本上一定要有 x 一組數據搭配 y0、y1 或 y 一組數據搭配 x0、x1，因此最重要的其實就是必須要有一組座標來產生 area，前面使用了固定 x0 或固定 y0 的方式，就可以做出折線圖的區域效果，當然，如果我們數據，就會產生非常有趣的形狀。( [svg-d3-05-area-demo3.html](svg-d3-05-area-demo3.html) )
+	如果要比較簡單來思考的話，y0 和 y1 可以分別看成是上方 y 座標與下方 y 坐標，x0、x1 可以看成左方的 x 座標與右方的 x 座標，基本上一定要有 x 一組數據搭配 y0、y1 或 y 一組數據搭配 x0、x1，因此最重要的其實就是必須要有一組座標來產生 area，前面使用了固定 x0 或固定 y0 的方式，就可以做出折線圖的區域效果，當然，如果我們數據，就會產生非常有趣的形狀。( [svg-d3-05-area-demo3.html](/demo/201411/svg-d3-05-area-demo3.html) )
 	
 		  var data = [
 		  {x:0, y0:0, y1:20},
@@ -148,7 +148,7 @@
 
 - **area.interpolate([interpolate])、area.tension([tension])**
 
-	這兩個 API 和 line() 的用法其實一模一樣，可以參考 [SVG D3 - 繪製線段](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line.html)，這兩者的目的在於根據我們的數據，描繪出有 B-spline 或 Cardinal spline  或 cubic interpolation 的邊緣線段，這裡我們拿剛剛範例 1 來做比較，實驗組套用了`.interpolate('bundle')`。( [svg-d3-05-area-demo4.html](svg-d3-05-area-demo4.html) )
+	這兩個 API 和 line() 的用法其實一模一樣，可以參考 [SVG D3 - 繪製線段](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line.html)，這兩者的目的在於根據我們的數據，描繪出有 B-spline 或 Cardinal spline  或 cubic interpolation 的邊緣線段，這裡我們拿剛剛範例 1 來做比較，實驗組套用了`.interpolate('bundle')`。( [svg-d3-05-area-demo4.html](/demo/201411/svg-d3-05-area-demo4.html) )
 	
 		 //對照組
 		  var area1 = d3.svg.area()
@@ -184,7 +184,7 @@
 
 - **area.defined([defined])**
 
-	defined 就式定義那些資料該出現或不該出現，舉例來說可以定義資料大於多少才出現，或資料是偶數才能出現...等之類,下面的範例讓區域只顯示 x 不是三的倍數的資料。 ( [svg-d3-05-area-demo5.html](svg-d3-05-area-demo5.html) )
+	defined 就式定義那些資料該出現或不該出現，舉例來說可以定義資料大於多少才出現，或資料是偶數才能出現...等之類,下面的範例讓區域只顯示 x 不是三的倍數的資料。 ( [svg-d3-05-area-demo5.html](/demo/201411/svg-d3-05-area-demo5.html) )
 
 		  //對照組
 		  var area1 = d3.svg.area()
@@ -203,13 +203,13 @@
 
 <br/>
 
-理解了 area 的用法之後，現在要來把之前的 line()、scale()、Axis() 和 area() 全部結合在一起，做一個票漂亮亮的圖表，第一步，直接參考上一篇的 [範例](http://www.oxxostudio.tw/articles/201411/svg-d3-04-axis-demo5.html) 拿來用，然後我們直接多新增 area 進去，就可以做出具有區域的折線圖表，程式碼有點多，不過都是之前介紹過的，所以直接點開範例看看吧。( [svg-d3-05-area-demo6.html](svg-d3-05-area-demo6.html) )
+理解了 area 的用法之後，現在要來把之前的 line()、scale()、Axis() 和 area() 全部結合在一起，做一個票漂亮亮的圖表，第一步，直接參考上一篇的 [範例](http://www.oxxostudio.tw/articles/201411/svg-d3-04-axis-demo5.html) 拿來用，然後我們直接多新增 area 進去，就可以做出具有區域的折線圖表，程式碼有點多，不過都是之前介紹過的，所以直接點開範例看看吧。( [svg-d3-05-area-demo6.html](/demo/201411/svg-d3-05-area-demo6.html) )
 	      
 ![SVG D3 - 區域 ( area )](/img/articles/201411/20141116_1_07.png)	
 
 <br/>
 
-只有一個折線圖不稀奇，可以放超過一個折線圖，看起來整個圖表的樣貌就更為完善囉！( [svg-d3-05-area-demo7.html](svg-d3-05-area-demo7.html) )
+只有一個折線圖不稀奇，可以放超過一個折線圖，看起來整個圖表的樣貌就更為完善囉！( [svg-d3-05-area-demo7.html](/demo/201411/svg-d3-05-area-demo7.html) )
 
 資料長這樣：
 

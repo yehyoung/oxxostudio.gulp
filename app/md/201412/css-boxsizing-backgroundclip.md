@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##box-sizing 與 background-clip  <span class="article-date" tag="css"><i></i>DEC 10, 2014</span>
+##box-sizing 與 background-clip  <span class="article-date" tag="css">DEC 10, 2014</span>
 
 過去在學習 CSS 的時候，首要任務就是要理解「box model」，因為　box model 是 CSS 裏頭很重要的模型概念，描述了 padding、margin、border 與 content 的空間定位 ( 參考 [W3C Box model](http://www.w3.org/TR/CSS2/box.html) )，雖然 CSS 是我吃飯的工具，但今天的專案竟然卡在一個簡單的小問題，因此就用一篇文章做個紀錄提醒自己不要忘記，也避免之後遭遇到又會卡住了。( 下圖就是 CSS 的 box model )
 

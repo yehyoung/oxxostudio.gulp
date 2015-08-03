@@ -53,7 +53,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##2010 年工作的插畫 ( 2 )  <span class="article-date" tag="creative"><i></i>DEC 14, 2014</span>
+##2010 年工作的插畫 ( 2 )  <span class="article-date" tag="creative">DEC 14, 2014</span>
 
 同樣也是在遠綠資訊的時候畫的，比之前的大張一點的，也有一些點陣與向量的圖形 ( 點陣圖是一直以來我愛的風格，當兵的時候畫了很多 )，原本想順著這個線條插畫系列，看看能不能畫出一本插畫集，不過明年再說吧！因為想學的程式學不完呀！
 

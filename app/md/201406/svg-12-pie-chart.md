@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (12) - pie chart 圓餅圖實作 <span class="article-date" tag="web"><i></i>JUN 23, 2014</span>
+##SVG 研究之路 (12) - pie chart 圓餅圖實作 <span class="article-date" tag="web">JUN 23, 2014</span>
 
 在之前我所撰寫的 SVG path 的文章 [SVG 研究之路 (5) - Path 進階篇](http://www.oxxostudio.tw/articles/201406/svg-05-path-2.html) 當中，詳細介紹了關於 path 的 A 參數用法，回想一下，A 參數是拿來繪製弧形，因此這篇就藉由 A 參數的精妙之處，來繪製圓餅圖；什麼是圓餅圖呢？圓餅圖 ( pie chart ) 是在各式各樣的圖表中，常見且最基本的圖表類型，雖然我們常常使用 Excel 等試算表工具來繪製，但往往在轉成網頁的時候，就必須轉換成圖檔，無法動態的產生圓餅圖，不過在瀏覽器進步的今天，我們就可以藉由程式來繪製出相當精緻的圖表。
 

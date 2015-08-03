@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (17) - Stroke-marker  <span class="article-date" tag="web"><i></i>SEP 8, 2014</span>
+##SVG 研究之路 (17) - Stroke-marker  <span class="article-date" tag="web">SEP 8, 2014</span>
 
 在 [SVG 研究之路 (16) - Stroke-miterlimit](http://www.oxxostudio.tw/articles/201409/svg-16-storke-miterlimit.html) 和 [SVG 研究之路 (6) - stroke 邊框](http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html) 都有介紹了 stroke 的用法，其實 stroke 還有另外一個特別的功能可以設定，就是「marker」，顧名思義，就是在線段的起點、中間點或結束點，加上我們自訂的符號，就可以讓折線圖更有特色。
 

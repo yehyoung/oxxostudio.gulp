@@ -46,15 +46,15 @@
 
 <meta property="og:description" content="當我們面對一個折線圖或長條圖的長寬，超過電腦視窗的畫面大小，就必須用比例的方式讓圖表等比例縮小來適合寬度，在 D3.js 裏頭，就要使用 scale 這個方法來達成。">
 
-<title>SVG D3 - 定義比例 ( scale.linear() )  - OXXO.STUDIO</title> 
+<title>SVG D3.js - 定義比例 ( scale.linear() )  - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3 - 定義比例 ( scale.linear() )  <span class="article-date" tag="web"><i></i>NOV 12, 2014</span>
+##SVG D3.js - 定義比例 ( scale.linear() )  <span class="article-date" tag="web">NOV 12, 2014</span>
 
-這篇原本要延續上一篇 [SVG D3 - 繪製線段](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line.html)，然後立馬做一個折線圖出來，不過在製作過程中發現有兩個重點必須要先闡述，第一個就是比例 Scale，第二個就是座標 Axis，深入研究之後，發現這兩個方法在 D3.js 裏頭學問還頗大的，所以就先獨立出來分別描述，完成後再來繼續折線圖的製作。
+這篇原本要延續上一篇 [SVG D3.js - 繪製線段](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line.html)，然後立馬做一個折線圖出來，不過在製作過程中發現有兩個重點必須要先闡述，第一個就是比例 Scale，第二個就是座標 Axis，深入研究之後，發現這兩個方法在 D3.js 裏頭學問還頗大的，所以就先獨立出來分別描述，完成後再來繼續折線圖的製作。
 
 什麼是比例 Scale 呢？最常見到比例尺的地方應該就是在地圖上，例如台灣面積大約 36,188 平方公里，要把台灣塞進一張 A4 大小的地圖根本就是天方夜譚，這時候就必須要用到比例了。
 
@@ -97,7 +97,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_05.png)
 
 	<br/>
-	用前一篇的 line 來畫個折線圖試試看，當折線圖超過 SVG 的範圍就會被裁切，就可以利用 scale 將折線圖固定在一定的大小內，如此一來也不用擔心數值的變動，因為一定都會以我們自訂的比例在範圍內顯示。原本的折線圖，看起來實在有夠小。 ( 範例：[svg-d3-03-scale-linear-demo1.html](svg-d3-03-scale-linear-demo1.html) )
+	用前一篇的 line 來畫個折線圖試試看，當折線圖超過 SVG 的範圍就會被裁切，就可以利用 scale 將折線圖固定在一定的大小內，如此一來也不用擔心數值的變動，因為一定都會以我們自訂的比例在範圍內顯示。原本的折線圖，看起來實在有夠小。 ( 範例：[svg-d3-03-scale-linear-demo1.html](/demo/201411/svg-d3-03-scale-linear-demo1.html) )
 
 		  var data = [
 		  {x:0, y:1.89}, 
@@ -142,7 +142,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_06.png)
 
 	<br/>
-	套用 scale 的折線圖，瞬間放大到適合的大小，套用 scale 的方法很簡單，最主要就是要先宣告水平和垂直的 scale 方法，然後把需要套用這個 scale 方法的數值加上 **scaleX(d.x)** 或 **scaleY(d.y)**，數值就會根據 scale 的定義進行縮放。( 範例：[svg-d3-03-scale-linear-demo3.html](svg-d3-03-scale-linear-demo3.html) ) 
+	套用 scale 的折線圖，瞬間放大到適合的大小，套用 scale 的方法很簡單，最主要就是要先宣告水平和垂直的 scale 方法，然後把需要套用這個 scale 方法的數值加上 **scaleX(d.x)** 或 **scaleY(d.y)**，數值就會根據 scale 的定義進行縮放。( 範例：[svg-d3-03-scale-linear-demo3.html](/demo/201411/svg-d3-03-scale-linear-demo3.html) ) 
 		
 		  var scaleX = d3.scale.linear()
 		                 .range([0,width])
@@ -162,7 +162,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_07.png)
 
 	<br/>
-	如果換成超過範圍的折線圖。 ( 範例：[svg-d3-03-scale-linear-demo2.html](svg-d3-03-scale-linear-demo2.html) )
+	如果換成超過範圍的折線圖。 ( 範例：[svg-d3-03-scale-linear-demo2.html](/demo/201411/svg-d3-03-scale-linear-demo2.html) )
 
 		  var data = [
 		  {x:0, y:100}, 
@@ -180,7 +180,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_08.png)
 
 	<br/>
-	套用 scale 的折線圖，瞬間放大到適合的大小。 ( 範例：[svg-d3-03-scale-linear-demo4.html](svg-d3-03-scale-linear-demo4.html) )
+	套用 scale 的折線圖，瞬間放大到適合的大小。 ( 範例：[svg-d3-03-scale-linear-demo4.html](/demo/201411/svg-d3-03-scale-linear-demo4.html) )
 
 		  var scaleX = d3.scale.linear()
 		                 .range([0,width])
@@ -200,7 +200,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_09.png)
 
 	<br/>
-	從上面的例子可以看出 scale 其實相當的好用，利用 range 與 domain 的搭配，就可以讓圖形在指定的範圍內顯示，但如果每次都要手動計算 domain 的數值大小其實有點麻煩，這時候就可以使用 D3.js 的 **min** 與 **max** 功能 ( 回想一下，在 [SVG D3 - 淺談 D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html) 有介紹過 )，就可以讓 D3.js 自動去抓取陣列裏頭的最大值和最小值，此外，在 range 的設定，如果把 [0,height] 改為 [height,0]，折線圖就會上下顛倒，畢竟 SVG 的座標系統是越往下數值越大，反過來才比較直覺。  ( 範例：[svg-d3-03-scale-linear-demo5.html](svg-d3-03-scale-linear-demo5.html) )
+	從上面的例子可以看出 scale 其實相當的好用，利用 range 與 domain 的搭配，就可以讓圖形在指定的範圍內顯示，但如果每次都要手動計算 domain 的數值大小其實有點麻煩，這時候就可以使用 D3.js 的 **min** 與 **max** 功能 ( 回想一下，在 [SVG D3 - 淺談 D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html) 有介紹過 )，就可以讓 D3.js 自動去抓取陣列裏頭的最大值和最小值，此外，在 range 的設定，如果把 [0,height] 改為 [height,0]，折線圖就會上下顛倒，畢竟 SVG 的座標系統是越往下數值越大，反過來才比較直覺。  ( 範例：[svg-d3-03-scale-linear-demo5.html](/demo/201411/svg-d3-03-scale-linear-demo5.html) )
 
 		  var data = [
 		  {x:0, y:1.89}, 
@@ -262,12 +262,12 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 
 	clamp 的內容是放 true 或 false 的布林值，這只是一個開關的設定，預設是 flase，為什麼說是開關呢？因為當我們沒有設定或設為 flase 的時候，超過 domain 最大值的數字將仍然按照 range 的比例進行縮放，但若設定為 true，超過最大值的數字一律以最大值呈現。
 
-	當數值超過了範圍，其實還是受到 range 的影響。( 範例：[svg-d3-03-scale-linear-demo6.html](svg-d3-03-scale-linear-demo6.html) )
+	當數值超過了範圍，其實還是受到 range 的影響。( 範例：[svg-d3-03-scale-linear-demo6.html](/demo/201411/svg-d3-03-scale-linear-demo6.html) )
 
 	![SVG D3 - 定義比例 ( scale.linear() )](/img/articles/201411/20141112_1_11.png)
 
 	<br/>
-	如果將 clamp 設為 true，超過的部分一律以最大值呈現。( 範例：[svg-d3-03-scale-linear-demo7.html](svg-d3-03-scale-linear-demo7.html) )
+	如果將 clamp 設為 true，超過的部分一律以最大值呈現。( 範例：[svg-d3-03-scale-linear-demo7.html](/demo/201411/svg-d3-03-scale-linear-demo7.html) )
 
 		  var scaleX = d3.scale.linear()
 		    .range([0, width])
@@ -280,7 +280,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 
 - **linear.nice([count])**
 
-	nice 會根據整體 range 的狀況，改變函數的 domain，使 domain 內的範圍值返回最接近的數，例如 0.986743 就返回 1.0，0.444 就返回 0.45，範例使用一個有套用 nice 一個沒有，就可以很明顯的看出差異，如果把 console 打開來看，就可以發現套用 nice 的數值明顯變了許多。( 範例：[svg-d3-03-scale-linear-demo8.html](svg-d3-03-scale-linear-demo8.html) )
+	nice 會根據整體 range 的狀況，改變函數的 domain，使 domain 內的範圍值返回最接近的數，例如 0.986743 就返回 1.0，0.444 就返回 0.45，範例使用一個有套用 nice 一個沒有，就可以很明顯的看出差異，如果把 console 打開來看，就可以發現套用 nice 的數值明顯變了許多。( 範例：[svg-d3-03-scale-linear-demo8.html](/demo/201411/svg-d3-03-scale-linear-demo8.html) )
 		
 		  //對照組，沒有使用 .nice()
 		  var scaleX1 = d3.scale.linear()
@@ -334,7 +334,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 
 - **linear.rangeRound(values)**
 
-	在 Math 裏頭 round 是返回最接近的整數，因此若我們將 range 換成 rangeRound，那麼返回的數值就不會是小數而是整數，可以從 console 看出原本的小數單位，都已經變成了整數。( 範例：[svg-d3-03-scale-linear-demo9.html](svg-d3-03-scale-linear-demo9.html) )
+	在 Math 裏頭 round 是返回最接近的整數，因此若我們將 range 換成 rangeRound，那麼返回的數值就不會是小數而是整數，可以從 console 看出原本的小數單位，都已經變成了整數。( 範例：[svg-d3-03-scale-linear-demo9.html](/demo/201411/svg-d3-03-scale-linear-demo9.html) )
 
 		  //對照組，range()
 		  var scaleX1 = d3.scale.linear()
@@ -374,7 +374,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 
 - **linear.invert(y)**
 
-	了解了 domain 和 range 之後，再來談談 linear.invert(y)，顧名思義，這就是讓套用之後的數字反轉回原本的數字，看到以下的例子，一開始的 a1 經過 range 之後，變成了，然後再經過 invert 就變回原本的數字。( 範例：[svg-d3-03-scale-linear-demo10.html](svg-d3-03-scale-linear-demo10.html) )
+	了解了 domain 和 range 之後，再來談談 linear.invert(y)，顧名思義，這就是讓套用之後的數字反轉回原本的數字，看到以下的例子，一開始的 a1 經過 range 之後，變成了，然後再經過 invert 就變回原本的數字。( 範例：[svg-d3-03-scale-linear-demo10.html](/demo/201411/svg-d3-03-scale-linear-demo10.html) )
 
 		console.log(scaleX(2.5));             //得到 66.66666666666667 
 	    console.log(scaleX.invert(66.6667));  //得到 2.50000125 
@@ -385,7 +385,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
  
 - **linear.ticks([count])、linear.tickFormat(count, [format])**
 
-	ticks 和 tickFormat 通常都會一起看，ticks 會根據內容數值的範圍，按照 count 的數量來做切割，取出最適當的數值區間，預設值為 10，不過若按照數字切割出來的範圍不適當，有時不一定會按照我們所設的數字切割範圍，而 tickFormat 就是可以設定數值的格式，這兩者在 Axis 座標裏頭比較有用，這裡可以使用 console 看出差異。( 範例：[svg-d3-03-scale-linear-demo11.html](svg-d3-03-scale-linear-demo11.html) )
+	ticks 和 tickFormat 通常都會一起看，ticks 會根據內容數值的範圍，按照 count 的數量來做切割，取出最適當的數值區間，預設值為 10，不過若按照數字切割出來的範圍不適當，有時不一定會按照我們所設的數字切割範圍，而 tickFormat 就是可以設定數值的格式，這兩者在 Axis 座標裏頭比較有用，這裡可以使用 console 看出差異。( 範例：[svg-d3-03-scale-linear-demo11.html](/demo/201411/svg-d3-03-scale-linear-demo11.html) )
 
 		console.log(
 	      scaleX.ticks(10)
@@ -401,7 +401,7 @@ Quantitative Scale 又分為 linear、pow、log、quantize、threshold、quantil
 
 - **linear.copy()**
 
-	copy 很容易理解，就單純是複製一份 range ，而不會影響到原本的 range。( 範例：[svg-d3-03-scale-linear-demo12.html](svg-d3-03-scale-linear-demo12.html) )
+	copy 很容易理解，就單純是複製一份 range ，而不會影響到原本的 range。( 範例：[svg-d3-03-scale-linear-demo12.html](/demo/201411/svg-d3-03-scale-linear-demo12.html) )
 
 		   var scaleX2 = scaleX1.copy();
 		

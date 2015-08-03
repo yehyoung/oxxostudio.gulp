@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (26) - 有趣的 Patterns  <span class="article-date" tag="web"><i></i>SEP 28, 2014</span>
+##SVG 研究之路 (26) - 有趣的 Patterns  <span class="article-date" tag="web">SEP 28, 2014</span>
 
 Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我們可以自訂背景的圖案，達到許多很有特色的變化，然而在 SVG 也是如此，而 SVG 比 CSS 更加強大的地方，是你所有的圖案幾乎都可以在 SVG 裏頭畫出來 ( 當然強調細節的點陣圖案例外 )，以下將介紹 Patterns 的相關屬性與參數設定，並直接來看一些 Patterns 的範例。
 
@@ -69,6 +69,8 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 - **preserveAspectRatio = "[defer] <align> [<meetOrSlice>]"**
 
 現在就讓我們詳細的來看看這些屬性：
+
+<br/>
 
 - **patternUnits = "userSpaceOnUse | objectBoundingBox"**
 
@@ -149,6 +151,7 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 
 	所以啦，**設定為`userSpaceOnUse`代表是實際的寬度或高度數值 ( SVG 的 )，而設定為`objectBoundingBox`的則是比例，實際數值要乘上套用的圖案長寬**，要非常非常之注意喔！
 
+<br/>
 
 - **patternContentUnits = "userSpaceOnUse | objectBoundingBox"**
  
@@ -170,6 +173,8 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 	    <rect width="100" height="100" x="120" y="30" stroke="#000" stroke-width="2" fill="url(#p1)" />
 	    <rect width="100" height="100" x="10" y="30" stroke="#000" stroke-width="2" fill="url(#p2)" />
 
+<br/>
+
 - **patternTransform**
 
 	讓我們可以直接對 pattern 下達 transform，範例中我們讓圖形旋轉 45 度，搭配剛剛提到的 patternUnits 和 patternContentUnits，就可以做出斜線的填滿。
@@ -185,9 +190,13 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 	      
 	    <rect width="100" height="100" x="10" y="30" stroke="#000" stroke-width="2" fill="url(#p1)" />
 
+<br/>
+
 - **x,y,width,height**
 
 	這四個屬性跟 patternUnits 設定為`userSpaceOnUse`或`objectBoundingBox`息息相關，反正只要記住，**設定為`userSpaceOnUse`就是標準長寬數值，而設定為`objectBoundingBox`就是比例**，千萬別忘記！
+
+<br/>
 
 - **xlink:href**
 
@@ -206,6 +215,8 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 	    <rect width="100" height="100" x="10" y="30" stroke="#000" stroke-width="2" fill="url(#p1)" />
 	    <rect width="100" height="100" x="120" y="30" stroke="#000" stroke-width="2" fill="url(#p2)" />
 
+<br/>
+
 - **preserveAspectRatio = "[defer] <align> [<meetOrSlice>]"**
 
 	看到 preserveAspectRatio 這個屬性，就表示我們的 pattern 可以使用 viewbox，什麼是 viewbox 呢？請參考 [SVG 研究之路 (23) - 理解 viewport 與 viewbox](http://www.oxxostudio.tw/articles/201409/svg-23-viewpoint-viewBox.html) 有非常完整的教學，下面是範例，使用 viewbox 來控制圖案的長寬尺寸。
@@ -223,6 +234,8 @@ Patterns 是 SVG fill 裏頭的一個有趣元素，記得在 CSS 裏頭，我�
 	      
 	    <rect width="100" height="100" x="10" y="30" stroke="#000" stroke-width="2" fill="url(#p1)" />
 	    <rect width="100" height="100" x="120" y="30" stroke="#000" stroke-width="2" fill="url(#p2)" />
+
+<br/>
 
 以上就是完整的 SVG Patterns 的介紹，心動的話就趕快畫點圖案來填滿吧！喔哈！
 

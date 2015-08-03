@@ -307,7 +307,7 @@ animation: b1 9s linear infinite, br1_1 9s infinite;
 
 <!-- @@block  =  articles-content--> 
 
-##Material Design - Progress and Activity <span class="article-date" tag="web"><i></i>JUL 10, 2014</span>
+##Material Design - Progress and Activity <span class="article-date" tag="web">JUL 10, 2014</span>
 
 這是一個利用 CSS 與 SVG 所做出來的進度條，仿照 Google Material Design 的設計風格設計，雖然 Google 有提供一系列的扁平風格樣式，但是由於技術尚未完全成熟，沒有相關的程式可以參考和套用，就自己寫了一個類似的，雖然還沒有模擬到百分之百，但已經是百分之八十接近了，分享一下。
 
@@ -422,6 +422,7 @@ animation: b1 9s linear infinite, br1_1 9s infinite;
 	}
 
 如果還是對於分成六段有疑問，可以參考下圖，主要就是要將這三個圈圈組合起來，每個圈圈會收會放，換成這樣子思考，就會必較簡單。  
+
 ![Material Design - Progress and Activity](/img/articles/201407/20140710_1_02.png)
 
 <br/>

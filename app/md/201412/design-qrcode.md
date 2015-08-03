@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##設計個性化 QR Code  <span class="article-date" tag="creative"><i></i>DEC 7, 2014</span>
+##設計個性化 QR Code  <span class="article-date" tag="creative">DEC 7, 2014</span>
+
+<img src="/img/articles/201412/20141207_1_01.jpg" class="preview-img">
 
 一直以來，我們對於 QR Code 的印象，就是那個黑色一點一點的小正方形，裏頭到底有些什麼東西，總是要經過手機掃描才可以真正了解，因此，這篇將會介紹四種設計個性化 QR Code 的方法，相信藉由這四種方式的互相搭配，大家都可以輕鬆地設計出個性化的 QR Code，再也不會是黑黑的一塊正方形，也不需要花錢去購買線上設計軟體了。
 
@@ -67,11 +69,11 @@
 ![設計個性化 QR Code](/img/articles/201412/20141207_1_03.jpg)
 
 以上大概是設計 QR Code 的幾個注意重點，理解之後，就要來實際設計個性化的 QR Code，開始之前，先推薦一個我自己非常喜歡的 QR Code 產生器 [http://qr.calm9.com/tw/](http://qr.calm9.com/tw/)，不僅可以設定大小，也可以自訂容錯率，以下這裡介紹的四種設計方式，也都會用這個網站產生 QR Code。好了，前言廢話都講完了，開始來看四種設計方法：
->
-- 加入 logo 或圖案
-- 曲線化
-- 點狀化
-- 加入背景圖
+
+>- 加入 logo 或圖案
+>- 曲線化
+>- 點狀化
+>- 加入背景圖
 
 
 <br/>

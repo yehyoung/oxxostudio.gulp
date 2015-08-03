@@ -40,7 +40,8 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content--> 
-<h2>深入解析 CSS Flexbox  <span class="article-date" tag="css"><i></i>JAN 30, 2015</span></h2>
+<h2>深入解析 CSS Flexbox  <span class="article-date" tag="css">JAN 30, 2015</span></h2>
+<p><img src="/img/articles/201501/20150130_1_01.jpg" class="preview-img"></p>
 <p>Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一個靈活的盒子 ( Flexible Box )，為什麼最近這個屬性才紅起來呢？最主要也是因為 CSS3 的規範終於普及 ( 或 IE 終於敗亡 )，加上行動裝置的發展促成了響應式布局興起，自適應長寬彈性相當大的 Flexbox 就趁勢而起了。 </p>
 <p>第一步要來看 Flexbox 的盒子模型，根據 <a href="http://www.w3.org/TR/css3-flexbox/#box-model">W3C</a> 文章所描述，flex 的盒子模型如下圖所呈現，與一般的盒子模型不同的地方，在於 Flexbox 的盒子模型具有<strong>水平的起點與終點</strong> ( main start、main end )，<strong>垂直的起點與終點</strong> ( cross start、cross end )，<strong>水平軸與垂直軸</strong> ( main axis、cross axis )，然後元素具有<strong>水平尺寸與垂直尺寸</strong> ( main size、cross size )，這些都是相當重要的布局規畫。</p>
 <p><img src="/img/articles/201501/20150130_1_02.jpg" alt="深入解析 CSS Flexbox"></p>
@@ -61,7 +62,7 @@
 <p><br/></p>
 <ul>
 <li><p><strong>display</strong></p>
-<p>  display 是我們熟知的 CSS 屬性，對於 Flexbox 來說，多了有兩種方式可以設定，預設為「flex」，其布局方式與 block 幾乎類似，都會強迫換行，但設定<code>display:flex</code>的子元素卻具備了更多彈性的設定，此外另外一種方式則是「inline-flex」，和 inline-block 也是幾乎雷同，意義上都是一個<code>display:flex</code>的元素外面包覆<code>display:inline</code>的屬性，在後方的元素不會換行。( 範例：<a href="css-flexbox-demo1.html">css-flexbox-demo1.html</a> )</p>
+<p>  display 是我們熟知的 CSS 屬性，對於 Flexbox 來說，多了有兩種方式可以設定，預設為「flex」，其布局方式與 block 幾乎類似，都會強迫換行，但設定<code>display:flex</code>的子元素卻具備了更多彈性的設定，此外另外一種方式則是「inline-flex」，和 inline-block 也是幾乎雷同，意義上都是一個<code>display:flex</code>的元素外面包覆<code>display:inline</code>的屬性，在後方的元素不會換行。( 範例：<a href="/demo/201501/css-flexbox-demo1.html">css-flexbox-demo1.html</a> )</p>
 <p>  CSS：</p>
 <pre><code>  .flex,
   .inline-flex{
@@ -81,25 +82,25 @@
 <p><br/></p>
 <ul>
 <li><p><strong>flex-direction</strong></p>
-<p>  flex-direction 表示 Flexbox 內容元素的「<strong>排列方向</strong>」，分別有下列四種。( 範例：<a href="css-flexbox-demo2.html">css-flexbox-demo2.html</a> )</p>
+<p>  flex-direction 表示 Flexbox 內容元素的「<strong>排列方向</strong>」，分別有下列四種。( 範例：<a href="/demo/201501/css-flexbox-demo2.html">css-flexbox-demo2.html</a> )</p>
 <ul>
 <li>row：預設值，由左到右，從上到下</li>
 <li>row-reverse：與 row 相反</li>
 <li>column：從上到下，再由左到右</li>
 <li><p>column-reverse：與 column 相反      </p>
 <p>CSS：</p>
-<p>  .flex-row{</p>
-<pre><code>  flex-direction:row;
-</code></pre><p>  }
-  .flex-row-reverse{</p>
-<pre><code>  flex-direction:row-reverse;
-</code></pre><p>  }
-  .flex-column{</p>
-<pre><code>  flex-direction:column;
-</code></pre><p>  }
-  .flex-column-reverse{</p>
-<pre><code>  flex-direction:column-reverse;
-</code></pre><p>  }</p>
+<p>.flex-row{</p>
+<pre><code>flex-direction:row;
+</code></pre><p>}
+.flex-row-reverse{</p>
+<pre><code>flex-direction:row-reverse;
+</code></pre><p>}
+.flex-column{</p>
+<pre><code>flex-direction:column;
+</code></pre><p>}
+.flex-column-reverse{</p>
+<pre><code>flex-direction:column-reverse;
+</code></pre><p>}  </p>
 <p><img src="/img/articles/201501/20150130_1_04.jpg" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
@@ -108,87 +109,85 @@
 <p><br/></p>
 <ul>
 <li><p><strong>justify-content</strong></p>
-<p>  justify-content 決定了內容元素與整個 Flexbox 的「<strong>水平對齊</strong>」位置，回想一下最上面講的 Flexbox 盒子模型，具有 main start 與 main end 左右兩個端點，justify-content 就是按照這個方式做設定，而其中的設定值總共有下列五個。( 範例：<a href="css-flexbox-demo3.html">css-flexbox-demo3.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#justify-content-property">W3C 說明</a> )</p>
+<p>  justify-content 決定了內容元素與整個 Flexbox 的「<strong>水平對齊</strong>」位置，回想一下最上面講的 Flexbox 盒子模型，具有 main start 與 main end 左右兩個端點，justify-content 就是按照這個方式做設定，而其中的設定值總共有下列五個。( 範例：<a href="/demo/201501/css-flexbox-demo3.html">css-flexbox-demo3.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#justify-content-property">W3C 說明</a> )</p>
 <ul>
 <li>flex-start：預設值，對齊最左邊的 main start</li>
 <li>flex-end：對齊最左邊的 main end</li>
 <li>center：水平置中</li>
 <li>space-between：平均分配內容元素，左右元素將會與 main start 和 main end 貼齊</li>
-<li><p>space-around：平均分配內容元素，間距也是平均分配</p>
-<p>CSS：</p>
-<p>  .flex-start{</p>
-<pre><code>  justify-content:flex-start;
-</code></pre><p>  }
-  .flex-end{</p>
-<pre><code>  justify-content:flex-end;
-</code></pre><p>  }
-  .center{</p>
-<pre><code>  justify-content:center;
-</code></pre><p>  }
-  .space-between{</p>
-<pre><code>  justify-content:space-between;
-</code></pre><p>  }
-  .space-around{</p>
-<pre><code>  justify-content:space-around;
-</code></pre><p>  }</p>
-<p><img src="/img/articles/201501/20150130_1_05.jpg" alt="深入解析 CSS Flexbox"></p>
-</li>
+<li>space-around：平均分配內容元素，間距也是平均分配</li>
 </ul>
+<p>CSS：</p>
+<pre><code>.flex-start{
+    justify-content:flex-start;
+}
+.flex-end{
+    justify-content:flex-end;
+}
+.center{
+    justify-content:center;
+}
+.space-between{
+    justify-content:space-between;
+}
+.space-around{
+    justify-content:space-around;
+}
+</code></pre><p>  <img src="/img/articles/201501/20150130_1_05.jpg" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
 <p><br/></p>
 <ul>
 <li><p><strong>align-items</strong></p>
-<p>  align-items 剛好和 justify-content 相反，align-items 決定了內容元素與整個 Flexbox 的「<strong>垂直對齊</strong>」位置，再回想一下最上面講的 Flexbox 盒子模型，具有 cross start 與 cross end 左右兩個端點，align-items 與 align-self 就是按照這個方式做設定，設定值總共有下列五個。( 範例：<a href="css-flexbox-demo4.html">css-flexbox-demo4.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">W3C 說明</a> )</p>
+<p>  align-items 剛好和 justify-content 相反，align-items 決定了內容元素與整個 Flexbox 的「<strong>垂直對齊</strong>」位置，再回想一下最上面講的 Flexbox 盒子模型，具有 cross start 與 cross end 左右兩個端點，align-items 與 align-self 就是按照這個方式做設定，設定值總共有下列五個。( 範例：<a href="/demo/201501/css-flexbox-demo4.html">css-flexbox-demo4.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">W3C 說明</a> )</p>
 <ul>
 <li>flex-start：預設值，對齊最上面的 cross start</li>
 <li>flex-end：對齊最下面的 cross end</li>
 <li>center：垂直置中</li>
 <li>stretch：將內容元素全部撐開至 Flexbox 的高度</li>
-<li><p>baseline：以所有內容元素的基線作為對齊標準</p>
-<p>CSS：</p>
-<p>  .flex-start{</p>
-<pre><code>  align-items:flex-start;
-</code></pre><p>  }
-  .flex-end{</p>
-<pre><code>  align-items:flex-end;
-</code></pre><p>  }
-  .center{</p>
-<pre><code>  align-items:center;
-</code></pre><p>  }
-  .stretch{</p>
-<pre><code>  align-items:stretch;
-</code></pre><p>  }
-  .baseline{</p>
-<pre><code>  align-items:baseline;
-</code></pre><p>  }
-  .flex-item{</p>
-<pre><code>  width:60px;
-  text-align:center;
-</code></pre><p>  }
-  .item1{</p>
-<pre><code>  font-size:20px;
-  line-height: 60px;
-  background:#c00;
-</code></pre><p>  }
-  .item2{</p>
-<pre><code>  line-height: 30px;
-  background:#095;
-</code></pre><p>  }
-  .item3{</p>
-<pre><code>  font-size:30px;
-  line-height: 100px;
-  background:#059;
-</code></pre><p>  }</p>
-<p><img src="/img/articles/201501/20150130_1_06.jpg" alt="深入解析 CSS Flexbox"></p>
-</li>
+<li>baseline：以所有內容元素的基線作為對齊標準</li>
 </ul>
+<p>CSS：  </p>
+<pre><code>.flex-start{
+    align-items:flex-start;
+}
+.flex-end{
+    align-items:flex-end;
+}
+.center{
+    align-items:center;
+}
+.stretch{
+    align-items:stretch;
+}
+.baseline{
+    align-items:baseline;
+}
+.flex-item{
+    width:60px;
+    text-align:center;
+}
+.item1{
+    font-size:20px;
+    line-height: 60px;
+    background:#c00;
+}
+.item2{
+    line-height: 30px;
+    background:#095;
+}
+.item3{
+    font-size:30px;
+    line-height: 100px;
+    background:#059;
+}
+</code></pre><p>  <img src="/img/articles/201501/20150130_1_06.jpg" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
 <p><br/></p>
 <ul>
 <li><p><strong>align-self</strong></p>
-<p>  align-self 的設定與 align-items 相同，但目的不同，align-self 的作用在於覆寫已經套用 align-items 的屬性，如果照我們以前所寫，因為 align-items 是針對子元素，所以必須要用 align-self 來進行覆寫，我們直接用上一個範例來修改就很清楚了。( 範例：<a href="css-flexbox-demo5.html">css-flexbox-demo5.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">W3C 說明</a> )</p>
+<p>  align-self 的設定與 align-items 相同，但目的不同，align-self 的作用在於覆寫已經套用 align-items 的屬性，如果照我們以前所寫，因為 align-items 是針對子元素，所以必須要用 align-self 來進行覆寫，我們直接用上一個範例來修改就很清楚了。( 範例：<a href="/demo/201501/css-flexbox-demo5.html">css-flexbox-demo5.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-items-property">W3C 說明</a> )</p>
 <p>  CSS：</p>
 <pre><code>  .item2{
       align-self:baseline;
@@ -201,99 +200,100 @@
 <p><br/></p>
 <ul>
 <li><p><strong>align-content</strong></p>
-<p>  剛剛談到的 align-items 是針對內容為單行的元素進行處理，如果遇到多行的元素，就要使用 align-content 這個屬性，這個屬性總共有六個設定值。( 範例：<a href="css-flexbox-demo6.html">css-flexbox-demo6.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-content-property">W3C 說明</a> )</p>
+<p>  剛剛談到的 align-items 是針對內容為單行的元素進行處理，如果遇到多行的元素，就要使用 align-content 這個屬性，這個屬性總共有六個設定值。( 範例：<a href="/demo/201501/css-flexbox-demo6.html">css-flexbox-demo6.html</a>、<a href="http://www.w3.org/TR/css3-flexbox/#align-content-property">W3C 說明</a> )</p>
 <ul>
 <li>flex-start：預設值，對齊最上面的 cross start</li>
 <li>flex-end：對齊最下面的 cross end</li>
 <li>center：垂直置中</li>
 <li>space-between：將第一行與最後一行分別對齊最上方與最下方    </li>
 <li>space-around：每行平均分配間距</li>
-<li><p>stretch：內容元素全部撐開</p>
-<p>CSS：</p>
-<p>  .flex-start,
-  .flex-end,
-  .center,
-  .space-between,<br>  .space-around,<br>  .stretch{</p>
-<pre><code>  display:inline-flex;
-  flex-wrap:wrap;
-  width:180px;
-  height:160px;
-  margin:5px 5px 40px;
-  border:1px solid #000;
-  vertical-align: top;
-</code></pre><p>  }
-  .flex-start{</p>
-<pre><code>  align-content:flex-start;
-</code></pre><p>  }
-  .flex-end{</p>
-<pre><code>  align-content:flex-end;
-</code></pre><p>  }
-  .center{</p>
-<pre><code>  align-content:center;
-</code></pre><p>  }
-  .space-between{</p>
-<pre><code>  align-content:space-between;
-</code></pre><p>  }
-  .space-around{</p>
-<pre><code>  align-content:space-around;
-</code></pre><p>  }
-  .stretch{</p>
-<pre><code>  align-content:stretch;
-</code></pre><p>  }
-  .align-content&gt;div{</p>
-<pre><code>  padding:15px;
-  margin:2px;
-  background:#666;
-</code></pre><p>  }</p>
-<p><img src="/img/articles/201501/20150130_1_08.jpg" alt="深入解析 CSS Flexbox"></p>
-</li>
+<li>stretch：內容元素全部撐開</li>
 </ul>
+<p>CSS：</p>
+<pre><code>.flex-start,
+.flex-end,
+.center,
+.space-between,    
+.space-around,    
+.stretch{
+    display:inline-flex;
+    flex-wrap:wrap;
+    width:180px;
+    height:160px;
+    margin:5px 5px 40px;
+    border:1px solid #000;
+    vertical-align: top;
+}
+.flex-start{
+    align-content:flex-start;
+}
+.flex-end{
+    align-content:flex-end;
+}
+.center{
+    align-content:center;
+}
+.space-between{
+    align-content:space-between;
+}
+.space-around{
+    align-content:space-around;
+}
+.stretch{
+    align-content:stretch;
+}
+.align-content&gt;div{
+    padding:15px;
+    margin:2px;
+    background:#666;
+}
+</code></pre><p>  <img src="/img/articles/201501/20150130_1_08.jpg" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
 <p><br/></p>
 <ul>
 <li><p><strong>flex-wrap</strong></p>
-<p>  在剛剛的範例看到一個 flex-wrap 的屬性，這個屬性負責的是讓內容的元素換行，因為當我們把父元素的 display 設定為 flex 或 inline-flex 的時候，子元素就是以單行的方式，彈性撐滿父元素，所以就要利用 flex-wrap 來換行，共有三個設定值。( 範例：<a href="css-flexbox-demo7.html">css-flexbox-demo7.html</a>) </p>
+<p>  在剛剛的範例看到一個 flex-wrap 的屬性，這個屬性負責的是讓內容的元素換行，因為當我們把父元素的 display 設定為 flex 或 inline-flex 的時候，子元素就是以單行的方式，彈性撐滿父元素，所以就要利用 flex-wrap 來換行，共有三個設定值。( 範例：<a href="/demo/201501/css-flexbox-demo7.html">css-flexbox-demo7.html</a>) </p>
 <ul>
 <li>nowrap：預設值，單行</li>
 <li>wrap：多行</li>
 <li><p>wrap-reverse：多行，但內容元素反轉</p>
 <p>CSS：</p>
-<p>  .nowrap,
-  .wrap,
-  .wrap-reverse{</p>
-<pre><code>  display:inline-flex;
-  flex-wrap:wrap;
-  width:180px;
-  height:80px;
-  margin:5px 5px 40px;
-  border:1px solid #000;
-  vertical-align: top;
-</code></pre><p>  }
-  .column{</p>
-<pre><code>  flex-direction:column;
-  width:120px;
-  height:180px;
-</code></pre><p>  }
-  .nowrap{</p>
-<pre><code>  flex-wrap:nowrap;
-</code></pre><p>  }
-  .wrap{</p>
-<pre><code>  flex-wrap:wrap;
-</code></pre><p>  }
-  .wrap-reverse{</p>
-<pre><code>  flex-wrap:wrap-reverse;
-</code></pre><p>  }
-  .align-content div{</p>
-<pre><code>  width:30px;
-  height:30px;
-  margin:5px;
-  background:#069;
-</code></pre><p>  }
-  .column div{</p>
-<pre><code>  background:#f50;
-</code></pre><p>  }</p>
-<p><img src="/img/articles/201501/20150130_1_09.jpg" alt="深入解析 CSS Flexbox"></p>
+<pre><code>.nowrap,
+.wrap,
+.wrap-reverse{
+    display:inline-flex;
+    flex-wrap:wrap;
+    width:180px;
+    height:80px;
+    margin:5px 5px 40px;
+    border:1px solid #000;
+    vertical-align: top;
+}
+.column{
+    flex-direction:column;
+    width:120px;
+    height:180px;
+}
+.nowrap{
+    flex-wrap:nowrap;
+}
+.wrap{
+    flex-wrap:wrap;
+}
+.wrap-reverse{
+    flex-wrap:wrap-reverse;
+}
+.align-content div{
+    width:30px;
+    height:30px;
+    margin:5px;
+    background:#069;
+}
+.column div{
+    background:#f50;
+}
+</code></pre><p><img src="/img/articles/201501/20150130_1_09.jpg" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
 </li>
@@ -301,7 +301,7 @@
 <p><br/></p>
 <ul>
 <li><p><strong>order</strong></p>
-<p>  剛剛在 flex-wrap 的屬性裏頭看到了可以把元素反轉，order 這個屬性更是可以直接指定一個數字，就可以由小到大的排列順序。( 範例：<a href="css-flexbox-demo8.html">css-flexbox-demo8.html</a>)</p>
+<p>  剛剛在 flex-wrap 的屬性裏頭看到了可以把元素反轉，order 這個屬性更是可以直接指定一個數字，就可以由小到大的排列順序。( 範例：<a href="/demo/201501/css-flexbox-demo8.html">css-flexbox-demo8.html</a>)</p>
 <pre><code>  .item{
       width:50px;
       height:60px;
@@ -343,49 +343,48 @@
 <li><strong>flex-grow</strong>：數字，無單位，當子元素的 flex-basis 長度「<strong>小</strong>」於它自己在父元素分配到的長度，按照數字做相對應的「伸展」比例分配，預設值為 1，設為 0 的話不會進行彈性變化，不可為負值。</li>
 <li><strong>flex-shrink</strong>：數字，無單位，當子元素的 flex-basis 長度「<strong>大</strong>」於它自己在父元素分配到的長度，按照數字做相對應的「壓縮」比例分配，預設值為 1，設為 0 的話不會進行彈性變化，不可為負值。</li>
 <li><p><strong>flex-basis</strong>：子元素的基本大小，作為父元素的大小比較基準，預設值為 0，也因為預設值為 0，所以沒有設定此屬性的時候，會以直接採用 flex-grow 屬性，flex-basis 也可以設為 auto，如果設為 auto，就表示子元素以自己的基本大小為單位。。</p>
-<p>三個屬性可以分開設定，也可以合在一起用一個 flex 統一設定，下面的例子展現出同一個 Flexbox，在不同的寬度，子元素會有不同大小的呈現。( 範例：<a href="css-flexbox-demo9.html">css-flexbox-demo9.html</a>)</p>
-<p>HTML：</p>
-  <div class="flex flex-300">
-          <div class="item item1">1</div>
-          <div class="item item2">2</div>
-  </div>
-  <div class="flex flex-150">
-          <div class="item item1">1</div>
-          <div class="item item2">2</div>
-  </div>
-
-<p>CSS：</p>
-<p>  .flex{</p>
-<pre><code>  display:inline-flex;
-  height:60px;
-  margin:5px 5px 40px;
-  border:1px solid #000;
-  vertical-align: top;
-</code></pre><p>  }
-  .flex-300{</p>
-<pre><code>  width:300px;
-</code></pre><p>  }
-  .flex-150{</p>
-<pre><code>  width:80px;
-</code></pre><p>  }
-  .item{</p>
-<pre><code>  height:60px;
-  text-align: center;
-  line-height: 50px;
-</code></pre><p>  }
-  .item1{</p>
-<pre><code>  flex:1 2 200px;
-  background:#c00;
-</code></pre><p>  }
-  .item2{</p>
-<pre><code>  flex:2 1 100px;
-  background:#069;
-</code></pre><p>  }</p>
-<p><img src="/img/articles/201501/20150130_1_11.jpg" alt="深入解析 CSS Flexbox"></p>
-<p>如果用動畫來表現，可以看出拉長的時候紅色會變得比藍色長，但壓縮的時候卻是藍色變得比紅色長，如此一來就更能體會 flex 在響應式設計裏頭的關鍵腳色囉！</p>
-<p><img src="/img/articles/201501/20150130_1_12.gif" alt="深入解析 CSS Flexbox"></p>
+<p>三個屬性可以分開設定，也可以合在一起用一個 flex 統一設定，下面的例子展現出同一個 Flexbox，在不同的寬度，子元素會有不同大小的呈現。( 範例：<a href="/demo/201501/css-flexbox-demo9.html">css-flexbox-demo9.html</a>)</p>
 </li>
 </ul>
+<p>HTML：</p>
+<pre><code>&lt;div cl  ass=&quot;flex flex-300&quot;&gt;
+        &lt;div class=&quot;item item1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item item2&quot;&gt;2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;flex flex-150&quot;&gt;
+        &lt;div class=&quot;item item1&quot;&gt;1&lt;/div&gt;
+        &lt;div class=&quot;item item2&quot;&gt;2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>CSS：</p>
+<pre><code>.flex{
+    display:inline-flex;
+    height:60px;
+    margin:5px 5px 40px;
+    border:1px solid #000;
+    vertical-align: top;
+}
+.flex-300{
+    width:300px;
+}
+.flex-150{
+    width:80px;
+}
+.item{
+    height:60px;
+    text-align: center;
+    line-height: 50px;
+}
+.item1{
+    flex:1 2 200px;
+    background:#c00;
+}
+.item2{
+    flex:2 1 100px;
+    background:#069;
+}
+</code></pre><p>  <img src="/img/articles/201501/20150130_1_11.jpg" alt="深入解析 CSS Flexbox"></p>
+<p>  如果用動畫來表現，可以看出拉長的時候紅色會變得比藍色長，但壓縮的時候卻是藍色變得比紅色長，如此一來就更能體會 flex 在響應式設計裏頭的關鍵腳色囉！</p>
+<p>  <img src="/img/articles/201501/20150130_1_12.gif" alt="深入解析 CSS Flexbox"></p>
 </li>
 </ul>
 <p><br/></p>

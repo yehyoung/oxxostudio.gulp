@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##結構化資料 SEO 與 meta 標籤 <span class="article-date" tag="web"><i></i>JUN 1, 2014</span>
+##結構化資料 SEO 與 meta 標籤 <span class="article-date" tag="web">JUN 1, 2014</span>
+
+<img src="/img/articles/201406/20140601_1_01.jpg" class="preview-img">
 
 隨著這個 blog 放到網路上開始，SEO 也變得重要起來，而在 SEO 裏頭，最重要的第一項重點就是 meta 標籤，這也是要告訴搜尋引擎和社群網站，你的 blog 或是網站主旨是什麼，作者是誰，分享的縮圖是什麼...等這些我們認為理所當然的資訊，畢竟這些搜尋引擎的蜘蛛和社群網站的人工智慧，現在還無法分辨你我網站內容的重點，因此我們必須靠這些 meta 或結構化資料 itemprop，來告訴它們。
 
@@ -61,44 +63,44 @@
 這是在我的網站 header 裏頭，所加入的 meta 標籤：
 	
 	<meta name="author" content="作者名稱">
-  	<meta name="copyright" content="版權所有人名稱">
-  
-  	<link rel="author" href="google plus 個人頁網址/posts">
-  	<link rel="publisher" href="google plus 個人頁網址">
-  	<meta name="description" content="網頁描述">
+	<meta name="copyright" content="版權所有人名稱">
 
-  	<meta itemprop="name" content="網站名稱或標題">
-  	<meta itemprop="image" content="要顯示的縮圖網址">
-  	<meta itemprop="description" content="網頁描述">
+	<link rel="author" href="google plus 個人頁網址/posts">
+	<link rel="publisher" href="google plus 個人頁網址">
+	<meta name="description" content="網頁描述">
 
-  	<meta property="og:title" content="網站名稱或標題" >
-  	<meta property="og:url" content="網址">
-  	<meta property="og:image" content="要顯示的縮圖網址">
-  	<meta property="og:description" content="網頁描述" >
+	<meta itemprop="name" content="網站名稱或標題">
+	<meta itemprop="image" content="要顯示的縮圖網址">
+	<meta itemprop="description" content="網頁描述">
+
+	<meta property="og:title" content="網站名稱或標題" >
+	<meta property="og:url" content="網址">
+	<meta property="og:image" content="要顯示的縮圖網址">
+	<meta property="og:description" content="網頁描述" >
 
 <br/>
 其中以下這三行，是寫給搜尋引擎看的 ( 特別是 google )，當中最重要的，就是`rel="author"`這一句，有寫這一段，接下來我們就可以去去 google plus 進行互相認證的作業 ( 也就是要讓 google plus 確認這個網頁的作者是你 )
 
-  	<link rel="author" href="google plus 個人頁網址/posts">
-  	<link rel="publisher" href="google plus 個人頁網址">
-  	<meta name="description" content="網頁描述">
+	<link rel="author" href="google plus 個人頁網址/posts">
+	<link rel="publisher" href="google plus 個人頁網址">
+	<meta name="description" content="網頁描述">
 
 而認證的過程，可以點選 [google 結構化資料測試工具](http://www.google.com/webmasters/tools/richsnippets) 連結，進行相關的認證作業，認證的過程其實也很簡單，就是進入 google plus 的個人頁面，點選「帳戶」，點選「編輯個人資料」，接著將「連結」裏頭的「作品刊載於」，新增目前的網站，接著 google plus 就會去查詢你的網站是否有放上`rel="author"`，如果有，就完成囉！
 
 <br/>
 而這三行是寫給 google plus 看的，分享到 google plus 上頭，就會正確顯示
 
-  	<meta itemprop="name" content="網站名稱或標題">
-  	<meta itemprop="image" content="要顯示的縮圖網址">
-  	<meta itemprop="description" content="網頁描述">
+	<meta itemprop="name" content="網站名稱或標題">
+	<meta itemprop="image" content="要顯示的縮圖網址">
+	<meta itemprop="description" content="網頁描述">
 
 <br/>
 而這四行是寫給 facebook 看的，分享到 facebook 上頭，就會正確顯示，如果發現都已經照著設定了，分享時仍有問題，可以點選 [Facebook Debugger](https://developers.facebook.com/tools/debug) 進行查詢和重新設定，完成後再次分享應該就不會有問題囉！
 
-  	<meta property="og:title" content="網站名稱或標題" >
-  	<meta property="og:url" content="網址">
-  	<meta property="og:image" content="要顯示的縮圖網址">
-  	<meta property="og:description" content="網頁描述" >
+	<meta property="og:title" content="網站名稱或標題" >
+	<meta property="og:url" content="網址">
+	<meta property="og:image" content="要顯示的縮圖網址">
+	<meta property="og:description" content="網頁描述" >
 
 <br/>
 當然 meta 標籤絕對不止這一些，因為除了 facebook 和 google plus，還有一個世界前三大的社群平台 twitter，以下列出在這些平台上完整的 meta 標籤語法，如果有需要也可以都加進自己的網站喔！

@@ -94,8 +94,8 @@
             <i class="tag"></i>
             <div class="md">
 
-<h2>SVG 研究之路 (25) - 再談漸層填色  <span class="article-date" tag="web"><i></i>SEP 27, 2014</span></h2>
-<p>先前在 <a href="http://www.oxxostudio.tw/articles/201406/svg-07-fill.html">SVG 研究之路 (7) - fill 填色</a> 有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是圓形漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：</p>
+<h2>SVG 研究之路 (25) - 再談漸層填色  <span class="article-date" tag="web">SEP 27, 2014</span></h2>
+<p>先前在 <a href="http://www.oxxostudio.tw/articles/201406/svg-07-fill.html">SVG 研究之路 (7) - fill 填色</a> 有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是放射漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：</p>
 <pre><code>&lt;defs&gt;
    &lt;linearGradient id=&quot;L&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;100%&quot;&gt;
      &lt;stop offset=&quot;5%&quot; stop-color=&quot;#F00&quot; /&gt;
@@ -135,6 +135,7 @@
 </li>
 </ul>
 <p>其實兩種漸層大同小異，差別只在於線性漸層是用<code>x1,y1,x2,y2</code>、圓形漸層是用<code>cx,cy,r,fx,fy</code>，因此我們先從相同的屬性來談起：</p>
+<p><br/></p>
 <ul>
 <li><p><strong>gradientUnits = &quot;userSpaceOnUse | objectBoundingBox&quot;</strong></p>
 <p>  gradientUnits 定義了漸層的座標系統，預設為<code>objectBoundingBox</code>，也就是以我們要套用漸層的物件為單位上色 ( 物件左上座標為漸層的 0% 0% )，而<code>userSpaceOnUse</code>則是以整個 SVG 視區 ( viewport ) 為座標系統，如果還不清楚，可以看看下方的示意圖，我把 SVG 放上兩個矩形，套用跟 SVG 視區一樣的漸層，只是 gradientUnits 設定不同，就可以發現漸層的位置有很明顯的差異，設定為<code>userSpaceOnUse</code>的矩形漸層色跟背景完全相同。 ( 附帶一提，如果是用 illustrator 產生的漸層，是採用<code>userSpaceOnUse</code> )</p>
@@ -152,6 +153,9 @@
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;40&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#userSpaceOnUse)&quot; /&gt;
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;140&quot; y=&quot;50&quot; stroke=&quot;#000&quot;  fill=&quot;url(#bg)&quot; /&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>gradientTransform</strong></p>
 <p>  可以把漸層套用 transform 的效果，也就是可以縮放、旋轉、傾斜、Matrix...等，不過用到的時間點還真的不常見，畢竟漸層都已經可以手動調整方向了，實際用到 gradientTransform 的機會也不多，下面是範例，把漸層旋轉 45 度。(    你一定會發現，明明是藍到白的漸層，旋轉後為什麼藍色區域變多了呢？因為旋轉以後，藍色後面沒有漸層，延伸出去是一片藍色，藍色區域就增加了 )</p>
 <p>  <img src="/img/articles/201409/20140927_2_03.png" alt="SVG 研究之路 (25) - 再談漸層填色"></p>
@@ -168,6 +172,9 @@
   &lt;rect width=&quot;250&quot; height=&quot;200&quot; x=&quot;0&quot; y=&quot;0&quot; fill=&quot;url(#bg)&quot; /&gt;
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;40&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#userSpaceOnUse)&quot; /&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>spreadMethod = &quot;pad | reflect | repeat&quot;</strong></p>
 <p>  這是個對於漸層來說頗重要也頗特別的屬性，可以下達三種指令，第一個 pad 是預設值，也就是按照我們的漸層填色，第二個 reflect 是鏡射，就是按照鏡射的方式用我們定義的漸層，補滿漸層的頭尾，第三個 repeat 就是重複，就是使用重複的漸層來補滿頭尾，看看下圖會比較清楚：</p>
 <p>  <img src="/img/articles/201409/20140927_2_04.png" alt="SVG 研究之路 (25) - 再談漸層填色"></p>
@@ -189,6 +196,9 @@
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;130&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#reflect)&quot;&gt;&lt;/rect&gt;
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;230&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#repeat)&quot;&gt;&lt;/rect&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>xlink:href</strong></p>
 <p>  讓漸層可以引用其它元素的設定，也就是說我們可以先定義漸層的顏色，，就可以套用在不同的起始點和終點，例如下面的範例：</p>
 <p>  <img src="/img/articles/201409/20140927_2_05.png" alt="SVG 研究之路 (25) - 再談漸層填色"></p>
@@ -206,7 +216,9 @@
   &lt;rect width=&quot;70&quot; height=&quot;70&quot; x=&quot;230&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#b3)&quot;&gt;&lt;/rect&gt;
 </code></pre></li>
 </ul>
+<p><br/></p>
 <p>OK，以上就是線性漸層和圓形漸層的共通屬性，接下來就要討論它們兩個個別的屬性了，剛剛的範例幾乎都是用線性漸層做的，就讓我們先來看看線性漸層 linearGradient 吧！</p>
+<p><br/></p>
 <ul>
 <li><p><strong>x1,y1,x2,y2</strong></p>
 <p>  這個非常容易理解，<code>x1,y1</code>就是漸層色的起點，<code>x2,y2</code>就是漸層色的終點，數值是 0~1 的數字 ( 可以小數 )，或是 0%~100% 的數值，至於要如何和內容的 stop offset 做區分呢？可以參考下面這張示意圖，<code>x1,y1,x2,y2</code>是指整個漸層填色的區域位置，而stop offset 則是在填色區域內的 0% ~ 100% 。</p>
@@ -238,7 +250,9 @@
     &lt;rect width=&quot;100&quot; height=&quot;100&quot; x=&quot;0&quot; y=&quot;0&quot; stroke=&quot;#000&quot; fill=&quot;url(#b2)&quot;&gt;&lt;/rect&gt;
 </code></pre></li>
 </ul>
+<p><br/></p>
 <p>看完了 linearGradient，就來研究一下 radialGradient。</p>
+<p><br/></p>
 <ul>
 <li><p><strong>cx,cy,r</strong></p>
 <p>  這是 radialGradient 最好理解的參數，顧名思義，從圓心出發一直到半徑結束的圓形漸層，請注意，單位仍然是小數點或是百分比，這邊最容易出錯的地方在<code>r</code>，因為如果你設為 1 或是 100%，半徑就是矩形的寬度喔！( 如果不設定，則預設值為 50%，如果不是圓形，則會按照長寬變成同等比例的橢圓半徑 )</p>
@@ -261,6 +275,9 @@
   &lt;rect width=&quot;100&quot; height=&quot;100&quot; x=&quot;115&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#r2)&quot;&gt;&lt;/rect&gt;
   &lt;rect width=&quot;100&quot; height=&quot;100&quot; x=&quot;225&quot; y=&quot;50&quot; stroke=&quot;#000&quot; fill=&quot;url(#r3)&quot;&gt;&lt;/rect&gt;
 </code></pre></li>
+</ul>
+<p><br/></p>
+<ul>
 <li><p><strong>fx,fy</strong></p>
 <p>  這兩個參數很有意思，這兩個參數預設是沒有值的，如果我們設定了這兩個參數，則剛剛的<code>cx,cy</code>就會變成圓形漸層填色的「<strong>範圍</strong>」圓心，然後漸層色會填滿這個「圓的範圍」</p>
 <p>  <img src="/img/articles/201409/20140927_2_10.png" alt="SVG 研究之路 (25) - 再談漸層填色"></p>
@@ -292,6 +309,7 @@
   &lt;rect width=&quot;150&quot; height=&quot;150&quot; x=&quot;160&quot; y=&quot;10&quot; stroke=&quot;#000&quot; fill=&quot;url(#r2)&quot; &gt;&lt;/rect&gt;
 </code></pre></li>
 </ul>
+<p><br/></p>
 <p>以上就是詳細的漸層用法，如果熟練了 radialGradient，也可以輕鬆做出立體的球喔！</p>
 <p><img src="/img/articles/201409/20140927_2_12.png" alt="SVG 研究之路 (25) - 再談漸層填色"></p>
 <pre><code>&lt;defs&gt;

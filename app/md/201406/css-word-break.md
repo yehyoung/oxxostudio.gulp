@@ -53,7 +53,9 @@
 
 <!-- @@block  =  articles-content-->
 
-##CSS 文字的換行 <span class="article-date" tag="css"><i></i>JUN 2, 2014</span>
+##CSS 文字的換行 <span class="article-date" tag="css">JUN 2, 2014</span>
+
+<img src="/img/articles/201406/20140602_2_01.jpg" class="preview-img">
 
 由於響應式網頁技術的興起，間接造成排版上不小的挑戰和創新，其中的一小部分就是文字的排版，這篇就來介紹一下在 CSS 裏頭文字的斷行，為什麼要特別寫這一篇呢？因為在做這個 blog 的時候，我竟然也遇到了斷行的問題，解決了文字的斷行，又冒出來`pre`的斷行問題，不過最後總算是都解決了，就寫下這一篇作為紀錄。
 
@@ -65,14 +67,13 @@
 
 ![word-wrap](/img/articles/201406/20140602_2_02.png)
 
-<br/>
 ###white-space###
 由於`word-wrap`只能讓英文單字換行，對於整段文章無法換行該怎麼做呢？這時候我們就需要用到`white-space`的屬性，有興趣的人也可以參考 w3schools 的 [說明](http://www.w3schools.com/cssref/pr_text_white-space.asp) 和 [範例](http://www.w3schools.com/cssref/playit.asp?filename=playcss_white-space)，如果我們只是要單純地讓一段文章不要換行，可以使用`white-space:nowrap;`的方式，就可以讓一段文章不要換行，而這裡還有個有趣的小技巧，就是搭配`overflow:hidden;`和`text-overflow:ellipsis;`，還可以做出文字後方變成「...」的效果喔！ 
+
 可以參考這個範例：[http://codepen.io/oxxo/pen/GjFwL](http://codepen.io/oxxo/pen/GjFwL)  
 
 ![white-space](/img/articles/201406/20140602_2_03.png)  
 
-<br/>
 除此之外，在面對`pre`標籤的時候，`white-space:nowrap;`就無用武之處了，這時候我們就必須使用`white-space:pre-wrap;`，如此一來，在`pre`內的文字和程式碼，也就會斷行囉！
 
 <!-- @@close-->

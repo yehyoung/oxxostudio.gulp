@@ -94,7 +94,8 @@
             <i class="tag"></i>
             <div class="md">
 
-<h2>SVG D3.js - 數字格式 ( Formatting )  <span class="article-date" tag="web"><i></i>JAN 11, 2015</span></h2>
+<h2>SVG D3.js - 數字格式 ( Formatting )  <span class="article-date" tag="web">JAN 11, 2015</span></h2>
+<p><img src="/img/articles/201501/20150111_1_01.jpg" class="preview-img"></p>
 <p>在 <a href="http://www.oxxostudio.tw/articles/201412/svg-d3-11-time.html">SVG D3.js - 時間格式 ( Time Formatting )</a> 這篇文章裡看完了時間的格式，接著就要來看看 d3.js 對於數字格式是如何處理的，因為 d3.js 主要就是針對數據去進行視覺化，所以大幅簡化了過去我們往往要寫很多判斷式來讓數字格式化的方法，只需要運用簡單的 API，就能夠輕鬆地讓數據格式化。其實講到數據的格式化，讓我想到一個強迫症藝術家 Ursus Wehrli 的一系列作品 ( <a href="https://www.google.com.tw/search?q=Tidying+Up+Art&amp;es_sm=122&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ei=iYuyVK_nLei9mgX424KgBw&amp;ved=0CAgQ_AUoAQ&amp;biw=1527&amp;bih=850#imgdii=_">Tidying Up Art</a> )，從一堆雜亂無章的數據當中把這些數據分門別類並且格式化，意境上非常的雷同呀喔哈！( 所以這篇文章的圖片就用這系列藝術作品來表現吧！ )</p>
 <p>d3.js 格式化數字的方法，就像下面的範例這樣，先宣告一個格式化的方法，然後把數字放進去，就會得到格式化的「字串」。( 注意，得到的結果是字串 )</p>
 <pre><code>var formatting = d3.format(&quot;&quot;);
@@ -295,7 +296,7 @@ console.log(_o1(0.0123));   //
 console.log(_o1(0.012345)); //
 console.log(_o1(-10));      //-12
 console.log(_o1(-0.123));   //
-</code></pre><p>x 範例：<a href="svg-d3-12-formatting-demo10.html">svg-d3-12-formatting-demo10.html</a></p>
+</code></pre><p>x 範例：<a href="/demo/201501/svg-d3-12-formatting-demo10.html">svg-d3-12-formatting-demo10.html</a></p>
 <pre><code>var _x1 = d3.format(&quot;x&quot;);
 
 console.log(_x1(1000));     //3e8
@@ -361,9 +362,10 @@ console.log(_comma(10000));     //10,000
 console.log(_comma(1));         //1
 console.log(_comma(-10000));    //-10,000
 </code></pre><p><br/>
-我們也可以<strong>用組合的方式</strong>來組合，但組合的順序記得要按照這個規則進行：(範例：<a href="svg-d3-12-formatting-demo15.html">svg-d3-12-formatting-demo15.html</a>)
-&gt;
-[[fill]align][sign][symbol][0][width][,][.precision][type]</p>
+我們也可以<strong>用組合的方式</strong>來組合，但組合的順序記得要按照這個規則進行：(範例：<a href="/demo/201501/svg-d3-12-formatting-demo15.html">svg-d3-12-formatting-demo15.html</a>)</p>
+<blockquote>
+<p>[[fill]align][sign][symbol][0][width][,][.precision][type]</p>
+</blockquote>
 <pre><code>console.log(d3.format(&quot;,.5e&quot;)(10000));   //1.00000e+4
 console.log(d3.format(&quot;,.5g&quot;)(10000));   //10,000
 console.log(d3.format(&quot;,.5f&quot;)(10000));   //10,000.00000

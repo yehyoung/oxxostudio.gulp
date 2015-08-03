@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (2) - Layer <span class="article-date" tag="web"><i></i>JUN 9, 2014</span>
+##SVG 研究之路 (2) - Layer <span class="article-date" tag="web">JUN 9, 2014</span>
+
+<img src="/img/articles/201406/20140609_1_01.jpg" class="preview-img">
 
 許多的設計師談到向量繪圖，總是相當的興奮，但只要一提到向量繪圖裡的程式碼，馬上就暈頭轉向不知所云，這篇將要以 Illustrator 做為輔助工具出發，帶領大家能夠更了解 SVG 的架構。
 
@@ -69,7 +71,8 @@
 	  <polygon id="a1" ........... />
 
 <br/>
-了解圖層的規則後，我們看看下圖的 SVG 程式碼與 Illustrator 裡頭圖層的對照，如果超過一個圖層，就可以發現每一個圖層，就相當於是 SVG 裡頭的`<g></g>`標籤，一個`<g></g>`就代表一個群組，換句話說，雖然在 Illustrator 當中看到了許多圖層，但是實際上每個圖層都可視作一個群組來使用，這也就大概可以了解了為什麼`<g></g>`無法單純利用 x 或 y 來控制位置，因為這是辦不到的，你可以對圖層內的元素調整位置，但卻無法對圖層位置。
+
+了解圖層的規則後，我們看看下圖的 SVG 程式碼與 Illustrator 裡頭圖層的對照，如果超過一個圖層，就可以發現每一個圖層，就相當於是 SVG 裡頭的`<g></g>`標籤，一個`<g></g>`就代表一個群組，換句話說，雖然在 Illustrator 當中看到了許多圖層，但是實際上每個圖層都可視作一個群組來使用，這也就大概可以了解了為什麼`<g></g>`無法單純利用 x 或 y 來控制位置，因為這是辦不到的，你可以對圖層內的元素調整位置，但卻無法對圖層調整位置。
 
 在 Illustrator 裏頭的圖層長這樣：
 
@@ -88,6 +91,7 @@
 	</g>
 
 <br/>
+
 從上面我們也可以看到，圖層的名稱自動對應到 id 的名稱，然而 id 在 HTML 裡頭是唯一的，但為甚麼可以在 Illustrator 裡頭設定同樣名稱的圖層呢？ 因為當我們使用 Illustrator 儲存成 SVG ，相同名稱的圖層會自動在圖層名稱後方添加變數識別，避免不必要的問題發生。
 
 在 Illustrator 裏頭的圖層長這樣：
@@ -101,6 +105,7 @@
 	<polygon id="a1" ......... "/>
 
 <br/>
+
 利用 illustrator 比較視覺化的方式，就更容易能了解 SVG 的架構囉！有興趣的人也可以發現，在 Adobe 裏頭也有 [相關的介紹](http://help.adobe.com/zh_TW/illustrator/cs/using/WS714a382cdf7d304e7e07d0100196cbc5f-6360a.html#WS714a382cdf7d304e7e07d0100196cbc5f-635fa) 喔！
 
 <!-- @@close-->

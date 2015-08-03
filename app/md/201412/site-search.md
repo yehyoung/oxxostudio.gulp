@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##簡單打造站內搜尋、標題搜尋  <span class="article-date" tag="web"><i></i>DEC 1, 2014</span>
+##簡單打造站內搜尋、標題搜尋  <span class="article-date" tag="web">DEC 1, 2014</span>
 
 自己個 blog 從五月正式上線至今，一直都缺了一個「站內搜尋」的功能，總算在這陣子找了空檔，把這個功能補上，同時在 list 頁面新增了 filter 以及標題搜尋的功能，每一篇文章的最下方也新增的上一頁下一頁的功能，最後順便把一些長期累積的小 bug 給修掉，在底層動的工程頗精彩呀。
 

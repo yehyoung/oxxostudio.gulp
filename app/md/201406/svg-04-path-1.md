@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (4) - Path 基礎篇 <span class="article-date" tag="web"><i></i>JUN 11, 2014</span>
+##SVG 研究之路 (4) - Path 基礎篇 <span class="article-date" tag="web">JUN 11, 2014</span>
+
+<img src="/img/articles/201406/20140611_1_01.jpg" class="preview-img">
 
 接下來要談談 SVG 裡頭最為重要的元素：Path，因為SVG 是向量圖，所有的物件和元素都是由 Path ( 路徑 ) 所組成，所以 Path 就具有相當多的指令讓使用者設定， 換句話說，搞懂了 Path 就等於搞定了SVG ( 或是搞定 80% 的 SVG，不管啦 )。
 
@@ -128,18 +130,19 @@
 
   M 也就是起始點，因此所有的 Path 一定從 M 開始，M 也只有兩個參數，x 和 y ，下列程式表示 (0,0) 為起始點，但因為是起始點，所以看不到東西是正常的 ( 可以自己使用 Illustrator 的鋼筆工具點一個點，是看不到東西的 )。 
 
-  ![](/img/articles/201406/20140611_1_02.png)
+  ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_02.png)
 
-		<path d="M0 0" stroke="black"/>
+	  <path d="M0 0" stroke="black"/>
 
 <br/>
 
 - **H / h**  
+
   H 可以從目前的點畫水平線到某個 x 座標，只有一個參數，x 數字越大越往左，數字越小越往右。( 小寫則可視為長度 ) 下列程式為畫一條水平線到 (50,0)。 
 
-  ![](/img/articles/201406/20140611_1_03.png)
+  ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_03.png)
 
-		<path d="M0 0 H50" stroke="black"/>
+	  <path d="M0 0 H50" stroke="black"/>
 
 <br/>
 
@@ -150,7 +153,7 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_04.png)
 
-		<path d="M0 0 V50" stroke="black"/>
+	  <path d="M0 0 V50" stroke="black"/>
 
 <br/>
 
@@ -160,7 +163,7 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_05.png)
 
-		<path d="M0 0 L50 50" stroke="black"/>
+	  <path d="M0 0 L50 50" stroke="black"/>
 
 <br/>
 
@@ -171,7 +174,7 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_06.png)
 
-		<path d="M0 0 C40 40,60 40,100,0" stroke="black" fill="none"/>
+	  <path d="M0 0 C40 40,60 40,100,0" stroke="black" fill="none"/>
 
 <br/>
 
@@ -181,7 +184,7 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_07.png)
 
-		<path d="M0 0 C40 40,60 40,100,0 S150 -40, 200 0" stroke="black" fill="none"/>
+	  <path d="M0 0 C40 40,60 40,100,0 S150 -40, 200 0" stroke="black" fill="none"/>
 
 <br/>
 
@@ -191,7 +194,8 @@
   
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_08.png)
 
-		<path d="M0 0 Q50 50, 100 0" stroke="black" fill="none"/>
+	  <path d="M0 0 Q50 50, 100 0" stroke="black" fill="none"/>
+
 <br/>
 
 - **T / t**
@@ -200,7 +204,7 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_09.png)
 
-		<path d="M0 0 Q50 50, 100 0 T200 0" stroke="black" fill="none"/>
+	  <path d="M0 0 Q50 50, 100 0 T200 0" stroke="black" fill="none"/>
 
 <br/>
 
@@ -210,7 +214,9 @@
 
   ![SVG 研究之路 (4) - Path 基礎篇](/img/articles/201406/20140611_1_10.png)
 
-		<path d="M0 0 Q50 50, 100 0 T200 0 Z" stroke="black" fill="none"/>
+	  <path d="M0 0 Q50 50, 100 0 T200 0 Z" stroke="black" fill="none"/>
+
+<br/>
 
 以上就是基本的命令控制，之後將會介紹 A 這個命令，因為 A 這個命令較為複雜，也是 Path 裏頭滿精華的部分，所以就用一篇文章專門介紹吧！
 

@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (10) - 初探 filter <span class="article-date" tag="web"><i></i>JUN 18, 2014</span>
+##SVG 研究之路 (10) - 初探 filter <span class="article-date" tag="web">JUN 18, 2014</span>
+
+<img src="/img/articles/201406/20140618_1_01.jpg" class="preview-img">
 
 這篇主要探討 SVG 的濾鏡：filter，是 SVG 裏頭比較少人著墨的地方，但卻也是可以讓圖形變化最大的地方，濾鏡不外乎像高斯模糊、混合、色彩變換...等，在我們使用繪圖軟體的時候，濾鏡是最常用到的功能之一，隨著瀏覽器的進步，幾乎所有的瀏覽起都支援 SVG 的濾鏡了 ( [各家瀏覽器 SVG 支援度](http://caniuse.com/svg-filters) )，但是濾鏡牽涉到太多演算法，例如什麼純量乘積、阿達馬乘積...等，我實在也還沒搞懂，所以這篇先將濾鏡表列出來，之後再來慢慢研究。
 
@@ -71,7 +73,7 @@
       </defs>
 <br/>
 
-因為我自己也還沒搞清楚一些濾鏡的用法，如果對濾鏡有興趣，可以閱讀這幾篇文章：[W3C SVG Filters](http://www.w3.org/TR/SVG/filters.html)、[Filter Effects in SVG](http://srufaculty.sru.edu/david.dailey/svg/SVGOpen2010/Filters2.htm)，以下是濾鏡的列表：
+因為在 chrome 上實測仍然有很多濾鏡效果不支援 ( IE 竟然支援... )，實際上要用，可能就真的要花點心思去測試了，不然真的做完發現不支援，還真是糗很大...如果對濾鏡有興趣，可以閱讀這幾篇文章：[W3C SVG Filters](http://www.w3.org/TR/SVG/filters.html)、[Filter Effects in SVG](http://srufaculty.sru.edu/david.dailey/svg/SVGOpen2010/Filters2.htm)，以下是濾鏡的列表：
 
 - **feBlend** ：使用不同的混合模式把兩個對象合成在一起。
 - **feColorMatrix** ：應用矩陣轉換。( [Matrix multiplication](http://en.wikipedia.org/wiki/Matrix_multiplication) )

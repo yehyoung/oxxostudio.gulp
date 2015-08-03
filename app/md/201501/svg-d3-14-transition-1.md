@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3.js - transition 基本篇  <span class="article-date" tag="web"><i></i>JAN 24, 2015</span>
+##SVG D3.js - transition 基本篇  <span class="article-date" tag="web">JAN 24, 2015</span>
 
 在 CSS 裡面有非常好用的 transition 屬性，同樣的在 d3.js 裡頭也有，而且比 CSS 的 transition 更加強大，除了會自動去計算補間動畫 ( 這個詞在 flash 裡頭很常聽到 )，更可以自己設定自己的補間效果 ( tween )，自己去設定相關的插值 ( interpolate )，許多 d3.js 圖表的動態效果，都是藉由這個 transition 來完成的！這篇將先會先介紹基本的 transition 的用法，後續會用其他篇幅來說明比較進階的應用。
 
@@ -71,7 +71,7 @@ d3.js 基本的 API 有以下幾個：
 
 - **.transition()、.delay()、.duratio()**
 
-	要看 API 就一定要實作，先看到下面這個範例，三個正方形在頁面載入之後就會往下移動，但因為設定的不同，所以會在不同的時間點抵達下方，紅色的正方形，單純只寫了`.transition`，因此會帶入預設的`.duration(250)`，也就是 0.25 秒，綠色的正方形多寫了`.duration(1000)`，表示會在一秒內抵達下方，藍色的正方形則是又多了`.delay(500)`，表示會延遲五秒鐘才開始進行動作，其實在在 CSS 也幾乎是同樣的設定方式啦。( 範例：[svg-d3-14-transition-1-demo1.html](svg-d3-14-transition-1-demo1.html) )
+	要看 API 就一定要實作，先看到下面這個範例，三個正方形在頁面載入之後就會往下移動，但因為設定的不同，所以會在不同的時間點抵達下方，紅色的正方形，單純只寫了`.transition`，因此會帶入預設的`.duration(250)`，也就是 0.25 秒，綠色的正方形多寫了`.duration(1000)`，表示會在一秒內抵達下方，藍色的正方形則是又多了`.delay(500)`，表示會延遲五秒鐘才開始進行動作，其實在在 CSS 也幾乎是同樣的設定方式啦。( 範例：[svg-d3-14-transition-1-demo1.html](/demo/201501/svg-d3-14-transition-1-demo1.html) )
 
 		d3.selectAll('div')
 		  .style({
@@ -103,7 +103,7 @@ d3.js 基本的 API 有以下幾個：
 
 - **.style()、.attr()**
 
-	在上面的範例，其實還用到了`.style`這個方法，這個方法就是單純的針對具有樣式的樣式屬性去做變換，如果換成像 SVG 裡頭使用 attr 控制的元素，就必須要改用`.attr`的方式來控制，例如下面這個範例。( 範例：[svg-d3-14-transition-1-demo2.html](svg-d3-14-transition-1-demo2.html) )
+	在上面的範例，其實還用到了`.style`這個方法，這個方法就是單純的針對具有樣式的樣式屬性去做變換，如果換成像 SVG 裡頭使用 attr 控制的元素，就必須要改用`.attr`的方式來控制，例如下面這個範例。( 範例：[svg-d3-14-transition-1-demo2.html](/demo/201501/svg-d3-14-transition-1-demo2.html) )
 
 		d3.selectAll('rect')
 		  .attr({
@@ -148,48 +148,48 @@ d3.js 基本的 API 有以下幾個：
 	- back(s)：先往後再往前
 	- bounce：會像球一樣的反彈
 
-	這個這個範例 [svg-d3-14-transition-1-demo3.html](svg-d3-14-transition-1-demo3.html) 裏頭，將`.ease`具備的模式一一展現，為了更清楚表現程式碼，就一段一段忠實呈現，在這裡就不一一把程式碼列出，可以點選範例看原始碼即可。
-
-		d3.select('.box1')
-			.transition()
-			.duration(1000)
-			.ease('linear') //換裡面的字串即可
-			.style({
-				'top': '200px'
-			});
-		d3.select('.box2')
-			.transition()
-			.duration(1000)
-			.ease('poly','2') //比較需要注意的是，有帶參數的要這樣寫
-			.style({
-				'top': '200px'
-			});
+  這個這個範例 [svg-d3-14-transition-1-demo3.html](/demo/201501/svg-d3-14-transition-1-demo3.html  ) 裏頭，將`  .ease`具備的模式一一展現，為了更清楚表現程式碼，就一段一段忠實呈現，在這裡就不一一把程式碼列出，可  以點選範例看原始碼即可。
+  
+  	d3.select('.box1')
+  		.transition()
+  		.duration(1000)
+  		.ease('linear') //換裡面的字串即可
+  		.style({
+  			'top': '200px'
+  		});
+  	d3.select('.box2')
+  		.transition()
+  		.duration(1000)
+  		.ease('poly','2') //比較需要注意的是，有帶參數的要這樣寫
+  		.style({
+  			'top': '200px'
+  		});
 	
 	![SVG D3.js - transition 基本篇](/img/articles/201501/20150124_1_04.gif)
 
-	除此之外，還有另外四種類型。( 範例：[svg-d3-14-transition-1-demo4.html](svg-d3-14-transition-1-demo4.html) )
+	除此之外，還有另外四種類型。( 範例：[svg-d3-14-transition-1-demo4.html](/demo/201501/svg-d3-14-transition-1-demo4.html) )
 	
 	- cubic-in：加速
 	- cubic-out：減速
 	- cubic-in-out：先減速再加速
 	- cubic-out-in：先加速再減速
 	
-		d3.select('.box1')
-			.transition()
-			.duration(1000)
-			.ease('cubic-in')  //cubic-out,cubic-out-in,cubic-in-out
-			.style({
-				'top': '200px'
-			});
-	
-	![SVG D3.js - transition 基本篇](/img/articles/201501/20150124_1_05.gif)
+  d3.select('.box1')
+  	.tran  sition()
+  	.duration(1000)
+  	.ease('cubic-in')  //cubic-out,cubic-out-in,cubic-in-out
+  	.style({
+  		'top': '200px'
+  	});
+  
+  ![SVG D3.js - transition 基本篇](/img/articles/201501/20150124_1_05.gif)
 
 
 <br/>
 
 - **.each()**
 
-	看完`.ease`，接下來就是`.each`這個方法，按照官網的說明，這是一個在補間動畫運作時的「監聽器」 ( listener )，具有三種類型，分別是「start」、「end」與「interrupt」，「start」代表在補間動畫開始的時候，同時執行，但根據官方說法，會有 17ms 的延遲，所以也不是完全同時，「end」表示在補間動畫結束後，要執行甚麼，而「interrupt」則表示當補間動畫中斷時，會執行些甚麼，下面的範例，第一個正方形在開始的時候就會有邊框，第二個則是在結束的時候會有邊框，第三個按鈕則是在我們按下 interrupt 按鈕的時候會出現邊框。( 範例：[svg-d3-14-transition-1-demo5.html](svg-d3-14-transition-1-demo5.html) )
+	看完`.ease`，接下來就是`.each`這個方法，按照官網的說明，這是一個在補間動畫運作時的「監聽器」 ( listener )，具有三種類型，分別是「start」、「end」與「interrupt」，「start」代表在補間動畫開始的時候，同時執行，但根據官方說法，會有 17ms 的延遲，所以也不是完全同時，「end」表示在補間動畫結束後，要執行甚麼，而「interrupt」則表示當補間動畫中斷時，會執行些甚麼，下面的範例，第一個正方形在開始的時候就會有邊框，第二個則是在結束的時候會有邊框，第三個按鈕則是在我們按下 interrupt 按鈕的時候會出現邊框。( 範例：[svg-d3-14-transition-1-demo5.html](/demo/201501/svg-d3-14-transition-1-demo5.html) )
 	
 		d3.select('.box1')
 			.transition()
@@ -235,7 +235,7 @@ d3.js 基本的 API 有以下幾個：
 
 - **.call()**
 
-	最後就是`.call`這個方法，其實這就類似我們在寫 JS 的時候，會把多個地方用到的函式獨立出來一樣，在下面的範例，由於三個正方形都會移動到同樣的位置，所以我們就將位置獨立出來，再使用`.call`來呼叫即可。( 範例：[svg-d3-14-transition-1-demo6.html](svg-d3-14-transition-1-demo6.html) )
+	最後就是`.call`這個方法，其實這就類似我們在寫 JS 的時候，會把多個地方用到的函式獨立出來一樣，在下面的範例，由於三個正方形都會移動到同樣的位置，所以我們就將位置獨立出來，再使用`.call`來呼叫即可。( 範例：[svg-d3-14-transition-1-demo6.html](/demo/201501/svg-d3-14-transition-1-demo6.html) )
 	
 		function d3Transition(){
 			d3.selectAll('div')
@@ -264,7 +264,7 @@ d3.js 基本的 API 有以下幾個：
 	![SVG D3.js - transition 基本篇](/img/articles/201501/20150124_1_03.gif)
 
 <br/>
-補充一點，我們也可以將 transition 組合起來成為一連串的動畫效果。( 範例：[svg-d3-14-transition-1-demo7.html](svg-d3-14-transition-1-demo7.html) )
+補充一點，我們也可以將 transition 組合起來成為一連串的動畫效果。( 範例：[svg-d3-14-transition-1-demo7.html](/demo/201501/svg-d3-14-transition-1-demo7.html) )
 
 	d3.select('.box1')
 		.transition()

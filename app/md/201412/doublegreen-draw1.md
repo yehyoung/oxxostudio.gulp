@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##2010 年工作的插畫 ( 1 )  <span class="article-date" tag="creative"><i></i>DEC 11, 2014</span>
+##2010 年工作的插畫 ( 1 )  <span class="article-date" tag="creative">DEC 11, 2014</span>
 
 在 2010 年結束中研院的生活，剛回高雄，在一家專門做人資系統 ( eHR ) 與 EIP 系統的公司「遠綠資訊」服務了兩年，說真的還滿感謝遠綠資訊對我的栽培，不僅讓我學了不少網頁的技術，也能把一些插畫運用在工作上，造就了現在努力紮紮實實學習的我，這裡分享一些當年所畫的簡單插畫，如果有「人資系統」或 「teamwork」、「EIP」 服務規劃的，也歡迎找敝人的前前公司 [遠綠資訊](http://www.doublegreen.com/)，最近他們也在推雲端服務 [SmoothCloud](http://www.smoothcloud.asia/)，相信一定能有所收穫。( 變成廣告文了哈~ )
 

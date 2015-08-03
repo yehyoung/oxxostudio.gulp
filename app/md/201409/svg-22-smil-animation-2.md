@@ -52,9 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (22) - 深入理解 SMIL Animation  <span class="article-date" tag="web"><i></i>SEP 21, 2014</span>
+##SVG 研究之路 (22) - 深入理解 SMIL Animation  <span class="article-date" tag="web">SEP 21, 2014</span>
 
-上一篇應該已經大概明白 SVG 的動畫是怎麼一回事，但仍然有很多屬性和設定沒有解釋清楚，然而這些屬性和設定，才是 SVG 動畫的最精華所在，讓我們繼續看下去~ XD (英文夠好的人也可以來 [W3C 這邊](http://www.w3.org/TR/SVG/animate.html#TargetAttributes) 瞧瞧)
+[上一篇](http://www.oxxostudio.tw/articles/201409/svg-21-smil-animation.html) 應該已經大概明白 SVG 的動畫是怎麼一回事，但仍然有很多屬性和設定沒有解釋清楚，然而這些屬性和設定，才是 SVG 動畫的最精華所在，讓我們繼續看下去~ XD (英文夠好的人也可以來 [W3C 這邊](http://www.w3.org/TR/SVG/animate.html#TargetAttributes) 瞧瞧)
 
 SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 
@@ -70,6 +70,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 		</rect>
 		<animate dur="2s" attributeName="x" repeatCount="indefinite" to="100" xlink:href="#qq"/>
 
+<br/>
+
 - **attributeName**
 
 	屬性的名稱，顧名思義就是當你設定了這個屬性，就會以這個屬性去進行動畫，下面的範例分別讓正方形水平和垂直移動。
@@ -83,14 +85,21 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 		  <animate dur="2s" attributeName="y" repeatCount="indefinite" to="100"/>
 		</rect>
 
+<br/>
+
 - **attributeType ( auto | CSS | XML )**
 
 	屬性的類別，預設值為 auto，如果明確知道該屬性是 CSS 還是 XML ，就可以直接在這邊下定義，不過其實使用自動就好，因為會自動先去 CSS 的屬性找，找不到再去 XML 的屬性找，原則上來說應該都不會有問題。
 
+<br/>
+
 - **動畫影格屬性**
+
 	- **calcMode ( discrete | linear | paced | spline )**
 		
 		指定動畫的進行速度模式，預設為 linear，也就是以同樣速度進行變化，如果遇到不支援的，則直接使用 discrete 的模式，直接跳到下一個狀態 ( from 直接跳到 to )，至於 paced ，則與 linear 相同，平均分配速度，不過就不能使用後面的 keyTimes 和 keySplines ，而 spline 就一定得用 keyTimes 和 keySplines 來配合運作。 ( 不清楚的話，繼續往下看，後面會有範例 )
+
+	<br/>
 
 	- **values**
 
@@ -104,6 +113,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			<rect width="60" height="60" x="50" y="50" fill="none" stroke="#000">
 			  <animate dur="2s" attributeName="x" repeatCount="indefinite" to="100"/>
 			</rect>
+
+	<br/>
 
 	- **keyTimes**
 		
@@ -127,6 +138,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			<rect width="60" height="60" x="50" y="50" fill="none" stroke="#000">
 			  <animate dur="2s" attributeName="x" repeatCount="indefinite" to="100"/>
 			</rect>
+
+	<br/>
 		
 	- **keySplines**
 
@@ -142,6 +155,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			  <animate dur="2s" attributeName="x" repeatCount="indefinite" to="100"/>
 			</rect>
 
+	<br/>
+
 	- **from**
 		
 		動畫起始時的屬性數值
@@ -154,15 +169,19 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 		
 		動畫相對於起始的屬性數值
 
+<br/>
 
 - **動畫時間屬性**
 
 	- **begin**
 
 		begin 可以說是動畫時間屬性裏頭最重要的了，上頭我們只提到了 begin 可以延遲時間，但其實 begin 裏頭卻有許多的學問：
+
 		- *時間設定*：
 		
 			首先我們看到 begin 的時間單位，可以使用 h、min、s 與 ms 這四個單位，不過通常都是 s 和 ms 就足夠使用，因為要用 SVG 直接刻一個幾分鐘或幾小時的動畫，實在是...然而如果不給單位，預設的就是 s 秒數。
+
+		<br/>
 
 		- *id.end; id.begin*：
 		
@@ -183,6 +202,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 				  <animate dur="2s" attributeName="y" to="100" begin="a1.end-1s"/> 
 				</rect>
 
+		<br/>
+
 		- *id.event;event*
 
 			指定某個 id 的事件或是某個事件之後，就執行動畫，下面的範例，點選灰色矩形，就會執行動畫。
@@ -194,6 +215,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 				  <animate dur="2s" attributeName="x" to="100" begin="qq.click"/>  
 				</rect>
 
+		<br/>
+
 		- *id.repeat(整數)*
 
 			某個 id 元素的動畫執行幾次之後就會接續執行。
@@ -204,6 +227,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 				  <animate id="r1"   dur="1s" attributeName="width" to="120" repeatCount="indefinite" />
 				  <animate dur="2s" attributeName="y" to="100" begin="r1.repeat(3)"/> 
 				</rect>	
+
+		<br/>
 
 		- *indefinite*
 
@@ -238,6 +263,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			  <animate dur="4s" attributeName="x" repeatCount="indefinite" to="100"/>
 			</rect>
 
+	<br/>
+
 	- **restart (always | whenNotActive | never)**
 
 		剛剛上面的範例有提到「可以使用超連結來控制動畫」，以及某個 id 點擊事件來觸發動畫，但使用的過程中會發現，每點一次動畫就跑一次，坦白說還真是有點討厭，這時候就必須使用 restart 的屬性，restart 總共有三個設定值，預設是 always，也就是每點一次就會執行一次，而 never 也很好理解就是永遠不會再觸發點擊的動作，另外一個設定就是 whenNotActive，這表示動畫正在執行的時候，點擊是沒有做用的。下面的範例設定動畫跑了三秒會停止，在動畫進行中，怎麼點擊按鈕都是沒有反應的。
@@ -248,6 +275,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 				<animate id="a1" dur="1s" attributeName="width" to="100" begin="indefinite" repeatCount="indefinite" restart="whenNotActive" max="3s"/> 
 			</rect>
 			<a xlink:href="#a1"><text x="50" y="30">開始動畫</text></a>
+
+	<br/>
 
 	- **repeatCount**
 		
@@ -270,6 +299,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			  <animate dur="2s" attributeName="x" to="100" fill="remove"/>
 			</rect>
 
+<br/>
+
 - **動畫添加與合併屬性**
 
 	- **additive ( replace | sum )**
@@ -284,6 +315,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			  <animateTransform attributeName="transform" dur="2s" type="rotate" from="0,80,80" to="360,80,80" repeatCount="indefinite" additive="sum"/>
 			</rect>
 
+	<br/>
+
 	- **accumulate ( none | sum )**
 
 		設定動畫結束後，是否從結束的地方接續動畫下去，none 是預設值，如果我們使用 sum，則會在第一段動畫結束的狀態繼續往下加，例如一開始縮放是 1>2，下一段就是2>4，下一段就是4>6，依此類推，不過使用者個屬性有規定，如果不是重複的動畫就不能使用。
@@ -296,6 +329,8 @@ SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 			<rect width="10" height="10" x="0" y="0" fill="#c00"> 
 			  <animateTransform attributeName="transform" dur="2s" type="scale" from="1" to="2"  repeatCount="indefinite" accumulate="none"/>
 			</rect>
+
+<br/>
 
 以上就是 SVG SMIL Animation 的詳細用法，當然，還有更多的細節等待我們去挖掘，畢竟在 W3C 這篇文章內容可是我的幾百倍吧 ( 制定者，不意外呀哈哈 )，不過瞭解上述的用法，其實就可以做出許多別人辦不到的特效囉！
 

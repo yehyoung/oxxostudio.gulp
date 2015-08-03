@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##WorldCup 2014 - Google Doodle 11~15 <span class="article-date" tag="share"><i></i>JUL 1, 2014</span>
+##WorldCup 2014 - Google Doodle 11~15 <span class="article-date" tag="share">JUL 1, 2014</span>
 
 Google 在今年的世界盃仍然就甘心的製作了一系列的首頁插畫，應該說是一系列的小動畫，心血來潮把這些動畫收集起來，仔細看才發現每張動畫都有些有趣的含意，以下就來看看編號 11~15 的 Google Doodle 吧！
 

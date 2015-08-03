@@ -349,7 +349,7 @@ animation: b1 9s linear infinite, br1_1 9s infinite;
             <i class="tag"></i>
             <div class="md">
 
-<h2>Material Design - Progress and Activity <span class="article-date" tag="web"><i></i>JUL 10, 2014</span></h2>
+<h2>Material Design - Progress and Activity <span class="article-date" tag="web">JUL 10, 2014</span></h2>
 <p>這是一個利用 CSS 與 SVG 所做出來的進度條，仿照 Google Material Design 的設計風格設計，雖然 Google 有提供一系列的扁平風格樣式，但是由於技術尚未完全成熟，沒有相關的程式可以參考和套用，就自己寫了一個類似的，雖然還沒有模擬到百分之百，但已經是百分之八十接近了，分享一下。</p>
 <p>我所做的 Progress and Activity 結構其實很簡單，就是使用 SVG 內部的 Circle 進行虛線的長度和間距變換，然後外層的 SVG 進行 360 度的旋轉，再搭配另外一個 SVG Circle 就可以做出頗炫的動態效果，整個效果完全不需要用到 JS,
 只需要撰寫 CSS 就完成囉！</p>
@@ -455,7 +455,8 @@ animation: b1 9s linear infinite, br1_1 9s infinite;
     stroke-dashoffset:256;
   }
 }
-</code></pre><p>如果還是對於分成六段有疑問，可以參考下圖，主要就是要將這三個圈圈組合起來，每個圈圈會收會放，換成這樣子思考，就會必較簡單。<br><img src="/img/articles/201407/20140710_1_02.png" alt="Material Design - Progress and Activity"></p>
+</code></pre><p>如果還是對於分成六段有疑問，可以參考下圖，主要就是要將這三個圈圈組合起來，每個圈圈會收會放，換成這樣子思考，就會必較簡單。  </p>
+<p><img src="/img/articles/201407/20140710_1_02.png" alt="Material Design - Progress and Activity"></p>
 <p><br/></p>
 <p>了解了整體的運作模式之後，最後一個步驟就是讓整個 SVG 進行旋轉，因此加上旋轉的 CSS 動畫，就可以做出相當不錯的特效囉！</p>
 <pre><code>@-webkit-keyframes c1_1{

@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##點選自動複製 ( ZeroClipboard )  <span class="article-date" tag="web"><i></i>JAN 26, 2015</span>
+##點選自動複製 ( ZeroClipboard )  <span class="article-date" tag="web">JAN 26, 2015</span>
 
 自從用了 Github 開始，一直都覺得它裏頭複製網址的方法做得很好，只需要點一個按鈕就可以複製 ( 也有可能因為文字欄位太短才用這種方式 )，仔細看了一下它怎麼寫的，發現上面用 div 疊了一層 flash 的 swf ，百般不思其解的狀態下找了一些資料，發現原來不能用純 javascript 的方法來做是因為瀏覽器的安全性限制，不能夠單純用前端存取剪貼簿的資料，所以才會用 flash 作為介接。
 
@@ -87,11 +87,11 @@ JS：
 		});
 
 <br/>
-上面的 HTML 我多放了一個 textarea，目的就是複製之後可以直接貼上，大家可以點選這個範例： [zeroclipboard-demo1.html](zeroclipboard-demo1.html),實際感受一下複製貼上，同時也可以在按鈕上面按右鍵，就會發現它上面多了一層 flash。
+上面的 HTML 我多放了一個 textarea，目的就是複製之後可以直接貼上，大家可以點選這個範例： [zeroclipboard-demo1.html](/demo/201501/zeroclipboard-demo1.html),實際感受一下複製貼上，同時也可以在按鈕上面按右鍵，就會發現它上面多了一層 flash。
 
 ![點選自動複製 ( ZeroClipboard )](/img/articles/201501/20150126_1_07.jpg)
 
-箇中原理其實就在於這段：`data-clipboard-text="12345"`，我們把要複製到剪貼簿的文字寫在裡面，點選之後就會把這段字複製起來，不過，總是不能所有東西都寫在裏頭，還是必須有寫在外面的時候，這時就必須用到 `data-clipboard-target`，裡面放上要複製區域的 id，就可以進行複製。( 範例： [zeroclipboard-demo2.html](zeroclipboard-demo2.html) )
+箇中原理其實就在於這段：`data-clipboard-text="12345"`，我們把要複製到剪貼簿的文字寫在裡面，點選之後就會把這段字複製起來，不過，總是不能所有東西都寫在裏頭，還是必須有寫在外面的時候，這時就必須用到 `data-clipboard-target`，裡面放上要複製區域的 id，就可以進行複製。( 範例： [zeroclipboard-demo2.html](/demo/201501/zeroclipboard-demo2.html) )
 
 HTML：
 
@@ -110,7 +110,7 @@ HTML：
 ![點選自動複製 ( ZeroClipboard )](/img/articles/201501/20150126_1_08.jpg)
 
 <br/>
-以上就是非常簡單就可以使用 ZeroClipboard.js 的作法，當然如果你 CSS 夠強，其實也可以利用 [偽元素](http://www.oxxostudio.tw/articles/201407/css-clock.html) 做出對話框的效果囉！( 範例： [zeroclipboard-demo3.html](zeroclipboard-demo3.html) )
+以上就是非常簡單就可以使用 ZeroClipboard.js 的作法，當然如果你 CSS 夠強，其實也可以利用 [偽元素](http://www.oxxostudio.tw/articles/201407/css-clock.html) 做出對話框的效果囉！( 範例： [zeroclipboard-demo3.html](/demo/201501/zeroclipboard-demo3.html) )
 
 HTML：
 

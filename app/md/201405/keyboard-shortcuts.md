@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content-->
 
-## SublimeText 組合快速鍵 <span class="article-date" tag="web"><i></i>MAY 25, 2014</span>
+## SublimeText 組合快速鍵 <span class="article-date" tag="web">MAY 25, 2014</span>
 
 使用程式編輯器，快速鍵的鍵盤組合是相當重要的，就好比使用 photoshop 和 illustrator ，也一定要把常用的快速鍵記住，畢竟在分秒必爭的時代裡，每個動作快個 0.1 秒，累積起來就相當可觀了！  
 這裡列出常用的 SublimeText 的快速鍵，也幫自己做個紀錄 ( 避免要用的時候又要 google 一下 )

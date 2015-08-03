@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##CSS Water Wave (水波效果) <span class="article-date" tag="css"><i></i>JUL 29, 2014</span>
+##CSS Water Wave (水波效果) <span class="article-date" tag="css">JUL 29, 2014</span>
+
+<img src="/img/articles/201407/20140729_1_01.gif" class="preview-img">
 
 以前玩 flash 的時候，總是會利用 flash 的遮色片做些特效，「水波」這個效果就是這樣子發想而來的，這個效果坦白說應該很多人見過也做過，但使用 CSS 來製作的人就很少了，因此這篇特別介紹如何使用 CSS，來完成這個水波的效果。範例：[CSS Water Wave](http://goo.gl/3VQRH7) ( 使用 EZoApp 設計工具，點選 preview 可以看效果喔！ )
 

@@ -51,7 +51,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (29) - filter - 水波效果  <span class="article-date" tag="web"><i></i>OCT 10, 2014</span>
+##SVG 研究之路 (29) - filter - 水波效果  <span class="article-date" tag="web">OCT 10, 2014</span>
 
 在 [SVG 研究之路 (28) - filter - feDisplacementMap](http://www.oxxostudio.tw/articles/201410/svg-28-filter-feDisplacementMap.html) 我們深入的認識了 feDisplacementMap 這個濾鏡，也做出了水波和國旗皺褶的效果，這篇將繼續針對 feDisplacementMap 做一些補充，同時也利用 SVG 的 animte 來做出水波的動畫，畢竟水波就是要會動才逼真呀！
 

@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (24) - 寫 jquery 產生圓餅圖  <span class="article-date" tag="web"><i></i>SEP 27, 2014</span>
+##SVG 研究之路 (24) - 寫 jquery 產生圓餅圖  <span class="article-date" tag="web">SEP 27, 2014</span>
+
+<img src="/img/articles/201409/20140927_1_01.jpg" class="preview-img">
 
 之前我們提過了 [SVG 研究之路 (12) - pie chart 圓餅圖實作](http://www.oxxostudio.tw/articles/201406/svg-12-pie-chart.html) 和 [SVG 研究之路 (14) - 控制 SVG 的注意事項](http://www.oxxostudio.tw/articles/201406/svg-14-control-SVG.html)，現在就要來將兩者結合，使用 jquery 來畫出圓餅圖，同時使用 json 的格式來長出特定的角度和顏色，如此一來，在不需要 D3.js 或 C3.js 等 SVG js 框架的輔助下，也可以自己做出一個動態產生的圓餅圖，而且還很好用喔！( 如果對於圓餅圖的產生還不熟悉的人，請點選上面的連結回去再次閱讀一下吧！ )
 

@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (27) - filter - feImage  <span class="article-date" tag="web"><i></i>OCT 5, 2014</span>
+##SVG 研究之路 (27) - filter - feImage  <span class="article-date" tag="web">OCT 5, 2014</span>
+
+<img src="/img/articles/201410/20141005_1_01.jpg" class="preview-img">
 
 feImage 是 SVG filter 裏頭最簡單的濾鏡，不過為什麼要用一篇文章專門介紹它呢？就是因為 feImage 可以幫助我們更實際的了解 filter 的原理，除此之外，這篇文章也會搭配另外一個最簡單的濾鏡 feTile ( 到底有幾個最簡單呀 ) 藉由實際的範例來深入了解 SVG filter 的博大精深吧！
 

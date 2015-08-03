@@ -40,7 +40,7 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content--> 
-<h2>SVG 研究之路 (16) - Stroke-miterlimit  <span class="article-date" tag="web"><i></i>SEP 6, 2014</span></h2>
+<h2>SVG 研究之路 (16) - Stroke-miterlimit  <span class="article-date" tag="web">SEP 6, 2014</span></h2>
 <p>在之前 <a href="http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html">SVG 研究之路 (6) - stroke 邊框</a> 有介紹過邊框的用法，不過其實 Stroke 還有其他的屬性可以設定使用，以下將介紹：「stroke-miterlimit」這個線段屬性，與之前相同，這篇仍舊會搭配一些 illustrator 來說明，因為我覺得，能回歸圖形思考，才是向量「圖」的真實面貌。</p>
 <p>首先我們仍然先使用 illustrator 畫出一段折線，並存檔成為 SVG。  </p>
 <p><img src="/img/articles/201409/20140906_1_02.png" alt="SVG 研究之路 (16) - Stroke-miterlimit"></p>
@@ -53,7 +53,9 @@
 <p><img src="/img/articles/201409/20140906_1_04.gif" alt="SVG 研究之路 (16) - Stroke-miterlimit"></p>
 <p>在解釋為什麼之前，我們也可以藉由 illustrator 的屬性面板裏頭發現，若將線段的交折處設定為「圓角」或「斜角」，則不會有「限度」這個屬性可以設定，同理，圓角與斜角在 SVG Stroke 裡的屬性分別為<code>stroke-linejoin=&quot;round&quot;</code>以及<code>stroke-linejoin=&quot;bevel&quot;</code>( 參考 <a href="http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html">SVG 研究之路 (6) - stroke 邊框</a> )，因為圓角不會有尖角的突出，斜角則已經是切邊的狀態。  </p>
 <p><img src="/img/articles/201409/20140906_1_05.gif" alt="SVG 研究之路 (16) - Stroke-miterlimit"></p>
-<p>藉由 illustrator 快速瞭解了之後，就來解釋一下原理，<code>stroke-miterlimit</code>這個屬性很特別的地方，它其實是「斜切長度除以線段寬度」的值 ( 如下圖 )，也因此我們在 illustrator 的屬性面板可以看到它的單位不是 pt 也不是 px，而是一個「x」，所以，當我們設定了這個比例的最小值，當比例越來越小，斜切的長度也越小，當小到比線段寬度交錯的更小，線段無法演算，就會發生切邊的現象。  </p>
+<p>藉由 illustrator 快速瞭解了之後，就來解釋一下原理，<code>stroke-miterlimit</code>這個屬性很特別的地方，它其實是「斜切長度除以線段寬度」的值 ( 如下圖 )，也因此我們在 illustrator 的屬性面板可以看到它的單位不是 pt 也不是 px，而是一個「x」。</p>
+<p><img src="/img/articles/201409/20140906_1_06.png" alt="SVG 研究之路 (16) - Stroke-miterlimit"></p>
+<p>所以，當我們設定了這個比例的最小值，當比例越來越小，斜切的長度也越小，當小到比線段寬度交錯的更小，線段無法演算，就會發生切邊的現象。  </p>
 <p><img src="/img/articles/201409/20140906_1_07.png" alt="SVG 研究之路 (16) - Stroke-miterlimit"></p>
-<p>我自己在繪圖的時候，有時候還滿希望有尖角的效果，就會把這個值調大，在一些線段轉折處，就不會是硬梆梆的斜切，而會產生漂亮的尖角，同樣的道理，在使用 SVG 繪製折線圖的時候，適度的出現斜切或尖角，才能夠讓圖形更美觀更漂亮。</p>
+<p>我自己在繪圖的時候，有時候還滿希望有尖角的效果，就會把這個「stroke-miterlimit」值調大，在一些線段轉折處，就不會是硬梆梆的斜切，而會產生漂亮的尖角，同樣的道理，在使用 SVG 繪製折線圖的時候，適度的出現斜切或尖角，才能夠讓圖形更美觀更漂亮。</p>
 <!-- @@close-->

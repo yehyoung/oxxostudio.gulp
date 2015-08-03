@@ -43,8 +43,9 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content-->
-<h2>CSS 偽類 child 和 of-type <span class="article-date" tag="css"><i></i>MAY 27, 2014</span></h2>
-<p>對於 CSS 的初學者而言，比較不容易理解的大概就是<strong>偽類</strong>以及<strong>偽元素</strong> ，一個比較簡單的區分，偽類開頭會是一個冒號，偽元素開頭是兩個冒號，這篇文章主要介紹偽類，偽元素的部分會在其他文章中再度提及。通常比較常用到的偽類大概就是超連結的錨點偽類：<code>a:link</code>、<code>a:hover</code>、<code>a:active</code>和<code>a:visited</code>這四種，但偽類真正的精華在於可以比較精準地控制 HTML 當中的各個 DOM，不僅僅只有這四種而已，偽類分為四大類，第一大類就是剛剛所提到的「<strong>錨點偽類</strong>」，也就是跟隨在超連結後的這四種，第二類是「<strong>狀態偽類</strong>」，就是描述<code>:checked</code>、<code>unchecked</code>、<code>:enabled</code>、<code>:disabled</code>這幾種，而另外兩類則是<code>-child</code>和<code>of-type</code>，這兩類是因為 CSS3 新增的偽類，也比較容易搞混，於是今天就來針對這兩類做說明。</p>
+<h2>CSS 偽類 child 和 of-type <span class="article-date" tag="css">MAY 27, 2014</span></h2>
+<p><img src="/img/articles/201405/20140527_1_01.jpg" class="preview-img"></p>
+<p>對於 CSS 的初學者而言，比較不容易理解的大概就是 <strong>偽類</strong> 以及 <strong>偽元素</strong> ，一個比較簡單的區分，偽類開頭會是一個冒號，偽元素開頭是兩個冒號，這篇文章主要介紹偽類，偽元素的部分會在其他文章中再度提及。通常比較常用到的偽類大概就是超連結的錨點偽類：<code>a:link</code>、<code>a:hover</code>、<code>a:active</code>和<code>a:visited</code>這四種，但偽類真正的精華在於可以比較精準地控制 HTML 當中的各個 DOM，不僅僅只有這四種而已，偽類分為四大類，第一大類就是剛剛所提到的「<strong>錨點偽類</strong>」，也就是跟隨在超連結後的這四種，第二類是「<strong>狀態偽類</strong>」，就是描述<code>:checked</code>、<code>unchecked</code>、<code>:enabled</code>、<code>:disabled</code>這幾種，而另外兩類則是<code>-child</code>和<code>of-type</code>，這兩類是因為 CSS3 新增的偽類，也比較容易搞混，於是今天就來針對這兩類做說明。</p>
 <p><br/>
 <code>child</code> 顧名思義，就是小孩子的意思，換句話說，凡是套上 child 的 DOM，外頭的 DOM 就是他的爸爸 ( 父元素 )，不管裏頭的元素是甚麼，都是 child，而 <code>child</code> 又有以下幾種：</p>
 <ul>
@@ -131,8 +132,7 @@
     display:inline-block;
     margin:5px;
 }
-</code></pre><p><br/></p>
-<p>長相會是這樣：</p>
+</code></pre><p>長相會是這樣：</p>
 <p><img src="/img/articles/201405/20140527_1_08.png" alt="CSS 偽類 child 和 of-type"></p>
 <p>這時候如果我們寫了</p>
 <pre><code>#test span:first-child{

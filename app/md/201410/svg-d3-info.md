@@ -46,17 +46,19 @@
 
 <meta property="og:description" content="雖然說對 D3.js 的印象是從圖形的表現開始，但 D3.js 真正的強項卻是在它的資料處理 ( data )，也因為能夠用很簡單的方式處理資料，將資料餵給 HTML 或 SVG，才能夠輕鬆的長出漂漂亮亮的圖形，也才更能將心力放在設計一個完美個圖表上。">
 
-<title>SVG D3 - 起手式  - OXXO.STUDIO</title> 
+<title>SVG D3.js - 起手式  - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3 - 起手式  <span class="article-date" tag="web"><i></i>OCT 31, 2014</span>
+##SVG D3.js - 起手式  <span class="article-date" tag="web">OCT 31, 2014</span>
 
-雖然說對 D3 的印象是從圖形的表現開始，但 D3 真正的強項卻是在它的資料處理 ( data )，也因為能夠用很簡單的方式處理資料，將資料餵給 HTML 或 SVG，才能夠輕鬆的長出漂漂亮亮的圖形，也才更能將心力放在設計一個完美個圖表上，而 D3 的 data 也不見得只適用在 SVG 的圖形產生，只要是 HTML 的 DOM 也都可以藉由這個方式作成，例如以往要將一百個一千個資料放到 DOM 裡或產出 DOM，必須用上 for 迴圈或是 each 的方式，這部分 D3 也幫我們都解決掉了，真是相當的方便。
+<img src="/img/articles/201410/20141031_1_01.jpg" class="preview-img">
 
-在介紹資料處理之前，一定得先來一段 D3 的起手式，第一步，掛載 D3.js：
+雖然說對 D3.js 的印象是從圖形的表現開始，但 D3.js 真正的強項卻是在它的資料處理 ( data )，也因為能夠用很簡單的方式處理資料，將資料餵給 HTML 或 SVG，才能夠輕鬆的長出漂漂亮亮的圖形，也才更能將心力放在設計一個完美個圖表上，而 D3.js 的 data 也不見得只適用在 SVG 的圖形產生，只要是 HTML 的 DOM 也都可以藉由這個方式作成，例如以往要將一百個一千個資料放到 DOM 裡或產出 DOM，必須用上 for 迴圈或是 each 的方式，這部分 D3 也幫我們都解決掉了，真是相當的方便。
+
+在介紹資料處理之前，一定得先來一段 D3.js 的起手式，第一步，掛載 D3.js：
 
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 

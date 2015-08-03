@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (30) - filter - feConvolveMatrix  <span class="article-date" tag="web"><i></i>OCT 20, 2014</span>
+##SVG 研究之路 (30) - filter - feConvolveMatrix  <span class="article-date" tag="web">OCT 20, 2014</span>
+
+<img src="/img/articles/201410/20141020_1_01.jpg" class="preview-img">
 
 之前有介紹過模糊的濾鏡 ( [SVG 研究之路 (13) - filter - feGaussianBlur](http://www.oxxostudio.tw/articles/201406/svg-13-filter-feGaussianBlur.html) )，既然有模糊濾鏡，為什麼沒有銳利化的濾鏡呢？其實是有的，在 SVG 如果說要進行銳利化，便要使用 feConvolveMatrix 這個濾鏡來實現，而且 feConvolveMatrix 不僅能進行銳利化，同時它也可以進行模糊的動作，不過因為是針對每個像素與四周像素進行矩陣運算，來計算出模糊或銳利，所以要寫的數字和程式相較於單純的 feGaussianBlur 濾鏡會複雜不少，因此如果有模糊的需求，還是直接使用 feGaussianBlur 吧！以下就來介紹一下 feConvolveMatrix 這個神奇的濾鏡。
 
@@ -85,7 +87,7 @@ Premiere ( Effect 搜尋 Convolution )
 
 ![SVG 研究之路 (30) - filter - feConvolveMatrix](/img/articles/201410/20141020_1_07.png)
 
-經過 Convolution Matrix 換算後：
+經過 Convolution Matrix (1 1 1 1 1 1 1 1 1) 換算後：
 
 ![SVG 研究之路 (30) - filter - feConvolveMatrix](/img/articles/201410/20141020_1_08.png)
 

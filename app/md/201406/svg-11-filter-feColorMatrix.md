@@ -45,13 +45,15 @@
 
 <meta property="og:description" content="feColorMatrix 顧名思義就是色彩矩陣的濾鏡，用一個矩陣的計算，將圖片的色彩重新計算後輸出，便可以達到各種不同的色彩變化效果，在此之前，要先介紹一下圖片顏色定義，因為如果不了解圖片的顏色組成原理，就會無法明白色彩該如何去計算。">
 
-<title>SVG 研究之路 (11) - filter - feColorMatrix - OXXO.STUDIO</title> 
+<title>SVG 研究之路 (11) - filter:feColorMatrix - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (11) - filter - feColorMatrix <span class="article-date" tag="web"><i></i>JUN 21, 2014</span>
+##SVG 研究之路 (11) - filter:feColorMatrix <span class="article-date" tag="web">JUN 21, 2014</span>
+
+<img src="/img/articles/201406/20140621_1_01.jpg" class="preview-img">
 
 feColorMatrix 顧名思義就是色彩矩陣的濾鏡，用一個矩陣的計算，將圖片的色彩重新計算後輸出，便可以達到各種不同的色彩變化效果，在此之前，要先介紹一下圖片顏色定義，因為如果不了解圖片的顏色組成原理，就會無法明白色彩該如何去計算。( 可以先閱讀我的這篇文章：[淺談位元色版](http://www.oxxostudio.tw/articles/201406/color-channel.html) )
 

@@ -52,9 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (25) - 再談漸層填色  <span class="article-date" tag="web"><i></i>SEP 27, 2014</span>
+##SVG 研究之路 (25) - 再談漸層填色  <span class="article-date" tag="web">SEP 27, 2014</span>
 
-先前在 [SVG 研究之路 (7) - fill 填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html) 有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是圓形漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：
+先前在 [SVG 研究之路 (7) - fill 填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html) 有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是放射漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：
 
 	<defs>
 	   <linearGradient id="L" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -94,6 +94,8 @@
 
 其實兩種漸層大同小異，差別只在於線性漸層是用`x1,y1,x2,y2`、圓形漸層是用`cx,cy,r,fx,fy`，因此我們先從相同的屬性來談起：
 
+<br/>
+
 - **gradientUnits = "userSpaceOnUse | objectBoundingBox"**
 
 	gradientUnits 定義了漸層的座標系統，預設為`objectBoundingBox`，也就是以我們要套用漸層的物件為單位上色 ( 物件左上座標為漸層的 0% 0% )，而`userSpaceOnUse`則是以整個 SVG 視區 ( viewport ) 為座標系統，如果還不清楚，可以看看下方的示意圖，我把 SVG 放上兩個矩形，套用跟 SVG 視區一樣的漸層，只是 gradientUnits 設定不同，就可以發現漸層的位置有很明顯的差異，設定為`userSpaceOnUse`的矩形漸層色跟背景完全相同。 ( 附帶一提，如果是用 illustrator 產生的漸層，是採用`userSpaceOnUse` )
@@ -113,6 +115,8 @@
 	    <rect width="70" height="70" x="40" y="50" stroke="#000" fill="url(#userSpaceOnUse)" />
 	    <rect width="70" height="70" x="140" y="50" stroke="#000"  fill="url(#bg)" />
 
+<br/>
+
 - **gradientTransform**
 
 	可以把漸層套用 transform 的效果，也就是可以縮放、旋轉、傾斜、Matrix...等，不過用到的時間點還真的不常見，畢竟漸層都已經可以手動調整方向了，實際用到 gradientTransform 的機會也不多，下面是範例，把漸層旋轉 45 度。(	你一定會發現，明明是藍到白的漸層，旋轉後為什麼藍色區域變多了呢？因為旋轉以後，藍色後面沒有漸層，延伸出去是一片藍色，藍色區域就增加了 )
@@ -131,6 +135,8 @@
 	    </defs>
 	    <rect width="250" height="200" x="0" y="0" fill="url(#bg)" />
 	    <rect width="70" height="70" x="40" y="50" stroke="#000" fill="url(#userSpaceOnUse)" />
+
+<br/>
 
 - **spreadMethod = "pad | reflect | repeat"**
 
@@ -156,6 +162,8 @@
 	    <rect width="70" height="70" x="130" y="50" stroke="#000" fill="url(#reflect)"></rect>
 	    <rect width="70" height="70" x="230" y="50" stroke="#000" fill="url(#repeat)"></rect>
 
+<br/>
+
 - **xlink:href**
 
 	讓漸層可以引用其它元素的設定，也就是說我們可以先定義漸層的顏色，，就可以套用在不同的起始點和終點，例如下面的範例：
@@ -175,7 +183,11 @@
 	    <rect width="70" height="70" x="130" y="50" stroke="#000" fill="url(#b2)"></rect>
 	    <rect width="70" height="70" x="230" y="50" stroke="#000" fill="url(#b3)"></rect>
 
+<br/>
+
 OK，以上就是線性漸層和圓形漸層的共通屬性，接下來就要討論它們兩個個別的屬性了，剛剛的範例幾乎都是用線性漸層做的，就讓我們先來看看線性漸層 linearGradient 吧！
+
+<br/>
 
 - **x1,y1,x2,y2**
 	
@@ -214,7 +226,11 @@ OK，以上就是線性漸層和圓形漸層的共通屬性，接下來就要討
       	<rect width="100" height="100" x="0" y="0" stroke="#000" fill="url(#b1)"></rect>
       	<rect width="100" height="100" x="0" y="0" stroke="#000" fill="url(#b2)"></rect>
 
+<br/>
+
 看完了 linearGradient，就來研究一下 radialGradient。
+
+<br/>
 
 - **cx,cy,r**
 
@@ -239,6 +255,8 @@ OK，以上就是線性漸層和圓形漸層的共通屬性，接下來就要討
 	    <rect width="100" height="100" x="5" y="50" stroke="#000" fill="url(#r1)"></rect>
 	    <rect width="100" height="100" x="115" y="50" stroke="#000" fill="url(#r2)"></rect>
 	    <rect width="100" height="100" x="225" y="50" stroke="#000" fill="url(#r3)"></rect>
+
+<br/>
 
 - **fx,fy**
 
@@ -275,6 +293,8 @@ OK，以上就是線性漸層和圓形漸層的共通屬性，接下來就要討
 	    </defs>
 	    <rect width="150" height="150" x="5" y="10" stroke="#000" fill="url(#r1)"></rect>
 	    <rect width="150" height="150" x="160" y="10" stroke="#000" fill="url(#r2)" ></rect>
+
+<br/>
 
 以上就是詳細的漸層用法，如果熟練了 radialGradient，也可以輕鬆做出立體的球喔！
 

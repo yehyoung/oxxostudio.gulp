@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Dreamsmile 網頁設計 <span class="article-date" tag="ui"><i></i>JUN 2, 2014</span>
+##Dreamsmile 網頁設計 <span class="article-date" tag="ui">JUN 2, 2014</span>
+
+<img src="/img/articles/201406/20140602_1_01.jpg" class="preview-img">
 
 [點選我看範例網站](https://dl.dropboxusercontent.com/u/59597657/worktest/dreamsmile/zh-tw/index.html)
 

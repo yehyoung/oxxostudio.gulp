@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (18) - 再談 defs  <span class="article-date" tag="web"><i></i>SEP 16, 2014</span>
+##SVG 研究之路 (18) - 再談 defs  <span class="article-date" tag="web">SEP 16, 2014</span>
 
 在前面的 SVG 研究之路裡，不斷看到 defs 這個元素的身影，從顏色的填充、線段的圖案、濾鏡的定義...等許多的效果，都必須使用 defs 來定義，因此就直接寫了這篇關於 defs 的文章，也把這個常見但用法又時常不同的元素，一次做一個整理，也方便之後使用的參考。
 
@@ -65,6 +65,8 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	</defs>
 	<use xlink:href="#rect1"/>
 	<use xlink:href="#rect1" x="110"/>
+
+<br/>
 
 也可以將 g 元素 ( 群組 ) 放在 defs 元素裏頭：
 
@@ -80,6 +82,8 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	<use xlink:href="#rect1" x="110"/>
 	<use xlink:href="#circle1" x="210"/>
 
+<br/>
+
 定義漸層色 ( [SVG 研究之路 (7) - fill 填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html) )：
 
 ![SVG 研究之路 (18) - 再談 defs](/img/articles/201409/20140916_1_04.png)
@@ -94,6 +98,7 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	<circle cx="220" cy="300" r="50" stroke="#000" stroke-width="5" fill="url(#a1)"></circle>
 	<rect x="290" y="250" width="100" height="100" stroke="url(#a1)" stroke-width="5" fill="none"></rect>
 
+<br/>
 
 定義文字路徑 ( [SVG 研究之路 (8) - text 文字](http://www.oxxostudio.tw/articles/201406/svg-08-text.html) )：
 
@@ -107,6 +112,8 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	  </textPath>
 	</text>
 
+<br/>
+
 定義剪裁 Cliping ( [SVG 研究之路 (9) - Clipping and Masking](http://www.oxxostudio.tw/articles/201406/svg-09-clipping-masking.html) )：
 
 ![SVG 研究之路 (18) - 再談 defs](/img/articles/201409/20140916_1_06.png)
@@ -117,6 +124,8 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	</clipPath>
 	</defs>
 	<circle cx="100" cy="100" r="100" clip-path="url(#a1)" fill="#000" />
+
+<br/>
 
 定義剪裁 ( [SVG 研究之路 (9) - Clipping and Masking](http://www.oxxostudio.tw/articles/201406/svg-09-clipping-masking.html) )：
 
@@ -130,6 +139,8 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	</defs>
 	  <rect id="box1" x="50" y="50" width="150" height="150" fill="#0f0"/>
 	  <rect id="box2" x="50" y="50" width="150" height="150" fill="#f00" mask="url(#mask1)"/>
+
+<br/>
 
 定義線段 marker ( [SVG 研究之路 (17) - Stroke-marker](http://www.oxxostudio.tw/articles/201409/svg-17-storke-marker.html) )：
 
@@ -148,6 +159,7 @@ defs 顧名思義就是「definitions」：定義，我們可以把許多重複�
 	</defs>
 	<polyline points="20,100 50,100 80,20 110,80 140,30 170,100 200,100" fill="none" stroke="black" stroke-width="1" marker-end="url(#b)" marker-start="url(#r)" marker-mid="url(#g)"></polyline>
 
+<br/>
 
 使用 defs 定義 filter ( [SVG 研究之路 (13) - filter - feGaussianBlur](http://www.oxxostudio.tw/articles/201406/svg-13-filter-feGaussianBlur.html) )：	
 

@@ -53,7 +53,9 @@
 
 <!-- @@block  =  articles-content-->
 
-##Web Font 的使用 <span class="article-date" tag="css"><i></i>JUN 6, 2014</span>
+##Web Font 的使用 <span class="article-date" tag="css">JUN 6, 2014</span>
+
+<img src="/img/articles/201406/20140606_1_01.jpg" class="preview-img">
 
 隨著雲端的越來越普及，許多字體的使用也逐漸躍上雲端，[Google Fonts][1] 是我很喜歡使用的一個雲端字體工具，最主要是因為完全免費，加上 Google 的空間和速度，讓許多有特色的英文字體可以在網頁上良好的展現，通常 web font 的格式不外乎就是 woff 這種格式 ( Web Open Font Format )，檔案大小會比一般的 TTF 來得小，但隨著瀏覽器的進步，也越來越多的字體使用 svg 的圖形格式，也可以做出 icon font，至於如何製作，會在另外的篇幅介紹。
 
@@ -86,9 +88,9 @@
 		@font-face {
 		    font-family: 字體名稱;
 		    src: url(字體名稱.woff);
-		}
+		}  
 
-	必要的時候可以在後方加上格式，避免舊版的 IE 不支援
+	必要的時候可以在後方加上格式，避免舊版的 IE 不支援  
 
 		@font-face {
 		    font-family: '字體名稱';

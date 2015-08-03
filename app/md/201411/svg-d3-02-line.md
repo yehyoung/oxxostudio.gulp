@@ -46,13 +46,13 @@
 
 <meta property="og:description" content="現在我們要來利用 D3.js 的 line() API ，來完成線段 ( line ) 的繪製，且有別於單純的 SVG 產生 path 不容易放入數據，D3.js 可以根據我們的數據，自動產生對應的線條。">
 
-<title>SVG D3 - 繪製線段 ( line )  - OXXO.STUDIO</title> 
+<title>SVG D3.js - 繪製線段  - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3 - 繪製線段 ( line )  <span class="article-date" tag="web"><i></i>NOV 3, 2014</span>
+##SVG D3.js - 繪製線段  <span class="article-date" tag="web">NOV 3, 2014</span>
 
 在之前的 [SVG 研究之路 (4) - Path 基礎篇](http://www.oxxostudio.tw/articles/201406/svg-04-path-1.html) 裡頭，詳細的列出了 SVG path 的繪製方式，現在我們要來利用 D3.js 的 line() API ，來完成線段 ( line ) 的繪製，且有別於單純的 SVG 產生 path 不容易放入數據，D3.js 可以根據我們的數據，自動產生對應的線條。
 
@@ -103,7 +103,7 @@
 ![SVG D3 - 繪製線段](/img/articles/201411/20141103_1_02.png)
 
 <br/>
-打開開發者工具就可以看到每個點的座標都照 data 畫出來了 ( 範例：[http://www.oxxostudio.tw/articles/201411/svg-d3-02-line-demo1.html](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line-demo1.html) )
+打開開發者工具就可以看到每個點的座標都照 data 畫出來了  ( 範例：[svg-d3-02-line-demo1.html](/demo/201411/svg-d3-02-line-demo1.html) )
 
 ![SVG D3 - 繪製線段](/img/articles/201411/20141103_1_03.png)
 
@@ -164,7 +164,7 @@
 
 	![SVG D3 - 繪製線段](/img/articles/201411/20141103_1_08.png)
 
-<br/>
+<br/>`
 
 - basis-open：
 
@@ -223,7 +223,7 @@
 	![SVG D3 - 繪製線段](/img/articles/201411/20141103_1_16.png)
 
 <br/>
-從上面各種模式所產生的線段就可以發現，D3.js 其實已經幫我們解決了很多想像不到的情形，特別是如果今天畫出來的線段希望它 smooth 一些，都可以藉由 D3.js 輕鬆實現，不需要再自己去計算 C 或是 Q ( 參考 [SVG 研究之路 (4) - Path 基礎篇](http://www.oxxostudio.tw/articles/201406/svg-04-path-1.html) )，最後實現的範例：[http://www.oxxostudio.tw/articles/201411/svg-d3-02-line-demo2.html](http://www.oxxostudio.tw/articles/201411/svg-d3-02-line-demo2.html)
+從上面各種模式所產生的線段就可以發現，D3.js 其實已經幫我們解決了很多想像不到的情形，特別是如果今天畫出來的線段希望它 smooth 一些，都可以藉由 D3.js 輕鬆實現，不需要再自己去計算 C 或是 Q ( 參考 [SVG 研究之路 (4) - Path 基礎篇](http://www.oxxostudio.tw/articles/201406/svg-04-path-1.html) )，最後實現的範例：[svg-d3-02-line-demo2.html](/demo/201411/svg-d3-02-line-demo2.html)
 
 不過 D3.js 的 line() 其實還有不少其他的用法，之後研究之後再來慢慢分享。^_^
 

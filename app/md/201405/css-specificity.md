@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content-->
 
-##CSS Specificity  <span class="article-date" tag="css"><i></i>MAY 30, 2014</span>
+##CSS Specificity  <span class="article-date" tag="css">MAY 30, 2014</span>
 
 什麼是 CSS Specificity 呢？翻成中文就是 CSS 的權重，而什麼是 CSS 的權重？就是指我們套用在 DOM 上頭的樣式，互相覆蓋的權力，例如直接寫在 DOM 上頭的樣式，權重一定會大於外部嵌入的樣式，寫在後頭的樣式，權重一定會大於寫在前頭的樣式，雖然看起來很容易理解，但實際上 CSS 的權重卻是分的非常仔細，許多人也常常會掉入權重的陷阱而不知所措。
 

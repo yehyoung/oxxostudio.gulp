@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SCSS 安裝與執行 <span class="article-date" tag="css"><i></i>JUN 4, 2014</span>
+##SCSS 安裝與執行 <span class="article-date" tag="css">JUN 4, 2014</span>
+
+<img src="/img/articles/201406/20140604_1_01.jpg" class="preview-img">
 
 SCSS 是我在 2013 年才接觸到的技術，其實也不算新，因為在我學習這門技術的時候，已經有不少相對應的工具與文章誕生，也因為看了這些教學和工具，才讓我深入地去學習一套好用的工具！
 
@@ -62,44 +64,57 @@ SCSS 其實也是常聽到的 SASS，兩者的差異只在於 SCSS 和原本的 
 
 安裝 SCSS 第一個步驟就是要先安裝 ruby，接著再利用 ruby 安裝 compass，最後利用 compass 解析 SCSS 成 CSS，就大功告成囉！
 
+<br/>
+
 - **安裝 ruby**：  
+
   可以到 [rubyinstaller 網站](http://rubyinstaller.org/downloads/) 下載安裝  
+
+<br/>
 
 - **安裝 compass**：  
   安裝完成 ruby 之後，開啟命令提示字元 ( CMD )，輸入以下程式碼，就可以安裝 compass
 
-		gem install compass
-	
-- **compass 建立專案**：  
+	  gem install compass
+
+<br/>
+
+- **compass 建立專案**： 
+
   在 D 槽新增資料夾 scss_test，接著打開命令提示字元輸入以下三行，就可以完成基本 compass 專案的建置
 
-		d:
-		cd scss_test
-		compass create style
+  	d:
+  	cd scss_test
+  	compass create style
 
 	![SCSS 安裝與執行](/img/articles/201406/20140604_1_02.png)  
 
 	![SCSS 安裝與執行](/img/articles/201406/20140604_1_03.png)
 
+<br/>
+
 - **修改設定**：  
+
   建置完成後應該可以在 scss_test 的資料夾內看到一個 style 資料夾，裏頭包含三個資料夾與一個`config.rb`的檔案，裏頭是專案的設定檔，如果要用預設的也可以，不過我的習慣是會先來修改這個檔案。  
   我的設定其實也很簡單，就是把`css_dir = "stylesheets"`改為`css_dir = "css"`，這樣也比較清楚是 css，也可以把 sass 改成 scss ，接著把那兩行有註解的取消註解 (`# relative_assets = true`、`# line_comments = false`)，這樣才不會轉成 css 的時候多了很多不必要的轉換註解。
   
-		http_path = "/"
-		css_dir = "stylesheets"
-		sass_dir = "sass"
-		images_dir = "images"
-		javascripts_dir = "javascripts"
-		
-		# relative_assets = true
+  	http_path = "/"
+  	css_dir = "stylesheets"
+  	sass_dir = "sass"
+  	images_dir = "images"
+  	javascripts_dir = "javascripts"
+  	
+  	# relative_assets = true  
 
-		# line_comments = false
-		
+  	# line_comments = false
 
+<br/>
+		
 - **compass 解析 SCSS**：  
+
   最後我們只要打開 CMD 裏頭，進入 style 目錄，輸入以下程式碼，compass 就會自動監測 scss 檔案的變化，如果有變化並按下儲存，compass 就會自動幫我們轉換，當然如果你在上一層目錄，同樣可以輸入`compass watch style`，也是同樣的效果喔！
 
-		compass watch
+	  compass watch
 
 	![SCSS 安裝與執行](/img/articles/201406/20140604_1_04.png)
 

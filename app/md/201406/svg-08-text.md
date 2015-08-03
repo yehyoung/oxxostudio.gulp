@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (8) - text 文字 <span class="article-date" tag="web"><i></i>JUN 15, 2014</span>
+##SVG 研究之路 (8) - text 文字 <span class="article-date" tag="web">UN 15, 2014</span>
+
+<img src="/img/articles/201406/20140615_1_01.jpg" class="preview-img">
 
 「文字」雖然字面上的解釋很簡單，但深入研究之後，發現 SVG 對於文字的設定，比我想像的複雜得多，但也因為有了這些我所不知道的設定和屬性，讓原本單純樸實的文字，更添加了幾分華麗的色彩和變化，這篇將介紹文字基本的屬性設定，以及一些進階的文字用法，學完之後，也就更能使用程式來控制文字，製作出與眾不同的動畫和特效了。
 

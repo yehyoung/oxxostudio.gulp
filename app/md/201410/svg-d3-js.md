@@ -46,13 +46,15 @@
 
 <meta property="og:description" content="D3.js 是一個用動態視覺化顯示資料的 js library，透過使用 HTML DOM、SVG 在網頁上顯示資料，在接觸 SVG 的時候不斷的接觸到 D3.js 的資訊，原本想說要先來玩玩 snap.svg 的，但由於大家都在談 D3，於是就也踏上這條不歸路。">
 
-<title>SVG D3 - D3.js 初體驗  - OXXO.STUDIO</title> 
+<title>SVG D3.js - 初體驗  - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##SVG D3 - D3.js 初體驗  <span class="article-date" tag="web"><i></i>OCT 30, 2014</span>
+##SVG D3 - D3.js 初體驗  <span class="article-date" tag="web">OCT 30, 2014</span>
+
+<img src="/img/articles/201410/20141030_1_01.jpg" class="preview-img">
 
 D3.js 是一個用動態視覺化顯示資料的 js library，透過使用 HTML DOM、SVG 在網頁上顯示資料，在接觸 SVG 的時候不斷的接觸到 D3 的資訊，原本想說要先來玩玩 snap.svg 的，但由於大家都在談 D3，於是就也踏上這條不歸路，因為 D3 主要的應用會以 SVG 來表現，趁著之前 SVG 31 天教學的文章剛寫完，對 SVG 印象猶新之際，打鐵趁熱學學 D3。
 

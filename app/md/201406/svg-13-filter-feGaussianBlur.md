@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (13) - filter - feGaussianBlur <span class="article-date" tag="web"><i></i>JUN 25, 2014</span>
+##SVG 研究之路 (13) - filter - feGaussianBlur <span class="article-date" tag="web">JUN 25, 2014</span>
+
+<img src="/img/articles/201406/20140625_1_01.jpg" class="preview-img">
 
 使用過 Photoshop 都知道，模糊就跟斯斯一樣多種，其中的一種就是「高斯模糊」，同樣的，在 illustrator 裏頭也有高斯模糊，因此 SVG 也就擁有高斯模糊的能力！以往我們單純用網頁製作「假」的高斯模糊，常常是將十幾二十張圖片更改透明度與些微的座標差距，來做出類似的效果 ( [可以參考這個我以前做的效果](https://dl.dropboxusercontent.com/u/59597657/oxxo_code/Jquery_20120712_imageBlurMask.html) )，這個方式其實在一些 3D 軟體做景深渲染的時候也常常使用，不過這種方法在網頁上必須撰寫一些程式才能辦到。今天有了 SVG 的 feGaussianBlur 濾鏡，我們只需要下幾個指令就能夠達到模糊的效果，且還能夠使用程式做互動的反應，是相當方便的喔！
 
@@ -150,13 +152,13 @@
 	
 	![](/img/articles/201406/20140625_1_07.png)
 
-		  <defs>
-		  <filter width="200" height="200" x="0" y="0" id="blur1" filterUnits="userSpaceOnUse" >
-		    <feGaussianBlur stdDeviation="5"/>
-		  </filter>
-		  </defs>
-		    <path d="M30 30 L100 30 Q90 65 100 100 L30 100 Q40 65 30 30" fill="#000" filter=url("#blur1") />
-		    <rect x="30" y="30" width="70" height="70" fill="#6f9"/>
+      <defs>
+      <filter width="200" height="200" x="0" y="0" id="blur1" filterUnits="userSpaceOnUse" >
+        <feGaussianBlur stdDeviation="5"/>
+      </filter>
+      </defs>
+        <path d="M30 30 L100 30 Q90 65 100 100 L30 100 Q40 65 30 30" fill="#000" filter=url("#blur1") />
+        <rect x="30" y="30" width="70" height="70" fill="#6f9"/>
 
 <br/>
 

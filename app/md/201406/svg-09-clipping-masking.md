@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##SVG 研究之路 (9) - Clipping and Masking <span class="article-date" tag="web"><i></i>JUN 16, 2014</span>
+##SVG 研究之路 (9) - Clipping and Masking <span class="article-date" tag="web">JUN 16, 2014</span>
+
+<img src="/img/articles/201406/20140616_1_01.jpg" class="preview-img">
 
 使用過 Illustrator 的朋友應該都會知道，裏頭有一個重要的繪圖功能，就是剪裁和遮色片，這也是在圖形處理上頗為重要的兩個功能，而在 SVG 裏頭這兩個功能也沒有缺席，和之前 [製作文字跟隨路徑](http://www.oxxostudio.tw/articles/201406/svg-08-text.html) 以及 [漸層填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html) 相同的做法，在製作剪裁或遮色片的時候，我們也必須先建立定義檔`defs`，就可以輕鬆做出 Clipping ( 剪裁 ) 和 Masking ( 遮色片 ) 的效果囉！
 

@@ -40,7 +40,7 @@
 
 <meta property="og:title" content="噁心黏黏球 ( 純 CSS ) - OXXO.STUDIO">
 
-<meta property="og:url" content="http://www.oxxostudio.tw/articles/201405/contact.html">
+<meta property="og:url" content="http://www.oxxostudio.tw/articles/201408/sticky-ball.html">
 
 <meta property="og:image" content="http://www.oxxostudio.tw/img/articles/201408/20140829_1_01.gif">
 
@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##噁心黏黏球 ( 純 CSS ) <span class="article-date" tag="css"><i></i>AUG 29, 2014</span>
+##噁心黏黏球 ( 純 CSS ) <span class="article-date" tag="css">AUG 29, 2014</span>
 
 這是一個純粹利用 CSS 所做出來的效果，這個效果說穿了就是一個影像處理的原理，做法跟 Photoshop 裡頭的幾乎一模一樣，只是一個用圖層和色版來製作，一個則是用 CSS ( 把 div 當成圖層思考就好了 )，要看完整範例程式碼可以點選這個網址：[http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272](http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272) ( 使用 EZoApp，按下上方 preview 可以預覽 )
 

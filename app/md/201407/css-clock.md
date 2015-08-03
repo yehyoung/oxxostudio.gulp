@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##電子時鐘效果 ( CSS 偽元素的應用 ) <span class="article-date" tag="css"><i></i>JUL 17, 2014</span>
+##電子時鐘效果 ( CSS 偽元素的應用 ) <span class="article-date" tag="css">JUL 17, 2014</span>
+
+<img src="/img/articles/201407/20140717_1_01.jpg" class="preview-img">
 
 [電子時鐘效果範例 ( 使用 EZoApp，點選 preview 可以預覽 )](http://jqmdesigner.appspot.com/designer.html#&ref=6078331350941696)  
 這是單純利用 CSS 做出來的時鐘，大量的應用了 CSS 裡頭的偽元素 ( ::before 和 ::after )，配合簡單的 JS 所作出的效果，以下就來介紹是如何做出來的。
