@@ -46,13 +46,15 @@
 
 <meta property="og:description" content="在上線版本裡頭，就會使用到打包和壓縮過的 JS 或 CSS，這類型的 JS 或 CSS 會在檔案名稱加個「.min」進行區隔，而一個打包壓縮過的 JS 和 CSS，基本上可能是好幾個檔案組合在一起，利用 Gulp 的套件，非常簡單的就可以做到打包壓縮的動作，甚至還可以自動重新命名檔案，一氣呵成。">
 
-<title>Gulp 學習筆記 2 - 打包壓縮 CSS 與 JS - OXXO.STUDIO</title> 
+<title>Gulp 學習 2 - 打包壓縮 CSS 與 JS - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習筆記 2 - 打包壓縮 CSS 與 JS  <span class="article-date" tag="web"><i></i>MAR 6, 2015</span>
+##Gulp 學習 2 - 打包壓縮 CSS 與 JS  <span class="article-date" tag="web">MAR 6, 2015</span>
+
+<img src="/img/articles/201503/20150306_1_01.jpg" class="preview-img">
 
 通常我們在寫網頁的時候，都會引入許多的 JS 和 CSS，而每引入一個也就會產生一個 request，當引入的越來越多，在效能和時間的等待上也就相對付出的越來越多，雖然在對於現在的網路速度和瀏覽器效能而言，看似問題都不大，但是對於一個流量超大的網站來說，一個使用者多了一個 request，在效能的處理上就相對重要許多，因此，在做網頁的時候，往往至少會分成兩個階段，一個階段是「開發時期」的版本，一個階段是「發佈上線」的版本，最主要就是會把「開發」和「上線」分開，如此一來才不會一時疏忽把還沒開發好的版本給對外公開了。
 

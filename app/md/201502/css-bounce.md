@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##有趣的 CSS 彈跳動畫  <span class="article-date" tag="css"><i></i>FEB 9, 2015</span>
+##有趣的 CSS 彈跳動畫  <span class="article-date" tag="css">FEB 9, 2015</span>
 
 這是只用了一個 div 來做的小動畫，純粹利用 CSS3 的 animation 來完成，就像是一個正方形在地上彈跳，碰到地面的時候尖角還會壓縮變圓，陰影的部分也會隨著正方形升高而縮小，至於到底該怎麼完成呢？讓我們繼續看下去。
 

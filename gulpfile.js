@@ -375,6 +375,61 @@ gulp.task('server', function() {
 });
 
 
+/*
+oooooooooo.  ooooo     ooo ooooo ooooo        oooooooooo.   
+`888'   `Y8b `888'     `8' `888' `888'        `888'   `Y8b  
+ 888     888  888       8   888   888          888      888 
+ 888oooo888'  888       8   888   888          888      888 
+ 888    `88b  888       8   888   888          888      888 
+ 888    .88P  `88.    .8'   888   888       o  888     d88' 
+o888bood8P'     `YbodP'    o888o o888ooooood8 o888bood8P'   
+*/
+
+/* build */
+gulp.task('build-clean',function(){
+  return gulp.src(['build/*'], {read: true}).pipe(clean());
+});
+
+gulp.task('move',['build-clean'],function(){
+  var opts = {
+    conditionals: true,
+    spare:true,
+    loose: true
+  };
+  var a1 = gulp.src('app/img/**/*').pipe(gulp.dest('build/img')),
+      a2 = gulp.src('app/articles/**/*').pipe(gulp.dest('build/articles')),
+      a3 = gulp.src('app/demo/**/*').pipe(gulp.dest('build/articles')),
+      a4 = gulp.src('app/js/lib/*').pipe(gulp.dest('build/js/lib')),
+      a4 = gulp.src('app/style/lib/*').pipe(gulp.dest('build/style/lib')),
+      a5 = gulp.src('app/json/*').pipe(gulp.dest('build/json')),
+      a6 = gulp.src('app/js/*.js')
+          .pipe(uglifyjs())
+          .pipe(gulp.dest('build/js')),
+      a7 = gulp.src('app/style/css/*.css')
+          .pipe(minicss())
+          .pipe(gulp.dest('build/style/css')),
+      a8 = gulp.src([
+              'app/index.html',
+              'app/list.html',
+              'app/search-results.html',
+              'app/favicon.ico',
+              'app/404.html',
+              'app/robots.txt',
+              'app/rss.xml'])
+            .pipe(gulp.dest('build'));
+  return merge(a1, a2, a3, a4, a5, a6, a7, a8);
+});
+
+gulp.task('build',['move'], function () {
+  return gulp.src(['build/**/*.html','!build/demo/**/*'])
+        .pipe(sitemap({
+            siteUrl: 'http://www.oxxostudio.io'
+        }))
+        .pipe(gulp.dest('build'));
+});
+
+
+
 /* 
                                .             oooo        
                              .o8             `888        
@@ -410,4 +465,4 @@ gulp.task('watch',function(){
   gulp.watch('app/md/201506/*.md',['md-include-201506']);
 });
 
-gulp.task('default',['index','list','search','less','server','md-include','watch']);
+gulp.task('default',['index','list','search','less','md-include','watch']);

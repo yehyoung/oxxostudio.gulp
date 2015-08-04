@@ -52,23 +52,25 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習 5 - 建立 HTML 模板  <span class="article-date" tag="web"><i></i>MAR 9, 2015</span>
+##Gulp 學習 5 - 建立 HTML 模板  <span class="article-date" tag="web">MAR 9, 2015</span>
+
+<img src="/img/articles/201503/20150309_1_01.jpg" class="preview-img">
 
 這個部落格經營了快一年，都是利用 fire.app 替我建置「純靜態」的 blog，換句話說，其實我只是撰寫內容，然後藉由 fire.app 幫我把內容和 layout 合併在一起，如果有興趣的人可以直接購買 [fire.app](http://fireapp.kkbox.com/doc/tw/index.html) 下來使用即可。不過這一篇並不是要介紹 fire.app，而是要利用 gulp，建立 HTML 的模板，同樣也是將 layout 和 content 分開，然後在預覽與上線的時候再合併。
 
 這裡我們要用到的是 gulp-html-extend 這個套件 ( 參考 [gulp-html-extend](https://www.npmjs.com/package/gulp-html-extend) )，和之前介紹過的 gulp-html-replace 類似，gulp-html-extend 會把某些特定註解內的內容置換為我們想要的內容，但與 gulp-html-replace 不同的地方，在於 gulp-html-replace 要置換的內容寫在 gulpfile.js 裏頭，而 gulp-html-extend 則是將外部的 HTML 內容嵌入註解的區域。
 
-以下面的例子來說，首先我們建立一個 layout.html 的樣版，裡頭是要共用的內容，在裡面可以看到有兩個註解，分別是 title 和 content，這就是我們要合併的部分。
+以下面的例子來說，首先我們建立一個 layout.html 的樣版，裡頭是要共用的內容，在裡面可以看到有兩個註解，分別是`<!-- @ @ placeholder= title -->`和`<!-- @ @ placeholder= content -->`，這就是我們要合併的部分。( 因為兩個 @ 會被 markdown 用消失，所以這邊中間有空格 )
 
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<!-- @@placeholder= title -->
+		<!-- @ @ placeholder= title -->
 		
 	</head>
 	<body>
-		<!-- @@placeholder= content -->
+		<!-- @ @ placeholder= content -->
 		<footer>
 		    footer
 		</footer>
@@ -80,31 +82,31 @@
 
 未合併的 index.html
 
-	<!-- @@master  = ../layout.html-->
+	<!-- @ @ master  = ../layout.html-->
 	
-	<!-- @@block  =  title-->
+	<!-- @ @ block  =  title-->
 	<title>index</title>
-	<!-- @@close-->
+	<!-- @ @ close-->
 
-	<!-- @@block  =  content-->
+	<!-- @ @ block  =  content-->
 	<main>
 	    我是 index
 	</main>
-	<!-- @@close-->
+	<!-- @ @close-->
 
 未合併的 index2.html
 
-	<!-- @@master  = ../layout.html-->
+	<!-- @ @master  = ../layout.html-->
 	
-	<!-- @@block  =  title-->
+	<!-- @ @block  =  title-->
 	<title>index2</title>
-	<!-- @@close-->
+	<!-- @ @close-->
 
-	<!-- @@block  =  content-->
+	<!-- @ @block  =  content-->
 	<main>
 	    我是 index2
 	</main>
-	<!-- @@close-->
+	<!-- @ @close-->
 
 <br/>
 合併之後就會變成這樣：

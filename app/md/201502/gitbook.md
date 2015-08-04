@@ -52,8 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##用 GitBook 來寫本書吧！  <span class="article-date" tag="css"><i></i>FEB 11, 2015</span>
+##用 GitBook 來寫本書吧！  <span class="article-date" tag="web">FEB 11, 2015</span>
 
+<img src="/img/articles/201502/20150211_1_01.jpg" class="preview-img">
 
 自從 2014 年底的台北市市長選舉，柯 P 用了 GitBook 發表了「[政策白皮書](http://whitebook.kptaipei.tw/)」之後，GitBook 這個以 GitHub 為基底的電子書瞬間爆紅，也因為政策白皮書瞬間流量爆炸，讓 GitBook 這個外國團隊還發公開信給柯 P 呀！( [連結參考](https://www.gitbook.com/blog/authors/taipei-mayor-writes-gitbook) ) 
 
@@ -64,7 +65,7 @@
 不過其實也不用太過擔心，因為 GitBook 的團隊很貼心的提供了線上的編輯器，在線上編輯器之前是提供桌面安裝版本的編輯器，不管是線上編輯器或是安裝版本的編輯器，都讓使用者可以在不會 Node.js 和 Git 的情況下進行書籍的編寫，不過仍然要會 Markdown 就是了。( Markdown 是一種非常輕量的語言，只需要撰寫純文字，加上簡單的標記，就可以把整篇文章的純文字轉換為 HTML 語言，相信不到半小時就能學會，參考：[Markdown](http://zh.wikipedia.org/wiki/Markdown) )
 
 <br/>
-廢話說盡，首先來看一下 GitBook 的線上編輯器該如何使用，第一步當然是要註冊一個帳號
+廢話說盡，首先來看一下 GitBook 的線上編輯器該如何使用，第一步當然是要註冊一個帳號，請前往 GitBook 吧！( [www.gitbook.com](http://www.gitbook.com) )
 
 ![用 GitBook 來寫本書吧！](/img/articles/201502/20150211_1_02.jpg)
 

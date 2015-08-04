@@ -40,7 +40,7 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content--> 
-<h2>運用 clip-path 的純 CSS 形狀變換  <span class="article-date" tag="css"><i></i>MAR 30, 2015</span></h2>
+<h2>運用 clip-path 的純 CSS 形狀變換  <span class="article-date" tag="css">MAR 30, 2015</span></h2>
 <p>在 <a href="http://www.oxxostudio.tw/articles/201503/css-regular-polygon-transform.html">單一 div 的正多邊形變換 ( 純 CSS )</a> 這篇所提到繪製正多邊形的方法，算是純粹利用偽元素來完成，不過坦白說還有另外一種方法，可以將單一 div 做更多形狀的變換，這種方法就是 CSS3 的「clip-path」，這個「clip-path
 」看起來有點眼熟，因為它原本就存在於 SVG 裡頭 ( 參考：<a href="http://www.oxxostudio.tw/articles/201406/svg-09-clipping-masking.html">SVG 研究之路 (9) - Clipping and Masking</a> )，利用遮罩 ( 剪裁 ) 的方法，連接座標繪製遮罩區域，就可以做出許多不同的形狀，讓底色或底圖顯現，隨著瀏覽器對於 CSS3 的支援度大幅提升，自然而然的就可以用它來做些與眾不同的變化。</p>
 <p>最先看到這個屬性的應用，是從這個網站看到的：<a href="http://species-in-pieces.com/">http://species-in-pieces.com/</a> ，不得不說這個網站做得實在太神了，一開始看到還真以為是用 SVG 做的，沒想到竟然是用 CSS 刻出來的... 真是太驚人啦！</p>
@@ -48,12 +48,13 @@
 <p>接著在找資料的過程中，又發現一個很強的網站：<a href="http://bennettfeely.com/clippy/">http://bennettfeely.com/clippy/</a> ，專門介紹「clip-path」這個 CSS3 的屬性，你可以直接在上面拖拉或修改，除了貝茲曲線外，幾乎任何形狀都做得出來 ( 中空的部分要用組合的 )</p>
 <p><img src="/img/articles/201503/20150330_1_03.jpg" alt="運用 clip-path 的純 CSS 形狀變換"></p>
 <p>如果不考慮一些瀏覽器支援度的問題，使用 clip-path 來繪製多邊形，還比利用偽元素還製作多邊形來得簡單許多，而且也可以做到單一 div 繪製超過八邊形，使用偽元素的繪製是直接從長寬著手，而利用 clip-path 則是要由每個點的座標著手，因為是座標點的緣故，要做出正多邊形就也同樣要用到許多基本的三角函式來計算座標，以下就利用 clip-path 來繪製圓形、橢圓和正多邊形給大家看看。( 請用 Chrome 看吧！ )</p>
-<p>開始繪製之前，有兩點注意事項：
-&gt;</p>
+<p>開始繪製之前，有兩點注意事項：</p>
+<blockquote>
 <ul>
 <li>使用 clip-path 要從同一個方向繪製，如果順時針繪製就一律順時針，逆時針就一律逆時針，因為 polygon 是一個連續的線段，若線段彼此有交集，面積區域就會有相減的狀況發生 ( 當然如果這是你要的效果就無妨了 )。</li>
 <li>如果繪製時採用「比例」的方式繪製，長寬就必須要先行設定，不然有可能繪製出來的長寬和我們想像的就會有落差，使用「像素」繪製就沒有這種問題。</li>
 </ul>
+</blockquote>
 <p><br/></p>
 <ul>
 <li><p><strong>圓形 circle( 半徑 at 圓心座標 )</strong></p>

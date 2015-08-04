@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="/style/css/layout.css">
 
 <link rel="stylesheet" href="/style/css/articles.css">
-<link rel="stylesheet" href="/style/css/lib/tomorrow.css">
+<link rel="stylesheet" href="/style/lib/tomorrow.css">
 
 
 
@@ -94,7 +94,8 @@
             <i class="tag"></i>
             <div class="md">
 
-<h2>HTML5 控制裝置陀螺儀 ( 三軸 )  <span class="article-date" tag="web"><i></i>JUN 30, 2015</span></h2>
+<h2>HTML5 控制裝置陀螺儀 ( 三軸 )  <span class="article-date" tag="web">JUN 30, 2015</span></h2>
+<p><img src="/img/articles/201506/20150630_1_01.jpg" class="preview-img"></p>
 <p>自從幾年前入手智慧型手機之後，對於行動裝置上特有的陀螺儀 ( 三軸 ) 偵測與感應器就滿感興趣的，而相關的應用除了在一些典型的 APP 裏頭很常見到之外 ( 指南針、水平儀、星空定位...等 )，在遊戲裡頭更是屢見不鮮 ( 賽車、跑酷、飛行、滾球...等 )，但撇除 APP 不談，過去在網頁裡頭要使用陀螺儀的三軸感測，幾乎是不可能，應該是說沒這個必要，因為在智慧行動裝置尚未普及的年代，誰會搬台電腦轉來轉去呢？</p>
 <p>不過在行動裝置發達的現在，手機或平板的瀏覽器效能也跟了上來，加上 iOS 與 Android 兩大陣營對於瀏覽器可以控制硬體的權限逐漸鬆手，慢慢的當年 HTML5 裏頭所制定出來，和控制裝置硬體相關的 API 也逐漸可以派上用場。</p>
 <p>這篇文章主要是記錄自己藉由控制陀螺儀獲取三軸數值的用法 ，如果不做個紀錄，我可能過一陣子又忘記怎麼用了。</p>
@@ -146,7 +147,7 @@ gamma:&lt;span id=&quot;gamma&quot;&gt;&lt;/span&gt;&lt;br/&gt;
 }else{
     document.querySelector(&#39;body&#39;).innerHTML = &#39;你的瀏覽器不支援喔&#39;;
 }
-</code></pre><p>完成後，用手機打開旋轉一下，應該就可以看到數值的變化了。( 範例：<a href="/html5-device-orientation-demo01.html">html5-device-orientation-demo01.html</a>，也可以掃描下方的 qrcode )</p>
+</code></pre><p>完成後，用手機打開旋轉一下，應該就可以看到數值的變化了。( 範例：<a href="/demo/201506/html5-device-orientation-demo01.html">html5-device-orientation-demo01.html</a>，也可以掃描下方的 qrcode )</p>
 <p><img src="/img/articles/201506/20150630_1_05.jpg" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><img src="/img/articles/201506/20150630_1_06.gif" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><br/></p>
@@ -180,7 +181,7 @@ if(window.DeviceOrientationEvent) {
 }else{
   document.querySelector(&#39;body&#39;).innerHTML = &#39;你的瀏覽器不支援喔&#39;;
 }
-</code></pre><p>完成後，用手機打開旋轉一下，應該就可以看到一個正立方體在旋轉囉。( 範例：<a href="/html5-device-orientation-demo02.html">html5-device-orientation-demo02.html</a>，也可以掃描下方的 qrcode )</p>
+</code></pre><p>完成後，用手機打開旋轉一下，應該就可以看到一個正立方體在旋轉囉。( 範例：<a href="/demo/201506/html5-device-orientation-demo02.html">html5-device-orientation-demo02.html</a>，也可以掃描下方的 qrcode )</p>
 <p><img src="/img/articles/201506/20150630_1_07.jpg" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><img src="/img/articles/201506/20150630_1_08.gif" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><br/></p>
@@ -229,7 +230,7 @@ if(window.DeviceOrientationEvent) {
 }else{
   document.querySelector(&#39;body&#39;).innerHTML = &#39;你的瀏覽器不支援喔&#39;;
 }
-</code></pre><p>完成後，用手機打開旋轉一下，一個網頁指南針就順利誕生囉！( 範例：<a href="/html5-device-orientation-demo03.html">html5-device-orientation-demo03.html</a>，也可以掃描下方的 qrcode )</p>
+</code></pre><p>完成後，用手機打開旋轉一下，一個網頁指南針就順利誕生囉！( 範例：<a href="/demo/201506/html5-device-orientation-demo03.html">html5-device-orientation-demo03.html</a>，也可以掃描下方的 qrcode )</p>
 <p><img src="/img/articles/201506/20150630_1_09.jpg" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><img src="/img/articles/201506/20150630_1_10.gif" alt="HTML5 控制裝置陀螺儀 ( 三軸 )"></p>
 <p><br/></p>

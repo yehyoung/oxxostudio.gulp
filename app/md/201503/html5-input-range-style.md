@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##改變 HTML5 range 樣式的兩種方法  <span class="article-date" tag="css"><i></i>MAR 24, 2015</span>
+##改變 HTML5 range 樣式的兩種方法  <span class="article-date" tag="css">MAR 24, 2015</span>
+
+<img src="/img/articles/201503/20150324_1_01.jpg" class="preview-img">
 
 今天來探討一下 HTML5 的 range 這個新的 input 類型，不過重點不是在 range 要如何使用，而是在如何去改變 range 的樣式，做出一個漂漂亮亮的滑動桿。
 

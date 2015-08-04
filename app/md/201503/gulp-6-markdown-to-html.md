@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習 6 - 架設 Markdown 轉 HTML 環境  <span class="article-date" tag="web"><i></i>MAR 13, 2015</span>
+##Gulp 學習 6 - 架設 Markdown 轉 HTML 環境  <span class="article-date" tag="web">MAR 13, 2015</span>
+
+<img src="/img/articles/201503/20150313_1_01.jpg" class="preview-img">
 
 要談到 Markdown 轉 HTML，其實有一大堆的 Markdown 編輯器都做得到，我個人最愛用的不外乎就是 Markdown Pad ( 只有 windows )、Mou ( Mac ) 和 lightPaper ( Mac )，然而不管是怎樣的編輯器，基本上都會具備將 markdown 轉為 HTML 的功能，所以一直以來我都不覺得在編輯器撰寫之後在轉檔有什麼不方便的，我的 blog 文章也一直都是用 markdown 寫的，不過自從用 gitbook 寫書之後，赫然發現 gitbook 的 markdown 自動轉換 html 功能真是太優了，用自己慣用的編輯器，存檔之後，Gitbook 就自動將 markdown 轉換為 HTML，而且還套上 layout 和樣式，真是太讚啦！
 
@@ -109,8 +111,8 @@
 
 markdown：
 
-	<!-- @@master  = ../../layout/master.html-->
-	<!-- @@block  =  content-->
+	<!-- @ @master  = ../../layout/master.html-->
+	<!-- @ @block  =  content-->
 	
 	#這是大標題
 	##這是次標題
@@ -118,7 +120,7 @@ markdown：
 	
 	測試 Markdown 轉 html
 	
-	<!-- @@close-->
+	<!-- @ @close-->
 
 html layout：
 
@@ -128,10 +130,10 @@ html layout：
 		<meta charset="UTF-8">
 		<link href="" rel="stylesheet">
 		<title>markdown preview</title>
-		<!-- @@placeholder= head -->
+		<!-- @ @placeholder= head -->
 	</head>
 	<body>
-		<!-- @@placeholder= content -->
+		<!-- @ @placeholder= content -->
 	</body>
 	</html>
 
@@ -223,8 +225,8 @@ html layout：
 
 <br/>
 相關連結：
->
-- [MarkdownPad](http://markdownpad.com/)
+
+>- [MarkdownPad](http://markdownpad.com/)
 - [Mou](http://25.io/mou/)
 - [lightPaper](http://www.ashokgelal.com/lightpaper-for-mac/)
 - [Gitbook](https://www.gitbook.com/)	

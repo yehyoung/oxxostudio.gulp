@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##oxxo.studio 一周年生日快樂  <span class="article-date" tag="other"><i></i>MAY 1, 2015</span>
+##oxxo.studio 一周年生日快樂  <span class="article-date" tag="other">MAY 1, 2015</span>
 
 今天是 oxxo.studio 開台一年的日子，雖然說部落格上的文章不是從五月一號開始，但第一個版本是在五月一號上線的，當初其實也用這個部落格作為我自己的生日禮物 ( 我也是五月一號出生ㄎㄎ )。
 

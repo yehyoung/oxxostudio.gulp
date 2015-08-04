@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##玩轉 CSS 3D - 正八面體與正十二面體  <span class="article-date" tag="css"><i></i>JUN 20, 2015</span>
+##玩轉 CSS 3D - 正八面體與正十二面體  <span class="article-date" tag="css">JUN 20, 2015</span>
 
 [上一篇]( http://www.oxxostudio.tw/articles/201506/css-3d-platonic-solid-1.html ) 介紹了正四面體與正六面體，接著我們要用同樣的方法，來製作正八面體與正十二面體，這兩個正多面體雖然組合的面比較多，不過因為具備了對稱性，所以只需要製作出一半的結構，另外一半再用反轉的方式接在一起即可。
 

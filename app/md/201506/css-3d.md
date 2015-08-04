@@ -52,13 +52,15 @@
 
 <!-- @@block  =  articles-content--> 
 
-##玩轉 CSS 3D - 原理篇  <span class="article-date" tag="css"><i></i>JUN 19, 2015</span>
+##玩轉 CSS 3D - 原理篇  <span class="article-date" tag="css">JUN 19, 2015</span>
+
+<img src="/img/articles/201506/20150619_1_01.jpg" class="preview-img">
 
 這篇 CSS 3D 的文章，其實醞釀已久，從 CSS 3D 出來的時候就已經在關注，只是要寫 CSS 3D 真的很費工，裏頭太多東西要講，加上最近在做 [Webduino](http://webduino.io) 可以改變世界的事業 ( Webduino 超讚呀！ )，所以就一直擱著了，趁著端午連假，一口氣把它搞定吧！
 
-雖然 CSS 3D 並非真的 3D，也不是甚麼 2.5D ( 因為無法解釋 0.5 的小數點的意義為何，所以我不會這樣講 )，CSS 3D 坦白說就是純粹利用計算的方法，藉由瀏覽器的高效能，在 2D 的空間繪製一個 3D 的圖形，就像我們拿張紙，用鉛筆在上頭畫個正立方體之類的，也因為是藉用了瀏覽器來運算，自然而然非常地耗效能，往往只要有過多的形狀轉換為 3D 呈現，就會發現電腦的風扇開始狂轉，這也是使用 CSS 3D 必須要注意的地方，畢竟 CSS 原本就不是拿來做 3D 應用的技術，可以畫 3D，只是可以加強 CSS 呈現的美感和能力，但用在精細的 3D 動畫或轉場效果，還是交給專業的 3D 繪圖軟體來進行。
+雖然 CSS 3D 並非真的 3D，CSS 3D 坦白說就是純粹利用計算的方法，藉由瀏覽器的高效能，在 2D 的空間繪製一個 3D 的圖形，就像我們拿張紙，用鉛筆在上頭畫個正立方體之類的，也因為是藉用了瀏覽器來運算，自然而然非常地耗效能，往往只要有過多的形狀轉換為 3D 呈現，就會發現電腦的風扇開始狂轉，這也是使用 CSS 3D 必須要注意的地方，畢竟 CSS 原本就不是拿來做 3D 應用的技術，可以畫 3D，只是可以加強 CSS 呈現的美感和能力，但用在精細的 3D 動畫或轉場效果，還是交給專業的 3D 繪圖軟體來進行。
 
-從這篇開始的接下來幾篇，將會深入介紹 CSS 3D 的繪圖以及直接做些應用。
+從這篇開始以及再來的一兩篇，將會深入介紹 CSS 3D 的繪圖以及直接做些應用，如果你已經會了 CSS 3D，不妨也可以看看正多面體該如何製作，可以參考這兩篇：[玩轉 CSS 3D - 正四面體與正六面體](http://www.oxxostudio.tw/articles/201506/css-3d-platonic-solid-1.html)、[玩轉 CSS 3D - 正八面體與正十二面體](http://www.oxxostudio.tw/articles/201506/css-3d-platonic-solid-2.html)。
 	
 <br/>
 
@@ -86,7 +88,7 @@
 
 - **設定 camera**
 
-	接著就要來把最外層的 div ( 以下通稱 camera ) 設定為攝影鏡頭，設定的方法為添加 perspective-origin 以及 perspective 這兩個屬性，這個屬性是什麼呢？簡單來說就是透視點以及鏡頭到透視點的距離，如果直接查詢 perspective，看到的八九不離十是下面這些圖案：( 圖片來源：http://mathworld.wolfram.com/Perspective.html )
+	接著就要來把最外層的 div ( 以下通稱 camera ) 設定為攝影鏡頭，設定的方法為添加 perspective-origin 以及 perspective 這兩個屬性，這個屬性是什麼呢？簡單來說就是透視點以及鏡頭到透視點的距離，如果直接查詢 perspective，看到的八九不離十是下面這些圖案：( 圖片來源：mathworld.wolfram.com/Perspective.html )
 	
 	![玩轉 CSS 3D - 原理篇](/img/articles/201506/20150619_1_04.jpg)
 	
@@ -135,7 +137,7 @@
 
 - **設定 box**
 
-	最後就是內容元素 box 了，我們可以添加一個 100px x 100px 的 box 進去，接著，用這個 box 來複習一下前面講的觀念，在**沒有設定 box 的 traslateZ、rotate 的情形下，不論我們如何去修改 camera 的 perspective-origin 和 perspective，box 的大小和位置都不會有變化**，為什麼呢？因為在沒有設定 box 的 translateZ 或 rotate，讓 Z 的深度有所變化，攝影機透過 perspective 看出去的位置都是相同的，也造成不論怎麼去看這個 box 都是一樣的大小。( 範例：[css-3d-demo02.html]((/demo/201506/css-3d-demo02.html) )
+	最後就是內容元素 box 了，我們可以添加一個 100px x 100px 的 box 進去，接著，用這個 box 來複習一下前面講的觀念，在**沒有設定 box 的 traslateZ、rotate 的情形下，不論我們如何去修改 camera 的 perspective-origin 和 perspective，box 的大小和位置都不會有變化**，為什麼呢？因為在沒有設定 box 的 translateZ 或 rotate，讓 Z 的深度有所變化，攝影機透過 perspective 看出去的位置都是相同的，也造成不論怎麼去看這個 box 都是一樣的大小。( 範例：[css-3d-demo02.html](/demo/201506/css-3d-demo02.html) )
 	
 		.box{
 			width:100px;
@@ -181,8 +183,8 @@
 	
 	![玩轉 CSS 3D - 原理篇](/img/articles/201506/20150619_1_11.gif)
 
-
 	<br/>
+	
 	再來我們加入多一點的 box，並且讓這些 box 的位置改變或旋轉，看看效果如何，這裡比較需要注意的地方，是我們必須要額外在每個 box 加入 position:absolute 的屬性，因為 div 本身為 block 屬性，會互相擠壓，要設定位置為絕對位置，才會正確地放在 space 裏頭。( 範例：[css-3d-demo05.html](/demo/201506/css-3d-demo05.html) )
 	
 		.space div{
@@ -218,6 +220,7 @@
 	![玩轉 CSS 3D - 原理篇](/img/articles/201506/20150619_1_12.jpg)
 
 <br/>
+
 藉由上述的三個 3D 元素，我們就可以輕鬆的繪製 CSS 3D 圖形，不過除了 camera、space 和 box 之外，還有一個**最重要最重要最重要**的撰寫規律在裏頭 ( 因為很重要所以要講三次 )，這個規律就是 tramsform 裏頭是有順序的，因為 CSS 3D 完全是藉由 2D 演算而來，並不是真的像 3D 軟體是真的有 3D 的空間，所以就變成會「按照順序」進行演算，而且又因為 transform 會造成物體的整個座標軸變換，在順序的編排上就格外重要。
 
 例如今天我先讓 box 在 X 軸上水平位移 100px 再繞著 Y 軸順時針轉 60 度，和先繞 Y 軸順時針轉 60 度，再在 X 軸上頭水平位移 100px 的結果會**完全不同**，因為當我先繞了 Y 軸轉動，整個 X 軸也會跟著轉動，這時候再做水平位移，位置就會像是在深度做變換。( 範例：[css-3d-demo06.html](/demo/201506/css-3d-demo06.html) )
@@ -243,6 +246,7 @@
 ![玩轉 CSS 3D - 原理篇](/img/articles/201506/20150619_1_13.jpg)
 
 <br/>
+
 transform 的數量少還比較看不出來，當今天 transform 裏頭數量一多，造成的差異就更加明顯，這也是在玩 CSS 3D 最最最最最需要注意的重點所在，一定要注意，一定要注意，一定要注意，非常重要所以再講三次呀！( 範例：[css-3d-demo07.html](/demo/201506/css-3d-demo07.html) )
 
 	.space div{

@@ -46,13 +46,15 @@
 
 <meta property="og:description" content="在二月的時候，我花了不少時間在學習 Gulp 這個任務自動化管理工具，最主要受到了 Gitbook 的啟發，還有洧杰與志誠的推薦，讓我毅然決然地投入了 Gulp 的世界，過去因為工作的需求，接觸過一點點的 Grunt，Gulp 和 Grunt 的初衷相同，都是要把過去需要人工處理的步驟給自動化，如此一來就可以省下不少寶貴的時間。">
 
-<title>Gulp 學習筆記 1 - 安裝與執行 - OXXO.STUDIO</title> 
+<title>Gulp 學習 1 - 安裝與執行 - OXXO.STUDIO</title> 
 
 <!-- @@close-->
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習筆記 1 - 安裝與執行  <span class="article-date" tag="web"><i></i>MAR 3, 2015</span>
+##Gulp 學習 1 - 安裝與執行  <span class="article-date" tag="web">MAR 3, 2015</span>
+
+<img src="/img/articles/201503/20150302_1_01.jpg" class="preview-img">
 
 在二月的時候，我花了不少時間在學習 Gulp 這個任務自動化管理工具，最主要受到了 Gitbook 的啟發，還有洧杰與志誠的推薦，讓我毅然決然地投入了 Gulp 的世界，過去因為工作的需求，接觸過一點點的 Grunt，Gulp 和 Grunt 的初衷相同，都是要把過去需要人工處理的步驟給自動化，如此一來就可以省下不少寶貴的時間，不過我的 Gulp 仍不熟稔，因此從這篇開始的接下來幾篇，都是我學習 Gulp 的歷程，如果有寫錯或是不明白的地方，也請大家多多給予指教。
 

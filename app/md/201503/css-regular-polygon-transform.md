@@ -52,13 +52,15 @@
 
 <!-- @@block  =  articles-content--> 
 
-##單一 div 的正多邊形變換 ( 純 CSS )  <span class="article-date" tag="css"><i></i>MAR 29, 2015</span>
+##單一 div 的正多邊形變換 ( 純 CSS )  <span class="article-date" tag="css">MAR 29, 2015</span>
+
+<img src="/img/articles/201503/20150329_1_01.jpg" class="preview-img">
 
 [上一篇](http://www.oxxostudio.tw/articles/201503/css-material-design-icon.html) 我們介紹了如何利用 before 和 after 偽元素來做 Material Design 風格的按鈕，裏頭關鍵的技術就在於活用邊框寬度和 div 本體寬高，因此這篇再加碼一個效果，就是純粹利用 CSS，讓「**單一個**」div，從正三角形變換為正八邊形 ( 單一 div 最多只能做到正八邊形 )，最後再搭配動畫的效果，變成正多邊形的變換動畫，也由於正多邊形需要用到不少的三角函數計算，為了方便起見，這裡將正多邊形的邊統一都設為 100px。
 
 如果對於偽元素的應用有興趣的，也可以參考我之前的一些文章的啦！
->
-- [CSS3動畫 - Google Loading Animation](http://www.oxxostudio.tw/articles/201406/css-google-loading.html)
+
+>- [CSS3動畫 - Google Loading Animation](http://www.oxxostudio.tw/articles/201406/css-google-loading.html)
 - [電子時鐘效果 ( CSS 偽元素的應用 )](http://www.oxxostudio.tw/articles/201407/css-clock.html)
 - [點擊後的 CSS 載入效果](http://www.oxxostudio.tw/articles/201412/css-click-loading.html)
 - [有趣的 CSS 彈跳動畫](http://www.oxxostudio.tw/articles/201502/css-bounce.html)
@@ -272,8 +274,8 @@
 
 <br/>
 其他與偽元素有關的 CSS 文章參考：
->
-- [CSS3動畫 - Google Loading Animation](http://www.oxxostudio.tw/articles/201406/css-google-loading.html)
+
+>- [CSS3動畫 - Google Loading Animation](http://www.oxxostudio.tw/articles/201406/css-google-loading.html)
 - [電子時鐘效果 ( CSS 偽元素的應用 )](http://www.oxxostudio.tw/articles/201407/css-clock.html)
 - [點擊後的 CSS 載入效果](http://www.oxxostudio.tw/articles/201412/css-click-loading.html)
 - [有趣的 CSS 彈跳動畫](http://www.oxxostudio.tw/articles/201502/css-bounce.html)

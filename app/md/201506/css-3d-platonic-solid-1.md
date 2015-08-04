@@ -52,11 +52,11 @@
 
 <!-- @@block  =  articles-content--> 
 
-##玩轉 CSS 3D - 正四面體與正六面體  <span class="article-date" tag="css"><i></i>JUN 20, 2015</span>
+##玩轉 CSS 3D - 正四面體與正六面體  <span class="article-date" tag="css">JUN 20, 2015</span>
 
 繼 [上一篇](http://www.oxxostudio.tw/articles/201506/css-3d.html) 我們理解了 CSS 3D 的箇中原理之後，廢話就不用多說，直接來畫正多面體吧！只要正多面體可以畫出來，基本上在 CSS 3D 的領域裡，大概就沒甚麼難得倒我們了。
 
-首先看一下維基百科 ( [https://goo.gl/ZsQZHm](https://goo.gl/ZsQZHm) ) 對於正多面體的介紹：「多面體，或稱柏拉圖立體， 指各面都是全等的正多邊形且每一個頂點所接的面數都是一樣的凸多面體。」簡單來說，就是非常對稱的立方體，而且每一個面都是由正多邊形組成，因此在這一篇，將會畫出正四面體、正六面體。
+首先看一下 [維基百科](https://goo.gl/ZsQZHm) 對於正多面體的介紹：「多面體，或稱柏拉圖立體， 指各面都是全等的正多邊形且每一個頂點所接的面數都是一樣的凸多面體。」簡單來說，就是非常對稱的立方體，而且每一個面都是由正多邊形組成，因此在這一篇，將會畫出正四面體、正六面體。
 
 開始之前，如果有不會用 CSS 畫正多邊形的，請先參考我之前寫過的：[單一 div 的正多邊形變換 ( 純 CSS )](http://www.oxxostudio.tw/articles/201503/css-regular-polygon-transform.html)
 
@@ -161,9 +161,8 @@
 			transform:translateX(50px) translateY(150px) rotateX(-90deg);
 		}
 
-	![玩轉 CSS 3D - 正四面體與正六面體](/img/articles/201506/20150620_1_10.jpg)
-
 	<br/>
+	
 	完成之後應該就會順利地看到一個正六面體，這時候我們可以改變 camera 的 perspective，可以更加清楚。( 範例：[css-3d-platonic-solid-1-demo01.html](/demo/201506/css-3d-platonic-solid-1-demo01.html) )
 
 	![玩轉 CSS 3D - 正四面體與正六面體](/img/articles/201506/20150620_1_02.jpg)

@@ -40,7 +40,8 @@
 
 <!-- @@close-->
 <!-- @@block  =  articles-content--> 
-<h2>Gulp 學習 6 - 架設 Markdown 轉 HTML 環境  <span class="article-date" tag="web"><i></i>MAR 13, 2015</span></h2>
+<h2>Gulp 學習 6 - 架設 Markdown 轉 HTML 環境  <span class="article-date" tag="web">MAR 13, 2015</span></h2>
+<p><img src="/img/articles/201503/20150313_1_01.jpg" class="preview-img"></p>
 <p>要談到 Markdown 轉 HTML，其實有一大堆的 Markdown 編輯器都做得到，我個人最愛用的不外乎就是 Markdown Pad ( 只有 windows )、Mou ( Mac ) 和 lightPaper ( Mac )，然而不管是怎樣的編輯器，基本上都會具備將 markdown 轉為 HTML 的功能，所以一直以來我都不覺得在編輯器撰寫之後在轉檔有什麼不方便的，我的 blog 文章也一直都是用 markdown 寫的，不過自從用 gitbook 寫書之後，赫然發現 gitbook 的 markdown 自動轉換 html 功能真是太優了，用自己慣用的編輯器，存檔之後，Gitbook 就自動將 markdown 轉換為 HTML，而且還套上 layout 和樣式，真是太讚啦！</p>
 <p>於是，當我發現 Gulp 也有 markdown 轉換的套件之後，就決定可以自己來做一個轉換的環境，如此一來就不用受限於各個編輯器的樣式，也不用受限於 gitbook 只能轉電子書的樣貌，甚至可以搭配之前幾篇介紹過的壓縮打包、html extend...等，做出一個純粹用 markdown 編寫網頁的環境。</p>
 <p>廢話說太多，開始今天的正題，我使用的套件是：gulp-markdown 這個套件 ( 參考：<a href="https://www.npmjs.com/package/gulp-markdown">gulp-markdown</a> )，這個套件可以將 markdown 純粹轉為 HTML 的格式，但不包含一個網頁應該要有的 head 與 body，它就是一個純粹的 HTML tag 而已，舉例來說，我們來將下面這段 Markdown 進行轉換：</p>
@@ -79,8 +80,8 @@
 </code></pre><p><br/>
 因為轉出來檔案要和 HTML 的 layout 做合併，所以我們必須要在我們要轉換的 markdown 檔案裡頭加上一些 html 的註解，轉換之後就會根據這些註解去做合併，下面這是我要用來轉換的 markdown 與 layout 的長相：</p>
 <p>markdown：</p>
-<pre><code>&lt;!-- @@master  = ../../layout/master.html--&gt;
-&lt;!-- @@block  =  content--&gt;
+<pre><code>&lt;!-- @ @master  = ../../layout/master.html--&gt;
+&lt;!-- @ @block  =  content--&gt;
 
 #這是大標題
 ##這是次標題
@@ -88,7 +89,7 @@
 
 測試 Markdown 轉 html
 
-&lt;!-- @@close--&gt;
+&lt;!-- @ @close--&gt;
 </code></pre><p>html layout：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -96,10 +97,10 @@
     &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;link href=&quot;&quot; rel=&quot;stylesheet&quot;&gt;
     &lt;title&gt;markdown preview&lt;/title&gt;
-    &lt;!-- @@placeholder= head --&gt;
+    &lt;!-- @ @placeholder= head --&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- @@placeholder= content --&gt;
+    &lt;!-- @ @placeholder= content --&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p>合併之後：</p>
@@ -179,12 +180,13 @@ gulp.task(&#39;webserver&#39;, [&#39;extend&#39;],function() {
 
 gulp.task(&#39;default&#39;,[&#39;watch&#39;,&#39;webserver&#39;]);
 </code></pre><p><br/>
-相關連結：
-&gt;</p>
+相關連結：</p>
+<blockquote>
 <ul>
 <li><a href="http://markdownpad.com/">MarkdownPad</a></li>
 <li><a href="http://25.io/mou/">Mou</a></li>
 <li><a href="http://www.ashokgelal.com/lightpaper-for-mac/">lightPaper</a></li>
 <li><a href="https://www.gitbook.com/">Gitbook</a>    </li>
 </ul>
+</blockquote>
 <!-- @@close-->

@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Low-Poly Art  <span class="article-date" tag="creative"><i></i>MAR 8, 2015</span>
+##Low-Poly Art  <span class="article-date" tag="creative">MAR 8, 2015</span>
 
 Low-Poly 這是個之前很紅的向量繪圖風格，不過其實 Low-Poly 存在已久，是由 3D 電腦繪圖發展而來，Low-Poly 是一個利用較少的多邊形，來構成一個 3D 的模型，由於減少了多邊形的數目，相對在做運算也會較為迅速，但缺點就是外觀會呈現一片一片的非擬真狀態。
 

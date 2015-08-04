@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##純 CSS 繪製圓餅圖  <span class="article-date" tag="css"><i></i>MAR 24, 2015</span>
+##純 CSS 繪製圓餅圖  <span class="article-date" tag="css">MAR 24, 2015</span>
+
+<img src="/img/articles/201503/20150324_2_01.gif" class="preview-img">
 
 當初我玩 SVG 的初衷，一部分就是因為當時的瀏覽器無法支援 CSS3 的動畫效果，當年為了一個圓餅圖 ( pie chart )，做不出來簡直快抓狂啦，但是近年來瀏覽器的效能大幅躍進，基本上使用純粹的 CSS 也可以做到圓餅圖的效果 ( 甚至是動畫 )，所以就用一篇文章來記錄一下純 CSS 繪製圓餅圖的過程吧！
 

@@ -52,13 +52,15 @@
 
 <!-- @@block  =  articles-content--> 
 
-##CSS 垂直置中的七個方法  <span class="article-date" tag="css"><i></i>FEB 1, 2015</span>
+##CSS 垂直置中的七個方法  <span class="article-date" tag="css">FEB 1, 2015</span>
+
+<img src="/img/articles/201502/20150201_1_01.jpg" class="preview-img">
 
 之前我有寫過一篇文章：「[CSS 垂直置中的三個方法](http://www.oxxostudio.tw/articles/201408/css-vertical-align.html)」，介紹了三種常用的垂直置中的小技巧，這篇將延續該篇文章，繼續介紹另外四種垂直置中的方法，如此一來總共就有七種垂直置中的方式可以搭配使用囉！( 雖然現在瀏覽器的支援度都差不多支援了，但仍然建議安全起見都要測試一下，特別是 IE )
 
 因此，糾竟是哪七種 CSS 垂直置中的方法呢？就是以下這七種的啦！
->
-- 設定行高 ( line-height ) 
+
+>- 設定行高 ( line-height ) 
 - 添加偽元素
 - calc 動態計算
 - 使用表格或假裝表格
@@ -72,7 +74,7 @@
 
 - **使用表格或假裝表格**
 
-	或許有些人會發現，在表格這個 HTML 裡面常用的 DOM 裏頭，要實現垂直置中是相當容易的，只需要下一行`vertical-align:middle`就可以，為什麼呢？最主要的原因就在於 table 的 display 是 table，而 td 的 display 是 table-cell，所以我們除了直接使用表格之外，也可以將要垂直置中元素的父元素的 display 改為 table-cell，就可以輕鬆達成，不過修改 display 有時候也會造成其他樣式屬性的連動影響，需要比較小心使用。( 範例：[css-vertical-align-7methods-demo1.html](css-vertical-align-7methods-demo1.html) )
+	或許有些人會發現，在表格這個 HTML 裡面常用的 DOM 裏頭，要實現垂直置中是相當容易的，只需要下一行`vertical-align:middle`就可以，為什麼呢？最主要的原因就在於 table 的 display 是 table，而 td 的 display 是 table-cell，所以我們除了直接使用表格之外，也可以將要垂直置中元素的父元素的 display 改為 table-cell，就可以輕鬆達成，不過修改 display 有時候也會造成其他樣式屬性的連動影響，需要比較小心使用。( 範例：[css-vertical-align-7methods-demo1.html](/demo/201502/css-vertical-align-7methods-demo1.html) )
 
 	HTML：
 
@@ -120,7 +122,7 @@
 
 - **transform**
 
-	transform 是 CSS3 的新屬性，主要掌管元素的變形、旋轉和位移，利用 transform 裏頭的 translateY ( 改變垂直的位移，如果使用百分比為單位，則是以元素本身的長寬為基準 )，搭配元素本身的 top 屬性，就可以做出垂直置中的效果，比較需要注意的地方是，子元素必須要加上`position:relative`，不然就會沒有效果喔。( 範例：[css-vertical-align-7methods-demo2.html](css-vertical-align-7methods-demo2.html) )
+	transform 是 CSS3 的新屬性，主要掌管元素的變形、旋轉和位移，利用 transform 裏頭的 translateY ( 改變垂直的位移，如果使用百分比為單位，則是以元素本身的長寬為基準 )，搭配元素本身的 top 屬性，就可以做出垂直置中的效果，比較需要注意的地方是，子元素必須要加上`position:relative`，不然就會沒有效果喔。( 範例：[css-vertical-align-7methods-demo2.html](/demo/201502/css-vertical-align-7methods-demo2.html) )
 
 		.use-transform{
 			width:200px;
@@ -142,7 +144,7 @@
 
 - **絕對定位**
 
-	絕對定位就是 CSS 裏頭的`position:absolute`，利用絕對位置來指定，但垂直置中的做法又和我們正統的絕對位置不太相同，是要將上下左右的數值都設為 0，再搭配一個`margin:auto`，就可以辦到垂直置中，不過要特別注意的是，設定絕對定位的子元素，其父元素的 position 必須要指定為 relative 喔！而且絕對定位的元素是會互相覆蓋的，所以如果內容元素較多，可能就會有些問題。( 範例：[css-vertical-align-7methods-demo3.html](css-vertical-align-7methods-demo3.html) )
+	絕對定位就是 CSS 裏頭的`position:absolute`，利用絕對位置來指定，但垂直置中的做法又和我們正統的絕對位置不太相同，是要將上下左右的數值都設為 0，再搭配一個`margin:auto`，就可以辦到垂直置中，不過要特別注意的是，設定絕對定位的子元素，其父元素的 position 必須要指定為 relative 喔！而且絕對定位的元素是會互相覆蓋的，所以如果內容元素較多，可能就會有些問題。( 範例：[css-vertical-align-7methods-demo3.html](/demo/201502/css-vertical-align-7methods-demo3.html) )
 
 		.use-absolute{
 			position: relative;
@@ -168,7 +170,7 @@
 
 - **使用 Flexbox**
 
-	回想一下之前的文章 [深入解析 CSS Flexbox](http://www.oxxostudio.tw/articles/201501/css-flexbox.html)，裡面介紹了 CSS3 最威的盒子模型：Flexbox，使用 align-items 或 align-content 的屬性，輕輕鬆鬆就可以做到垂直置中的效果喔！( 範例：[css-vertical-align-7methods-demo4.html](css-vertical-align-7methods-demo4.html) )
+	回想一下之前的文章 [深入解析 CSS Flexbox](http://www.oxxostudio.tw/articles/201501/css-flexbox.html)，裡面介紹了 CSS3 最威的盒子模型：Flexbox，使用 align-items 或 align-content 的屬性，輕輕鬆鬆就可以做到垂直置中的效果喔！( 範例：[css-vertical-align-7methods-demo4.html](/demo/201502/css-vertical-align-7methods-demo4.html) )
 
 		.use-flexbox{
 			display:flex;

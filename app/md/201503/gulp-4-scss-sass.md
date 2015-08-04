@@ -52,7 +52,7 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習 4 - 建立 SCSS/SASS 編輯環境  <span class="article-date" tag="web"><i></i>MAR 8, 2015</span>
+##Gulp 學習 4 - 建立 SCSS/SASS 編輯環境  <span class="article-date" tag="web">MAR 8, 2015</span>
 
 隨著時代的演進，這一兩年來我都已經是用 SCSS 在編寫 CSS，不過 SCSS/SASS 是建構在 Ruby 的環境之下，通常我們要使用，則必須先安裝 Ruby 以及 compass，或也可以購買安裝 Fire.app 代勞，那麼要如何才能用 gulp ，來建立一個自動執行轉換 SCSS 的環境呢？
 
@@ -136,8 +136,8 @@
 沒想到原本在 Mac 上很簡單的步驟，在 windows 我卻花了好幾個小時才搞定，真是莫名其妙呀喔哈！
 
 參考資料：
->
-- [SCSS/SASS](http://sass-lang.com/)
+
+>- [SCSS/SASS](http://sass-lang.com/)
 - [fire.app](http://fireapp.kkbox.com/doc/tw/index.html)
 - [SCSS 安裝與執行](http://www.oxxostudio.tw/articles/201406/scss-01-install.html)
 - [解決中文註解發生錯誤](http://jsnwork.kiiuo.com/archives/1723/sass-scss-compass-susy2-ruby-%E8%A7%A3%E6%B1%BA%E4%B8%AD%E6%96%87%E8%A8%BB%E8%A7%A3%E7%99%BC%E7%94%9F%E9%8C%AF%E8%AA%A4)

@@ -52,7 +52,9 @@
 
 <!-- @@block  =  articles-content--> 
 
-##Gulp 學習 3 - 打包壓縮 HTML  <span class="article-date" tag="web"><i></i>MAR 7, 2015</span>
+##Gulp 學習 3 - 打包壓縮 HTML  <span class="article-date" tag="web">MAR 7, 2015</span>
+
+<img src="/img/articles/201503/20150307_1_01.jpg" class="preview-img">
 
 上一篇我們看完了打包與壓縮 CSS 和 JS，為什麼打包壓縮 HTML 不要一起講呢？是因為打包壓縮 HTML 還會用到額外的套件和方法，避免混淆，所以就分成兩篇來紀錄。
 
