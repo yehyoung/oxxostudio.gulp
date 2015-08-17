@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
   extend = require('gulp-html-extend'),
-  replace = require('gulp-html-replace'),
+  replace = require('gulp-concat'),
   include = require('gulp-html-tag-include'),
   newer = require('gulp-newer'),
   clean = require('gulp-clean'),
