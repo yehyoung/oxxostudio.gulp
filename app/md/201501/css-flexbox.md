@@ -80,20 +80,20 @@ Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一�
 
 	display 是我們熟知的 CSS 屬性，對於 Flexbox 來說，多了有兩種方式可以設定，預設為「flex」，其布局方式與 block 幾乎類似，都會強迫換行，但設定`display:flex`的子元素卻具備了更多彈性的設定，此外另外一種方式則是「inline-flex」，和 inline-block 也是幾乎雷同，意義上都是一個`display:flex`的元素外面包覆`display:inline `的屬性，在後方的元素不會換行。( 範例：[css-flexbox-demo1.html](/demo/201501/css-flexbox-demo1.html) )
 
-	CSS：
+  CSS：
 
-		.flex,
-		.inline-flex{
-			width:100px;
-			height:50px;
-			border:1px solid #000;
-		}
-		.flex{
-			display:flex;
-		}
-		.inline-flex{
-			display:inline-flex;
-		}
+      .flex,
+      .inline-flex{
+      	width:100px;
+      	height:50px;
+      	border:1px solid #000;
+      }
+      .flex{
+      	display:flex;
+      }
+      .inline-flex{
+      	display:inline-flex;
+      }
 
 	![深入解析 CSS Flexbox](/img/articles/201501/20150130_1_03.jpg)
 
@@ -103,25 +103,25 @@ Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一�
 
 	flex-direction 表示 Flexbox 內容元素的「**排列方向**」，分別有下列四種。( 範例：[css-flexbox-demo2.html](/demo/201501/css-flexbox-demo2.html) )
 
-	- row：預設值，由左到右，從上到下
-	- row-reverse：與 row 相反
-	- column：從上到下，再由左到右
-	- column-reverse：與 column 相反  	
-
-  	CSS：
-
-	  .flex-row{
-	  	flex-direction:row;
-	  }
-	  .flex-row-reverse{
-	  	flex-direction:row-reverse;
-	  }
-	  .flex-column{
-	  	flex-direction:column;
-	  }
-	  .flex-column-reverse{
-	  	flex-direction:column-reverse;
-	  }  
+  - row：預設值，由左到右，從上到下
+  - row-reverse：與 row 相反
+  - column：從上到下，再由左到右
+  - column-reverse：與 column 相反  	
+  
+  CSS：
+  
+      .flex-row{
+      	flex-direction:row;
+      }
+      .flex-row-reverse{
+      	flex-direction:row-reverse;
+      }
+      .flex-column{
+      	flex-direction:column;
+      }
+      .flex-column-reverse{
+      	flex-direction:column-reverse;
+      }  
 
 	![深入解析 CSS Flexbox](/img/articles/201501/20150130_1_04.jpg)
 
@@ -131,29 +131,29 @@ Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一�
 
 	justify-content 決定了內容元素與整個 Flexbox 的「**水平對齊**」位置，回想一下最上面講的 Flexbox 盒子模型，具有 main start 與 main end 左右兩個端點，justify-content 就是按照這個方式做設定，而其中的設定值總共有下列五個。( 範例：[css-flexbox-demo3.html](/demo/201501/css-flexbox-demo3.html)、[W3C 說明](http://www.w3.org/TR/css3-flexbox/#justify-content-property) )
 
-	- flex-start：預設值，對齊最左邊的 main start
-	- flex-end：對齊最左邊的 main end
-	- center：水平置中
-	- space-between：平均分配內容元素，左右元素將會與 main start 和 main end 貼齊
-	- space-around：平均分配內容元素，間距也是平均分配
+  - flex-start：預設值，對齊最左邊的 main start
+  - flex-end：對齊最左邊的 main end
+  - center：水平置中
+  - space-between：平均分配內容元素，左右元素將會與 main start 和 main end 貼齊
+  - space-around：平均分配內容元素，間距也是平均分配
 	
   CSS：
   
-  	.flex-start{
-  		justify-content:flex-start;
-  	}
-  	.flex-end{
-  		justify-content:flex-end;
-  	}
-  	.center{
-  		justify-content:center;
-  	}
-  	.space-between{
-  		justify-content:space-between;
-  	}
-  	.space-around{
-  		justify-content:space-around;
-  	}
+      .flex-start{
+      	justify-content:flex-start;
+      }
+      .flex-end{
+      	justify-content:flex-end;
+      }
+      .center{
+      	justify-content:center;
+      }
+      .space-between{
+      	justify-content:space-between;
+      }
+      .space-around{
+      	justify-content:space-around;
+      }
 
 	![深入解析 CSS Flexbox](/img/articles/201501/20150130_1_05.jpg)
 
@@ -163,47 +163,47 @@ Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一�
 
 	align-items 剛好和 justify-content 相反，align-items 決定了內容元素與整個 Flexbox 的「**垂直對齊**」位置，再回想一下最上面講的 Flexbox 盒子模型，具有 cross start 與 cross end 左右兩個端點，align-items 與 align-self 就是按照這個方式做設定，設定值總共有下列五個。( 範例：[css-flexbox-demo4.html](/demo/201501/css-flexbox-demo4.html)、[W3C 說明](http://www.w3.org/TR/css3-flexbox/#align-items-property) )
 
-	- flex-start：預設值，對齊最上面的 cross start
-	- flex-end：對齊最下面的 cross end
-	- center：垂直置中
-	- stretch：將內容元素全部撐開至 Flexbox 的高度
-	- baseline：以所有內容元素的基線作為對齊標準
+  - flex-start：預設值，對齊最上面的 cross start
+  - flex-end：對齊最下面的 cross end
+  - center：垂直置中
+  - stretch：將內容元素全部撐開至 Flexbox 的高度
+  - baseline：以所有內容元素的基線作為對齊標準
 
   CSS：  
   
-  	.flex-start{
-  		align-items:flex-start;
-  	}
-  	.flex-end{
-  		align-items:flex-end;
-  	}
-  	.center{
-  		align-items:center;
-  	}
-  	.stretch{
-  		align-items:stretch;
-  	}
-  	.baseline{
-  		align-items:baseline;
-  	}
-  	.flex-item{
-  		width:60px;
-  		text-align:center;
-  	}
-  	.item1{
-  		font-size:20px;
-  		line-height: 60px;
-  		background:#c00;
-  	}
-  	.item2{
-  		line-height: 30px;
-  		background:#095;
-  	}
-  	.item3{
-  		font-size:30px;
-  		line-height: 100px;
-  		background:#059;
-  	}
+      .flex-start{
+      	align-items:flex-start;
+      }
+      .flex-end{
+      	align-items:flex-end;
+      }
+      .center{
+      	align-items:center;
+      }
+      .stretch{
+      	align-items:stretch;
+      }
+      .baseline{
+      	align-items:baseline;
+      }
+      .flex-item{
+      	width:60px;
+      	text-align:center;
+      }
+      .item1{
+      	font-size:20px;
+      	line-height: 60px;
+      	background:#c00;
+      }
+      .item2{
+      	line-height: 30px;
+      	background:#095;
+      }
+      .item3{
+      	font-size:30px;
+      	line-height: 100px;
+      	background:#059;
+      }
 
 	![深入解析 CSS Flexbox](/img/articles/201501/20150130_1_06.jpg)
 
@@ -215,11 +215,11 @@ Flexbox 是一個 CSS3 的盒子模型 ( box model )，顧名思義它就是一�
 
 	CSS：
 
-		.item2{
-			align-self:baseline;
-			line-height: 30px;
-			background:#095;
-		}
+      .item2{
+      	align-self:baseline;
+      	line-height: 30px;
+      	background:#095;
+      }
 
 	![深入解析 CSS Flexbox](/img/articles/201501/20150130_1_07.jpg)
 
