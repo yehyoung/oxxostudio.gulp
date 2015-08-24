@@ -56,7 +56,7 @@
 
 <img src="/img/articles/201405/20140525_1_01.jpg" class="preview-img">
 
-[人中伯貼圖 36P](OZSun/index.html)  
+[人中伯貼圖 36P](/demo/201405/OZSun/index.html)  
 
 這是我之前為公司所繪製的 36 組即時聊天插圖：**人中伯**，不過礙於是替公司繪製的產品，就無法自行拿來上架 ( 不然應該要拿去 line 的商城的 )，其實思考要畫什麼角色的時間比我畫的時間還久，最主要在考量要如何畫出一組我自己也想用的貼圖，於是一個頗搞笑的角色就這樣誕生。
 
@@ -78,8 +78,8 @@
 
 這是人中伯貼圖的效果預覽，大家有興趣可以點進去看看囉！^_^  
 
-[人中伯貼圖 36P](https://dl.dropboxusercontent.com/u/59597657/worktest/OZSun/index.html)  
+[人中伯貼圖 36P](/demo/201405/OZSun/index.html)  
 
-[![人中伯貼圖設計](/img/articles/201405/20140525_1_04.jpg)](https://dl.dropboxusercontent.com/u/59597657/worktest/OZSun/index.html) 
+[![人中伯貼圖設計](/img/articles/201405/20140525_1_04.jpg)](/demo/201405/OZSun/index.html) 
 
 <!-- @@close--> 
