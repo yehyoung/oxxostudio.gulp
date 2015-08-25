@@ -26,7 +26,11 @@ ooo. .oo.  .oo.    .oooo.   oooo d8b  888  oooo   .oooo888   .ooooo.  oooo oooo 
 o888o o888o o888o `Y888""8o d888b    o888o o888o `Y8bod88P" `Y8bod8P'     `8'  `8'     o888o o888o 
 */
 
-/* markdown，需要手動修改把 id 拿掉，markdown to json 必須把 data[path].body mark 起來 */
+// markdown，需要手動修改把 id 拿掉，markdown to json 必須把 data[path].body mark 起來
+// gulp-markdown > node-modules > marked > lib > marked.js
+//+ ' id="'
+//+ this.options.headerPrefix
+//+ raw.toLowerCase().replace(/[^\w]+/g, '-')
 
 /* all */
 gulp.task('md-clean', function() {
@@ -356,6 +360,11 @@ o888o o888o o888o `Y8bod88P"      8888888888          888 8""888P' `Y8bod8P' o88
                                                   .o. 88P                                
                                                   `Y888P                                 
 */
+// markdown to json，需要手動修改把 body mark 起來
+// gulp-markdown-to-json > node-modules > index.js
+//data[path].body = markup.slice(1).join(' ');
+//data[path].body = marked(parsed.body);
+
 
 gulp.task('md2json', function() {
   return gulp.src(['app/md/**/*.md'])
