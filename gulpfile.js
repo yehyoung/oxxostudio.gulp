@@ -347,6 +347,27 @@ gulp.task('md-include-201508', ['md-extend-201508'], function() {
   return gulp.src('app/articles/201508/*.html').pipe(include()).pipe(gulp.dest('app/articles/201508/'));
 });
 
+/* 201509 */
+gulp.task('md-clean-201509', function() {
+  return gulp.src(['app/md2html/201509', 'app/articles/201509'], {
+    read: true
+  }).pipe(clean());
+});
+gulp.task('md-201509', ['md-clean-201509'], function() {
+  return gulp.src('app/md/201509/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201509/'));
+});
+gulp.task('md-extend-201509', ['md-201509'], function() {
+  return gulp.src('app/md2html/201509/*.html')
+    .pipe(extend({
+      annotations: false,
+      verbose: false
+    }))
+    .pipe(gulp.dest('app/articles/201509/'));
+});
+gulp.task('md-include-201509', ['md-extend-201509'], function() {
+  return gulp.src('app/articles/201509/*.html').pipe(include()).pipe(gulp.dest('app/articles/201509/'));
+});
+
 
 /*
                         .o8         .oooo.            o8o                                
@@ -586,6 +607,7 @@ gulp.task('watch', function() {
   gulp.watch('app/md/201505/*.md', ['md-include-201505']);
   gulp.watch('app/md/201506/*.md', ['md-include-201506']);
   gulp.watch('app/md/201508/*.md', ['md-include-201508']);
+  gulp.watch('app/md/201509/*.md', ['md-include-201509']);
 });
 
 gulp.task('default', ['index', 'list', 'search', 'less', 'md-include', 'watch']);
