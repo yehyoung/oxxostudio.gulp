@@ -58,7 +58,7 @@
 
 有興趣的人可以先到這個 demo 網站看看：[https://www.google.com/intl/en/chrome/demos/speech.html](https://www.google.com/intl/en/chrome/demos/speech.html)，下拉選單選擇自己要念的語言，按一下右上的麥克風，就可以開始玩語音輸入了。
 
-![圖2](/img/articles/201509/20150906_1_02.jpg)
+![Google 語音辨識 API](/img/articles/201509/20150906_1_02.jpg)
 
 接著要來看一下怎麼實作語音辨識，語音辨識一開始要判斷「**webkitSpeechRecognition**」有沒有存在瀏覽器裡，因為這是內建於瀏覽器的 api，從 webkit 的字樣我們也可以知道，Firefox 和 IE 是一定 GG 的，所以一開始的程式可以這樣寫：
 
@@ -129,7 +129,7 @@ if 裡面就可以放個 alert 或顯示文字作為警告，重點放在 else �
       
       recognition.start(); 	
 
-	![圖3](/img/articles/201509/20150906_1_03.jpg)
+	![Google 語音辨識 API](/img/articles/201509/20150906_1_03.jpg)
 
 	從印出來的結果可以看到，每一段話之間其實都存在著一個「isFinal」的屬性，這個屬性如果是 true，表示這段話結束，就會把這段話存為一個 result，因此我們可以從這邊發現幾個比較重要的 event 屬性如下：
 
@@ -182,7 +182,7 @@ if 裡面就可以放個 alert 或顯示文字作為警告，重點放在 else �
       
       recognition.start();  
 
-	![圖3](/img/articles/201509/20150906_1_03.jpg)
+	![Google 語音辨識 API](/img/articles/201509/20150906_1_03.jpg)
 
 以上就是利用現成的 Chrome 語音辨識 API 的應用實例，記得要使用的時候一定要有網路，而且網路的速度也決定了辨識的速度，畢竟他的運作原理是把我們的聲音錄製即時傳送出去辨識，所以網路越慢來往的時間就會拉大，最後再附上一個我用語音辨識來操控自走車的影片，真的滿有趣的喔！
 
