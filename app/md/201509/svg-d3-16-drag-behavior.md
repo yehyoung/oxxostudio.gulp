@@ -34,7 +34,7 @@
 
 <meta itemprop="name" content="SVG D3.js - 拖拉行為 ( Drag Behavior ) - OXXO.STUDIO">
 
-<meta itemprop="image" content="http://www.oxxostudio.tw/img/articles/201509/rticles/201509/20150914_1_01.gif">
+<meta itemprop="image" content="http://www.oxxostudio.tw/img/articles/201509/rticles/201509/20150914_1_01b.jpg">
 
 <meta itemprop="description" content="這篇要來談一下 d3.js 裏頭的「拖拉行為」( Drag Behavior )，其實 drag 這個行為在 web 的世界裡頭早就存在已久，HTML5 出來之後更變成了一些基本的網頁行為，不過這個行為在 d3.js 該如何實現呢？其實 d3.js 早就已經幫我們做好了，不僅適用在 svg 裡頭，更可以應用在一般的網頁元素上頭。">
 
@@ -42,7 +42,7 @@
 
 <meta property="og:url" content="http://www.oxxostudio.tw/articles/201509/svg-d3-16-drag-behavior.html" target="_blank">
 
-<meta property="og:image" content="http://www.oxxostudio.tw/img/articles/201509/rticles/201509/20150914_1_01.gif">
+<meta property="og:image" content="http://www.oxxostudio.tw/img/articles/201509/rticles/201509/20150914_1_01b.jpg">
 
 <meta property="og:description" content="這篇要來談一下 d3.js 裏頭的「拖拉行為」( Drag Behavior )，其實 drag 這個行為在 web 的世界裡頭早就存在已久，HTML5 出來之後更變成了一些基本的網頁行為，不過這個行為在 d3.js 該如何實現呢？其實 d3.js 早就已經幫我們做好了，不僅適用在 svg 裡頭，更可以應用在一般的網頁元素上頭。">
 
@@ -124,11 +124,11 @@
 不過，今天如果只有單純拖拉的行為好像不足以表現 d3.js 的長處，所以我們把 drag 換成 svg，根據 data 來產生一些圓形，並讓這些圓形都可以拖拉，一開始我們先設定 data ( 或是引入 data 也可以 )，然後設定 drag 行為，在 body 裡面放入 svg，有了 svg 之後就根據 data，利用`.data(data).enter()`產生圓形，呼叫 drag 行為，就完成囉！( 範例：[svg-d3-16-drag-behavior-demo3.html](/demo/201509/svg-d3-16-drag-behavior-demo3.html) )
 
 	var data = [
-	  {cx:210, cy:210, r:50, fill:'#ff0000'},
-	  {cx:75, cy:75, r:40, fill:'#00cc00'},
-	  {cx:200, cy:30, r:30, fill:'#0000ff'},
-	  {cx:80, cy:190, r:80, fill:'#0099cc'},
-	  {cx:100, cy:100, r:30, fill:'#ff9900'}
+	  {'cx':210, 'cy':210, 'r':50, 'fill':'#ff0000'},
+	  {'cx':75, 'cy':75, 'r':40, 'fill':'#00cc00'},
+	  {'cx':200, 'cy':30, 'r':30, 'fill':'#0000ff'},
+	  {'cx':80, 'cy':190, 'r':80, 'fill':'#0099cc'},
+	  {'cx':100, 'cy':100, 'r':30, 'fill':'#ff9900'}
 	];
 
 	var drag = d3.behavior.drag()  
