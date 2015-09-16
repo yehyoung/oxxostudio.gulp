@@ -5,17 +5,17 @@ $(function() {
   var $content = $('.content');
   var windowWidth, contentWidth;
   var nowUrl = location.href;
-  var urlParts,file;
+  var urlParts,fileName;
 
   urlParts = nowUrl.split('/');
-  file = urlParts.pop();
+  fileName = urlParts.pop();
 
   $('pre').addClass('prettyprint');
   $('.preview-img').unwrap('p');
   $('.tag').addClass('tag-' + tag);
   $('.md a').attr('target','_blank');
 
-  _showTag('tag-'+tag,file);
+  _showTag('tag-'+tag,fileName);
   _socialPosition();
   _socialClick(nowUrl);  
 
@@ -69,9 +69,6 @@ $(function() {
       var aUrl = $(this).attr('href');
       _trackGA('link-to:'+aUrl);
     });
-    $(window).scroll(function(){
-      _trackGA('scroll:'+file);
-    });
   }
 
   function _showTag(tagName,fileName) {
@@ -80,7 +77,6 @@ $(function() {
       var classify = [];
       var classifyNum = 0;
       var i, maxNum,nowNum;
-      console.log(data.length);
       for (i = 0; i < dataLength; i++) {
         if (data[i].tag == tagName) {
           classify[classifyNum] = data[i];

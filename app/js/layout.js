@@ -6,7 +6,9 @@ $(function() {
   var nowUrl = location.href;
   var urlParts = nowUrl.split("/");
   var siteUrl = urlParts[0] + '//' + urlParts[2] + '/';
+  var fileName = urlParts.pop()||'index.html';
   var timer, bannerGifPosition = -4;
+  var scroll = 0;
   var goodSentences = [
     'Design thinking is everywhere',
     'Good design is innovative',
@@ -17,7 +19,16 @@ $(function() {
 
   _mainMenu();
   _goodSentences();
+
   $window.resize(_mainMenu);
+  $window.scroll(function(){
+    scroll = scroll + 1;
+    if(scroll==1){
+      _trackGA('scroll:'+fileName);
+    }else if(scroll%10==0){
+      _trackGA('scroll:'+fileName);
+    }
+  });
 
   $('#main-menu>ul>li').on('click', function() {
     var linkPage = $(this).attr('class');
