@@ -239,31 +239,25 @@
 
 <br/>
 
-range 的部分，用了 mousedown 和 mousemove 互相搭配：
+range 的部分，用了`oninput`：
 
-	frequencyRange.addEventListener('mousedown',function(){
-	  this.addEventListener('mousemove',function(){
-	    frequency = this.value;
-	    showFrequency.innerHTML = frequency;
-	    _sound();
-	  });
-	});
+	frequencyRange.oninput = function(){
+	  frequency = this.value;
+	  showFrequency.innerHTML = frequency;
+	  _sound();
+	};
 
-	detuneRange.addEventListener('mousedown',function(){
-	  this.addEventListener('mousemove',function(){
-	    detune = this.value;
-	    showDetune.innerHTML = detune;
-	    _sound();
-	  });
-	});
+	detuneRange.oninput = function(){
+	  detune = this.value;
+	  showDetune.innerHTML = detune;
+	  _sound();
+	};
 
-	volumeRange.addEventListener('mousedown',function(){
-	  this.addEventListener('mousemove',function(){
-	    volume = this.value;
-	    showVolume.innerHTML = volume;
-	    _sound();
-	  });
-	});
+	volumeRange.oninput = function(){
+	  volume = this.value;
+	  showVolume.innerHTML = volume;
+	  _sound();
+	};
 
 <br/>
 
