@@ -102,7 +102,7 @@ if 裡面就可以放個 alert 或顯示文字作為警告，重點放在 else �
 
 	「開始辨識」的 API。
 
-- **recognition.end();**
+- **recognition.stop();**
 
 	「停止辨識」的 API。
 
