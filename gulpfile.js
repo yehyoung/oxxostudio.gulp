@@ -53,342 +53,50 @@ gulp.task('md-include', ['md-extend'], function() {
   return gulp.src('app/articles/**/*.html').pipe(include()).pipe(gulp.dest('app/articles/'));
 });
 
-/* 201405 */
-gulp.task('md-clean-201405', function() {
-  return gulp.src(['app/md2html/201405', 'app/articles/201405'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201405', ['md-clean-201405'], function() {
-  return gulp.src('app/md/201405/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201405/'));
-});
-gulp.task('md-extend-201405', ['md-201405'], function() {
-  return gulp.src('app/md2html/201405/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201405/'));
-});
-gulp.task('md-include-201405', ['md-extend-201405'], function() {
-  return gulp.src('app/articles/201405/*.html').pipe(include()).pipe(gulp.dest('app/articles/201405/'));
-});
+var time = [
+  '201405',
+  '201406',
+  '201407',
+  '201408',
+  '201409',
+  '201410',
+  '201411',
+  '201412',
+  '201501',
+  '201502',
+  '201503',
+  '201505',
+  '201506',
+  '201508',
+  '201509',
+  '201510'
+];
 
-/* 201406 */
-gulp.task('md-clean-201406', function() {
-  return gulp.src(['app/md2html/201406', 'app/articles/201406'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201406', ['md-clean-201406'], function() {
-  return gulp.src('app/md/201406/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201406/'));
-});
-gulp.task('md-extend-201406', ['md-201406'], function() {
-  return gulp.src('app/md2html/201406/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201406/'));
-});
-gulp.task('md-include-201406', ['md-extend-201406'], function() {
-  return gulp.src('app/articles/201406/*.html').pipe(include()).pipe(gulp.dest('app/articles/201406/'));
-});
+for(var timeLength = 0; timeLength < time.length; timeLength++){
+  task(time[timeLength]);
+}
 
-/* 201407 */
-gulp.task('md-clean-201407', function() {
-  return gulp.src(['app/md2html/201407', 'app/articles/201407'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201407', ['md-clean-201407'], function() {
-  return gulp.src('app/md/201407/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201407/'));
-});
-gulp.task('md-extend-201407', ['md-201407'], function() {
-  return gulp.src('app/md2html/201407/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201407/'));
-});
-gulp.task('md-include-201407', ['md-extend-201407'], function() {
-  return gulp.src('app/articles/201407/*.html').pipe(include()).pipe(gulp.dest('app/articles/201407/'));
-});
-
-/* 201408 */
-gulp.task('md-clean-201408', function() {
-  return gulp.src(['app/md2html/201408', 'app/articles/201408'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201408', ['md-clean-201408'], function() {
-  return gulp.src('app/md/201408/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201408/'));
-});
-gulp.task('md-extend-201408', ['md-201408'], function() {
-  return gulp.src('app/md2html/201408/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201408/'));
-});
-gulp.task('md-include-201408', ['md-extend-201408'], function() {
-  return gulp.src('app/articles/201408/*.html').pipe(include()).pipe(gulp.dest('app/articles/201408/'));
-});
-
-/* 201409 */
-gulp.task('md-clean-201409', function() {
-  return gulp.src(['app/md2html/201409', 'app/articles/201409'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201409', ['md-clean-201409'], function() {
-  return gulp.src('app/md/201409/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201409/'));
-});
-gulp.task('md-extend-201409', ['md-201409'], function() {
-  return gulp.src('app/md2html/201409/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201409/'));
-});
-gulp.task('md-include-201409', ['md-extend-201409'], function() {
-  return gulp.src('app/articles/201409/*.html').pipe(include()).pipe(gulp.dest('app/articles/201409/'));
-});
-
-/* 201410 */
-gulp.task('md-clean-201410', function() {
-  return gulp.src(['app/md2html/201410', 'app/articles/201410'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201410', ['md-clean-201410'], function() {
-  return gulp.src('app/md/201410/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201410/'));
-});
-gulp.task('md-extend-201410', ['md-201410'], function() {
-  return gulp.src('app/md2html/201410/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201410/'));
-});
-gulp.task('md-include-201410', ['md-extend-201410'], function() {
-  return gulp.src('app/articles/201410/*.html').pipe(include()).pipe(gulp.dest('app/articles/201410/'));
-});
-
-/* 201411 */
-gulp.task('md-clean-201411', function() {
-  return gulp.src(['app/md2html/201411', 'app/articles/201411'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201411', ['md-clean-201411'], function() {
-  return gulp.src('app/md/201411/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201411/'));
-});
-gulp.task('md-extend-201411', ['md-201411'], function() {
-  return gulp.src('app/md2html/201411/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201411/'));
-});
-gulp.task('md-include-201411', ['md-extend-201411'], function() {
-  return gulp.src('app/articles/201411/*.html').pipe(include()).pipe(gulp.dest('app/articles/201411/'));
-});
-
-/* 201412 */
-gulp.task('md-clean-201412', function() {
-  return gulp.src(['app/md2html/201412', 'app/articles/201412'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201412', ['md-clean-201412'], function() {
-  return gulp.src('app/md/201412/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201412/'));
-});
-gulp.task('md-extend-201412', ['md-201412'], function() {
-  return gulp.src('app/md2html/201412/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201412/'));
-});
-gulp.task('md-include-201412', ['md-extend-201412'], function() {
-  return gulp.src('app/articles/201412/*.html').pipe(include()).pipe(gulp.dest('app/articles/201412/'));
-});
-
-/* 201501 */
-gulp.task('md-clean-201501', function() {
-  return gulp.src(['app/md2html/201501', 'app/articles/201501'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201501', ['md-clean-201501'], function() {
-  return gulp.src('app/md/201501/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201501/'));
-});
-gulp.task('md-extend-201501', ['md-201501'], function() {
-  return gulp.src('app/md2html/201501/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201501/'));
-});
-gulp.task('md-include-201501', ['md-extend-201501'], function() {
-  return gulp.src('app/articles/201501/*.html').pipe(include()).pipe(gulp.dest('app/articles/201501/'));
-});
-
-/* 201502 */
-gulp.task('md-clean-201502', function() {
-  return gulp.src(['app/md2html/201502', 'app/articles/201502'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201502', ['md-clean-201502'], function() {
-  return gulp.src('app/md/201502/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201502/'));
-});
-gulp.task('md-extend-201502', ['md-201502'], function() {
-  return gulp.src('app/md2html/201502/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201502/'));
-});
-gulp.task('md-include-201502', ['md-extend-201502'], function() {
-  return gulp.src('app/articles/201502/*.html').pipe(include()).pipe(gulp.dest('app/articles/201502/'));
-});
-
-/* 201503 */
-gulp.task('md-clean-201503', function() {
-  return gulp.src(['app/md2html/201503', 'app/articles/201503'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201503', ['md-clean-201503'], function() {
-  return gulp.src('app/md/201503/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201503/'));
-});
-gulp.task('md-extend-201503', ['md-201503'], function() {
-  return gulp.src('app/md2html/201503/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201503/'));
-});
-gulp.task('md-include-201503', ['md-extend-201503'], function() {
-  return gulp.src('app/articles/201503/*.html').pipe(include()).pipe(gulp.dest('app/articles/201503/'));
-});
-
-/* 201505 */
-gulp.task('md-clean-201505', function() {
-  return gulp.src(['app/md2html/201505', 'app/articles/201505'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201505', ['md-clean-201505'], function() {
-  return gulp.src('app/md/201505/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201505/'));
-});
-gulp.task('md-extend-201505', ['md-201505'], function() {
-  return gulp.src('app/md2html/201505/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201505/'));
-});
-gulp.task('md-include-201505', ['md-extend-201505'], function() {
-  return gulp.src('app/articles/201505/*.html').pipe(include()).pipe(gulp.dest('app/articles/201505/'));
-});
-
-/* 201506 */
-gulp.task('md-clean-201506', function() {
-  return gulp.src(['app/md2html/201506', 'app/articles/201506'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201506', ['md-clean-201506'], function() {
-  return gulp.src('app/md/201506/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201506/'));
-});
-gulp.task('md-extend-201506', ['md-201506'], function() {
-  return gulp.src('app/md2html/201506/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201506/'));
-});
-gulp.task('md-include-201506', ['md-extend-201506'], function() {
-  return gulp.src('app/articles/201506/*.html').pipe(include()).pipe(gulp.dest('app/articles/201506/'));
-});
-
-/* 201508 */
-gulp.task('md-clean-201508', function() {
-  return gulp.src(['app/md2html/201508', 'app/articles/201508'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201508', ['md-clean-201508'], function() {
-  return gulp.src('app/md/201508/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201508/'));
-});
-gulp.task('md-extend-201508', ['md-201508'], function() {
-  return gulp.src('app/md2html/201508/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201508/'));
-});
-gulp.task('md-include-201508', ['md-extend-201508'], function() {
-  return gulp.src('app/articles/201508/*.html').pipe(include()).pipe(gulp.dest('app/articles/201508/'));
-});
-
-/* 201509 */
-gulp.task('md-clean-201509', function() {
-  return gulp.src(['app/md2html/201509', 'app/articles/201509'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201509', ['md-clean-201509'], function() {
-  return gulp.src('app/md/201509/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201509/'));
-});
-gulp.task('md-extend-201509', ['md-201509'], function() {
-  return gulp.src('app/md2html/201509/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201509/'));
-});
-gulp.task('md-include-201509', ['md-extend-201509'], function() {
-  return gulp.src('app/articles/201509/*.html').pipe(include()).pipe(gulp.dest('app/articles/201509/'));
-});
-
-/* 201510 */
-gulp.task('md-clean-201510', function() {
-  return gulp.src(['app/md2html/201510', 'app/articles/201510'], {
-    read: true
-  }).pipe(clean());
-});
-gulp.task('md-201510', ['md-clean-201510'], function() {
-  return gulp.src('app/md/201510/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/201510/'));
-});
-gulp.task('md-extend-201510', ['md-201510'], function() {
-  return gulp.src('app/md2html/201510/*.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(gulp.dest('app/articles/201510/'));
-});
-gulp.task('md-include-201510', ['md-extend-201510'], function() {
-  return gulp.src('app/articles/201510/*.html').pipe(include()).pipe(gulp.dest('app/articles/201510/'));
-});
-
+function task(t){
+  gulp.task('md-clean-'+t, function() {
+    return gulp.src(['app/md2html/'+t, 'app/articles/'+t], {
+      read: true
+    }).pipe(clean());
+  });
+  gulp.task('md-'+t, ['md-clean-'+t], function() {
+    return gulp.src('app/md/'+t+'/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/'+t+'/'));
+  });
+  gulp.task('md-extend-'+t, ['md-'+t], function() {
+    return gulp.src('app/md2html/'+t+'/*.html')
+      .pipe(extend({
+        annotations: false,
+        verbose: false
+      }))
+      .pipe(gulp.dest('app/articles/'+t+'/'));
+  });
+  gulp.task('md-include-'+t, ['md-extend-'+t], function() {
+    return gulp.src('app/articles/'+t+'/*.html').pipe(include()).pipe(gulp.dest('app/articles/'+t+'/'));
+  });
+}
 
 /*
                         .o8         .oooo.            o8o                                
