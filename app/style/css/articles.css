@@ -436,7 +436,7 @@
 .md pre,
 .md code,
 .md tt {
-  font-size: 12px;
+  font-size: 13px;
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   word-break: break-all !important;
   word-wrap: break-word !important;
@@ -469,6 +469,9 @@
 }
 .md pre strong {
   background: #fc0;
+}
+.md pre.prettyprint {
+  padding: 10px;
 }
 .md pre code,
 .md pre tt {
