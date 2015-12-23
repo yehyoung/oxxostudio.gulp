@@ -142,7 +142,7 @@ body 載入之後要做的事情就是下面這段，一開始用 cheerio 載入
 
 	});
 
-最後一樣使用`setInterval`五分鐘撈一次資料，就可以囉！
+最後一樣使用`setInterval`五分鐘撈一次資料，就可以囉！( Github：[https://github.com/oxxostudio/pm25](https://github.com/oxxostudio/pm25) )
 
 	pm();
 	setInterval(pm,5*60*1000);
