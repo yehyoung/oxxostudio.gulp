@@ -203,6 +203,7 @@
     overflow: inherit;
     text-overflow: inherit;
     white-space: inherit;
+    word-break: break-all;
   }
   #content-grid ul li h3 {
     display: block;
@@ -250,7 +251,7 @@
     margin: 0 auto 18px;
   }
   #content-grid ul li h2 {
-    margin: 40px 0 0 62px;
+    margin: 40px 30px 0 62px;
   }
   #content-grid ul li h3 {
     margin: 20px 0 0 62px;
@@ -288,7 +289,7 @@
 }
 @media (max-width: 550px) {
   #content-grid ul li h2 {
-    margin: 25px 0 0 30px;
+    margin: 25px 30px 0;
   }
   #content-grid ul li h3 {
     display: none;
