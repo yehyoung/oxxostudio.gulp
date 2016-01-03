@@ -67,6 +67,8 @@
 	<button id="p">play</button>
 	<button id="s">pause</button>
 
+<br/>
+
 JavaScript 要先做一些變數的宣告，因為 analyser 只會執行一次動作，所以這裡用一個 timer 作為計時器 ( 待會會用到 )，然後設定 audioCtx 是聲音處理器，重點是把音樂的訊號和 analyser 綁在一起，然後最後再用 analyser 輸出。
 
 	var timer;
@@ -78,6 +80,8 @@ JavaScript 要先做一些變數的宣告，因為 analyser 只會執行一次�
 	var analyser = audioCtx.createAnalyser();
 	source.connect(analyser);
 	analyser.connect(audioCtx.destination);
+
+<br/>
 
 接著對於 analyser 做設定，analyser 有幾個屬性：fftSize、frequencyBinCount、minDecibels、maxDecibels 和 smoothingTimeConstant，裡面最重要的是 fftSize ，這是傅立葉變換的區域 ( 可參考下圖 )，數值必須是 2 的平方，在 Web audio 裡最大值為 2048，不過如果純粹查詢 web audio 的資料其實比較少，但如果獨立查詢「FFT Size」
 ，可以發現有一拖拉庫的音頻率波的資料，frequencyBinCount 預設為 fftSize 的一半，minDecibels、maxDecibels 和 smoothingTimeConstant 這三個基本上都是 fftSize 的設定值，這裏直接用預設值即可。( 雖然以前大學物理系有學過一點，但因為年代已久遠，自己又不是專門在搞音頻訊號處理的，扯到傅立葉分析就有點...反正就先這樣吧 )
@@ -101,6 +105,8 @@ JavaScript 要先做一些變數的宣告，因為 analyser 只會執行一次�
 
 	update();
 
+<br/>
+
 最後就要來設定一下按鈕的行為，按下播放就播放，按下暫停就暫停 ( 好像在講廢話 XD )
 
 	s.onclick = function(){
@@ -112,6 +118,8 @@ JavaScript 要先做一些變數的宣告，因為 analyser 只會執行一次�
 	  myAudio.play();
 	  update();
 	};
+
+<br/>
 
 實際跑一次，打開 console，就會看到音樂的頻譜數值跑出來了 ( 範例：[web-audio-api-Analyser-demo1.html](/demo/201601/web-audio-api-Analyser-demo1.html) )
 
