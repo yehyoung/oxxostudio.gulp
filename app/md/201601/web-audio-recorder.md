@@ -54,7 +54,11 @@
 
 ##獲取錄音資訊 (getUserMedia) <span class="article-date" tag="web">JAN 3, 2016</span>
 
-當我們會使用音訊播放並且會製成頻譜圖之後，接著就要來玩玩錄音了，原理大概就是透過電腦的麥克風，獲取外部聲音，然後經由 Web Audio 聲音處理節點把聲音數位化，更進一步地把聲音儲存下來。
+當我們會使用音訊播放並且會製成頻譜圖之後，接著就要來玩玩錄音了，原理大概就是透過電腦的麥克風，獲取外部聲音，然後經由 Web Audio 聲音處理節點把聲音數位化，更進一步地把聲音儲存下來。( 不過錄音需要用到 https，畢竟如果隨隨便便就可以錄，還真是滿危險的...XD )
+
+如果有遇到出現這個畫面，按下「進階」，點選「繼續前往 www.oxxostudio.tw 網站 (不安全)」即可，會出現這個畫面主要原因就是錄音需的網址要有 SSL 憑證，而我的部落格卻沒有買憑證所以是 http 開頭，才會有這個畫面出現，所以，要試用就只能先這樣囉~ ( 不過如果跑在本機端 localhost 就沒這問題 )
+
+![獲取錄音資訊](/img/articles/201601/20160103_2_06.jpg)
 
 HTML 先放上兩個按鈕，一個是開始，一個是暫停。
 
@@ -92,7 +96,7 @@ HTML 先放上兩個按鈕，一個是開始，一個是暫停。
 
 <br/>
 
-接著就把要做的事情寫在裡面，先宣告一個 microphone 變數來用音訊處理器承接麥克風的音訊 ( createMediaStreamSource )，因為進來的都是即時的，所以用 analyser 來做處理，把音訊接到 analyser 上面後就做一些基本的設定，每 20ms 分析一次，完成後打開網頁 console，對著麥克風講話，應該就可以看到數值開始跑囉！不過這裡會把`analyser.connect(context.destination);`這段給移除掉，因為如果一邊錄音又一邊播放，就會產生無窮迴圈，喇叭就會發出非常刺耳的聲音。 ( 範例：[web-audio-recorder-demo01.html](/demo/201601/web-audio-recorder-demo01.html) )
+接著就把要做的事情寫在裡面，先宣告一個 microphone 變數來用音訊處理器承接麥克風的音訊 ( createMediaStreamSource )，因為進來的都是即時的，所以用 analyser 來做處理，把音訊接到 analyser 上面後就做一些基本的設定，每 20ms 分析一次，完成後打開網頁 console，對著麥克風講話，應該就可以看到數值開始跑囉！不過這裡會把`analyser.connect(context.destination);`這段給移除掉，因為如果一邊錄音又一邊播放，就會產生無窮迴圈，喇叭就會發出非常刺耳的聲音。 ( 範例：[web-audio-recorder-demo01.html](https://www.oxxostudio.tw/demo/201601/web-audio-recorder-demo01.html) )
 
 	var microphone = context.createMediaStreamSource(stream);
 	var analyser = context.createAnalyser();
@@ -122,9 +126,7 @@ HTML 先放上兩個按鈕，一個是開始，一個是暫停。
 
 ![獲取錄音資訊](/img/articles/201601/20160103_2_02.jpg)
 
-<br/>
-
-當然只有數值一定不有趣，把數值轉換成視覺化的頻譜才特別，和之前畫頻譜都類似，這裏用比較簡單的方法 ( 不用 SVG、D3 或 Canvas )，純粹先用 div 來表現，首先在畫面裡用 JavaScript 放入 256 個 div，讓 div 依據陣列數值變化高度和背景顏色。( 範例：[web-audio-recorder-demo02.html](/demo/201601/web-audio-recorder-demo02.html) )
+當然只有數值一定不有趣，把數值轉換成視覺化的頻譜才特別，和之前畫頻譜都類似，這裏用比較簡單的方法 ( 不用 SVG、D3 或 Canvas )，純粹先用 div 來表現，首先在畫面裡用 JavaScript 放入 256 個 div，讓 div 依據陣列數值變化高度和背景顏色。( 範例：[web-audio-recorder-demo02.html](https://www.oxxostudio.tw/demo/201601/web-audio-recorder-demo02.html) )
 
 ![獲取錄音資訊](/img/articles/201601/20160103_2_03.jpg)
 
@@ -175,7 +177,7 @@ Recorder.js 有幾個 API 可以用，分別是`record()`負責錄音，`stop()`
 
 <br/>
 
-完成後，打開網頁，按下錄音就可以開始錄音，同時也會看到聲音頻譜在跳動，錄音完成就會自動產生播放器試聽與下載聲音檔案，相當有趣味的啦！( 範例：[web-audio-recorder-demo03.html](/demo/201601/web-audio-recorder-demo03.html) )
+完成後，打開網頁，按下錄音就可以開始錄音，同時也會看到聲音頻譜在跳動，錄音完成就會自動產生播放器試聽與下載聲音檔案，相當有趣味的啦！( 範例：[web-audio-recorder-demo03.html](https://www.oxxostudio.tw/demo/201601/web-audio-recorder-demo03.html) )
 
 ![獲取錄音資訊](/img/articles/201601/20160103_2_05.jpg)
 
