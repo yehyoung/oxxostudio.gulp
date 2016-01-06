@@ -36,7 +36,7 @@
 
 <meta itemprop="image" content="http://www.oxxostudio.tw/img/articles/201601/20160105_1_01b.jpg">
 
-<meta itemprop="description" content="上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：函式、 mixin 和 extend，當我們可以熟練mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。">
+<meta itemprop="description" content="上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：mixin 和 extend，當我們可以熟練 mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。">
 
 <meta property="og:title" content="用 LESS 寫 CSS ( Mixin、Extend ) - OXXO.STUDIO">
 
@@ -44,7 +44,7 @@
 
 <meta property="og:image" content="http://www.oxxostudio.tw/img/articles/201601/20160105_1_01b.jpg">
 
-<meta property="og:description" content="上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：函式、 mixin 和 extend，當我們可以熟練mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。">
+<meta property="og:description" content="上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：mixin 和 extend，當我們可以熟練mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。">
 
 <title>用 LESS 寫 CSS ( Mixin、Extend ) - OXXO.STUDIO</title> 
 
@@ -54,7 +54,7 @@
 
 ## 用 LESS 寫 CSS ( Mixin、Extend ) <span class="article-date" tag="css">JAN 5, 2016</span>
 
-上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：函式、 mixin 和 extend，當我們可以熟練mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。
+上一篇介紹了 LESS 的基本用法、import 和變數，這一篇要來玩一點比較進階的：mixin 和 extend，當我們可以熟練 mixin 和 extend 的用法，相信對於整個 CSS 可以有大幅加速的功能。
 
 ### mixin
 
@@ -187,7 +187,7 @@ mixin 就是混合，不過其實也就是剛剛上面介紹函式的延伸，�
 
 ### 帶有參數的 mixin
 
-我們可以在函式裡面加入參數重複使用，而這些參數我們也可以定義預設值，當帶有預設值的參數遇到自訂的數值，就會以自訂的數值為主，不過如果自訂的數值沒有到參數的數量呢？這時候就可以使用「**@arguments**」這個特別的參數，「@arguments」就表示在沒有自定義數值的狀態下，自動採用我們的預設值。
+我們可以在 mixin 裡面加入參數重複使用，而這些參數我們也可以定義預設值，當帶有預設值的參數遇到自訂的數值，就會以自訂的數值為主，不過如果自訂的數值沒有到參數的數量呢？這時候就可以使用「**@arguments**」這個特別的參數，「@arguments」就表示在沒有自定義數值的狀態下，自動採用我們的預設值。
 
 這邊其實非常好用，特別是針對許多 CSS3 帶有前綴字的屬性 ( 像是 -webkit- 、 -moz- 之類的 )，基本上只需要定義一次，後面重複使用即可。
 
