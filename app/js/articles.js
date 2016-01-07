@@ -20,21 +20,33 @@ $(function() {
   _socialClick(nowUrl);  
 
   $window.resize(_socialPosition);
-  $window.scroll(function() {
-    if ($window.scrollTop() > 150) {
-      $('.social-icon').not('animated').fadeIn(300);
-    } else {
-      $('.social-icon').not('animated').fadeOut(300);
-    }
-  });
 
   function _socialPosition() {
-    $window.width() > 1000 ? windowWidth = $window.width() : windowWidth = 1000;
-    contantWidth = $content.width();
-    var dx = windowWidth / 2 + contantWidth / 2 + 10;
-    $('.social-icon').css({
-      'left': dx + 'px'
-    });
+    if($window.width() > 1000){
+      windowWidth = $window.width();
+      contantWidth = $content.width();
+      var dx = windowWidth / 2 + contantWidth / 2 + 10;
+      var dx1 = windowWidth / 2 + contantWidth / 2 + 15;
+      var dx2 = windowWidth / 2 - contantWidth / 2 - 45;
+      $('.social-icon').css({
+        'left': dx + 'px'
+      });
+      $('.arrow-left').css({
+        'left': dx2 + 'px'
+      }).attr('target','_top');
+      $('.arrow-right').css({
+        'left': dx1 + 'px'
+      }).attr('target','_top');
+      $window.scroll(function() {
+        if ($window.scrollTop() > 150) {
+          $('.social-icon, .arrow-left, .arrow-right').not('animated').fadeIn(300);
+        } else {
+          $('.social-icon, .arrow-left, .arrow-right').not('animated').fadeOut(300);
+        }
+      });
+    }else{
+      $('.social-icon, .arrow-left, .arrow-right').hide();
+    }
   }
 
   function _socialClick(pageURL) {
@@ -68,6 +80,9 @@ $(function() {
     $('.content a').on('click', function() {
       var aUrl = $(this).attr('href');
       _trackGA('link-to:'+aUrl);
+    });
+    $('.arrow-left, .arrow-right').on('click', function() {
+      _trackGA('arrow-previous-next');
     });
   }
 
@@ -118,20 +133,26 @@ $(function() {
         $('.previous-article h4').html(
             '<a href='+data[nowNum+1].site+'>'+data[nowNum+1].title+'</a>'
           );
+        $('.arrow-right').css({'top':'-100px'});
+        $('.arrow-left').attr('href',data[nowNum+1].site).attr('title',data[nowNum+1].title);
       }
       else if (nowNum==(dataLength-1)){
         $('.previous-article h4').html('沒有前一篇文章了呦~');
         $('.next-article h4').html(
             '<a href='+data[nowNum-1].site+'>'+data[nowNum-1].title+'</a>'
           );
+        $('.arrow-left').css({'top':'-100px'});
+        $('.arrow-right').attr('href',data[nowNum-1].site).attr('title',data[nowNum-1].title);
       }
       else{
         $('.previous-article h4').html(
             '<a href='+data[nowNum+1].site+'>'+data[nowNum+1].title+'</a>'
           );
+        $('.arrow-left').attr('href',data[nowNum+1].site).attr('title',data[nowNum+1].title);
         $('.next-article h4').html(
             '<a href='+data[nowNum-1].site+'>'+data[nowNum-1].title+'</a>'
           );
+        $('.arrow-right').attr('href',data[nowNum-1].site).attr('title',data[nowNum-1].title);
       }
     });
   }

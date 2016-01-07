@@ -47,6 +47,38 @@
 #container .content .tag-css {
   background-position: 0 -264px;
 }
+#container .arrow-right,
+#container .arrow-left {
+  display: block;
+  position: fixed;
+  top: 50%;
+  display: none;
+  width: 30px;
+  height: 52px;
+  cursor: pointer;
+}
+#container .arrow-right i,
+#container .arrow-left i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/layout/sprites.png);
+  background-repeat: no-repeat;
+  opacity: .5;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+#container .arrow-right:hover i,
+#container .arrow-left:hover i {
+  opacity: 1;
+}
+#container .arrow-right i {
+  background-position: -129px -182px;
+}
+#container .arrow-left i {
+  background-position: -129px -249px;
+}
 #container .social-icon {
   position: fixed;
   top: 75px;
