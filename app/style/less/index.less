@@ -1,18 +1,12 @@
-._transition-time(@timer) {
-   -webkit-transition:@timer;
-      -moz-transition:@timer;
-           transition:@timer;
- }
-._div-radius(@radius) {
-   -webkit-border-radius:@radius;
-      -moz-border-radius:@radius;
-           border-radius:@radius;
- }
-._border-box {
-   -webkit-box-sizing:border-box;
-      -moz-box-sizing:border-box;
-           box-sizing:border-box;
- }
+@import "_all_mixin.less";
+@import "_all_color.less";
+
+/* layout */
+@import "_layout.less";
+
+/* index */
+@import "_index.less";
+
  #content-grid {
    width:1000px;
    margin:20px auto 40px;

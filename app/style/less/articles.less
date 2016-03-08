@@ -1,18 +1,9 @@
-._transition-time(@timer) {
-  -webkit-transition:@timer;
-    -moz-transition:@timer;
-         transition:@timer;
-}
-._div-radius(@radius) {
-  -webkit-border-radius:@radius;
-     -moz-border-radius:@radius;
-          border-radius:@radius;
-}
-._border-box {
-  -webkit-box-sizing:border-box;
-     -moz-box-sizing:border-box;
-          box-sizing:border-box;
-}
+/* layout */
+@import "_layout.less";
+
+/* articles */
+@import "_articles.less";
+
 #container {
   .content {
     position: relative;
