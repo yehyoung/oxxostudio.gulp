@@ -144,7 +144,12 @@ gulp.task('css-clean', function() {
 });
 
 gulp.task('less', ['css-clean'], function() {
-  return gulp.src('app/style/less/*.less')
+  return gulp.src([
+    'app/style/less/index.less',
+    'app/style/less/articles.less',
+    'app/style/less/list.less',
+    'app/style/less/search-results.less'
+    ])
     .pipe(less())
     .pipe(gulp.dest('app/style/css'))
 });
@@ -314,7 +319,7 @@ oooo oooo    ooo  .oooo.   .o888oo  .ooooo.   888 .oo.
     `8'  `8'     `Y888""8o   "888" `Y8bod8P' o888o o888o 
 */
 
-gulp.task('watch', function() {
+gulp.task('watch',['md-include'], function() {
   gulp.watch('app/_index.html', ['index']);
   gulp.watch('app/_list.html', ['list']);
   gulp.watch('app/_search-results.html', ['search']);
@@ -344,4 +349,4 @@ gulp.task('watch', function() {
   gulp.watch('app/md/201601/*.md', ['md-include-201601']);
 });
 
-gulp.task('default', ['index', 'list', 'search', 'less', 'md-include', 'watch']);
+gulp.task('default', ['index', 'list', 'search','less',  'md-include', 'watch']);
