@@ -71,7 +71,8 @@ var time = [
   '201509',
   '201510',
   '201512',
-  '201601'
+  '201601',
+  '201603'
 ];
 
 for(var timeLength = 0; timeLength < time.length; timeLength++){
@@ -327,7 +328,7 @@ gulp.task('watch',['md-include'], function() {
   gulp.watch('app/_articles-js.html', ['md-include']);
   gulp.watch('app/_articles-css.html', ['md-include']);
   gulp.watch('app/_articles.html', ['md-include']);
-  gulp.watch('app/style/less/*.less', ['less']);
+  gulp.watch('app/style/less/**/*.less', ['less']);
   //gulp.watch('app/md/**/*.md',['md2json']);
   gulp.watch('app/md/201405/*.md', ['md-include-201405']);
   gulp.watch('app/md/201406/*.md', ['md-include-201406']);
@@ -347,6 +348,7 @@ gulp.task('watch',['md-include'], function() {
   gulp.watch('app/md/201510/*.md', ['md-include-201510']);
   gulp.watch('app/md/201512/*.md', ['md-include-201512']);
   gulp.watch('app/md/201601/*.md', ['md-include-201601']);
+  gulp.watch('app/md/201603/*.md', ['md-include-201603']);
 });
 
 gulp.task('default', ['index', 'list', 'search','less',  'md-include', 'watch']);
