@@ -120,7 +120,7 @@
 		background:#c00;	
 	}
 
-![CSS 偽類 child 和 of-type](/img/articles/201405/20140527_1_05.png)
+![CSS 偽類 child 和 of-type](/img/articles/201405/20140527_1_10.jpg)
 
 `:nth-child(2n)` 把偶數的挑出來 ( 應該說是把 2 的倍數挑出來 )
 	
@@ -128,13 +128,15 @@
 		background:#c00;	
 	}
 
-![CSS 偽類 child 和 of-type](/img/articles/201405/20140527_1_06.png)
+![CSS 偽類 child 和 of-type](/img/articles/201405/20140527_1_05.png)
 
 `:nth-child(2n+1)` 把奇數的挑出來，其他就依此類推
 	
 	li:nth-child(2n+1){
 		background:#c00;	
 	}
+
+![CSS 偽類 child 和 of-type](/img/articles/201405/20140527_1_06.png)
 
 至於 `nth-last-child()` 剛好就和 nth-child 相反過來，是從後面數過來的，這裡就不多做說明，而最後一個 `only-child()`，只適用於父元素內只有一個子元素的情形，例如你的程式碼是：
 
