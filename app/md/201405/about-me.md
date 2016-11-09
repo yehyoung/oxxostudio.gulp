@@ -87,6 +87,6 @@
 <br/>
 ### 以前的站台
 	
-如果大家對於我以前的 blog 有興趣的話，可以點選這個連結進去看看：[oxxo-sutdio.blogspot.com](http://oxxo-sutdio.blogspot.com) ，不過之後主要的檔案都會放在這邊囉，也歡迎大家多來逛逛，多給我一些建議或是提供我更好的修改想法，甘溫的啦！
+如果大家對於我以前的 blog 有興趣的話，可以點選這個連結進去看看：[oxxo-sutdio.blogspot.com](http://oxxo-studio-past.blogspot.tw/) ，不過之後主要的檔案都會放在這邊囉，也歡迎大家多來逛逛，多給我一些建議或是提供我更好的修改想法，甘溫的啦！
 
 <!-- @@close-->

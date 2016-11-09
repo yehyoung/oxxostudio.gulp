@@ -72,7 +72,9 @@ var time = [
   '201510',
   '201512',
   '201601',
-  '201603'
+  '201603',
+  '201607',
+  '201608'
 ];
 
 for(var timeLength = 0; timeLength < time.length; timeLength++){
@@ -349,6 +351,8 @@ gulp.task('watch',['md-include'], function() {
   gulp.watch('app/md/201512/*.md', ['md-include-201512']);
   gulp.watch('app/md/201601/*.md', ['md-include-201601']);
   gulp.watch('app/md/201603/*.md', ['md-include-201603']);
+  gulp.watch('app/md/201607/*.md', ['md-include-201607']);
+  gulp.watch('app/md/201608/*.md', ['md-include-201608']);
 });
 
 gulp.task('default', ['index', 'list', 'search','less',  'md-include', 'watch']);

@@ -56,7 +56,7 @@
 
 <img src="/img/articles/201408/20140831_1_01.jpg" class="preview-img">
 
-( 新增文章參考：[ CSS 垂直置中的七個方法](ttp://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html) )
+( 新增文章參考：[ CSS 垂直置中的七個方法](http://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html) )
 
 我們在編輯一個版面，通常都會用到水平置中和垂直置中來設計，而水平置中很好處理，不外乎就是設定`margin:0 auto;`或是`text-align:center;`,就可以輕鬆解決掉水平置中的問題，但一直以來最麻煩對齊問題，都是「垂直置中」這個討人厭的設定，以下將介紹三種單純利用 CSS 垂直置中的方式：「設定行高」、「添加偽元素」、「calc 動態計算」，其實一點也不難 ( 當然跟水平置中比起來難了一點 )，只需要觀念正確就可以解決。
 
@@ -183,6 +183,6 @@
 
 <br/>
 
-以上就是三種垂直置中的方法，沒有想像的困難，但往往在需要的時候都會忘記，做個筆記也分享一下。( 新增文章參考：[ CSS 垂直置中的七個方法](ttp://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html) )
+以上就是三種垂直置中的方法，沒有想像的困難，但往往在需要的時候都會忘記，做個筆記也分享一下。( 新增文章參考：[ CSS 垂直置中的七個方法](http://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html) )
 
 <!-- @@close-->
