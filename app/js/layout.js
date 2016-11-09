@@ -133,7 +133,9 @@ $(function() {
   }
 
   function _trackGA(peopleEvent) {
-    ga('send', 'event', peopleEvent, peopleEvent);
+    if(ga){
+      ga('send', 'event', peopleEvent, peopleEvent);
+    }
   }
 
 });
