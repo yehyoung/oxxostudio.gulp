@@ -98,7 +98,7 @@
 
 開發者頁面第一個選項「Basic information」是最重要的，在這邊我們要記住「Channel ID」、「Channel Secret」( 點選 SHOW 會出現 ) 和「Channel Access Token」( 點選 ISSUE 會產生 )，而「Webhook URL」則是一個要放在「https」的網址，用作和 LINE BOT 溝通使用，到這邊基本上我們已經完成了 LINE BOT 的設定，接著就來看看 Webhook URL 要怎麼做。
 
-![LINE BOT 實戰 ( 原理篇 )](/img/articles/201701/20170115_1_10.jpg)
+![LINE BOT 實戰 ( 原理篇 )](/img/articles/201701/20170115_1_11.jpg)
 
 <br/>
 
