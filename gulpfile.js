@@ -74,7 +74,8 @@ var time = [
   '201601',
   '201603',
   '201607',
-  '201608'
+  '201608',
+  '201701'
 ];
 
 for(var timeLength = 0; timeLength < time.length; timeLength++){
@@ -353,6 +354,7 @@ gulp.task('watch',['md-include'], function() {
   gulp.watch('app/md/201603/*.md', ['md-include-201603']);
   gulp.watch('app/md/201607/*.md', ['md-include-201607']);
   gulp.watch('app/md/201608/*.md', ['md-include-201608']);
+  gulp.watch('app/md/201701/*.md', ['md-include-201701']);
 });
 
 gulp.task('default', ['index', 'list', 'search','less',  'md-include', 'watch']);
