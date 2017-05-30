@@ -57,13 +57,5 @@
 [![玩玩 360 度 ( 進階編修 ) ](/img/articles/201607/20160731_1_14.jpg)](https://goo.gl/xAZg4R)
 
 
-
 到這邊，我們已經可以輕鬆的編修 360 照片，[下一篇](http://www.oxxostudio.tw/articles/201608/panorama-360-3.html)，我將會介紹如何繪製一張 360 圖片。
-
-
-<br/>
-
-
-
-
 

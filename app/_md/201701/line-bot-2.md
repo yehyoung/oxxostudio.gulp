@@ -1,21 +1,17 @@
 # LINE BOT 實戰 ( 聊天篇 ) 
 
-[上一篇](line-bot.html) 我們已經知道 LINE BOT 相關的原理以及如何部署，這篇就真的來完成一個會和你聊天的機器人，希望可以時實作一個你問他現在 PM2.5 數值他就會回答你，甚至你問他日幣匯率他也會回答你。( 可以參考 [做個簡單的爬蟲 ( 幣值、空污 PM2.5 )](http://www.oxxostudio.tw/articles/201512/spider-basic.html) )
-
-<br/>
+[上一篇](line-bot.html#_top) 我們已經知道 LINE BOT 相關的原理以及如何部署，這篇就真的來完成一個會和你聊天的機器人，希望可以時實作一個你問他現在 PM2.5 數值他就會回答你，甚至你問他日幣匯率他也會回答你。( 可以參考 [做個簡單的爬蟲 ( 幣值、空污 PM2.5 )](http://www.oxxostudio.tw/articles/201512/spider-basic.html) )
 
 ## 1. LINE Message Type
 
 如果我們傳訊息給我們建立的 LINE BOT，可以看到 Message 裡面有個「type」的屬性，透過這個屬性我們可以作出對應的動作，以下就列出 LINE Message 的 type 種類。( 參考 [https://www.npmjs.com/package/linebot](https://www.npmjs.com/package/linebot)、[https://devdocs.line.me/](https://devdocs.line.me/en/) )
 
-- **text**：純文字。
-- **image**：圖片。
-- **video**：影片。
-- **audio**：聲音。
-- **location**：地點。
-- **sticker**：表情符號、貼圖。
-
-<br/>
+- *text*：純文字。
+- *image*：圖片。
+- *video*：影片。
+- *audio*：聲音。
+- *location*：地點。
+- *sticker*：表情符號、貼圖。
 
 ## 2. 重複我們說過的話
 
@@ -38,8 +34,6 @@
 
 ![LINE BOT 實戰 ( 聊天篇 )](/img/articles/201701/20170115_2_02.jpg)
 
-<br/>
-
 ## 3. 主動發送訊息
 
 如果我們增加下面這段程式碼，那麼就會在 Server 啟動後五秒鐘，發送文字給對應的使用者。
@@ -52,8 +46,6 @@
 	},5000);
 
 ![LINE BOT 實戰 ( 聊天篇 )](/img/articles/201701/20170115_2_03.jpg)
-
-<br/>
 
 ## 4. 詢問 PM2.5 空氣污染數值
 
@@ -130,8 +122,6 @@
 
 ![LINE BOT 實戰 ( 聊天篇 )](/img/articles/201701/20170115_2_04.jpg)
 
-<br/>
-
 ## 5. 主動通知日幣匯率
 
 關於日幣爬蟲的技術，可以參考我之前寫的 [實戰智慧插座 29 - 用日幣匯率開關燈 ( Node.js 爬蟲應用篇 )](http://ithelp.ithome.com.tw/articles/10188884) 裡面有很完整的說明，這邊我就只貼出關鍵的程式碼，下面的程式表示當日幣小於 0.28 的時候，就會主動發送 LINE 的訊息通知。
@@ -158,8 +148,6 @@
 	}
 
 ![LINE BOT 實戰 ( 聊天篇 )](/img/articles/201701/20170115_2_05.jpg)
-
-<br/>
 
 以上就是我們把 LINE BOT 拿來和各種網頁技術結合產生的應用，其實還可以做到一大堆事情呀！舉例來說，下面這個影片就是我把 LINE BOT 和 Webduino 結合，就可以用 LINE 來開關燈！真的是很酷呀！
 

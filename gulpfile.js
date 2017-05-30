@@ -44,9 +44,12 @@ renderer.image = function(href, title, text) {
 };
 //如果結尾帶有 #_blank 的超連結，輸出後變成 target=_blank
 renderer.link = function(href, title, text) {
+  href = href + '" target="_blank';
   var link = marked.Renderer.prototype.link.call(this, href, title, text);
-  if (link.indexOf('#_blank') > 0) {
-    return link.replace('#_blank"', '" target="_blank"');
+  if (link.indexOf('#_top') > 0) {
+    link =  link.replace('target="_blank"', '');
+    return link.replace('#_top', '');
+    //return link.replace('#_blank"', '" target="_blank"');
   } else {
     return link;
   }

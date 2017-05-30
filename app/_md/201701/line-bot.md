@@ -2,8 +2,6 @@
 
 最近剛撰寫完 IT 鐵人賽的「實戰智慧插座」系列文章 ( [https://goo.gl/hI1mEa](https://goo.gl/hI1mEa) )，原本最後兩篇想用個 LINE BOT 來完美收尾，但天不從人願 ( 自己後端的能力太弱 ），沒辦法順利完成，但趁著這個週末，總算是搞定了 LINE BOT ( LINE 聊天機器人 )。
 
-<br/>
-
 ## 1. LINE BOT 設定
 
 因為要使用 LINE 的機器人，一定要先到 「LINE Business Center」 建立 「BOT 帳號」( [https://business.line.me/zh-hant/](https://business.line.me/zh-hant/) )。
@@ -46,8 +44,6 @@
 
 ![LINE BOT 實戰 ( 原理篇 )](/img/articles/201701/20170115_1_11.jpg)
 
-<br/>
-
 ## 2. 製作 Webhook URL ( Node.js )
 
 我這邊使用 Node.js 來建構我的 Webhook 頁面，首先我們要使用 「**linebot**」這個 Node.js 模組 ( 參考 [https://www.npmjs.com/package/linebot](https://www.npmjs.com/package/linebot) )，然後伺服器端使用「**express**」這個模組。
@@ -68,8 +64,6 @@
 	  "license": "ISC"
 	}
 
-<br/>
-
 完成後輸入指令列 ` npm install linebot express --save` 安裝模組 ( 注意，`name`不要和安裝的模組重複了 )，安裝好了以後，建立一個 index.js，輸入下列指令，並填入自己 LINE BOT 的 channel Id、channel Secret 和 channel Access Token。
 
 	var linebot = require('linebot');
@@ -80,8 +74,6 @@
 	  channelSecret: channel Secret,
 	  channelAccessToken: channel Access Token
 	});
-
-<br/>
 
 鍵入下列程式碼，這會在我們部署到 heroku 上頭之後，在收到 LINE 的訊息的時候把 `event` 印出，然後因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過另外一段程式碼作轉換。( 參考：[http://stackoverflow.com/questions/18008620/node-js-express-js-app-only-works-on-port-3000](http://stackoverflow.com/questions/18008620/node-js-express-js-app-only-works-on-port-3000) )。
 
@@ -98,9 +90,6 @@
 	  var port = server.address().port;
 	  console.log("App now running on port", port);
 	});
-
-
-<br/>
 
 ## 3. 部署到 Heroku
 
@@ -136,9 +125,7 @@
 
 ![LINE BOT 實戰 ( 原理篇 )](/img/articles/201701/20170115_1_19.jpg)
 
-<br/>
-
-### 4. 傳 LINE 給 LINE BOT
+## 4. 傳 LINE 給 LINE BOT
 
 透過 QRCode 我們可以加入 LINE BOT 聊天室開始聊天，一開始會有一個自動訊息。
 

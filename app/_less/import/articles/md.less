@@ -8,8 +8,8 @@ article {
   padding: 20px 60px 50px;
   font-size: 17px;
   color: #333;
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
-  line-height: 28px;
+  font-family: arial;
+  line-height: 30px;
   word-break: break-all;
   border-radius: 15px;
   background: #fafafa;
@@ -17,17 +17,15 @@ article {
   .preview-img {
     float: right;
     width: 300px;
-    margin: 20px 10px 20px;
+    margin: 10px 0 20px 10px;
+    border-radius: 5px;
   }
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h3 {
     margin: 20px 0 10px;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
+    color: #000;
   }
   h1 {
     position: relative;
@@ -36,67 +34,86 @@ article {
     font-size: 28px;
     color: #000;
     margin: 30px 0 20px;
-  }
-  h1::before {
-    content: attr(data-date);
-    position: absolute;
-    top: 5px;
-    right: 0;
-    font-size: 14px;
-    color: #777;
-  }
-  h1::after {
-    content: '';
-    position: absolute;
-    top: 42px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: url(/img/layout/content_line.gif);
+    &:before {
+      content: attr(data-date);
+      position: absolute;
+      top: 8px;
+      right: 0;
+      font-size: 14px;
+      color: #777;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: url(/img/layout/content_line.gif);
+    }
   }
   h2 {
-    font-size: 18px;
-    font-weight: 900;
+    margin-top: 50px;
+    font-size: 22px;
   }
   p,
   blockquote,
   ul,
   ol,
-  dl,
-  table,
-  pre {
-    margin: 15px 0;
+  table {
+    margin: 0 0 15px;
   }
   ul,
   ol {
-    padding-left: 30px;
+    padding-left: 20px;
   }
   li {
     list-style: disc;
+    h3 {
+      font-size: 20px;
+      margin: 0 0 5px;
+    }
   }
   p {
     max-width: 100%;
     a {
+      transition: .2s;
       color: #4183C4;
       text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      word-wrap: break-word;
+      word-break: break-all;
+      white-space: pre-wrap;
+      &:hover {
+        color: #37c0ff;
+      }
     }
     code {
       background: #f9f2f4;
-      padding: 2px 10px;
+      padding: 2px 5px;
+      margin: 0 5px;
       color: #c7254e;
       font-size: 15px;
-      font-family: 'verdana';
       border-radius: 3px;
     }
+  }
+  img {
+    max-width: 100%;
+    margin: 0 0 20px 0;
+    border-radius: 5px;
+  }
+  strong{
+    font-weight: bold;
+    color:#f90;
+  }
+  em{
+    font-weight: bold;
+    color:#000;
   }
   pre {
     &.prettyprint {
       box-sizing: border-box;
       margin: 15px 0 30px;
-      padding: 30px;
+      padding: 20px;
       overflow-x: auto;
       font-size: 16px;
       line-height: 24px;
@@ -115,7 +132,7 @@ article {
     padding: 10px 10px 10px 15px;
     margin: 10px 0 30px;
     border-left: 5px solid #ccc;
-    background: #f5f5f5;
+    background: #f1f1f1;
     p {
       margin: 0;
     }
@@ -140,11 +157,6 @@ article {
   table td {
     padding: 6px 13px;
     border: 1px solid #ccc;
-  }
-  img {
-    max-width: 100%;
-    margin: 0 auto 20px;
-    border-radius: 5px;
   }
   svg {
     max-width: 100%;
