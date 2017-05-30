@@ -32,7 +32,7 @@ Low-Poly 這是個之前很紅的向量繪圖風格，不過其實 Low-Poly 存�
 
 下面這三張圖，就是我用 Low-Poly 的畫法去畫的我家的三隻寵物，每隻繪製的時間大約 1.5 小時，分享給大家。( 其中的小狗，是我最愛的寵物，畫寵物也是為了紀念牠陪伴我的這十一年 )
 
-![Low-Poly Art](/img/articles/201503/20150308_2_01b.jpg)
+![Low-Poly Art](/img/articles/201503/low-poly-art.jpg)
 
 ![Low-Poly Art](/img/articles/201503/20150308_2_03.jpg)
 

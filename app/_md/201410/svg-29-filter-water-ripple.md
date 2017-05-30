@@ -52,7 +52,7 @@ OK 補充完了，繼續來看一下這篇的主題：水波效果，在上一�
 
 套用移置率鏡後的效果，這樣的 gif 動畫只有一兩秒，檔案大小高達 600KB，SVG 只有 2KB，你也可以直接打開 [SVG 預覽](/img/articles/201410/20141010_1_demo.svg)，看不到就表示你的瀏覽器不支援喔~：
 
-![SVG 研究之路 (29) - filter - 水波效果](/img/articles/201410/20141010_1_01.gif)
+![SVG 研究之路 (29) - filter - 水波效果](/img/articles/201410/svg-29-filter-water-ripple.gif)
 
     <svg width="340" height="231">
       <defs>

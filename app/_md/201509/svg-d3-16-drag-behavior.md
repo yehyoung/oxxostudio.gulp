@@ -113,5 +113,5 @@
 	          })
 	          .call(drag);
 
-![SVG D3.js - 拖拉行為 ( Drag Behavior )](/img/articles/201509/20150914_1_01.gif)
+![SVG D3.js - 拖拉行為 ( Drag Behavior )](/img/articles/201509/svg-d3-16-drag-behavior.gif)
 

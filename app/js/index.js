@@ -45,7 +45,7 @@ $(function() {
         for (j = Num; j < k; j++) {
           var imgUrl;
           if (!data[j].img) {
-            imgUrl = '/img' + data[j].site.replace('.html', '.jpg');
+            imgUrl = '/img' + data[j].site.replace('.html', '-s.jpg');
           } else {
             imgUrl = data[j].img;
           }
@@ -103,7 +103,7 @@ $(function() {
           if (classify[p].img) {
             imgUrl = classify[p].img;
           } else {
-            imgUrl = '/img' + classify[p].site.replace('.html', '.jpg');
+            imgUrl = '/img' + classify[p].site.replace('.html', '-s.jpg');
           }
           $('#content-grid>ul').append(
             '<li>' +

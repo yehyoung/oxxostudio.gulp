@@ -113,7 +113,7 @@ $(function() {
           $('#other-articles').append(
             '<a href="' + classify[j].site + '">' +
             '<div>' +
-            '<img src="/img' + classify[j].site.replace('.html','.jpg') + '">' +
+            '<img src="/img' + classify[j].site.replace('.html','-s.jpg') + '">' +
             '<h4>' + classify[j].title + '</h4>' +
             '</div>' +
             '</a>'
@@ -126,7 +126,7 @@ $(function() {
           $('#other-articles').append(
             '<a href="' + randomNumA[j - 5][0].site + '">' +
             '<div>' +
-            '<img src="/img' + randomNumA[j - 5][0].site.replace('.html','.jpg') + '">' +
+            '<img src="/img' + randomNumA[j - 5][0].site.replace('.html','-s.jpg') + '">' +
             '<h4>' + randomNumA[j - 5][0].title + '</h4>' +
             '</div>' +
             '</a>'

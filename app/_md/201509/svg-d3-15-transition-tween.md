@@ -148,6 +148,6 @@ tween 的用法其實滿容易的，就是`tween(name,factory)`，當中的 name
 	    cc.innerHTML = c(t);
 	  };
 
-![SVG D3.js - transition ( tween、interpolate )](/img/articles/201509/20150912_1_01.gif)
+![SVG D3.js - transition ( tween、interpolate )](/img/articles/201509/svg-d3-15-transition-tween.gif)
 
 

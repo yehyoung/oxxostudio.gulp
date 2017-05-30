@@ -152,7 +152,7 @@
 	});
 
 
-![純 CSS 繪製圓餅圖](/img/articles/201503/20150324_2_01.gif)
+![純 CSS 繪製圓餅圖](/img/articles/201503/css-pie-chart.gif)
 
 圓餅圖相關連結：
 
