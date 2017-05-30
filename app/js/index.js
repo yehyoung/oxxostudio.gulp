@@ -9,6 +9,7 @@ $(function() {
   var siteUrl = urlParts2[0] + '//' + urlParts2[2] + '/';
   var stopTimer = 0;
 
+
   if (urlParts1[1]) {
     urlPages = urlParts1[1].split("=");
     pageTag = urlPages[0];
@@ -37,11 +38,17 @@ $(function() {
       function _renderContent(Num) {
         var j, k;
         k = Num + maxNum;
-        if(k>=dataLength){
-          k= dataLength;
+        if (k >= dataLength) {
+          k = dataLength;
         }
         // k < dataLength ? '' : k = dataLength;
         for (j = Num; j < k; j++) {
+          var imgUrl;
+          if (!data[j].img) {
+            imgUrl = '/img' + data[j].site.replace('.html', '.jpg');
+          } else {
+            imgUrl = data[j].img;
+          }
           $('#content-grid>ul').append(
             '<li>' +
             '<i class="' + data[j].tag + '"></i>' +
@@ -51,7 +58,7 @@ $(function() {
             '<a href="' + data[j].site + '" title="' + data[j].title + '">' +
             '<div class="content-img">' +
             '<span></span>' +
-            '<img src="' + data[j].img + '">' +
+            '<img src="' + imgUrl + '">' +
             '</div>' +
             '</a>' +
             '<div class="content-grid-line"></div>' +
@@ -87,11 +94,17 @@ $(function() {
       function _renderContent(Num) {
         var p, q;
         q = Num + maxNum;
-        if(q>=classifyNum){
+        if (q >= classifyNum) {
           q = classifyNum;
         }
         // q < classifyNum ? '' : q = classifyNum;
         for (p = Num; p < q; p++) {
+          var imgUrl;
+          if (classify[p].img) {
+            imgUrl = classify[p].img;
+          } else {
+            imgUrl = '/img' + classify[p].site.replace('.html', '.jpg');
+          }
           $('#content-grid>ul').append(
             '<li>' +
             '<i class="' + classify[p].tag + '"></i>' +
@@ -101,7 +114,7 @@ $(function() {
             '<a href="' + classify[p].site + '">' +
             '<div class="content-img">' +
             '<span></span>' +
-            '<img src="' + classify[p].img + '">' +
+            '<img src="' + imgUrl + '">' +
             '</div>' +
             '</a>' +
             '<div class="content-grid-line"></div>' +
@@ -168,17 +181,45 @@ $(function() {
 
   function _h4Content() {
     $('#content-grid>ul').find('h4').each(function() {
-      var $h4=$(this);
+      var $h4 = $(this);
       var h4url = $h4.attr('content');
       $.ajax({
-        url:h4url,
-        success:function(data){
-          var dataStr = data.substr(0, 1000);
-          var dataArray = $.parseHTML(dataStr);
-          for(var k=0; k<dataArray.length; k++){
-            if(dataArray[k].name=='description'){
-              $h4.html(dataArray[k].content.substr(0, 105) + ' ...');
-              return;
+        url: h4url,
+        success: function(data) {
+          var dataArray = $.parseHTML(data);
+          for (var k = 0; k < dataArray.length; k++) {
+            if (dataArray[k].localName == 'main') {
+              var p = dataArray[k].querySelector('p');
+              var pi = p.innerHTML;
+              if (pi.indexOf('img') != -1) {
+                p = dataArray[k].querySelector('p+p');
+                pi = p.innerHTML;
+              }
+              var a = p.querySelectorAll('a');
+              var an = Array.apply(null, a);
+              an.forEach(function(e) {
+                var ao = e.outerHTML;
+                var ai = e.innerHTML;
+                pi = pi.replace(ao, ai);
+              });
+              String.prototype.allReplace = function(obj) {
+                var retStr = this;
+                for (var x in obj) {
+                  retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+                }
+                return retStr;
+              };
+              pi = pi.allReplace({
+                '<code>': '',
+                '</code>': '',
+                '<strong>': '',
+                '</strong>': ''
+              });
+              if (pi.length > 100) {
+                $h4.html(pi.substr(0, 100) + ' ...');
+              } else {
+                $h4.html(pi);
+              }
             }
           }
         }

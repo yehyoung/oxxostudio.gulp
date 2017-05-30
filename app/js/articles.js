@@ -2,41 +2,39 @@ $(function() {
   var j, tag = $('.article-date').attr('tag');
   var $window = $(window);
   var $document = $(document);
-  var $content = $('.content');
+  var $content = $('article');
   var windowWidth, contentWidth;
   var nowUrl = location.href;
-  var urlParts,fileName;
+  var urlParts, fileName;
 
   urlParts = nowUrl.split('/');
+  var pageUrl = '/articles/' + urlParts[urlParts.length - 2] + '/' + urlParts[urlParts.length - 1];
   fileName = urlParts.pop();
 
-  $('pre').addClass('prettyprint');
   $('.preview-img').unwrap('p');
-  $('.tag').addClass('tag-' + tag);
-  $('.md a').attr('target','_blank');
 
-  _showTag('tag-'+tag,fileName);
+  _showTag('tag-' + tag, fileName);
   _socialPosition();
-  _socialClick(nowUrl);  
+  _socialClick(nowUrl);
 
   $window.resize(_socialPosition);
 
   function _socialPosition() {
-    if($window.width() > 1000){
+    if ($window.width() > 1000) {
       windowWidth = $window.width();
       contantWidth = $content.width();
-      var dx = windowWidth / 2 + contantWidth / 2 + 10;
-      var dx1 = windowWidth / 2 + contantWidth / 2 + 15;
-      var dx2 = windowWidth / 2 - contantWidth / 2 - 45;
+      var dx = windowWidth / 2 + contantWidth / 2 + 70;
+      var dx1 = windowWidth / 2 + contantWidth / 2 + 75;
+      var dx2 = windowWidth / 2 - contantWidth / 2 - 105;
       $('.social-icon').css({
         'left': dx + 'px'
       });
       $('.arrow-left').css({
         'left': dx2 + 'px'
-      }).attr('target','_top');
+      }).attr('target', '_top');
       $('.arrow-right').css({
         'left': dx1 + 'px'
-      }).attr('target','_top');
+      }).attr('target', '_top');
       $window.scroll(function() {
         if ($window.scrollTop() > 150) {
           $('.social-icon, .arrow-left, .arrow-right').not('animated').fadeIn(300);
@@ -44,7 +42,7 @@ $(function() {
           $('.social-icon, .arrow-left, .arrow-right').not('animated').fadeOut(300);
         }
       });
-    }else{
+    } else {
       $('.social-icon, .arrow-left, .arrow-right').hide();
     }
   }
@@ -79,25 +77,32 @@ $(function() {
     });
     $('.content a').on('click', function() {
       var aUrl = $(this).attr('href');
-      _trackGA('link-to:'+aUrl);
+      _trackGA('link-to:' + aUrl);
     });
     $('.arrow-left, .arrow-right').on('click', function() {
       _trackGA('arrow-previous-next');
     });
   }
 
-  function _showTag(tagName,fileName) {
+  function _showTag(c, fileName) {
     $.getJSON('/json/pageList.json', function(data) {
+      data.forEach(function(e) {
+        if (e.site == pageUrl) {
+          $('.tag').addClass(e.tag);
+          $('h1').attr('data-date', e.date);
+          tagName = e.tag;
+        }
+      });
       dataLength = data.length;
       var classify = [];
       var classifyNum = 0;
-      var i, maxNum,nowNum;
+      var i, maxNum, nowNum;
       for (i = 0; i < dataLength; i++) {
         if (data[i].tag == tagName) {
           classify[classifyNum] = data[i];
           classifyNum = classifyNum + 1;
         }
-        if (data[i].site.indexOf(fileName) != -1){
+        if (data[i].site.indexOf(fileName) != -1) {
           nowNum = i;
         }
       }
@@ -108,7 +113,7 @@ $(function() {
           $('#other-articles').append(
             '<a href="' + classify[j].site + '">' +
             '<div>' +
-            '<img src="' + classify[j].img + '">' +
+            '<img src="/img' + classify[j].site.replace('.html','.jpg') + '">' +
             '<h4>' + classify[j].title + '</h4>' +
             '</div>' +
             '</a>'
@@ -121,38 +126,40 @@ $(function() {
           $('#other-articles').append(
             '<a href="' + randomNumA[j - 5][0].site + '">' +
             '<div>' +
-            '<img src="' + randomNumA[j - 5][0].img + '">' +
+            '<img src="/img' + randomNumA[j - 5][0].site.replace('.html','.jpg') + '">' +
             '<h4>' + randomNumA[j - 5][0].title + '</h4>' +
             '</div>' +
             '</a>'
           );
         }
       }
-      if (nowNum==0){
+      if (nowNum == 0) {
         $('.next-article h4').html('沒有下一篇文章了呦~');
         $('.previous-article h4').html(
-            '<a href='+data[nowNum+1].site+'>'+data[nowNum+1].title+'</a>'
-          );
-        $('.arrow-right').css({'top':'-100px'});
-        $('.arrow-left').attr('href',data[nowNum+1].site).attr('title',data[nowNum+1].title);
-      }
-      else if (nowNum==(dataLength-1)){
+          '<a href=' + data[nowNum + 1].site + '>' + data[nowNum + 1].title + '</a>'
+        );
+        $('.arrow-right').css({
+          'top': '-100px'
+        });
+        $('.arrow-left').attr('href', data[nowNum + 1].site).attr('title', data[nowNum + 1].title);
+      } else if (nowNum == (dataLength - 1)) {
         $('.previous-article h4').html('沒有前一篇文章了呦~');
         $('.next-article h4').html(
-            '<a href='+data[nowNum-1].site+'>'+data[nowNum-1].title+'</a>'
-          );
-        $('.arrow-left').css({'top':'-100px'});
-        $('.arrow-right').attr('href',data[nowNum-1].site).attr('title',data[nowNum-1].title);
-      }
-      else{
+          '<a href=' + data[nowNum - 1].site + '>' + data[nowNum - 1].title + '</a>'
+        );
+        $('.arrow-left').css({
+          'top': '-100px'
+        });
+        $('.arrow-right').attr('href', data[nowNum - 1].site).attr('title', data[nowNum - 1].title);
+      } else {
         $('.previous-article h4').html(
-            '<a href='+data[nowNum+1].site+'>'+data[nowNum+1].title+'</a>'
-          );
-        $('.arrow-left').attr('href',data[nowNum+1].site).attr('title',data[nowNum+1].title);
+          '<a href=' + data[nowNum + 1].site + '>' + data[nowNum + 1].title + '</a>'
+        );
+        $('.arrow-left').attr('href', data[nowNum + 1].site).attr('title', data[nowNum + 1].title);
         $('.next-article h4').html(
-            '<a href='+data[nowNum-1].site+'>'+data[nowNum-1].title+'</a>'
-          );
-        $('.arrow-right').attr('href',data[nowNum-1].site).attr('title',data[nowNum-1].title);
+          '<a href=' + data[nowNum - 1].site + '>' + data[nowNum - 1].title + '</a>'
+        );
+        $('.arrow-right').attr('href', data[nowNum - 1].site).attr('title', data[nowNum - 1].title);
       }
     });
   }

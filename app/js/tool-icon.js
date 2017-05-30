@@ -1,7 +1,7 @@
 $(function() {
   var $window = $(window);
-  var $content = $('.content');
-  var windowWidth, contentWidth;
+  var $article = $('article');
+  var windowWidth, articleWidth;
 
   _toolPosition();
   _toolClick();
@@ -18,8 +18,8 @@ $(function() {
 
   function _toolPosition() {
     $window.width() > 1000 ? windowWidth = $window.width() : windowWidth = 1000;
-    contantWidth = $content.width();
-    var dx = windowWidth / 2 + contantWidth / 2 + 10;
+    articleWidth = $article.width();
+    var dx = windowWidth / 2 + articleWidth / 2 + 30;
     $('.tool-icon').css({
       'left': dx + 'px'
     });

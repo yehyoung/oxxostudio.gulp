@@ -1,0 +1,114 @@
+# SVG 研究之路 (24) - 寫 jquery 產生圓餅圖  
+
+![](/img/articles/201409/svg-24-jquery-pie-chart.jpg#preview-img) 
+
+之前我們提過了 [SVG 研究之路 (12) - pie chart 圓餅圖實作](http://www.oxxostudio.tw/articles/201406/svg-12-pie-chart.html) 和 [SVG 研究之路 (14) - 控制 SVG 的注意事項](http://www.oxxostudio.tw/articles/201406/svg-14-control-SVG.html)，現在就要來將兩者結合，使用 jquery 來畫出圓餅圖，同時使用 json 的格式來長出特定的角度和顏色，如此一來，在不需要 D3.js 或 C3.js 等 SVG js 框架的輔助下，也可以自己做出一個動態產生的圓餅圖，而且還很好用喔！( 如果對於圓餅圖的產生還不熟悉的人，請點選上面的連結回去再次閱讀一下吧！ )
+
+使用 jquery 畫出圓餅圖的原理很簡單，就是要在 SVG 內部放入 path 的路徑，不過由於 SVG 是 xmlns 而非 HTML，因此瀏覽器不認識 rect 或 path 等元素，所以在程式之初必須先加上這段：
+
+     function makeSVG(tag, attrs) {
+       var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+       for (var k in attrs)
+         el.setAttribute(k, attrs[k]);
+       return el;
+     }
+
+有了這段之後，我們就可以把 path 或 rect 宣告為 HTML 的元素，就可以使用 jquery 來做 append 的動作；接下來就是重頭戲了，回想一下之前是怎麼畫圓餅圖的，現在就要依樣畫葫蘆的畫出來，只是要轉成 jquery 啦~
+
+一開始要先宣告變數，`i`和`j`是 for 迴圈用的，`path`是配合上面的程式碼要給 jquery append 的，`x0,y0`則是從圓心出發的第一個座標，`x1,y1`是第二個座標，`aa,bb,cc`,`all`都只是後面會用到的變數，`cx,cy`是圓餅圖的圓心，`r`是半徑，最後一個`data`則是 json 格式的資料。
+
+     var i, j, path, x0, y0, x1, y1, aa, cc, bb = 0;
+     var all = 0;
+     var cx = 90;
+     var cy = 90;
+     var r = 70;
+     var data = [{
+       num: 12,
+       fill: '#f00'
+     }, {
+       num: 28,
+       fill: '#0f0'
+     }, {
+       num: 7,
+       fill: '#c0c'
+     }, {
+       num: 36,
+       fill: '#00f'
+     }, {
+       num: 7,
+       fill: '#c0c'
+     }, {
+       num: 17,
+       fill: '#0cc'
+     }, {
+       num: 12,
+       fill: '#cc0'
+     }, {
+       num: 7,
+       fill: '#c0c'
+     }];
+
+
+再來進入主程式的部分，一開始的 for 迴圈幫助我們由 data 計算總共有幾個扇形，才可以算出每個扇形的角度，跟著的 for 迴圈一開始先進行 if-else 的判斷，為什麼要這個判斷呢？單純只是因為第一個扇形和最後一個扇形的角度計算方式比較不同，所以必須獨立出來計算，判斷之後有了 path 所需要的數值，再藉由另外一個 if-else 來判斷畫出正確的扇形，最後緊跟著的 path 就是利用 jquery append 的方式畫入 SVG 裏頭。
+
+     for (i = 0; i < data.length; i++) {
+       all = all + data[i].num;
+     }
+     for (j = 0; j < data.length; j++) {
+       if (j === 0) {
+         x0 = cx + r * Math.cos((0 * Math.PI) / 180);
+         y0 = cy + r * Math.sin((0 * Math.PI) / 180);
+         bb = bb + data[0].num;
+         cc = bb / all * 360;
+         x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+         y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+       } else if (j > 0 && j < (data.length - 1)) {
+         x0 = cx + r * Math.cos((cc * Math.PI) / 180);
+         y0 = cy + r * Math.sin((cc * Math.PI) / 180);
+         bb = bb + data[j].num;
+         cc = bb / all * 360;
+         x1 = cx + r * Math.cos((cc * Math.PI) / 180);
+         y1 = cy + r * Math.sin((cc * Math.PI) / 180);
+       } else {
+         x0 = cx + r * Math.cos((cc * Math.PI) / 180);
+         y0 = cy + r * Math.sin((cc * Math.PI) / 180);
+         x1 = cx + r * Math.cos((0 * Math.PI) / 180);
+         y1 = cy + r * Math.sin((0 * Math.PI) / 180);
+       }
+
+       if ((data[j].num / all * 360) > 180) {
+         aa = 'M' + cx + ' ' + cy + ',' + 'L' + x0 + ' ' + y0 + ' ' + 'A' + r + ' ' + r + ' 0 1 1 ' + x1 + ' ' + y1 + ' ' + 'Z';
+       } else {
+         aa = 'M' + cx + ' ' + cy + ',' + 'L' + x0 + ' ' + y0 + ' ' + 'A' + r + ' ' + r + ' 0 0 1 ' + x1 + ' ' + y1 + ' ' + 'Z';
+       }
+
+       path = makeSVG('path', {
+         'd': aa,
+         'fill': data[j].fill,
+         'stroke': '#fff',
+         'stroke-width': '2'
+       });
+       $('#qq').append(path);
+
+     }
+
+其實到上面這裡我們已經畫完了扇形，最後再加點小小的變化，就是讓滑鼠移上去會變透明：
+
+     $('path').hover(function () {
+       $(this).css({
+         'opacity': '.5'
+       });
+     }, function () {
+       $(this).css({
+         'opacity': '1'
+       });
+     });
+
+![SVG 研究之路 (24) - 寫 jquery 產生圓餅圖](/img/articles/201409/20140927_1_02.png)
+
+就這樣，輕鬆愜意地完成了圓餅圖的製作，當然，了解原理之後，也可以做出一些不同的變化，例如半徑越來越大之類的圓餅圖，原理就是在第二個 for 迴圈裡面多個 r=r+5 ，每個扇形的半徑就會越來越大囉！( 範例：[http://jsbin.com/jacugi/2](http://jsbin.com/jacugi/2) )
+
+![SVG 研究之路 (24) - 寫 jquery 產生圓餅圖](/img/articles/201409/20140927_1_03.png)
+
+
+	

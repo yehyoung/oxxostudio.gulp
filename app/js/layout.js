@@ -1,8 +1,7 @@
 $(function() {
   var $window = $(window);
   var $body = $('body');
-  var $wrapper = $('#wrapper');
-  var $container = $('#container');
+  var $container = $('main');
   var nowUrl = location.href;
   var urlParts = nowUrl.split("/");
   var siteUrl = urlParts[0] + '//' + urlParts[2] + '/';

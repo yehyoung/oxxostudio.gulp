@@ -1,0 +1,30 @@
+.arrow-right,
+.arrow-left {
+  display: block;
+  position: fixed;
+  top: 50%;
+  display: none;
+  width: 30px;
+  height: 52px;
+  cursor: pointer;
+  & i {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(/img/layout/sprites.png);
+    background-repeat: no-repeat;
+    opacity: .5;
+    transition:.3s;
+  }
+  &:hover i {
+    opacity: 1;
+  }
+}
+
+.arrow-right i {
+  background-position: -129px -182px;
+}
+
+.arrow-left i {
+  background-position: -129px -249px;
+}

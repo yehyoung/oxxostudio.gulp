@@ -1,0 +1,39 @@
+main {
+  article {
+    >i {
+      position:absolute;
+      top:25px;
+      left:-10px;
+      display:inline-block;
+      width:56px;
+      height:44px;
+      background-image:url(/img/layout/sprites.png);
+    }
+    .tag-ui {
+      background-position:0 -88px;
+    }
+    .tag-others {
+      background-position:0 -44px;
+    }
+    .tag-creative {
+      background-position:0 0;
+    }
+    .tag-photo {
+      background-position:0 -132px;
+    }
+    .tag-web {
+      background-position:0 -176px;
+    }
+    .tag-share {
+      background-position:0 -220px;
+    }
+    .tag-css {
+      background-position:0 -264px;
+    }
+  }
+  @media  (max-width: @w3) {
+    article>i {
+      display:none;
+    }
+  }
+}

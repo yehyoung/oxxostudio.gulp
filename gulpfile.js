@@ -1,310 +1,274 @@
 var gulp = require('gulp'),
-  extend = require('gulp-html-extend'),
-  replace = require('gulp-concat'),
-  include = require('gulp-html-tag-include'),
-  newer = require('gulp-newer'),
-  clean = require('gulp-clean'),
   markdown = require('gulp-markdown'),
-  md2json = require('gulp-markdown-to-json'),
-  rename = require('gulp-rename'),
+  dom = require('gulp-dom'),
+  rename = require("gulp-rename"),
+  clean = require("gulp-clean"),
   less = require('gulp-less'),
-  minicss = require('gulp-minify-css'),
-  minihtml = require('gulp-minify-html'),
-  uglifyjs = require('gulp-uglify'),
-  sitemap = require('gulp-sitemap'),
+  md2json = require('gulp-markdown-to-json'),
+  md = require('marked'),
+  gutil = require('gulp-util'),
+  extender = require('gulp-html-extend'),
+  include = require('gulp-html-tag-include'),
   merge = require('merge-stream'),
-  webserver = require('gulp-webserver'),
-  gutil = require('gulp-util');
+  sitemap = require('gulp-sitemap'),
+  changed = require('gulp-changed'),
+  runSequence = require('run-sequence'),
+  minifyCss = require('gulp-minify-css'),
+  uglify = require('gulp-uglify'),
+  insert = require('gulp-insert'),
+  data = require('gulp-data');
 
-/*
-                                     oooo              .o8                                         
-                                     `888             "888                                         
-ooo. .oo.  .oo.    .oooo.   oooo d8b  888  oooo   .oooo888   .ooooo.  oooo oooo    ooo ooo. .oo.   
-`888P"Y88bP"Y88b  `P  )88b  `888""8P  888 .8P'   d88' `888  d88' `88b  `88. `88.  .8'  `888P"Y88b  
- 888   888   888   .oP"888   888      888888.    888   888  888   888   `88..]88..8'    888   888  
- 888   888   888  d8(  888   888      888 `88b.  888   888  888   888    `888'`888'     888   888  
-o888o o888o o888o `Y888""8o d888b    o888o o888o `Y8bod88P" `Y8bod8P'     `8'  `8'     o888o o888o 
-*/
+/**
+ * markdown to html
+ * marked 設定，避免 <h1> 會轉不出中文而產生奇怪 id
+ * 參考 https://www.npmjs.com/package/marked
+ * 參考 https://www.npmjs.com/package/gulp-markdown
+ */
+var marked = markdown.marked;
+var renderer = new marked.Renderer();
 
-// markdown，需要手動修改把 id 拿掉，markdown to json 必須把 data[path].body mark 起來
-// gulp-markdown > node-modules > marked > lib > marked.js
-//+ ' id="'
-//+ this.options.headerPrefix
-//+ raw.toLowerCase().replace(/[^\w]+/g, '-')
+renderer.html = function(html) {
+  return html;
+};
+renderer.heading = function(text, level) {
+  return '<h' + level + '>' + text + '</h' + level + '>\n';
+};
 
-/* all */
-gulp.task('md-clean', function() {
-  return gulp.src(['app/md2html', 'app/articles'], {
-    read: true
-  }).pipe(clean());
+renderer.image = function(href, title, text) {
+  var image = marked.Renderer.prototype.image.call(this, href, title, text);
+  if (image.indexOf('#preview-img') > 0) {
+    return image.replace('#preview-img"', '" class="preview-img"');
+  } else {
+    return image;
+  }
+};
+//如果結尾帶有 #_blank 的超連結，輸出後變成 target=_blank
+renderer.link = function(href, title, text) {
+  var link = marked.Renderer.prototype.link.call(this, href, title, text);
+  if (link.indexOf('#_blank') > 0) {
+    return link.replace('#_blank"', '" target="_blank"');
+  } else {
+    return link;
+  }
+};
+
+function escape(html, encode) {
+  return html
+    .replace(!encode ? /&(?!#?\w+;)/g : /&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+renderer.code = function(code) {
+  return '<pre class="prettyprint"><code>' + escape(code, true) + '\n</code></pre>';
+};
+
+/**
+ * 透過 include 把版面共用的元素獨立出來變成模組
+ * 主板放在 main 資料夾，共用的模組則放在 module 資料夾
+ * 合併後放在 _layout-combine 資料夾內
+ */
+gulp.task('include', function() {
+  return gulp.src(['app/_layout/*.html'])
+    .pipe(include({
+      prefixVar: '@!@'
+    }))
+    .pipe(gulp.dest('app/_layout-combine/'));
 });
-gulp.task('md', ['md-clean'], function() {
-  return gulp.src('app/md/**/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/'));
+
+/**
+ * markdown 轉換成 html，記得加入 marked 的設定
+ * changed 幫助我們只轉換有改變的檔案，增加效能
+ * 記得要加入 extension: '.html' 的設定，不然會失效
+ * 參考 https://www.npmjs.com/package/gulp-changed
+ * 透過 insert 可以在每一頁的開頭加入固定內容
+ * 因為 index 為第一層，相對路徑必須獨立出來
+ */
+gulp.task('markdown', ['include'], function() {
+  return gulp.src(['app/_md/**/*.md'])
+    .pipe(changed('app/_md2html/', {
+      extension: '.html'
+    }))
+    .pipe(markdown({
+      renderer: renderer
+    }))
+    .pipe(insert.prepend('<!-- @@master  = ../../_layout-combine/layout-article.html-->\n<!-- @@block  =  article-->\n'))
+    .pipe(insert.append('\n<!-- @@close-->'))
+    .pipe(gulp.dest('app/_md2html/'));
 });
-gulp.task('md-extend', ['md'], function() {
-  return gulp.src('app/md2html/**/*.html')
-    .pipe(extend({
+
+/**
+ * 轉換後的 html 合併 layout，透過 changed 只轉換有改變的檔案
+ */
+gulp.task('extender', ['markdown'], function() {
+  return gulp.src('app/_md2html/**/*')
+    .pipe(changed('app/articles/', {
+      extension: '.html'
+    }))
+    .pipe(extender({
       annotations: false,
       verbose: false
     }))
     .pipe(gulp.dest('app/articles/'));
 });
-gulp.task('md-include', ['md-extend'], function() {
-  return gulp.src('app/articles/**/*.html').pipe(include()).pipe(gulp.dest('app/articles/'));
-});
-
-var time = [
-  '201405',
-  '201406',
-  '201407',
-  '201408',
-  '201409',
-  '201410',
-  '201411',
-  '201412',
-  '201501',
-  '201502',
-  '201503',
-  '201505',
-  '201506',
-  '201508',
-  '201509',
-  '201510',
-  '201512',
-  '201601',
-  '201603',
-  '201607',
-  '201608',
-  '201701'
-];
-
-for(var timeLength = 0; timeLength < time.length; timeLength++){
-  task(time[timeLength]);
-}
-
-function task(t){
-  gulp.task('md-clean-'+t, function() {
-    return gulp.src(['app/md2html/'+t, 'app/articles/'+t], {
-      read: true
-    }).pipe(clean());
-  });
-  gulp.task('md-'+t, ['md-clean-'+t], function() {
-    return gulp.src('app/md/'+t+'/*.md').pipe(markdown()).pipe(gulp.dest('app/md2html/'+t+'/'));
-  });
-  gulp.task('md-extend-'+t, ['md-'+t], function() {
-    return gulp.src('app/md2html/'+t+'/*.html')
-      .pipe(extend({
-        annotations: false,
-        verbose: false
-      }))
-      .pipe(gulp.dest('app/articles/'+t+'/'));
-  });
-  gulp.task('md-include-'+t, ['md-extend-'+t], function() {
-    return gulp.src('app/articles/'+t+'/*.html').pipe(include()).pipe(gulp.dest('app/articles/'+t+'/'));
-  });
-}
-
-/*
-                        .o8         .oooo.            o8o                                
-                       "888       .dP""Y88b           `"'                                
-ooo. .oo.  .oo.    .oooo888             ]8P'         oooo  .oooo.o  .ooooo.  ooo. .oo.   
-`888P"Y88bP"Y88b  d88' `888           .d8P'          `888 d88(  "8 d88' `88b `888P"Y88b  
- 888   888   888  888   888         .dP'              888 `"Y88b.  888   888  888   888  
- 888   888   888  888   888       .oP     .o          888 o.  )88b 888   888  888   888  
-o888o o888o o888o `Y8bod88P"      8888888888          888 8""888P' `Y8bod8P' o888o o888o 
-                                                      888                                
-                                                  .o. 88P                                
-                                                  `Y888P                                 
-*/
-// markdown to json，需要手動修改把 body mark 起來
-// gulp-markdown-to-json > node-modules > index.js
-//data[path].body = markup.slice(1).join(' ');
-//data[path].body = marked(parsed.body);
 
 
-gulp.task('md2json', function() {
-  return gulp.src(['app/md/**/*.md'])
+/**
+ * 透過 delete data.body 避免產生的 json 包含 body
+ * 參考 https://www.npmjs.com/package/gulp-markdown-to-json
+ */
+gulp.task('md2json', ['extender'], function() {
+  return gulp.src(['app/_md/**/*.md'])
     .pipe(gutil.buffer())
-    .pipe(md2json('articles.json'))
+    .pipe(md2json(marked, 'articles.json', function(data, file) {
+      var filePath = file.path.split('app/_md')[1].replace('.md', '.html');
+      delete data.body;
+      data.url = filePath;
+      return data;
+    }))
     .pipe(gulp.dest('app/json'))
 });
 
+/**
+ * 如果是 layout 改變，則全部重新轉換 ( 不然會被 changed 影響 )
+ */
+gulp.task('layout-extender', ['include'], function() {
+  var layout_1 = gulp.src('app/_md2html/**/*')
+    .pipe(extender({
+      annotations: false,
+      verbose: false
+    }))
+    .pipe(gulp.dest('app/articles/'));
 
-/*
-oooo                              
-`888                              
- 888   .ooooo.   .oooo.o  .oooo.o 
- 888  d88' `88b d88(  "8 d88(  "8 
- 888  888ooo888 `"Y88b.  `"Y88b.  
- 888  888    .o o.  )88b o.  )88b 
-o888o `Y8bod8P' 8""888P' 8""888P'
-*/
+  var layout_2 = gulp.src(['app/_layout-combine/*.html', '!app/_layout-combine/layout-article.html'])
+    .pipe(extender({
+      annotations: false,
+      verbose: false
+    }))
+    .pipe(gulp.dest('app/'));
 
-gulp.task('css-clean', function() {
-  return gulp.src(['app/style/css/*'], {
+  return merge(layout_1, layout_2);
+});
+
+/**
+ * less to css
+ */
+gulp.task('less', function() {
+  return gulp.src(['app/_less/*.less'])
+    .pipe(less())
+    .pipe(gulp.dest('app/css/'))
+});
+
+gulp.task('less2css', ['less'], function() {
+  return gulp.src('app/_less/lib/**/*').pipe(gulp.dest('app/css/lib'));
+});
+
+
+/** 
+ * build 前先清空原本舊的 build 內容
+ */
+gulp.task('build-clean', function() {
+  return gulp.src(['build/*'], {
       read: true
     })
     .pipe(clean());
 });
 
-gulp.task('less', ['css-clean'], function() {
-  return gulp.src([
-    'app/style/less/index.less',
-    'app/style/less/articles.less',
-    'app/style/less/list.less',
-    'app/style/less/search-results.less'
-    ])
-    .pipe(less())
-    .pipe(gulp.dest('app/style/css'))
-});
-
-
-/*
- o8o                    .o8                        
- `"'                   "888                        
-oooo  ooo. .oo.    .oooo888   .ooooo.  oooo    ooo 
-`888  `888P"Y88b  d88' `888  d88' `88b  `88b..8P'  
- 888   888   888  888   888  888ooo888    Y888'    
- 888   888   888  888   888  888    .o  .o8"'88b   
-o888o o888o o888o `Y8bod88P" `Y8bod8P' o88'   888o 
-*/
-
-gulp.task('index', function() {
-  return gulp.src('app/_index.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
+/**
+ * 產生每一頁的 meta 內容
+ */
+gulp.task('build-meta', ['build-clean'], function() {
+  var baseUrl = 'http://www.oxxostudio.tw';
+  var fileUrl = [];
+  var a = 0,
+    b = 0;
+  return gulp.src('app/articles/**/*.html')
+    .pipe(data(function(file) {
+      a = a + 1;
+      fileUrl[a] = file.path.split('app')[1];
     }))
-    .pipe(rename(function(path) {
-      path.basename = "index";
+    .pipe(dom(function() {
+      b = b + 1;
+      var src, imgUrl;
+      var title = this.querySelector('h1').innerHTML;
+      // 篩選 meta 裡 description 的描述內容
+      // 移除超連結、移除 code 與 strong...等標籤
+      var p = this.querySelector('p');
+      var description = p.innerHTML;
+      if (description.indexOf('img') > 0) {
+        p = this.querySelector('p+p');
+        description = p.innerHTML;
+      }
+      var a = p.querySelectorAll('a');
+      var an = Array.apply(null, a);
+      an.forEach(function(e) {
+        var ao = e.outerHTML;
+        var ai = e.innerHTML;
+        description = description.replace(ao, ai);
+      });
+      String.prototype.allReplace = function(obj) {
+        var retStr = this;
+        for (var x in obj) {
+          retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+        }
+        return retStr;
+      };
+      description = description.allReplace({
+        '<code>': '',
+        '</code>': '',
+        '<strong>': '',
+        '</strong>': ''
+      });
+      var meta = this.querySelectorAll('meta');
+      var metaToArray = Array.apply(null, meta);
+
+      this.querySelector('title').innerHTML = title + ' - OXXO.STUDIO';
+      imgUrl = fileUrl[b].replace('.html', '.jpg');
+
+      var re = new RegExp("&quot;");
+      description.replace(/&quot;/g, '');
+
+      metaToArray.forEach(function(e) {
+        if (e.getAttribute('property') == 'og:title') {
+          e.setAttribute('content', title);
+        }
+        if (e.getAttribute('property') == 'og:description' || e.getAttribute('itemprop') == 'description' || e.getAttribute('name') == 'description') {
+          e.setAttribute('content', description);
+        }
+        if (e.getAttribute('property') == 'og:image' || e.getAttribute('itemprop') == 'image') {
+          e.setAttribute('content', baseUrl + '/img' + imgUrl);
+        }
+        if (e.getAttribute('property') == 'og:url') {
+          e.setAttribute('content', baseUrl + fileUrl[b]);
+        }
+      });
+
+      return this;
     }))
-    .pipe(gulp.dest('app'));
+    .pipe(gulp.dest('build/articles/'));
 });
 
+/** 
+ * 透過 gulp-stream 來合併 task 
+ * build 的時候根據網頁結構，自動產生 sitemap.xml
+ */
+gulp.task('build-move', ['build-meta'], function() {
 
-/*
-oooo   o8o               .   
-`888   `"'             .o8   
- 888  oooo   .oooo.o .o888oo 
- 888  `888  d88(  "8   888   
- 888   888  `"Y88b.    888   
- 888   888  o.  )88b   888 . 
-o888o o888o 8""888P'   "888" 
-*/
+  var a1 = gulp.src('app/json/*').pipe(gulp.dest('build/json')),
+    a2 = gulp.src('app/img/**/*').pipe(gulp.dest('build/img')),
+    a3 = gulp.src('app/js/lib/**/*').pipe(gulp.dest('build/js/lib')),
+    a4 = gulp.src('app/js/*.js').pipe(uglify()).pipe(gulp.dest('build/js')),
+    a5 = gulp.src('app/css/lib/**/*').pipe(gulp.dest('build/css/lib')),
+    a6 = gulp.src('app/css/*.css').pipe(minifyCss()).pipe(gulp.dest('build/css')),
+    a7 = gulp.src('app/*.html').pipe(gulp.dest('build'));
 
-gulp.task('list', function() {
-  return gulp.src('app/_list.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(rename(function(path) {
-      path.basename = "list";
-    }))
-    .pipe(gulp.dest('app'));
+  return merge(a1, a2, a3, a4, a5, a6, a7);
 });
 
-/*
-                                                oooo        
-                                                `888        
- .oooo.o  .ooooo.   .oooo.   oooo d8b  .ooooo.   888 .oo.   
-d88(  "8 d88' `88b `P  )88b  `888""8P d88' `"Y8  888P"Y88b  
-`"Y88b.  888ooo888  .oP"888   888     888        888   888  
-o.  )88b 888    .o d8(  888   888     888   .o8  888   888  
-8""888P' `Y8bod8P' `Y888""8o d888b    `Y8bod8P' o888o o888o 
-*/
-
-gulp.task('search', function() {
-  return gulp.src('app/_search-results.html')
-    .pipe(extend({
-      annotations: false,
-      verbose: false
-    }))
-    .pipe(rename(function(path) {
-      path.basename = "search-results";
-    }))
-    .pipe(gulp.dest('app'));
-});
-
-
-/* 
- .oooo.o  .ooooo.  oooo d8b oooo    ooo  .ooooo.  oooo d8b 
-d88(  "8 d88' `88b `888""8P  `88.  .8'  d88' `88b `888""8P 
-`"Y88b.  888ooo888  888       `88..8'   888ooo888  888     
-o.  )88b 888    .o  888        `888'    888    .o  888     
-8""888P' `Y8bod8P' d888b        `8'     `Y8bod8P' d888b    
-*/
-
-gulp.task('server', function() {
-  return gulp.src('app/')
-    .pipe(webserver({
-      port: 1111,
-      livereload: false,
-      directoryListing: false,
-      open: true,
-      fallback: 'index.html'
-    }));
-});
-
-
-/*
-oooooooooo.  ooooo     ooo ooooo ooooo        oooooooooo.   
-`888'   `Y8b `888'     `8' `888' `888'        `888'   `Y8b  
- 888     888  888       8   888   888          888      888 
- 888oooo888'  888       8   888   888          888      888 
- 888    `88b  888       8   888   888          888      888 
- 888    .88P  `88.    .8'   888   888       o  888     d88' 
-o888bood8P'     `YbodP'    o888o o888ooooood8 o888bood8P'   
-*/
-
-/* build */
-gulp.task('build-clean', function() {
-  return gulp.src(['build/*'], {
-    read: true
-  }).pipe(clean());
-});
-
-gulp.task('move', ['build-clean'], function() {
-  var opts = {
-    conditionals: true,
-    spare: true,
-    loose: true
-  };
-  var a1 = gulp.src('app/img/**/*').pipe(gulp.dest('build/img')),
-    a2 = gulp.src('app/articles/**/*').pipe(gulp.dest('build/articles')),
-    a3 = gulp.src('app/demo/**/*').pipe(gulp.dest('build/demo')),
-    a4 = gulp.src('app/js/lib/*').pipe(gulp.dest('build/js/lib')),
-    a4 = gulp.src('app/style/lib/*').pipe(gulp.dest('build/style/lib')),
-    a5 = gulp.src('app/json/*').pipe(gulp.dest('build/json')),
-    a6 = gulp.src('app/js/*.js')
-    .pipe(uglifyjs())
-    .pipe(gulp.dest('build/js')),
-    a7 = gulp.src('app/style/css/*.css')
-    .pipe(minicss())
-    .pipe(gulp.dest('build/style/css')),
-    a8 = gulp.src([
-      'app/index.html',
-      'app/list.html',
-      'app/search-results.html',
-      'app/favicon.ico',
-      'app/404.html',
-      'app/robots.txt',
-      'app/rss.xml',
-      'app/CNAME',
-      'app/googleddac32a05b66aecc.html'
-    ])
-    .pipe(gulp.dest('build'));
-  return merge(a1, a2, a3, a4, a5, a6, a7, a8);
-});
-
-gulp.task('build', ['move'], function() {
-  return gulp.src([
-    'build/**/*.html', 
-    '!build/demo/**/*', 
-    '!build/search-results.html', 
-    '!build/404.html',
-    '!build/googleddac32a05b66aecc.html'
-    ])
+gulp.task('build', ['build-move'], function() {
+  return gulp.src(['build/**/*.html'])
     .pipe(sitemap({
       siteUrl: 'http://www.oxxostudio.tw'
     }))
@@ -312,49 +276,40 @@ gulp.task('build', ['move'], function() {
 });
 
 
-
-/* 
-                               .             oooo        
-                             .o8             `888        
-oooo oooo    ooo  .oooo.   .o888oo  .ooooo.   888 .oo.   
- `88. `88.  .8'  `P  )88b    888   d88' `"Y8  888P"Y88b  
-  `88..]88..8'    .oP"888    888   888        888   888  
-   `888'`888'    d8(  888    888 . 888   .o8  888   888  
-    `8'  `8'     `Y888""8o   "888" `Y8bod8P' o888o o888o 
-*/
-
-gulp.task('watch',['md-include'], function() {
-  gulp.watch('app/_index.html', ['index']);
-  gulp.watch('app/_list.html', ['list']);
-  gulp.watch('app/_search-results.html', ['search']);
-  gulp.watch('app/_layout.html', ['index', 'list', 'search', 'md-include']);
-  gulp.watch('app/_articles-js.html', ['md-include']);
-  gulp.watch('app/_articles-css.html', ['md-include']);
-  gulp.watch('app/_articles.html', ['md-include']);
-  gulp.watch('app/style/less/**/*.less', ['less']);
-  //gulp.watch('app/md/**/*.md',['md2json']);
-  gulp.watch('app/md/201405/*.md', ['md-include-201405']);
-  gulp.watch('app/md/201406/*.md', ['md-include-201406']);
-  gulp.watch('app/md/201407/*.md', ['md-include-201407']);
-  gulp.watch('app/md/201408/*.md', ['md-include-201408']);
-  gulp.watch('app/md/201409/*.md', ['md-include-201409']);
-  gulp.watch('app/md/201410/*.md', ['md-include-201410']);
-  gulp.watch('app/md/201411/*.md', ['md-include-201411']);
-  gulp.watch('app/md/201412/*.md', ['md-include-201412']);
-  gulp.watch('app/md/201501/*.md', ['md-include-201501']);
-  gulp.watch('app/md/201502/*.md', ['md-include-201502']);
-  gulp.watch('app/md/201503/*.md', ['md-include-201503']);
-  gulp.watch('app/md/201505/*.md', ['md-include-201505']);
-  gulp.watch('app/md/201506/*.md', ['md-include-201506']);
-  gulp.watch('app/md/201508/*.md', ['md-include-201508']);
-  gulp.watch('app/md/201509/*.md', ['md-include-201509']);
-  gulp.watch('app/md/201510/*.md', ['md-include-201510']);
-  gulp.watch('app/md/201512/*.md', ['md-include-201512']);
-  gulp.watch('app/md/201601/*.md', ['md-include-201601']);
-  gulp.watch('app/md/201603/*.md', ['md-include-201603']);
-  gulp.watch('app/md/201607/*.md', ['md-include-201607']);
-  gulp.watch('app/md/201608/*.md', ['md-include-201608']);
-  gulp.watch('app/md/201701/*.md', ['md-include-201701']);
+/** 
+ * watch 
+ */
+gulp.task('watch', function() {
+  /** 
+   * 判斷如果狀態是修改，就純粹執行 extender
+   * 如果是新增、更名或刪除，則 json 要重新產生
+   */
+  gulp.watch(['app/_md/**/*'], function(event) {
+    if (event.type != 'changed') {
+      gulp.start('md2json');
+    } else {
+      gulp.start('extender');
+    }
+  });
+  gulp.watch(['app/_less/**/*'], ['less2css']);
+  gulp.watch(['app/_layout/**/*'], ['layout-extender']);
 });
 
-gulp.task('default', ['index', 'list', 'search','less',  'md-include', 'watch']);
+
+
+/** 
+ * 不用每次編輯都做一次清除動作，在開始前先清除一次即可
+ * 透過 runSequence 讓開始前先執行一次清除動作
+ * 參考 https://www.npmjs.com/package/run-sequence
+ */
+gulp.task('clean', function() {
+  return gulp.src(['app/_md2html/*', 'app/articles/*', 'app/css/*', 'app/_layout-combine/*'], {
+      read: true
+    })
+    .pipe(clean());
+});
+
+gulp.task('default', function(callback) {
+  runSequence('clean', ['md2json', 'layout-extender', 'less2css', 'watch'],
+    callback);
+});
