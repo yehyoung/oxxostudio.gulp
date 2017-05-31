@@ -132,7 +132,7 @@ $(function() {
           );
         }
       }
-      _h4Content();
+      _articles();
       _pageNum(classifyNum, nowPageNum);
       _classifyPages();
     });
