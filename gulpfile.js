@@ -122,7 +122,7 @@ gulp.task('extender', ['markdown'], function() {
  * 透過 delete data.body 避免產生的 json 包含 body
  * 參考 https://www.npmjs.com/package/gulp-markdown-to-json
  */
-gulp.task('md2json', ['extender'], function() {
+gulp.task('md2json', function() {
   return gulp.src(['app/_md/**/*.md'])
     .pipe(gutil.buffer())
     .pipe(md2json(marked, 'articles.json', function(data, file) {
@@ -210,7 +210,7 @@ gulp.task('build-clean', function() {
 /**
  * 產生每一頁的 meta 內容
  */
-gulp.task('build-meta', ['build-clean'], function() {
+gulp.task('build-meta', ['build-clean','md2json'], function() {
   var baseUrl = 'http://www.oxxostudio.tw';
   var fileUrl = [];
   var a = 0,
@@ -317,7 +317,7 @@ gulp.task('watch', function() {
    */
   gulp.watch(['app/_md/**/*'], function(event) {
     if (event.type != 'changed') {
-      gulp.start('md2json');
+      gulp.start(['md2json','extender']);
     } else {
       gulp.start('extender');
     }
@@ -341,6 +341,6 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', function(callback) {
-  runSequence('clean', ['md2json', 'layout-extender', 'less2css', 'watch'],
+  runSequence('clean', ['md2json','extender', 'layout-extender', 'less2css', 'watch'],
     callback);
 });
