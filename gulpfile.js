@@ -47,7 +47,7 @@ renderer.link = function(href, title, text) {
   href = href + '" target="_blank';
   var link = marked.Renderer.prototype.link.call(this, href, title, text);
   if (link.indexOf('#_top') > 0) {
-    link =  link.replace('target="_blank"', '');
+    link = link.replace('target="_blank"', '');
     return link.replace('#_top', '');
     //return link.replace('#_blank"', '" target="_blank"');
   } else {
@@ -127,8 +127,36 @@ gulp.task('md2json', ['extender'], function() {
     .pipe(gutil.buffer())
     .pipe(md2json(marked, 'articles.json', function(data, file) {
       var filePath = file.path.split('app/_md')[1].replace('.md', '.html');
-      delete data.body;
-      data.url = filePath;
+      String.prototype.allReplace = function(obj) {
+        var retStr = this;
+        for (var x in obj) {
+          retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
+        }
+        return retStr;
+      };
+      var pi = data.body.allReplace({
+        '<code>': '',
+        '</code>': '',
+        '<strong>': '',
+        '</strong>': '',
+        '</p>': '',
+        '\n': '',
+        '<br>': ''
+      });
+      var p = pi.split('<p>');
+      var b;
+      if (p[1].indexOf('img') != -1) {
+        b = p[2];
+      } else {
+        b = p[1];
+      }
+      if (b.length > 100) {
+        b = b.substr(0, 100) + '...';
+      }
+      delete data.updatedAt;
+      delete data.title;
+      data.body = b;
+      //data.url = filePath;
       return data;
     }))
     .pipe(gulp.dest('app/json'))

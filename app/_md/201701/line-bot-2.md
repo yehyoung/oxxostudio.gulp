@@ -1,6 +1,8 @@
 # LINE BOT 實戰 ( 聊天篇 ) 
 
-[上一篇](line-bot.html#_top) 我們已經知道 LINE BOT 相關的原理以及如何部署，這篇就真的來完成一個會和你聊天的機器人，希望可以時實作一個你問他現在 PM2.5 數值他就會回答你，甚至你問他日幣匯率他也會回答你。( 可以參考 [做個簡單的爬蟲 ( 幣值、空污 PM2.5 )](http://www.oxxostudio.tw/articles/201512/spider-basic.html) )
+上一篇我們已經知道 LINE BOT 相關的原理以及如何部署，這篇就真的來完成一個會和你聊天的機器人，希望可以時實作一個你問他現在 PM2.5 數值他就會回答你，甚至你問他日幣匯率他也會回答你。
+
+> 相關參考：[LINE BOT 實戰 ( 原理篇 )]((line-bot.html#_top))、[做個簡單的爬蟲 ( 幣值、空污 PM2.5 )](/articles/201512/spider-basic.html#_top) )
 
 ## 1. LINE Message Type
 

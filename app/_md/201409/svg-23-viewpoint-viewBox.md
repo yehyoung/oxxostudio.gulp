@@ -2,7 +2,9 @@
 
 ![](/img/articles/201409/svg-23-viewpoint-viewBox.jpg#preview-img) 
 
-記得我初次接觸 SVG 的時候，常常為了定位和大小感到相當的疑惑，有時候明明設定了這樣的大小，莫名其妙的又變成了另外的大小，也不知道該如何去設定，直到看了 [W3C 的定義](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute) 之後，總算才明白了箇中原理，雖然我們都知道 SVG 該如何去使用，但往往一開始卻忽略了 SVG 的許多設定，所以這篇文章我們回頭仔細看看相關的設定，對於之後的圖形操作，也才能夠真正的融會貫通，也不需要一查再查了。
+記得我初次接觸 SVG 的時候，常常為了定位和大小感到相當的疑惑，有時候明明設定了這樣的大小，莫名其妙的又變成了另外的大小，也不知道該如何去設定，直到看了「W3C 的定義」之後，總算才明白了箇中原理，雖然我們都知道 SVG 該如何去使用，但往往一開始卻忽略了 SVG 的許多設定，所以這篇文章我們回頭仔細看看相關的設定，對於之後的圖形操作，也才能夠真正的融會貫通，也不需要一查再查了。
+
+> 參考：[W3C 的定義](http://www.w3.org/TR/SVG/coords.html#ViewBoxAttribute)
 
 在 [SVG 研究之路 (17) - Stroke-marker](http://www.oxxostudio.tw/articles/201409/svg-17-storke-marker.html) 裡其實也有提到 viewbox ，但是總覺得沒有直接來篇文章介紹，觀念上再遇到的時候又會亂掉了。這篇主要會介紹 viewport ，當中包含了 viewbox 和 preserveAspectRatio 兩個屬性。
 

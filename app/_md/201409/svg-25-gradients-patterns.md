@@ -1,6 +1,10 @@
 # SVG 研究之路 (25) - 再談漸層填色  
 
-先前在 [SVG 研究之路 (7) - fill 填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html) 有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是放射漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：
+先前有介紹過 SVG 的 fill 填色，文章後面介紹了基本的漸層填色，但並沒有深入的介紹進一步的設定，然而高深莫測的漸層填色 ( Gradient ) 在 SVG 的 fill 裡面學問還真是不少，所以專門用一篇文章來解釋漸層填色，如此使用 fill 也才能更正確更靈活。
+
+> [SVG 研究之路 (7) - fill 填色](http://www.oxxostudio.tw/articles/201406/svg-07-fill.html)
+
+廢話不多說，立馬來看漸層 Gradient ，漸層有兩種，第一種是線性漸層 ( Linear gradients ) ，第二種是放射漸層 ( Radial gradients ) ，因為是漸層，所以要這樣子定義：
 
 	<defs>
 	   <linearGradient id="L" x1="0%" y1="0%" x2="100%" y2="100%">

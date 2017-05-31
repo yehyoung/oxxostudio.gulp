@@ -2,7 +2,7 @@
 
 ![](/img/articles/201412/svg-d3-10-colors-2.jpg#preview-img)
 
-[上一篇](http://www.oxxostudio.tw/articles/201412/svg-d3-09-colors-1.html) 我們探討了 d3.js 裏頭色彩的定義與 API 操作方式，其實對於色彩，d3.js 還有不少應用的方法，也因此在官網所介紹的範例，才會如此的色彩豐富生動多姿，因此，這篇將繼續介紹色彩的應用，主要是利用之前介紹過的 scale 來變化色彩，很神奇吧！scale 要怎麼定義色彩？就讓我們繼續看下去吧~
+上一篇我們探討了 d3.js 裏頭色彩的定義與 API 操作方式，其實對於色彩，d3.js 還有不少應用的方法，也因此在官網所介紹的範例，才會如此的色彩豐富生動多姿，因此，這篇將繼續介紹色彩的應用，主要是利用之前介紹過的 scale 來變化色彩，很神奇吧！scale 要怎麼定義色彩？就讓我們繼續看下去吧~
 
 介紹之前，來回顧一下 scale 的用法，之前介紹過兩種用法，分別是 [linear](http://www.oxxostudio.tw/articles/201411/svg-d3-03-scale-linear.html) 和 [ordinal](http://www.oxxostudio.tw/articles/201412/svg-d3-08-ordinal.html) ( 當然還有其他的，不過最常用的就這兩種 )，而 d3.js 的色彩同樣也可以使用這兩種 API 來進行定義，首先來看看 linear 該如何使用。
 

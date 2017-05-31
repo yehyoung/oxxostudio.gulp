@@ -2,9 +2,9 @@
 
 ![](/img/articles/201406/dreamsmile-web.jpg#preview-img)
 
-[點選我看範例網站](https://dl.dropboxusercontent.com/u/59597657/worktest/dreamsmile/zh-tw/index.html)
-
 這是之前替公司所設計的產品網頁，介紹 dreamsmile 這套目標紀錄的 app，版面的配置採用現在比較流行的單頁式網頁設計，搭配卷軸滾動的小特效 ( 卷軸捲到哪邊就會出現一些效果 ) ，只是比較可惜的那時候對於 RWD 的技術還不熟練，加上時間比較緊迫，就快速地做出了這個版本，也因為沒有響應式，手機版本也是用 javascript 硬刻出來的。
+
+> 連結：[範例網站](https://dl.dropboxusercontent.com/u/59597657/worktest/dreamsmile/zh-tw/index.html)
 
 裏頭花費最多時間的地方，就在上方滑鼠移動的特效，為了讓看起來真的像手機拍攝，除了背景和滑鼠移動必須連動，手機裡頭的圖片也必須連動，而兩者連動的位移比例也要不同，這也是自己第一次嘗試這種作法，但做出來感覺還滿特別，也頗受好評的。程式的部分沒有太特別的，主要就使用`e.pageX`和`e.pageY`來抓取滑鼠的位置，由圖片的中心點出發，計算水平和垂直的位移，進一步乘上或除以固定的比例，就能夠有類似的效果。
 

@@ -2,7 +2,9 @@
 
 ![](/img/articles/201502/gitbook.jpg#preview-img)
 
-自從 2014 年底的台北市市長選舉，柯 P 用了 GitBook 發表了「[政策白皮書](http://whitebook.kptaipei.tw/)」之後，GitBook 這個以 GitHub 為基底的電子書瞬間爆紅，也因為政策白皮書瞬間流量爆炸，讓 GitBook 這個外國團隊還發公開信給柯 P 呀！( [連結參考](https://www.gitbook.com/blog/authors/taipei-mayor-writes-gitbook) ) 
+自從 2014 年底的台北市市長選舉，柯 P 用了 GitBook 發表了「政策白皮書」之後，GitBook 這個以 GitHub 為基底的電子書瞬間爆紅，也因為政策白皮書瞬間流量爆炸，讓 GitBook 這個外國團隊還發公開信給柯 P 呀！ 
+
+參考：[政策白皮書](http://whitebook.kptaipei.tw/)、[政策白皮書 Gitbook](https://www.gitbook.com/blog/authors/taipei-mayor-writes-gitbook)
 
 然而 GitBook 這個服務也不是這時候才開始，根據他們官方說法，2014 年結束時在上頭已經有 3300 本電子書，而我也在 2014 上架了一本公司產品的教學手冊 ( 截至今日瀏覽人次快五千 )，目前也在籌備要上架自己的教學手冊。
 

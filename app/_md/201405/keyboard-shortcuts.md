@@ -1,8 +1,9 @@
 # SublimeText 組合快速鍵 
 
 使用程式編輯器，快速鍵的鍵盤組合是相當重要的，就好比使用 photoshop 和 illustrator ，也一定要把常用的快速鍵記住，畢竟在分秒必爭的時代裡，每個動作快個 0.1 秒，累積起來就相當可觀了！  
-這裡列出常用的 SublimeText 的快速鍵，也幫自己做個紀錄 ( 避免要用的時候又要 google 一下 )
-更多個 SublimeText 內容可以參考非常完整的 [SublimeText 手冊](http://docs.sublimetext.tw/)。
+這裡列出常用的 SublimeText 的快速鍵，也幫自己做個紀錄。
+
+> 參考：[SublimeText 手冊](http://docs.sublimetext.tw/)。
   
 <table width="100%">
 <tr style="background:#a0a0a0;"><td colspan="2" style="text-align:center;"><strong>編輯</strong></td>

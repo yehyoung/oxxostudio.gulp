@@ -2,7 +2,9 @@
 
 ![](/img/articles/201409/svg-21-smil-animation.jpg#preview-img) 
 
-SVG 的動畫元素是由 W3C Synchronized Multimedia (SYMM) Working Group 由 Synchronized Multimedia Integration Language (SMIL，同步多媒體集成語言) 所規範開發，SMIL 規劃具有許多的參數與設定值 ( 可以參考 [W3C 的規範](http://www.w3.org/TR/SVG/animate.html) )，也因為有了這些設定，我們便可以輕鬆的控制 SVG 圖形，這篇將介紹 SVG 基本的動畫，進階動畫控制的部分會在 [下一篇](http://www.oxxostudio.tw/articles/201409/svg-22-smil-animation-2.html) 文章進行分享。
+SVG 的動畫元素是由 W3C Synchronized Multimedia (SYMM) Working Group 由 Synchronized Multimedia Integration Language (SMIL，同步多媒體集成語言) 所規範開發，SMIL 規劃具有許多的參數與設定值，也因為有了這些設定，我們便可以輕鬆的控制 SVG 圖形，這篇將介紹 SVG 基本的動畫，進階動畫控制的部分會在下一篇文章進行分享。
+
+> 參考：[W3C 的規範](http://www.w3.org/TR/SVG/animate.html)
 
 SVG 動畫其實跟 CSS3 的動畫很類似，都是必須要手動寫程式控制動畫時間、延遲時間與影格...等的數值，不過 SVG 動畫勝過 CSS3 動畫的地方，就在於 SVG 動畫可以讓圖形跟隨路徑移動、旋轉，還可以將動畫影格與時間做更精準的搭配，甚至在不需要撰寫 javascript 的情形下，就讓動畫具有一些互動效果，真的是非常之神奇呀！( 隨著瀏覽器逐漸的支援，SVG 也逐漸火紅起來 )
 

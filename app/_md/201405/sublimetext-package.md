@@ -12,9 +12,8 @@
 >import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)  
 
 安裝完成後，只要按下 **Ctrl + Shift + p**，輸入 install package，點選後就可以看到一大堆可以安裝的 Package 列表囉！
-<br/>
-<br/>
-### 我所安裝的 Package ###
+
+## 我所安裝的 Package
 
 - **Emmet** ： 非常重要的套件，會有很多程式碼的提示以及快速產生程式碼的指令
 - **Scss** ： SCSS 的套件，也可同時安裝 Sass
@@ -33,8 +32,7 @@
 - **Theme** ： 強烈推薦 Soda Dark 3.sublime-theme
 - **Color-Picker** ： 選擇顏色更容易
 
-<br/>
-### 補充說明 ###
+## 補充說明
 
 補充上述的 Theme，安裝之後必須要手動添加相關的設定，重啟 SublimeText 之後才會生效喔！  
 
@@ -52,5 +50,3 @@
 	}
 
 以上就是我所使用的 Package，關於 SublimeText 的使用心得和經驗，會在日後慢慢分享。
-
-<!-- @@close-->

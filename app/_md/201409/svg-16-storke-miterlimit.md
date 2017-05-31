@@ -1,6 +1,8 @@
 # SVG 研究之路 (16) - Stroke-miterlimit  
 
-在之前 [SVG 研究之路 (6) - stroke 邊框](http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html) 有介紹過邊框的用法，不過其實 Stroke 還有其他的屬性可以設定使用，以下將介紹：「stroke-miterlimit」這個線段屬性，與之前相同，這篇仍舊會搭配一些 illustrator 來說明，因為我覺得，能回歸圖形思考，才是向量「圖」的真實面貌。
+在之前「SVG 研究之路 (6) - stroke 邊框」有介紹過邊框的用法，不過其實 Stroke 還有其他的屬性可以設定使用，以下將介紹：「stroke-miterlimit」這個線段屬性，與之前相同，這篇仍舊會搭配一些 illustrator 來說明，因為我覺得，能回歸圖形思考，才是向量「圖」的真實面貌。
+
+> 參考：[SVG 研究之路 (6) - stroke 邊框](http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html)
 
 首先我們仍然先使用 illustrator 畫出一段折線，並存檔成為 SVG。  
 

@@ -2,7 +2,9 @@
 
 ![](/img/articles/201409/svg-24-jquery-pie-chart.jpg#preview-img) 
 
-之前我們提過了 [SVG 研究之路 (12) - pie chart 圓餅圖實作](http://www.oxxostudio.tw/articles/201406/svg-12-pie-chart.html) 和 [SVG 研究之路 (14) - 控制 SVG 的注意事項](http://www.oxxostudio.tw/articles/201406/svg-14-control-SVG.html)，現在就要來將兩者結合，使用 jquery 來畫出圓餅圖，同時使用 json 的格式來長出特定的角度和顏色，如此一來，在不需要 D3.js 或 C3.js 等 SVG js 框架的輔助下，也可以自己做出一個動態產生的圓餅圖，而且還很好用喔！( 如果對於圓餅圖的產生還不熟悉的人，請點選上面的連結回去再次閱讀一下吧！ )
+之前我們提過了「SVG 研究之路 (12) - pie chart 圓餅圖實作」和「SVG 研究之路 (14) - 控制 SVG 的注意事項」，現在就要來將兩者結合，使用 jquery 來畫出圓餅圖，同時使用 json 的格式來長出特定的角度和顏色，如此一來，在不需要 D3.js 或 C3.js 等 SVG js 框架的輔助下，也可以自己做出一個動態產生的圓餅圖，而且還很好用喔！( 如果對於圓餅圖的產生還不熟悉的人，請點選下面的連結回去再次閱讀一下吧！ )
+
+> 參考：[SVG 研究之路 (12) - pie chart 圓餅圖實作](http://www.oxxostudio.tw/articles/201406/svg-12-pie-chart.html)、[SVG 研究之路 (14) - 控制 SVG 的注意事項](http://www.oxxostudio.tw/articles/201406/svg-14-control-SVG.html)
 
 使用 jquery 畫出圓餅圖的原理很簡單，就是要在 SVG 內部放入 path 的路徑，不過由於 SVG 是 xmlns 而非 HTML，因此瀏覽器不認識 rect 或 path 等元素，所以在程式之初必須先加上這段：
 

@@ -2,7 +2,9 @@
 
 ![](/img/articles/201509/svg-d3-17-zoom-behavior.jpg#preview-img) 
 
-上一篇我們提到了[拖拉行為 Drag Behavior](http://www.oxxostudio.tw/articles/201509/svg-d3-16-drag-behavior.html)，但在視覺化圖表的世界裡，如果只有拖拉好像還是不夠的，因此 d3.js 也很貼心的設計了「縮放行為」( Zoom Behavior )，讓我們可以透過例如滑鼠滾輪滾動或手指的手勢，就可以進行圖表的縮放，這篇也將要來探討是如何實作的，畢竟縮放的效果在 web 領域是比較少見也比較不容易實做，而 d3.js 與 svg 的結合，讓這個效果可以輕鬆愜意的展現。
+上一篇我們提到了「拖拉行為 Drag Behavior」，但在視覺化圖表的世界裡，如果只有拖拉好像還是不夠的，因此 d3.js 也很貼心的設計了「縮放行為」( Zoom Behavior )，讓我們可以透過例如滑鼠滾輪滾動或手指的手勢，就可以進行圖表的縮放，這篇也將要來探討是如何實作的，畢竟縮放的效果在 web 領域是比較少見也比較不容易實做，而 d3.js 與 svg 的結合，讓這個效果可以輕鬆愜意的展現。
+
+> 參考：[拖拉行為 Drag Behavior](http://www.oxxostudio.tw/articles/201509/svg-d3-16-drag-behavior.html)
 
 zoom 的用法和 drag 滿類似的，都是一開始要先用`d3.behavior.zoom();`宣告行為，然後再使用`call`來呼叫，不過 zoom 相對又稍微複雜了些，因為又多了一些參數需要設定，讓我們先來看一下它提供了哪些 api：
 

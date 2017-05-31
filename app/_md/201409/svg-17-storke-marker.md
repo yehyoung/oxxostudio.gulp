@@ -1,6 +1,8 @@
 # SVG 研究之路 (17) - Stroke-marker 
 
-在 [SVG 研究之路 (16) - Stroke-miterlimit](http://www.oxxostudio.tw/articles/201409/svg-16-storke-miterlimit.html) 和 [SVG 研究之路 (6) - stroke 邊框](http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html) 都有介紹了 stroke 的用法，其實 stroke 還有另外一個特別的功能可以設定，就是「marker」，顧名思義，就是在線段的起點、中間點或結束點，加上我們自訂的符號，就可以讓折線圖更有特色。
+在「SVG 研究之路 (16) - Stroke-miterlimit」和「SVG 研究之路 (6) - stroke 邊框」都有介紹了 stroke 的用法，其實 stroke 還有另外一個特別的功能可以設定，就是「marker」，顧名思義，就是在線段的起點、中間點或結束點，加上我們自訂的符號，就可以讓折線圖更有特色。
+
+> 參考 [SVG 研究之路 (16) - Stroke-miterlimit](http://www.oxxostudio.tw/articles/201409/svg-16-storke-miterlimit.html)、[SVG 研究之路 (6) - stroke 邊框](http://www.oxxostudio.tw/articles/201406/svg-06-stroke.html)
 
 不過 marker 並不是寫在 stroke 的屬性裏頭，而是用`defs`來定義，再使用`marker-start`、`marker-mid`和`marker-end`來將其放入線段當中，原本我想使用 illustrator 來表現，不過在 illustrator 裏頭，是用`g` ( group ) 把符號和線段組合，並不是使用 marker 的方式，但我們仍然可以使用 illustrator 來繪製圖案。
 

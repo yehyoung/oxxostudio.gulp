@@ -1,6 +1,8 @@
 # SublimeText - Seti_UI theme  
 
-今天來介紹一個非常漂亮的 SublimeText theme：[Seti_UI](https://packagecontrol.io/packages/Seti_UI)，在介紹之前，先來談一下過去我使用的：Soda Dark 3 theme，Soda Dark 3 是一套顏色偏灰綠色的主題樣式。( [soda-theme](https://github.com/buymeasoda/soda-theme) )
+今天來介紹一個非常漂亮的 SublimeText theme：Seti_UI，在介紹之前，先來談一下過去我使用的：Soda Dark 3 theme，Soda Dark 3 是一套顏色偏灰綠色的主題樣式：「soda-theme」。
+
+> 連結：[Seti_UI](https://packagecontrol.io/packages/Seti_UI)、[soda-theme](https://github.com/buymeasoda/soda-theme)
 
 ![SublimeText - Seti_UI theme](/img/articles/201503/20150310_1_02.jpg)
 

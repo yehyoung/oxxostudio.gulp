@@ -1,6 +1,6 @@
 # SVG 研究之路 (29) - filter - 水波效果  
 
-在 [SVG 研究之路 (28) - filter - feDisplacementMap](http://www.oxxostudio.tw/articles/201410/svg-28-filter-feDisplacementMap.html) 我們深入的認識了 feDisplacementMap 這個濾鏡，也做出了水波和國旗皺褶的效果，這篇將繼續針對 feDisplacementMap 做一些補充，同時也利用 SVG 的 animte 來做出水波的動畫，畢竟水波就是要會動才逼真呀！
+在上一篇我們深入的認識了 feDisplacementMap 這個濾鏡，也做出了水波和國旗皺褶的效果，這篇將繼續針對 feDisplacementMap 做一些補充，同時也利用 SVG 的 animte 來做出水波的動畫，畢竟水波就是要會動才逼真呀！
 
 說是補充其實也只是上一篇少講了這個 [W3C 的範例](http://www.w3.org/Graphics/SVG/Test/20030813/htmlframe/full-filters-displace-01-f.html) ( 看下圖 )，裏頭同樣是使用黑白的棋盤圖來做移置，不過作為移置的參考漸層圖是有設計過的漸層，可以讓整體的移置剛好旋轉 20 度，而且如果是以 png 作為漸層移置參考，就不會有鋸齒狀的效果。
 

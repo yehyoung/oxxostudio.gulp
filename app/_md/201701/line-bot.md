@@ -1,6 +1,8 @@
 # LINE BOT 實戰 ( 原理篇 )
 
-最近剛撰寫完 IT 鐵人賽的「實戰智慧插座」系列文章 ( [https://goo.gl/hI1mEa](https://goo.gl/hI1mEa) )，原本最後兩篇想用個 LINE BOT 來完美收尾，但天不從人願 ( 自己後端的能力太弱 ），沒辦法順利完成，但趁著這個週末，總算是搞定了 LINE BOT ( LINE 聊天機器人 )。
+最近剛撰寫完 IT 鐵人賽的「實戰智慧插座」系列文章，原本最後兩篇想用個 LINE BOT 來完美收尾，但天不從人願 ( 自己後端的能力太弱 ），沒辦法順利完成，但趁著這個週末，總算是搞定了 LINE BOT ( LINE 聊天機器人 )。
+
+> 實戰智慧插座：[https://goo.gl/hI1mEa](https://goo.gl/hI1mEa)
 
 ## 1. LINE BOT 設定
 

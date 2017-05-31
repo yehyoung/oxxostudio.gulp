@@ -1,6 +1,8 @@
 # SVG D3.js - Enter、Update 和 Exit 
 
-在我之前的文章有談過 [D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html)，這篇要來在介紹一下資料處理當中很重要的三個元素：enter、update 和 exit ( 不知道為什麼當初寫那篇文章沒有寫到哈哈 )，為什麼說很重要呢？因為這三個元素可以處理當畫面元素 ( Elements ) 和資料數量 ( data ) 不相等的情形。
+在我之前的文章有談過「D3.js 的資料處理」，這篇要來在介紹一下資料處理當中很重要的三個元素：enter、update 和 exit ( 不知道為什麼當初寫那篇文章沒有寫到哈哈 )，為什麼說很重要呢？因為這三個元素可以處理當畫面元素 ( Elements ) 和資料數量 ( data ) 不相等的情形。
+
+> 參考：[D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html)
 
 以下面這張圖來說，我們利用 enter 來放入資料，如果資料有多少筆，就會在背景「預先」產生多少個元素，當 enter 指令發生的當下，就會把這些預先產生的元素放到畫面裏，而資料和元素數量相等的部分，我們就稱之為「update」，如果資料比元素多，「enter」就會自動生成對應數量的元素來因應，如果資料比元素少，就可以用 exit 指令來列出多的元素，再利用 remove 來移除，這就是 enter 到 update 到 exit 的標準流程。( 簡單來說，enter 就是多出來的，update 就是相等，exit 就是少掉的 )
 

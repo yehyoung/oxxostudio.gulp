@@ -1,6 +1,6 @@
 # 聲音參數與音量節點 ( AudioParam,GainNode ) 
 
-[上一篇](http://www.oxxostudio.tw/articles/201509/web-audio-api.html) 有介紹到 GainNode 這個控制聲音大小的節點模組，但並沒有深入介紹相關的用法，這篇就要來談談 GainNode 的操作處理，由於 GainNode 實在簡單，因為它只有一個屬性叫做「gain」，所以一定要先介紹「AudioParam」這個 Audio 的參數。
+上一篇有介紹到 GainNode 這個控制聲音大小的節點模組，但並沒有深入介紹相關的用法，這篇就要來談談 GainNode 的操作處理，由於 GainNode 實在簡單，因為它只有一個屬性叫做「gain」，所以一定要先介紹「AudioParam」這個 Audio 的參數。
 
 AudioParam 主要用來控制 AudioNode 的運作，並且可以計算出從某個時間點到某個時間點數值的變化，以音量來說，利用 AudioParam 就可以做到淡入淡出的效果，AudioParam 包含了以下幾種方法 ( 詳細數學式說明可以參考 [W3C 解釋](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html#AudioParam) )：
 

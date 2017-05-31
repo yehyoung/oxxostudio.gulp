@@ -1,8 +1,10 @@
 # Dreamsmile 影片製作 
 
-影片連結：[http://youtu.be/UvqD6lrezvQ](http://youtu.be/UvqD6lrezvQ)  
+這是為了之前公司的一個 App 產品 Dreamsmile 所做的一支形象影片，在完全沒有資源的情形下，硬生生地用畫的把這整支影片給畫出來，而且製作人員只有我一個人，包辦了劇情、腳本、畫、影片、音效和音樂，總共花了約兩週的時間製作，兩週的時間修改，真是累死我呀！不過至少也是非常順利的完成了這支影片，大家可以點選下方的影片觀賞喔！
 
-這是為了之前公司的一個 App 產品 Dreamsmile 所做的一支形象影片，在完全沒有資源的情形下，硬生生地用畫的把這整支影片給畫出來，而且製作人員只有我一個人，包辦了劇情、腳本、畫、影片、音效和音樂，總共花了約兩週的時間製作，兩週的時間修改，真是累死我呀！不過至少也是非常順利的完成了這支影片，大家可以點選下方的影片觀賞喔！( [也可以看看我製作的網站心得](http://www.oxxostudio.tw/articles/201406/dreamsmile-web.html) )
+> 參考：[我製作的網站心得](http://www.oxxostudio.tw/articles/201406/dreamsmile-web.html)
+
+> 影片連結：[http://youtu.be/UvqD6lrezvQ](http://youtu.be/UvqD6lrezvQ)  
 
 <iframe src="//www.youtube.com/embed/UvqD6lrezvQ" frameborder="0" allowfullscreen style="width:100%;"></iframe>
 

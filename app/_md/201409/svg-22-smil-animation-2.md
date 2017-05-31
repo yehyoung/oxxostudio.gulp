@@ -1,6 +1,8 @@
 # SVG 研究之路 (22) - 深入理解 SMIL Animation  
 
-[上一篇](http://www.oxxostudio.tw/articles/201409/svg-21-smil-animation.html) 應該已經大概明白 SVG 的動畫是怎麼一回事，但仍然有很多屬性和設定沒有解釋清楚，然而這些屬性和設定，才是 SVG 動畫的最精華所在，讓我們繼續看下去~ XD (英文夠好的人也可以來 [W3C 這邊](http://www.w3.org/TR/SVG/animate.html#TargetAttributes) 瞧瞧)
+上一篇應該已經大概明白 SVG 的動畫是怎麼一回事，但仍然有很多屬性和設定沒有解釋清楚，然而這些屬性和設定，才是 SVG 動畫的最精華所在，讓我們繼續看下去~ XD
+
+> 參考：[Attributes to identify the target attribute or property for an animation](http://www.w3.org/TR/SVG/animate.html#TargetAttributes)
 
 SVG 的動畫具有以下幾個重要的也是共用的屬性，分別是：
 

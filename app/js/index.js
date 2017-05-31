@@ -8,7 +8,7 @@ $(function() {
   var urlParts2 = nowUrl.split("/");
   var siteUrl = urlParts2[0] + '//' + urlParts2[2] + '/';
   var stopTimer = 0;
-
+  var d;
 
   if (urlParts1[1]) {
     urlPages = urlParts1[1].split("=");
@@ -26,6 +26,14 @@ $(function() {
   } else {
     _showAll(1);
   }
+
+  function _articles() {
+    $.getJSON('/json/articles.json', function(data) {
+      d = data;
+      _h4Content();
+    });
+  }
+
 
   function _showAll(nowPageNum) {
     $.getJSON('/json/pageList.json', function(data) {
@@ -68,7 +76,7 @@ $(function() {
           );
         }
       }
-      _h4Content();
+      _articles();
       _pageNum(dataLength, nowPageNum);
       _allPages();
     });
@@ -183,47 +191,17 @@ $(function() {
     $('#content-grid>ul').find('h4').each(function() {
       var $h4 = $(this);
       var h4url = $h4.attr('content');
-      $.ajax({
-        url: h4url,
-        success: function(data) {
-          var dataArray = $.parseHTML(data);
-          for (var k = 0; k < dataArray.length; k++) {
-            if (dataArray[k].localName == 'main') {
-              var p = dataArray[k].querySelector('p');
-              var pi = p.innerHTML;
-              if (pi.indexOf('img') != -1) {
-                p = dataArray[k].querySelector('p+p');
-                pi = p.innerHTML;
-              }
-              var a = p.querySelectorAll('a');
-              var an = Array.apply(null, a);
-              an.forEach(function(e) {
-                var ao = e.outerHTML;
-                var ai = e.innerHTML;
-                pi = pi.replace(ao, ai);
-              });
-              String.prototype.allReplace = function(obj) {
-                var retStr = this;
-                for (var x in obj) {
-                  retStr = retStr.replace(new RegExp(x, 'g'), obj[x]);
-                }
-                return retStr;
-              };
-              pi = pi.allReplace({
-                '<code>': '',
-                '</code>': '',
-                '<strong>': '',
-                '</strong>': ''
-              });
-              if (pi.length > 100) {
-                $h4.html(pi.substr(0, 100) + ' ...');
-              } else {
-                $h4.html(pi);
-              }
-            }
+      var arr = h4url.split('/');
+      var arrUrl = '/' + arr[arr.length - 2] + '/' + arr[arr.length - 1];
+      for (var i in d) {
+        for (var j in d[i]) {
+          if (arrUrl == ('/' + i + '/' + j + '.html')) {
+            var c = d[i][j].body;
+            $h4.html(c);
+            $h4.html($h4.text());
           }
         }
-      });
+      }
     });
   }
 

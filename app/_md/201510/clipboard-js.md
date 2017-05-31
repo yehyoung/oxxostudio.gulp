@@ -1,6 +1,8 @@
 # 點選複製 Clipboard.js 
 
-之前有介紹過 [點選自動複製 ( ZeroClipboard )](http://www.oxxostudio.tw/articles/201501/zeroclipboard.html) 這個透過 flash 的方式，繞過瀏覽器安全性限制，將網頁元素內容複製到剪貼簿的方法，但因為必須走 flash 的緣故，在不支援 flash 的瀏覽器裡反而變成了一個隱性的問題，從以前那篇文章可以看到，當初其實是參考了 Github 的做法，結果前一陣子在 Github 裡頭，赫然發現他的那顆按鈕已經不是 flash，變成用純粹的 JavaScript 就可以複製到剪貼簿，真是太令人感到意外！
+之前有介紹過 「點選自動複製 ( ZeroClipboard )」這個透過 flash 的方式，繞過瀏覽器安全性限制，將網頁元素內容複製到剪貼簿的方法，但因為必須走 flash 的緣故，在不支援 flash 的瀏覽器裡反而變成了一個隱性的問題，從以前那篇文章可以看到，當初其實是參考了 Github 的做法，結果前一陣子在 Github 裡頭，赫然發現他的那顆按鈕已經不是 flash，變成用純粹的 JavaScript 就可以複製到剪貼簿，真是太令人感到意外！
+
+> 參考：[點選自動複製 ( ZeroClipboard )](http://www.oxxostudio.tw/articles/201501/zeroclipboard.html)
 
 再差不多同一時間，從 Facebook 的 Front-End Developers Taiwan 社團看到了 Rplus Chen 大大發的一篇文章：「[Clipboard.js](https://zenorocha.github.io/clipboard.js/)」，就這麼巧同樣也是在講不走 flash 就能複製到剪貼簿的 JavaScript，找了一些資料，發現 W3C 也開始支援 ( 參考：[Clipboard API and events](http://www.w3.org/TR/clipboard-apis/) )，就先把這些內容收藏著，等待時機派上用場。
 

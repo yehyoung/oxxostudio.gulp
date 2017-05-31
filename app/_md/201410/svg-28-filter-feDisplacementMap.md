@@ -2,7 +2,9 @@
 
 ![](/img/articles/201410/svg-28-filter-feDisplacementMap.jpg#preview-img)
 
-在玩 photoshop 的時候，我時常會使用一個名為「移置」的特效，這個特效說難不難，可以參考我在 2008 年寫的的教學：[photoshop：國旗飄揚皺折](http://oxxo-studio-past.blogspot.tw/2008/01/photoshop_5142.html)，在 Photoshop 裏頭這個特效的基本原理，就在於利用 Alpha 色版的深度，讓圖片的像素產生不同的位移情形，在許多的 AfterEffect 特效或 3D 效果裏頭，也都會使用類似的作法，來讓貼圖更吻合表面。
+在玩 photoshop 的時候，我時常會使用一個名為「移置」的特效，這個特效說難不難，我在 2008 年使用 photoshop 做過國旗飄揚皺折的特效，在 Photoshop 裏頭這個特效的基本原理，就在於利用 Alpha 色版的深度，讓圖片的像素產生不同的位移情形，在許多的 AfterEffect 特效或 3D 效果裏頭，也都會使用類似的作法，來讓貼圖更吻合表面。
+
+> 參考：[photoshop：國旗飄揚皺折](http://oxxo-studio-past.blogspot.tw/2008/01/photoshop_5142.html)
 
 同樣的，SVG 裡也有提供這種功能，就叫做 feDisplacementMap，也因為有了這個濾鏡，我們更可以做出許多有趣的變化，現在就讓我們來繼續看下去~
 

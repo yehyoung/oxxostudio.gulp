@@ -2,7 +2,9 @@
 
 ![](/img/articles/201407/css-water-wave.gif#preview-img)
 
-以前玩 flash 的時候，總是會利用 flash 的遮色片做些特效，「水波」這個效果就是這樣子發想而來的，這個效果坦白說應該很多人見過也做過，但使用 CSS 來製作的人就很少了，因此這篇特別介紹如何使用 CSS，來完成這個水波的效果。範例：[CSS Water Wave](http://goo.gl/3VQRH7) ( 使用 EZoApp 設計工具，點選 preview 可以看效果喔！ )
+以前玩 flash 的時候，總是會利用 flash 的遮色片做些特效，「水波」這個效果就是這樣子發想而來的，這個效果坦白說應該很多人見過也做過，但使用 CSS 來製作的人就很少了，因此這篇特別介紹如何使用 CSS，來完成這個水波的效果。
+
+> 範例：[CSS Water Wave](http://goo.gl/3VQRH7)
 
 雖然 webkit 具有遮色片的能力 ( webkit mask )，不過就如同我之前在 [CSS 模糊效果](http://www.oxxostudio.tw/articles/201407/css-blur.html) 所提到的，webkit 雖然強大，但在跨瀏覽器上總是它的罩門，況且在效能上也是往往會造成困擾 ( 這也是為什麼 chrome 要這麼吃資源了@@ )，因此撇開 webkit 不談，我們該用什麼方法，才可以做出像 flash 水波的效果呢？答案就是用「**疊**」的，這個水波效果的原理其實就是用六個 div 疊在一起，接著最重要的就是將背景設為固定：`background-attachment:fixed;`，然後讓背景的尺寸有大有小，就可以完成了，詳細原理如下：
 

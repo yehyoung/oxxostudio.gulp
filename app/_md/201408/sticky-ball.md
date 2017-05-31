@@ -1,6 +1,8 @@
 # 噁心黏黏球 ( 純 CSS )
 
-這是一個純粹利用 CSS 所做出來的效果，這個效果說穿了就是一個影像處理的原理，做法跟 Photoshop 裡頭的幾乎一模一樣，只是一個用圖層和色版來製作，一個則是用 CSS ( 把 div 當成圖層思考就好了 )，要看完整範例程式碼可以點選這個網址：[http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272](http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272) ( 使用 EZoApp，按下上方 preview 可以預覽 )
+這是一個純粹利用 CSS 所做出來的效果，這個效果說穿了就是一個影像處理的原理，做法跟 Photoshop 裡頭的幾乎一模一樣，只是一個用圖層和色版來製作，一個則是用 CSS ( 把 div 當成圖層思考就好了 )。
+
+> 完整範例程式碼：[http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272](http://jqmdesigner.appspot.com/designer.html#&ref=5128921674678272)
 
 一開始我們來玩 Photoshop，會比直接寫 CSS 來得容易理解 ( 沒有 Photoshop 的人也沒關係，看完說明也就懂了ㄎㄎ )，首先我們新增兩個圖層，一個裡頭放上紅色的小球，另外一個裡頭放上黑色的大球。
 

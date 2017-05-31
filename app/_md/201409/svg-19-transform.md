@@ -1,6 +1,6 @@
 # SVG 研究之路 (19) - transform 基礎篇  
 
-在 CSS3 裏頭，我們常常使用到 transform 這個變形的效果，同樣的，對於 SVG 來說，transform 也是重要的變形屬性，與 CSS 一模一樣，SVG 的 transform 不外乎就是這五個方法：translate、scale、rotate、skew、matrix，這篇將介紹基本的前四個方法，[下一篇](http://www.oxxostudio.tw/articles/201409/svg-20-transform-matrix.html)會繼續介紹 matrix 這個比較複雜的方法。
+在 CSS3 裏頭，我們常常使用到 transform 這個變形的效果，同樣的，對於 SVG 來說，transform 也是重要的變形屬性，與 CSS 一模一樣，SVG 的 transform 不外乎就是這五個方法：translate、scale、rotate、skew、matrix，這篇將介紹基本的前四個方法，下一篇會繼續介紹 matrix 這個比較複雜的方法。
 	
 - **translate(tx,[ty])**
 

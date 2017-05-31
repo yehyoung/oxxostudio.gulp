@@ -2,7 +2,9 @@
 
 ![](/img/articles/201501/svg-d3-12-formatting.jpg#preview-img)
 
-在 [SVG D3.js - 時間格式 ( Time Formatting )](http://www.oxxostudio.tw/articles/201412/svg-d3-11-time.html) 這篇文章裡看完了時間的格式，接著就要來看看 d3.js 對於數字格式是如何處理的，因為 d3.js 主要就是針對數據去進行視覺化，所以大幅簡化了過去我們往往要寫很多判斷式來讓數字格式化的方法，只需要運用簡單的 API，就能夠輕鬆地讓數據格式化。其實講到數據的格式化，讓我想到一個強迫症藝術家 Ursus Wehrli 的一系列作品 ( [Tidying Up Art](https://www.google.com.tw/search?q=Tidying+Up+Art&es_sm=122&source=lnms&tbm=isch&sa=X&ei=iYuyVK_nLei9mgX424KgBw&ved=0CAgQ_AUoAQ&biw=1527&bih=850#imgdii=_) )，從一堆雜亂無章的數據當中把這些數據分門別類並且格式化，意境上非常的雷同呀喔哈！( 所以這篇文章的圖片就用這系列藝術作品來表現吧！ )
+在「SVG D3.js - 時間格式 ( Time Formatting )」這篇文章裡看完了時間的格式，接著就要來看看 d3.js 對於數字格式是如何處理的，因為 d3.js 主要就是針對數據去進行視覺化，所以大幅簡化了過去我們往往要寫很多判斷式來讓數字格式化的方法，只需要運用簡單的 API，就能夠輕鬆地讓數據格式化。其實講到數據的格式化，讓我想到一個強迫症藝術家 Ursus Wehrli 的一系列作品 ( Tidying Up Art )，從一堆雜亂無章的數據當中把這些數據分門別類並且格式化，意境上非常的雷同呀喔哈！( 所以這篇文章的圖片就用這系列藝術作品來表現吧！ )
+
+> 參考：[SVG D3.js - 時間格式 ( Time Formatting )](http://www.oxxostudio.tw/articles/201412/svg-d3-11-time.html)、[Tidying Up Art](https://www.google.com.tw/search?q=Tidying+Up+Art&es_sm=122&source=lnms&tbm=isch&sa=X&ei=iYuyVK_nLei9mgX424KgBw&ved=0CAgQ_AUoAQ&biw=1527&bih=850#imgdii=_)
 
 d3.js 格式化數字的方法，就像下面的範例這樣，先宣告一個格式化的方法，然後把數字放進去，就會得到格式化的「字串」。( 注意，得到的結果是字串 )
 

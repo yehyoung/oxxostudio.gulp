@@ -2,9 +2,11 @@
 
 ![](/img/articles/201412/svg-d3-08-ordinal.jpg#preview-img)
 
-之前我在 [SVG D3.js - 定義比例 ( scale.linear() )](http://www.oxxostudio.tw/articles/201411/svg-d3-03-scale-linear.html) 有介紹過比例尺的用法，當中有提到 ordinal，ordinal 與 linear 最大的差別，可以不一定要使用數字，可以使用非定量的值作為比例尺 ( 序數：非定量的值依序排列 )，因為可以使用非數字的值，畫出來的座標，也就更能朝理想的座標長相邁進了。
+之前我在「SVG D3.js - 定義比例 ( scale.linear() )」有介紹過比例尺的用法，當中有提到 ordinal，ordinal 與 linear 最大的差別，可以不一定要使用數字，可以使用非定量的值作為比例尺 ( 序數：非定量的值依序排列 )，因為可以使用非數字的值，畫出來的座標，也就更能朝理想的座標長相邁進了。
 
-其實 ordinal 的用法和 linear 的用法幾乎一模一樣，不過仍然先來看一下 ordinal 有哪些 API ，然後再介紹一下吧！( 忘記的請複習 [SVG D3.js - 定義比例 ( scale.linear() )](http://www.oxxostudio.tw/articles/201411/svg-d3-03-scale-linear.html) )
+> 參考：[SVG D3.js - 定義比例 ( scale.linear() )](http://www.oxxostudio.tw/articles/201411/svg-d3-03-scale-linear.html)
+
+其實 ordinal 的用法和 linear 的用法幾乎一模一樣，不過仍然先來看一下 ordinal 有哪些 API ，然後再介紹一下吧！
 
 >- ordinal.domain
 - ordinal.range

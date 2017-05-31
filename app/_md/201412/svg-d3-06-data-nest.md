@@ -2,7 +2,9 @@
 
 ![](/img/articles/201412/svg-d3-06-data-nest.jpg#preview-img)
 
-之前在 [SVG D3.js - 淺談 D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html) 提過基本的數據處理方法，這陣子又研究了一下 d3.js 的 nest，這篇就來介紹一下這個很有意思的數據處理方法：d3.nest。
+之前在「SVG D3.js - 淺談 D3.js 的資料處理」提過基本的數據處理方法，這陣子又研究了一下 d3.js 的 nest，這篇就來介紹一下這個很有意思的數據處理方法：d3.nest。
+
+> 參考：[SVG D3.js - 淺談 D3.js 的資料處理](http://www.oxxostudio.tw/articles/201411/svg-d3-01-data.html)
 
 nest 就是「巢」的意思 ( 不是潮喔~ 雖然 d3.js 好像有點潮 )，透過 d3.nest 的轉換，可以將原本的數據變成以 key 和 value 為主的巢狀結構，並且可以針對巢狀結構的每個節點進行排序，而所得到的巢狀結構數據，可以在程式裡重複使用而不會影響到原本的數據。
 

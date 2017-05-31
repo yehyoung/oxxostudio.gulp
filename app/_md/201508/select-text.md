@@ -1,7 +1,10 @@
 # 自動選取某個區域的文字 
 
-最近在工作上需要一個功能，就是點選一個按鈕可以全選某個區域內的文字，由於，找了一些解法大多都是針對文 input 的 text 或 textarea 所設計，，後來總算是在 Stack Overflow 發現了完美的解法，( 參考連結：[http://goo.gl/uAHGuS](http://goo.gl/uAHGuS) ) 根據這個解法我就做出來了可以選取特定區域文字的範例，程式碼的長相如下：  
-( 範例：[select-text-demo01.html](/demo/201508/select-text-demo01.html) )
+最近在工作上需要一個功能，就是點選一個按鈕可以全選某個區域內的文字，由於，找了一些解法大多都是針對文 input 的 text 或 textarea 所設計，，後來總算是在 Stack Overflow 發現了完美的解法，根據這個解法我就做出來了可以選取特定區域文字的範例。 
+
+> 範例：[select-text-demo01.html](/demo/201508/select-text-demo01.html)
+
+> 參考：[http://goo.gl/uAHGuS](http://goo.gl/uAHGuS)  
 
 HTML：
 

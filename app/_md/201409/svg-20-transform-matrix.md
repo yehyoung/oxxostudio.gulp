@@ -1,6 +1,6 @@
 # SVG 研究之路 (20) - transform Matrix  
 
-[前一篇](http://www.oxxostudio.tw/articles/201409/svg-19-transform.html) 介紹了 SVG tansform 的前四個基本方法：translate、scale、rotate 和 skew，其實這四個方法都是建構在 Matrix 這個最重要的變形方法之上，只是因為 Matrix 真的要寫起來實在太過複雜，因此在許多效果上都直接省略了，不過如果可以了解 Matrix 的原理，面對更複雜的變形問題，也可以迎刃而解，就讓我們來進入 Matrix 的世界吧！
+前一篇介紹了 SVG tansform 的前四個基本方法：translate、scale、rotate 和 skew，其實這四個方法都是建構在 Matrix 這個最重要的變形方法之上，只是因為 Matrix 真的要寫起來實在太過複雜，因此在許多效果上都直接省略了，不過如果可以了解 Matrix 的原理，面對更複雜的變形問題，也可以迎刃而解，就讓我們來進入 Matrix 的世界吧！
 
 首先要先了解 Matrix 的原理，Matrix 就是矩陣，在 SVG 的 transform 裡有六個數值，分別是：matrix(a,b,c,d,e,f)，原本的座標、長寬和角度透過矩陣的運算，就可以轉換出一組新的座標、長寬和角度，而剛剛看到的六個參數，其實真正的長相是下圖這個樣子 ( 圖片來源：[www.w3.org](http://www.w3.org/TR/SVG/coords.html) )：
 

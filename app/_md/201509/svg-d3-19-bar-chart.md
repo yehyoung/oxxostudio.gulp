@@ -1,6 +1,8 @@
 # SVG D3.js - 直條圖 ( Bar Chart ) 
 
-在之前一系列的 d3.js 介紹之後，終於要來發揮 d3.js 的強項「畫圖表」了 ( 其實之前已經有畫過折線圖了，參考：[SVG D3.js - 區域 ( area )](http://www.oxxostudio.tw/articles/201411/svg-d3-05-area.html) )，這篇要來繪製的圖表是「長條圖 bar chart」，長條圖大概也是最簡單的圖表了，雖然可以直接用 CSS 和 div 來做，不過為了之後更複雜的圖表設計，這裏就直接用 SVG 進行。
+在之前一系列的 d3.js 介紹之後，終於要來發揮 d3.js 的強項「畫圖表」了 ( 其實之前已經有畫過折線圖了，這篇要來繪製的圖表是「長條圖 bar chart」，長條圖大概也是最簡單的圖表了，雖然可以直接用 CSS 和 div 來做，不過為了之後更複雜的圖表設計，這裏就直接用 SVG 進行。
+
+> 參考：[SVG D3.js - 區域 ( area )](http://www.oxxostudio.tw/articles/201411/svg-d3-05-area.html) )
 
 一開始先熟悉一下長條圖的畫法，用一個簡單的資料數據來畫，這裏的數據我用 random 的方式產生，接著在畫面中用 d3.js 放入一個 SVG，接著利用 data 產生對應的矩形，矩形的位置和寬度，就根據數據的數值自動產生 (`data(data`和`enter()`)，很簡單的就可以完成一個 SVG 的長條圖。( 範例：[svg-d3-19-bar-chart-demo01.html](/demo/201509/svg-d3-19-bar-chart-demo01.html) )
 

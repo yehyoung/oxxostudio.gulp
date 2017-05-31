@@ -2,7 +2,9 @@
 
 ![](/img/articles/201509/svg-d3-15-transition-tween.gif#preview-img) 
 
-之前有介紹過 [d3.js 基本的 transition](http://www.oxxostudio.tw/articles/201501/svg-d3-14-transition-1.html) ( 好像是一月份的事情了，真是好久以前啦... )，這篇要來談談比較難的 tween ( 補間動畫 )，在之前的 transition 都是使用 d3.js 預設的補間動畫，而 tween 可以透過一個函式，指定中間過場的行為，這個方式其實很好用，因為我們除了基本的長、寬、位置、顏色，更可以做出文字、數字...等電腦不知道如何做補間動作的效果 ( 例如 1~10 的數字變換 )，而 tween 通常會搭配 interpolate 一起服用，所以這篇就一起來介紹。
+之前有介紹過「d3.js 基本的 transition」( 好像是一月份的事情了，真是好久以前啦... )，這篇要來談談比較難的 tween ( 補間動畫 )，在之前的 transition 都是使用 d3.js 預設的補間動畫，而 tween 可以透過一個函式，指定中間過場的行為，這個方式其實很好用，因為我們除了基本的長、寬、位置、顏色，更可以做出文字、數字...等電腦不知道如何做補間動作的效果 ( 例如 1~10 的數字變換 )，而 tween 通常會搭配 interpolate 一起服用，所以這篇就一起來介紹。
+
+> 參考：[d3.js 基本的 transition](http://www.oxxostudio.tw/articles/201501/svg-d3-14-transition-1.html)
 
 tween 的用法其實滿容易的，就是`tween(name,factory)`，當中的 name 是我們自訂這個補間動畫的名稱，不過這個 name 實際上沒有太大的用處，彷彿是識別用的 ( 可以參考 stackoverflow 的[這篇](http://stackoverflow.com/questions/25002417/d3-use-of-the-name-argument-in-transition-tween)，也是有人對這個 name 有同樣的困惑 )，至於第二個參數 factory 就十分重要了，裏頭主要會放上我們需要進行補間動畫的程式，以下面的這個例子來看，透過`interpolateRound`，可以計算 0 到 100 之間的補間數字，然後再透過 tween 本身的 return，就可以非常簡單的做出一個 0 到 100 跳動的效果。( 範例：[svg-d3-15-transition-tween-demo1.html](/demo/201509/svg-d3-15-transition-tween-demo1.html) ) 
 
