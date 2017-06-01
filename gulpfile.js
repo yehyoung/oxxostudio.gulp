@@ -293,9 +293,10 @@ gulp.task('build-move', ['build-meta'], function() {
     a4 = gulp.src('app/js/*.js').pipe(uglify()).pipe(gulp.dest('build/js')),
     a5 = gulp.src('app/css/lib/**/*').pipe(gulp.dest('build/css/lib')),
     a6 = gulp.src('app/css/*.css').pipe(minifyCss()).pipe(gulp.dest('build/css')),
-    a7 = gulp.src('app/*').pipe(gulp.dest('build'));
+    a7 = gulp.src('app/*').pipe(gulp.dest('build')),
+    a8 = gulp.src('app/demo/**/*').pipe(gulp.dest('build/demo'));
 
-  return merge(a1, a2, a3, a4, a5, a6, a7);
+  return merge(a1, a2, a3, a4, a5, a6, a7, a8);
 });
 
 gulp.task('build', ['build-move'], function() {
