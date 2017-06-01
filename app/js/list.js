@@ -64,7 +64,7 @@ $(function() {
       }
       function _searchStart(v){
         $searchStyle.html(
-          '#container .content li:not([data-title*="' + v + '"]) {display: none;}'
+          'main .content li:not([data-title*="' + v + '"]) {display: none;}'
         );
       }
     });
