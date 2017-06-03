@@ -300,7 +300,7 @@ gulp.task('build-move', ['build-meta'], function() {
 });
 
 gulp.task('build', ['build-move'], function() {
-  return gulp.src(['build/**/*.html'])
+  return gulp.src(['build/**/*.html','!build/demo/**/*.html'])
     .pipe(sitemap({
       siteUrl: 'http://www.oxxostudio.tw'
     }))
