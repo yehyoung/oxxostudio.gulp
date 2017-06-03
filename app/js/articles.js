@@ -107,13 +107,19 @@ $(function() {
         }
       }
       var randomNumA = [];
+      var imgUrl;
       if (classifyNum <= 5) {
         console.log(classifyNum);
         for (j = 0; j < classifyNum; j++) {
+          if(classify[j].img){
+            imgUrl = classify[j].img;
+          }else{
+            imgUrl = '/img'+classify[j].site.replace('.html','-s.jpg');
+          }
           $('#other-articles').append(
             '<a href="' + classify[j].site + '">' +
             '<div>' +
-            '<img src="/img' + classify[j].site.replace('.html','-s.jpg') + '">' +
+            '<img src="' + imgUrl + '">' +
             '<h4>' + classify[j].title + '</h4>' +
             '</div>' +
             '</a>'
@@ -122,12 +128,17 @@ $(function() {
       } else {
         for (j = classifyNum; j >= (classifyNum - 4); j--) {
           var k = Math.floor(j * Math.random(j));
-          randomNumA[j - 5] = classify.splice(k, 1);
+          randomNumA[j - 5] = classify.splice(k, 1)[0];
+          if(randomNumA[j - 5].img){
+            imgUrl = randomNumA[j - 5].img;
+          }else{
+            imgUrl = '/img'+randomNumA[j - 5].site.replace('.html','-s.jpg');
+          }
           $('#other-articles').append(
-            '<a href="' + randomNumA[j - 5][0].site + '">' +
+            '<a href="' + randomNumA[j - 5].site + '">' +
             '<div>' +
-            '<img src="/img' + randomNumA[j - 5][0].site.replace('.html','-s.jpg') + '">' +
-            '<h4>' + randomNumA[j - 5][0].title + '</h4>' +
+            '<img src="' + imgUrl + '">' +
+            '<h4>' + randomNumA[j - 5].title + '</h4>' +
             '</div>' +
             '</a>'
           );

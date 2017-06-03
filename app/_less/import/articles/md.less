@@ -6,11 +6,6 @@ article {
   max-width: 900px;
   margin: 20px auto 20px;
   padding: 20px 60px 50px;
-  font-size: 16px;
-  color: #333;
-  font-family: arial;
-  line-height: 30px;
-  word-break: break-all;
   border-radius: 15px;
   background: #fafafa;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
@@ -23,7 +18,7 @@ article {
   h1,
   h2,
   h3 {
-    margin: 20px 0 10px;
+    margin: 20px 0 20px;
     padding: 0;
     color: #000;
   }
@@ -33,11 +28,11 @@ article {
     width: 100%;
     font-size: 28px;
     color: #000;
-    margin: 30px 0 20px;
+    margin: 30px 0 35px;
     &:before {
       content: attr(data-date);
       position: absolute;
-      top: 8px;
+      top: 15px;
       right: 0;
       font-size: 14px;
       color: #777;
@@ -53,8 +48,8 @@ article {
     }
   }
   h2 {
-    margin-top: 50px;
-    font-size: 22px;
+    margin-top: 60px;
+    font-size: 26px;
   }
   p,
   blockquote,
@@ -76,24 +71,28 @@ article {
   }
   p {
     max-width: 100%;
-    a {
-      transition: .2s;
-      color: #4183C4;
-      text-decoration: none;
-      word-wrap: break-word;
-      word-break: break-all;
-      white-space: pre-wrap;
-      &:hover {
-        color: #37c0ff;
-      }
-    }
+    font-size: 17px;
+    color: #333;
+    font-family: arial;
+    line-height: 28px;
+    word-break: break-all;
     code {
       background: #f9f2f4;
       padding: 2px 5px;
-      margin: 0 5px;
+      margin: 0;
       color: #c7254e;
-      font-size: 15px;
       border-radius: 3px;
+    }
+  }
+  a {
+    transition: .2s;
+    color: #4183C4;
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+    &:hover {
+      color: #37c0ff;
     }
   }
   img {
@@ -101,13 +100,13 @@ article {
     margin: 0 0 20px 0;
     border-radius: 5px;
   }
-  strong{
+  strong {
     font-weight: bold;
-    color:#f90;
+    color: #f90;
   }
-  em{
+  em {
     font-weight: bold;
-    color:#000;
+    color: #000;
   }
   pre {
     &.prettyprint {
@@ -139,6 +138,9 @@ article {
     }
     ul {
       margin-bottom: 0;
+      li{
+        margin:15px 0;
+      }
     }
   }
   hr {
