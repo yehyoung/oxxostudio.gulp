@@ -31,7 +31,7 @@
       <div class="redball"></div>
     </div>
 
-只要對 blackball 和 redball 加入模糊的濾鏡，對 effect 加入對比的濾鏡，就能夠達到 Photoshop 裡面的特效，而模糊的濾鏡必須使用`-webkit-filter:blur(數值)`，對比則使用`-webkit-filter:blur(數值)`，這個只能夠運行在 Chrome 和 Safari 這兩個使用 webkit 核心的瀏覽器，所以 firefox 和 IE 就抱歉啦！
+只要對 blackball 和 redball 加入模糊的濾鏡，對 effect 加入對比的濾鏡，就能夠達到 Photoshop 裡面的特效，而模糊的濾鏡必須使用`-webkit-filter:blur(數值)`，對比則使用` -webkit-filter:contrast(數值)`，這個只能夠運行在 Chrome 和 Safari 這兩個使用 webkit 核心的瀏覽器，所以 firefox 和 IE 就抱歉啦！
 
 ![](/img/articles/201408/20140829_1_07.gif)
 
