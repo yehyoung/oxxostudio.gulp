@@ -2,7 +2,7 @@
 
 ![](/img/articles/201706/javascript-promise-settimeout.jpg#preview-img)
 
-過去在寫 JavaScript 使用的同步延遲，都是用 setTimeout 來實現，但如果有很多個任務或流程要執行，就得使用一堆 callback 來完成，然而 JavaScript 裡的 Promise 剛好就可以用來解決這個問題，讓整個延遲的過程可以很漂亮且同步的「串」在一起。
+過去在寫 JavaScript 使用的同步延遲，都是用非同步的 setTimeout 加上 callback 來實現，但如果有很多個任務或流程要執行，就得用上一大堆的 callback，然而 JavaScript 裡的 Promise ，剛好就可以用來解決同步與非同步的問題，讓整個延遲的過程可以很漂亮且同步的「串」在一起。
 
 ## 同步非同步
 
