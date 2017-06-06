@@ -42,7 +42,7 @@ renderer.image = function(href, title, text) {
     return image;
   }
 };
-//如果結尾帶有 #_blank 的超連結，輸出後變成 target=_blank
+//如果結尾帶有 #_top 的超連結，輸出後不會有 target=_blank ( 預設連結全部都有 )
 renderer.link = function(href, title, text) {
   href = href + '" target="_blank';
   var link = marked.Renderer.prototype.link.call(this, href, title, text);
@@ -134,22 +134,31 @@ gulp.task('md2json', function() {
         }
         return retStr;
       };
-      var pi = data.body.allReplace({
-        '<code>': '',
-        '</code>': '',
-        '<strong>': '',
-        '</strong>': '',
-        '</p>': '',
-        '\n': '',
-        '<br>': ''
-      });
-      var p = pi.split('<p>');
+      var p = data.body.split('<p>');
       var b;
       if (p[1].indexOf('img') != -1) {
         b = p[2];
       } else {
         b = p[1];
       }
+      if (b.indexOf('</p>') != -1) {
+        b = b.split('</p>')[0];
+      }
+      b = b.allReplace({
+        '<code>': '',
+        '</code>': '',
+        '<strong>': '',
+        '</strong>': '',
+        '\n': '',
+        '<br>': '',
+        '<br/>': '',
+        '<ul>': '',
+        '<li>': '',
+        '</ul>': '',
+        '</li>': '',
+        '<h2>': '',
+        '</h2>': ''
+      });
       if (b.length > 100) {
         b = b.substr(0, 100) + '...';
       }
@@ -210,7 +219,7 @@ gulp.task('build-clean', function() {
 /**
  * 產生每一頁的 meta 內容
  */
-gulp.task('build-meta', ['build-clean','md2json'], function() {
+gulp.task('build-meta', ['build-clean', 'md2json'], function() {
   var baseUrl = 'http://www.oxxostudio.tw';
   var fileUrl = [];
   var a = 0,
@@ -287,20 +296,31 @@ gulp.task('build-meta', ['build-clean','md2json'], function() {
  */
 gulp.task('build-move', ['build-meta'], function() {
 
+  var fileList = [
+    'app/404.html',
+    'app/CNAME',
+    'app/favicon.ico',
+    'app/googleddac32a05b66aecc.html',
+    'app/index.html',
+    'app/list.html',
+    'app/robots.txt',
+    'app/search-results.html'
+  ];
+
   var a1 = gulp.src('app/json/*').pipe(gulp.dest('build/json')),
     a2 = gulp.src('app/img/**/*').pipe(gulp.dest('build/img')),
     a3 = gulp.src('app/js/lib/**/*').pipe(gulp.dest('build/js/lib')),
     a4 = gulp.src('app/js/*.js').pipe(uglify()).pipe(gulp.dest('build/js')),
     a5 = gulp.src('app/css/lib/**/*').pipe(gulp.dest('build/css/lib')),
     a6 = gulp.src('app/css/*.css').pipe(minifyCss()).pipe(gulp.dest('build/css')),
-    a7 = gulp.src('app/*').pipe(gulp.dest('build')),
+    a7 = gulp.src(fileList).pipe(gulp.dest('build')),
     a8 = gulp.src('app/demo/**/*').pipe(gulp.dest('build/demo'));
 
   return merge(a1, a2, a3, a4, a5, a6, a7, a8);
 });
 
 gulp.task('build', ['build-move'], function() {
-  return gulp.src(['build/**/*.html','!build/demo/**/*.html'])
+  return gulp.src(['build/**/*.html', '!build/demo/**/*.html'])
     .pipe(sitemap({
       siteUrl: 'http://www.oxxostudio.tw'
     }))
@@ -318,7 +338,7 @@ gulp.task('watch', function() {
    */
   gulp.watch(['app/_md/**/*'], function(event) {
     if (event.type != 'changed') {
-      gulp.start(['md2json','extender']);
+      gulp.start(['md2json', 'extender']);
     } else {
       gulp.start('extender');
     }
@@ -342,6 +362,6 @@ gulp.task('clean', function() {
 });
 
 gulp.task('default', function(callback) {
-  runSequence('clean', ['md2json','extender', 'layout-extender', 'less2css', 'watch'],
+  runSequence('clean', ['md2json', 'extender', 'layout-extender', 'less2css', 'watch'],
     callback);
 });
