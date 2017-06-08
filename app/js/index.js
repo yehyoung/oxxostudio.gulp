@@ -197,7 +197,6 @@ $(function() {
         for (var j in d[i]) {
           if (arrUrl == ('/' + i + '/' + j + '.html')) {
             var c = d[i][j].body;
-      console.log(c);
             $h4.html(c);
             $h4.html($h4.text());
           }
